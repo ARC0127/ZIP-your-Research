@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MODE_LOCK v1.0.1",
+  "type": "object",
+  "required": [
+    "version",
+    "activated_at",
+    "project",
+    "language",
+    "web_browsing_policy",
+    "primary_priorities",
+    "debug_trace_default"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "activated_at": {
+      "type": "string"
+    },
+    "project": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "web_browsing_policy": {
+      "type": "string",
+      "enum": [
+        "ALLOW",
+        "FORBID"
+      ]
+    },
+    "unknown_strictness": {
+      "type": "string"
+    },
+    "citation_mode": {
+      "type": "string"
+    },
+    "debug_trace_default": {
+      "type": "string",
+      "enum": [
+        "OFF",
+        "ON"
+      ]
+    },
+    "time_budget_minutes_per_task": {
+      "type": "integer"
+    },
+    "stop_condition": {
+      "type": "string"
+    },
+    "primary_priorities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "secondary_rules": {
+      "type": "object"
+    }
+  }
+}

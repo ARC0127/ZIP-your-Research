@@ -1,0 +1,33 @@
+categories:
+- research_core
+- experiments
+- reproducibility
+- paper_ops
+- composite
+version: v1.0.1
+intent_detection:
+  notes:
+  - Prefer 'writing_engine' when user provides manuscript text / PDF / review comments
+    / venue constraints.
+  - Prefer S3xx when user asks for validation, ablation, baselines, metrics, or a
+    2-hour decision signal.
+  - Prefer S4xx when user asks for reproducibility, code/data audits, dataset construction,
+    leakage.
+  - Prefer S5xx when user asks about submission strategy, rebuttal, camera-ready,
+    review simulation.
+priority_rules:
+- rule: safety_and_truthfulness
+  description: 'Apply evidence policy first: no fabrication; label UNKNOWN; propose
+    verification.'
+- rule: 2_hour_deliverable_bias
+  description: Default to a 2-hour deliverable plan unless user explicitly requests
+    long-form.
+- rule: single_primary_skill
+  description: Return ONE primary skill prompt; optional secondary skill only if needed
+    for verification.
+composite_skills:
+- id: writing_engine
+  purpose: Gate → Rewrite → Verify; venue constraints; web research protocol
+  entry: skills/writing_engine/MASTER_v1.0.1.md
+tooling:
+  router_cli: router/route.py

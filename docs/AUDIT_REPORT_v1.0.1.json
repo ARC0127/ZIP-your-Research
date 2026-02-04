@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-02-04 03:44 UTC",
+  "pattern_scan": [
+    "\\bTODO\\b",
+    "\\bTBD\\b",
+    "FIXME"
+  ],
+  "hit_count": 2,
+  "hits": [
+    [
+      "skills/experiments/S327_experiment_completeness_check.md",
+      "\\bTODO\\b"
+    ],
+    [
+      "skills/research_core/S204_literature_triage_pipeline.md",
+      "\\bTODO\\b"
+    ]
+  ],
+  "skills_patched_count": 126
+}

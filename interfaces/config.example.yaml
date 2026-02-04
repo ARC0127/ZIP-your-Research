@@ -1,0 +1,31 @@
+# Example config for providers (copy to interfaces/config.yaml if desired)
+
+providers:
+  openalex:
+    enabled: true
+    api_key_env: OPENALEX_API_KEY   # required by OpenAlex docs
+    base_url: "https://api.openalex.org"
+    timeout_s: 30
+    select: "id,display_name,publication_year,host_venue,authorships,cited_by_count,doi"
+
+  crossref:
+    enabled: true
+    base_url: "https://api.crossref.org"
+    mailto: "YOUR_EMAIL@example.com"  # recommended for polite pool
+    timeout_s: 30
+
+  arxiv:
+    enabled: true
+    base_url: "https://export.arxiv.org/api/query"
+    timeout_s: 30
+
+  semantic_scholar:
+    enabled: true
+    base_url: "https://api.semanticscholar.org/graph/v1"
+    api_key_env: S2_API_KEY         # optional but recommended for stability
+    timeout_s: 30
+    fields: "title,year,venue,authors,url,abstract,citationCount,externalIds"
+
+hooks:
+  deduplicate_by_doi:
+    enabled: true
