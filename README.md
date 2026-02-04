@@ -4,8 +4,8 @@
 **License:** MIT
 
 A modular prompt + workflow toolkit for **high‑rigor research work** — designed to keep your chats **truthful**, **auditable**, and **stable** (no prompt drift).
-
-- 🧠 **A/B/C/E audits**: Logic (A) / Method (B) / Calculation (C) / Innovation correctness (E)
+[You can change these default settings by chatting with the llm.]
+- 🧠 **A/B/C/E audits**: Logic (A) / Method (B) / Calculation (C) / Innovation correctness (E) 
 - 🔍 **Evidence‑grounded novelty checks** (optional CLI → JSON evidence → paste back into chat)
 - 🧪 **Experiment completeness** + “**2‑hour sprint**” patch planning
 - ✍️ **Writing engine**: calibrated rewrites (no claim inflation), reviewer‑risk wording
