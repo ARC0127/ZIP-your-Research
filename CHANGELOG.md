@@ -28,6 +28,9 @@ A **system-level normalization + audit pass**: remove legacy v1.0.1-named artifa
 - Reproducible system audit command:
   - `tools/system_audit_v1_3.py` → writes `artifacts/system_audit/report_v1.3.2.md`
 
+### Fixed
+- GitHub Actions CI now installs `PyYAML` via `requirements.txt`, preventing `ModuleNotFoundError: yaml` during `tools/build_all.py` and strict validation.
+
 ---
 
 ## v1.3.1 (2026-02-15)

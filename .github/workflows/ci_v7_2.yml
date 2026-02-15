@@ -12,6 +12,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
       - run: python tools/build_all.py
       - run: python tools/validate_v7_2.py
       - run: python tools/drift_audit_v1_3.py
