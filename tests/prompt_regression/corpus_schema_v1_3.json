@@ -1,0 +1,8 @@
+{
+  "schema_id": "zip-your-research.prompt_regression.corpus.v1_3",
+  "version": "1.3.2",
+  "entry_required_keys": ["id", "label", "focus", "text"],
+  "label_allowed": ["IN_SCOPE", "OUT_OF_SCOPE", "CHANGE_REQUEST", "INJECTION"],
+  "focus_note": "Focus is a routing hint for MODE_LOCK priorities; not necessarily an exhaustive enum here.",
+  "text_max_chars": 12000
+}

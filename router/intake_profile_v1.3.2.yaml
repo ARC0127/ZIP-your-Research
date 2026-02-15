@@ -1,0 +1,107 @@
+version: v1.3.2
+defaults:
+  top_priorities:
+  - A_logic
+  - B_method
+  - C_calculation
+  - E_innovation_correctness
+  intake_depth: deep
+  strictness: high
+  output_mode: audit_first
+  citation_mode: conservative
+  web_browsing_policy: ALLOW
+  debug_trace: 'OFF'
+depth_policy_ref: boot/09_INTAKE_DEPTH_POLICY_v1.3.2.md
+domains:
+- key: A_logic
+  name: 思路/逻辑一致性核查
+  primary_skills:
+  - S226
+  questions:
+  - 你要核查的对象是什么：段落/推导/实验论证/整体story？请粘贴范围并给最小上下文。
+  - 请列出你当前的核心 claim（1–3条），以及你认为支持它的证据/推理链在哪里。
+  - 你认为最可能错在哪里？定义、前提、推理跳步、因果方向、还是结论外推？
+  - 如果让我“强挑刺”，你允许我提出反例/构造极端情况/指出循环论证吗？哪些假设不可动？
+  - 验收标准是什么：必须给出反例/必须形式化重写/必须输出决策（保留/改写/删除）？
+- key: B_method
+  name: 方法正确性核查
+  primary_skills:
+  - S227
+  questions:
+  - 方法的输入-输出-假设分别是什么？请给最小形式化定义（变量/空间/约束）。
+  - 这方法要解决的痛点是什么？相对 baseline 的关键差异点是什么（机制层面）？
+  - 你担心的正确性点：收敛性/一致性/可辨识性/偏差来源/实现对齐/分布外？
+  - 方法与证据的对齐：你现有实验/理论能覆盖哪些假设？哪些是假设未验证？
+  - 你希望的产物：错误定位+修复方案，还是证明草图+边界条件，或二者都要？
+- key: C_calculation
+  name: 计算正确性核查（算式/推导/数值）
+  primary_skills:
+  - S326
+  questions:
+  - 请标注你要核查的具体计算段（逐行编号/截图/LaTeX）。
+  - 请说明符号约定与单位/量纲（如有），以及边界条件/初始条件。
+  - 你希望核查粒度：代数变形、微积分步骤、期望/概率推导、还是数值实现一致性？
+  - 是否需要我做“独立复算”（从上一行推到下一行），并指出最小错误点？
+  - 如果发现错误，是否允许我给出替代推导 + 可复现检查清单（sanity checks）？
+- key: E_innovation_correctness
+  name: 创新思路正确性审计（想法是否站得住）
+  primary_skills:
+  - S233
+  questions:
+  - 你的创新点用一句话表述是什么？它依赖哪些关键假设（列出）？
+  - 你的创新试图打破的瓶颈是什么？你认为它为什么能打破（机制解释）？
+  - 这条创新的“致命失败模式”是什么（反例/不可实现/违反约束/与已知定理冲突）？
+  - 你更希望我采用：反驳式审计（强挑刺）还是建设式改造（保留核心、替换脆弱环节）？
+  - 验收标准：你希望最后得到“可写进论文的创新表述+范围+局限”，还是“是否应放弃/改方向”的决策？
+- key: D_paper_story
+  name: 论文整体思路核查（storyline & contribution map）
+  primary_skills:
+  - S229
+  questions:
+  - 你的贡献点清单（<=5条）是什么？每条贡献对应哪一节/哪一实验/哪一理论？
+  - 读者最可能误解的点是什么？你希望如何防止误解（结构/措辞/图表）？
+  - 你更在意：逻辑自洽、叙事张力、还是审稿人预期对齐？
+- key: F_proof_idea
+  name: 证明思路核查（proof roadmap, gap finding）
+  primary_skills:
+  - S230
+  - S235
+  questions:
+  - 你现在的证明结构分哪几步？每一步用到哪些引理/假设？
+  - 你最不确定的是哪一步？是技术引理、不等式、构造、还是边界条件？
+  - 你希望输出：proof skeleton（可写进论文）还是 gap list + alternative route？
+- key: H_experiment_completeness
+  name: 实验完整性检查（coverage, baselines, ablations, reporting）
+  primary_skills:
+  - S327
+  - S328
+  questions:
+  - 你的实验目标是什么：SOTA、消融解释、还是验证关键假设？
+  - 你现在已有的实验有哪些？缺口是什么（baseline/ablation/metric/seed/reporting）？
+  - 你希望我给出：2小时最小补全清单，还是投稿级完整 checklist？
+- key: G_novelty_search
+  name: 创新点搜索/查新策略（可验证检索计划）
+  primary_skills:
+  - S231
+  - S234
+  questions:
+  - 你要查的新颖性对象是：问题设定/方法/理论/实验协议/系统工程？
+  - 你允许我提出哪些检索关键词/同义词/子领域迁移关键词？（语言：中/英）
+  - 查新产物要到什么程度：候选论文清单+对比表，还是仅检索策略？
+- key: I_paper_interpretation
+  name: 论文解读（精读→claim map→风险点）
+  primary_skills:
+  - S232
+  questions:
+  - 你要解读的论文材料是什么（PDF/摘要/段落）？你希望我优先读哪部分？
+  - 你更关注：核心机制、理论假设、实验可信度、还是与自己工作的关联？
+  - 输出希望：面试式问答、复现式解释、还是可直接写 related work？
+- key: J_sentence_rewrite_retrieval
+  name: 句子改写 + 风险审计（证据对齐）
+  primary_skills:
+  - S526
+  - S527
+  questions:
+  - 请给原句，并说明它的功能（claim/motivation/summary/limitation）。
+  - 你允许的改写幅度：轻改措辞/重写结构/重排段落？语气偏保守还是偏强？
+  - 你是否需要：替代表述 + 风险提示（夸大/不可证/不合规）？

@@ -1,8 +1,123 @@
 # Changelog
 
+## v1.3.2 (2026-02-15)
+
+### Goal
+A **system-level normalization + audit pass**: remove legacy v1.0.1-named artifacts, make prompt-regression checks schema-driven (not heuristic), and add a reproducible system-audit command that verifies end-to-end logical consistency.
+
+### Removed
+- Legacy v1.0.1-named artifacts (superseded by v1.3.2 equivalents; changelog history retained):
+  - `boot/*_v1.0.1.*`, `router/*_v1.0.1.*`, `router/weights_v1.0.1.yaml`, `router/intake_profile_v1.0.1.yaml`
+  - `docs/AUDIT_REPORT_v1.0.1.*`, `docs/archive/*`, duplicated How-to-use PDF under `tools/how_to_use/`
+- Outdated generated artifacts from v1.3.1 (re-generated under v1.3.2 naming).
+
+### Changed
+- Canonical master prompts bumped to v1.3.2:
+  - `skills/writing_engine/MASTER_v1.3.2.md`
+  - `skills/coding_engine/MASTER_v1.3.2.md`
+- Router now targets the v1.3.2 masters + weights/profile naming (`router/route.py`, `router/weights_v1.3.2.yaml`, `router/intake_profile_v1.3.2.yaml`).
+- Drift audit now ignores historical logs (`CHANGELOG.md`, `INCREMENTAL_UPDATE_*`) to avoid false positives on removed legacy artifacts.
+
+### Added
+- Prompt regression schema + validator:
+  - `tests/prompt_regression/corpus_schema_v1_3.json`
+  - `tools/validate_corpus_v1_3.py`
+  - `docs/PROMPT_REGRESSION.md`
+- LOCKED simulator upgraded to **label-driven** pass/fail (heuristics kept only as diagnostics):
+  - `tools/simulate_locked_regression_v1_3.py` → writes `artifacts/locked_regression/report_v1.3.2.md`
+- Reproducible system audit command:
+  - `tools/system_audit_v1_3.py` → writes `artifacts/system_audit/report_v1.3.2.md`
+
+---
+
+## v1.3.1 (2026-02-15)
+
+### Goal
+Tighten v1.3 into a **clean, non-redundant** release: remove unused archives and legacy v1.2 artifacts, canonicalize validator/audit names, and add a deterministic **LOCKED perturbation simulator** based on `corpus_v1_3`.
+
+### Removed
+- Unused embedded archive: `ZIP-your-Research_v1.3_release.zip` (was ~68KB and not referenced).
+- Legacy v1.2 artifacts kept only in CHANGELOG history (files deleted):
+  - `boot/*_v1.2.md`, skills/coding_engine/MASTER_v1.2.md, `tests/prompt_regression/*_v1_2.*`, INCREMENTAL_UPDATE_v1.2.md, AUTOBOOT_v1.0.1.md.
+
+### Changed
+- Release packager `tools/make_release.py` now excludes archive suffixes to prevent nested zips.
+- Canonical maintainer tools renamed to v1.3:
+  - `tools/validate_v1_3.py` (shims `validate_v7_1.py` / `validate_v7_2.py` updated)
+  - `tools/drift_audit_v1_3.py` (CI + docs updated)
+- Routing + coding_engine canonicalized to v1.3:
+  - `router/route.py` now points to `skills/coding_engine/MASTER_v1.3.md`
+  - coding_engine module header cleaned to avoid conflicting v1.2 headings.
+
+### Added
+- LOCKED perturbation simulation:
+  - `tools/simulate_locked_regression_v1_3.py` → writes `artifacts/locked_regression/report_v1.3.1.md`
+
+---
+
+## v1.3 (2026-02-15)
+
+### Goal
+Agentic‑style **single‑conversation research closure** (ONECHAT_LOOP) + stronger onboarding + explicit attribution to public agentic research systems.
+
+### Added
+- ONECHAT protocol (single chat agentic loop):
+  - `boot/12_ONECHAT_DEEP_LOOP_v1.3.md`
+  - `docs/ONECHAT_PLAYBOOK_v1.3.md`
+  - `docs/ONBOARDING_FASTPATH_v1.3.md`
+- Onboarding & skill discoverability:
+  - `docs/SKILLS.md` (human‑first catalog)
+  - `tools/gen_skills_catalog_v1_3.py` (generates `docs/SKILLS_INDEX_GENERATED_v1.3.md`)
+- Agentic architecture & attributions:
+  - `docs/AGENTIC_ARCHITECTURE_v1.3.md`
+  - `docs/HELLO_AGENTS_ADAPTATION_v1.3.md`
+  - `docs/ATTRIBUTION_v1.3.md`
+- Coding minimalism module:
+  - `skills/coding_engine/modules/05_MINIMALISM.md`
+
+- Expanded prompt regression suite:
+  - `tests/prompt_regression/corpus_v1_3.jsonl`
+  - `tests/prompt_regression/fuzz_payloads_v1_3.bin`
+  - generator: `tools/gen_fuzz_payloads_v1_3.py`
+
+### Changed
+- Version bump to 1.3 (`VERSION`, `skills_manifest.yaml`, README/INDEX headers).
+- LOCKED scope guard + per‑turn requirements loop updated to v1.3:
+  - `boot/10_LOCKED_SCOPE_GUARD_v1.3.md`
+  - `boot/11_REQUIREMENTS_LOCK_LOOP_v1.3.md`
+
+---
+
+## v1.2 (2026-02-15)
+
+### Goal
+System-level hardening for **instruction adherence under conversation perturbations**, and a stronger **vibe coding** workflow with closure-first scaffolding.
+
+### Added
+- LOCKED drift firewall:
+  - `boot/10_LOCKED_SCOPE_GUARD_v1.3.md`
+  - `boot/11_REQUIREMENTS_LOCK_LOOP_v1.3.md`
+- New reproducibility skills:
+  - `S431_closed_loop_verification` (template for S430 PASS closure)
+  - `S432_scope_drift_firewall` (maps user perturbations into an explicit state machine)
+- New composite prompt:
+  - `skills/coding_engine/MASTER_v1.3.md` (+ build tool tools/build_coding_engine.py)
+- Maintainer tooling:
+  - `tools/validate_v1_3.py` (strict), plus shims `tools/validate_v7_1.py` / `tools/validate_v7_2.py`
+  - `tools/drift_audit_v1_3.py` + `docs/DRIFT_POLICY.md`
+  - compatibility aliases: `boot/09_INTAKE_DEPTH_POLICY_v8_2.md`, `router/intake_profile_v8_1.yaml`, `router/intake_profile_v9_0.yaml`, `tools/render_intake_questions_v8_2.py`
+- Prompt regression corpus:
+  - tests/prompt_regression/corpus_v1_2.jsonl
+  - tests/prompt_regression/fuzz_payloads_v1_2.bin
+
+### Changed
+- CI now runs build + strict validation + drift audit.
+
+---
+
 ## v1.0.1
 - Added machine-executable router CLI: `router/route.py`.
-- Added strict validator: `tools/validate_v7_2.py` and CI workflow `ci_v7_2.yml`.
+- Added strict validator: `tools/validate_v7_2.py` and CI workflow `.github/workflows/ci_v7_2.yml`.
 - Added release packaging script: `tools/make_release.py` and docs `docs/RELEASE.md`.
 - Added workflow recipes: `docs/WORKFLOWS.md` and template `templates/workflow_chain_template.md`.
 - Added 40 new skills across research_core/experiments/reproducibility/paper_ops (S216–S225, S316–S325, S416–S425, S516–S525).

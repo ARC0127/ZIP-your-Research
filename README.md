@@ -1,15 +1,16 @@
-# 📦 ZIP your Research (v1.0.1)
+# 📦 ZIP your Research (v1.3.2)
 
-**Version Time:** 2026-02-03  
+**Version Time:** 2026-02-15  
 **License:** MIT
 
 A modular prompt + workflow toolkit for **high‑rigor research work** — designed to keep your chats **truthful**, **auditable**, and **stable** (no prompt drift).
-[You can change these default settings by chatting with the llm.]
-- 🧠 **A/B/C/E audits**: Logic (A) / Method (B) / Calculation (C) / Innovation correctness (E) 
+
+- 🧠 **A/B/C/E audits**: Logic (A) / Method (B) / Calculation (C) / Innovation correctness (E)
 - 🔍 **Evidence‑grounded novelty checks** (optional CLI → JSON evidence → paste back into chat)
 - 🧪 **Experiment completeness** + “**2‑hour sprint**” patch planning
 - ✍️ **Writing engine**: calibrated rewrites (no claim inflation), reviewer‑risk wording
 - ♻️ **Repropack**: reproducibility skeleton + command inference + release checklist
+- 🧱 **Locked drift firewall**: out-of-scope requests do not derail locked sessions (`boot/10_LOCKED_SCOPE_GUARD_v1.3.md`)
 
 ---
 
@@ -43,7 +44,7 @@ After `CONFIRM`, the assistant enters **locked execution** and starts doing real
 - **rolls back to intake immediately** (mandatory for prompt‑injection / malicious content), or
 - provides a **short, conservative quick answer** (convenience for normal questions), and then **returns to intake**.
 
-See: `boot/02_PRELOCK_VIOLATION_RESPONSE_v1.0.1.md` and `boot/01_GLOBAL_GUARDRAILS_v1.0.1.md`.
+See: `boot/02_PRELOCK_VIOLATION_RESPONSE_v1.3.2.md` and `boot/01_GLOBAL_GUARDRAILS_v1.3.2.md`.
 
 ---
 
@@ -75,7 +76,7 @@ SESSION_OVERRIDES:
 ## 🧩 What’s inside (repo inventory)
 
 ### Top‑level
-- `AUTOBOOT_v1.0.1.md` — what to paste in message #1 to start bootstrap + intake
+- `AUTOBOOT_v1.3.md` — recommended (one‑chat loop)
 - `AGENTS.md` — interaction contract (how the assistant should behave)
 - `INDEX.md` — master index (skills + workflows)
 - `skills_manifest.yaml` — machine‑readable skill manifest
@@ -90,14 +91,14 @@ SESSION_OVERRIDES:
   - `reproducibility/` (S4xx) — reproducibility templates, release checklist, artifact manifests
   - `paper_ops/` (S5xx) — rebuttal simulator, reviewer risk register, submission readiness checks
   - `writing_engine/` — structured rewrites + claim calibration
-- `tools/` — local CLI (`ra_cli.py`), repropack, build/validate helpers
+- `tools/` — local CLI (`tools/ra_cli.py`), repropack, build/validate helpers
 - `docs/` — quickstart, workflows, dev notes, safety/legal docs
 - `templates/` — evidence + citation policy, skill authoring templates
 - `interfaces/` — provider contracts + config examples
 
 ### PDFs / scripts
-- `docs/how_to_use/ZIP-your-Research_How_to_Use_v1.0.1.pdf`
-- `tools/how_to_use/gen_ZIP-your-Research_HowToUse_v1_0_1.py`
+- `docs/how_to_use/ZIP-your-Research_How_to_Use_v1.3.2.pdf`
+- `tools/how_to_use/gen_ZIP-your-Research_HowToUse_v1_3_2.py`
 
 ---
 
@@ -108,7 +109,7 @@ If you want **evidence JSON** for novelty checks and a reproducibility scaffold:
 ```bash
 sudo apt update
 sudo apt install -y python3 python3-pip unzip git
-unzip ZIP-your-Research_v1.0.1_release.zip -d ASR
+unzip ZIP-your-Research_v1.3.2_release.zip -d ASR
 cd ASR/ZIP-your-Research
 python3 -m pip install -r requirements.txt
 
@@ -137,6 +138,17 @@ Paste `evidence.json` (and `repropack/SCAN_REPORT.md`) back into Web chat for hi
 - `docs/SECURITY_PROMPT_INJECTION.md`
 
 ---
+
+## 🔗 References
+
+Design inspirations (agentic research workflows & teaching organization):
+- 日行迹 / FARS public descriptions (Ideation/Planning/Experiment/Writing + shared file system):
+  - https://www.thepaper.cn/newsDetail_forward_32600597
+- Hello‑Agents (Datawhale): systematized agent tutorial + AI-native agent patterns:
+  - https://github.com/datawhalechina/hello-agents
+
+(See also: `docs/ATTRIBUTION_v1.3.md`)
+
 
 ## 👤 Maintainer
 

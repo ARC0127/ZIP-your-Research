@@ -4,7 +4,7 @@ categories:
 - reproducibility
 - paper_ops
 - composite
-version: v1.0.1
+version: v1.3.2
 intent_detection:
   notes:
   - Prefer 'writing_engine' when user provides manuscript text / PDF / review comments
@@ -28,6 +28,6 @@ priority_rules:
 composite_skills:
 - id: writing_engine
   purpose: Gate → Rewrite → Verify; venue constraints; web research protocol
-  entry: skills/writing_engine/MASTER_v1.0.1.md
+  entry: skills/writing_engine/MASTER_v1.3.2.md
 tooling:
   router_cli: router/route.py

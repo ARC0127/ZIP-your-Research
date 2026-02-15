@@ -1,4 +1,4 @@
-# Evidence & Citation Policy (v1.0.1)
+# Evidence & Citation Policy (v1.3.2)
 
 ## Non‑negotiables
 - No fabrication.
@@ -18,7 +18,7 @@ If a required fact is missing:
 2) List what would verify it
 3) Provide the next best decision-oriented action
 
-## v1.0.1 Expansion: evidence tiers and citation hygiene
+## v1.3.2 Expansion: evidence tiers and citation hygiene
 
 ### Evidence tiers (use in outputs)
 - **VERIFIED**: backed by provided source text or an explicit citation link.

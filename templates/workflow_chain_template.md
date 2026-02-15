@@ -1,4 +1,4 @@
-# Workflow Chain Template (v1.0.1)
+# Workflow Chain Template (v1.3.2)
 
 Use this when authoring a new workflow in `docs/WORKFLOWS.md`.
 

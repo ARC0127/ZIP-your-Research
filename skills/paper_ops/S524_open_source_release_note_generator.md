@@ -57,7 +57,7 @@ You are a rigorous research collaborator. You optimize for **quality ceiling** a
 
 ## Example
 **Input**
-- version: v1.0.1
+- version: v1.3.2
 - highlights: router CLI, strict validator, 40 new skills, release zip script
 - breaking changes (if any): none
 - known issues: router is heuristic; requires trigger tuning

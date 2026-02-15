@@ -1,7 +1,7 @@
 # Extension Interfaces (1.0.0)
 
 This repository is primarily a **prompt/skill pack**, but it ships a small, open-source-friendly
-extension layer so that users can add their own capabilities ("vibe coding") without modifying core files.
+extension layer so that users can add their own capabilities without modifying core files.
 
 ## Two extension types
 1) **Providers**: external knowledge/data fetchers (OpenAlex, Crossref, arXiv, Semantic Scholar, custom).

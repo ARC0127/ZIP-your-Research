@@ -10,7 +10,7 @@ These apply to *every* skill and *every* response.
 ## Mandatory response banner (every assistant message)
 At the very top of every assistant message, output a single-line banner:
 
-`ZIP your Research | ZIP_MODE: ON | STAGE: <PRE-LOCK|LOCKED> | MEMORY: NOT USED | WEB: <ON|OFF> | DEBUG_TRACE: <ON|OFF>`
+`ZIP your Research | ZIP_MODE: ON | STAGE: <PRE-LOCK|LOCKED> | MEMORY: NOT USED | WEB: <ON|OFF> | DEBUG_TRACE: <ON|OFF> | DEBUG_VIBE_CORE: <ON|OFF> | VIBE: <M2|M3|OFF> | HCP: <ON|OFF>`
 
 - **STAGE** is determined by whether Mode Lock is activated in this chat.
 - **MEMORY: NOT USED** means: do not rely on other-chat memory; require Migration Prompt.
@@ -40,6 +40,12 @@ Users often ask with a single sentence (e.g., “check world model”). This is 
 3) ask **at most 1–3** targeted follow-ups (no long questionnaires) to pull the request back into a checkable form.
 
 This rule prevents the assistant from hallucinating a scope or inventing missing context.
+
+## DEBUG_VIBE_CORE / VIBE / HCP (always displayed)
+
+- These fields are always displayed.
+- Their **canonical semantics and MUST-level rules** are defined in `skills/reproducibility/S430_debug_vibe_core.md` (SSOT).
+- PRE-LOCK: brief answers are allowed, but if the user asks for code/debug work, apply S430 (default VIBE=M3, HCP=ON).
 
 ## Truth/UNKNOWN policy
 - Missing required info → mark **UNKNOWN** and ask the minimal questions.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deterministic skill router (v1.0.1, weighted).
+"""Deterministic skill router (v1.3.2, weighted).
 
 Goal: Given a user query, recommend top-K skills (copy/paste ready), with a bias toward:
 - 思路/逻辑核查
@@ -15,7 +15,7 @@ Goal: Given a user query, recommend top-K skills (copy/paste ready), with a bias
 Design:
 - Read YAML front matter from skills/**/S*.md
 - Base score: trigger matches (substring, case-insensitive) + small token overlap bonus
-- Apply category weights + task-pattern boosts from router/weights_v1.0.1.yaml
+- Apply category weights + task-pattern boosts from router/weights_v1.3.2.yaml
 - Treat composite `writing_engine` as a first-class candidate (for rewriting / manuscript-like input)
 - Output is stable and audit-friendly.
 
@@ -35,7 +35,7 @@ except Exception:
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS_DIR = ROOT / "skills"
-WEIGHTS_FILE = ROOT / "router" / "weights_v1.0.1.yaml"
+WEIGHTS_FILE = ROOT / "router" / "weights_v1.3.2.yaml"
 
 FRONT_MATTER_RE = re.compile(r"^---\n(.*?)\n---\n", re.S)
 
@@ -49,6 +49,14 @@ WRITING_HINTS = [
     "rewrite", "revise", "polish", "edit", "review", "camera-ready", "rebuttal",
     "润色", "改写", "重写", "审稿", "降重", "表达", "措辞",
     "icml", "neurips", "iclr", "cvpr", "aaai",
+]
+
+
+# coding/debug intent hints (EN + ZH)
+CODING_HINTS = [
+    "bug", "fix", "debug", "traceback", "exception", "crash", "regression", "refactor",
+    "unit test", "pytest", "mypy", "lint", "ci",
+    "报错", "修复", "调试", "回归", "重构", "代码审计", "单测", "编译",
 ]
 
 def parse_front_matter(text: str) -> Dict:
@@ -169,8 +177,18 @@ def main():
         "name": "writing_engine",
         "category": "composite",
         "triggers": [x.lower() for x in WRITING_HINTS],
-        "path": "skills/writing_engine/MASTER_v1.0.1.md",
+        "path": "skills/writing_engine/MASTER_v1.3.2.md",
     })
+
+    # v1.2+: Add composite coding_engine as a candidate for scoring
+    skills.append({
+        "id": "coding_engine",
+        "name": "coding_engine",
+        "category": "composite",
+        "triggers": [x.lower() for x in CODING_HINTS],
+        "path": "skills/coding_engine/MASTER_v1.3.2.md",
+    })
+
 
     # Manuscript heuristic: print a strong hint, but still compute scores
     manuscript_flag = looks_like_manuscript(q)
@@ -187,7 +205,7 @@ def main():
 
     if manuscript_flag:
         print("Heuristic: manuscript-like input detected → consider PRIMARY writing_engine.")
-        print("Next: skills/writing_engine/MASTER_v1.0.1.md")
+        print("Next: skills/writing_engine/MASTER_v1.3.2.md")
         print()
 
     if not scored:

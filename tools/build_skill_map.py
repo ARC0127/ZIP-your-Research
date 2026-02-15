@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate router/SKILL_MAP_v1.0.1.md from skills front matter.
+"""Generate router/SKILL_MAP_v1.3.2.md from skills front matter.
 
 This avoids manual drift between skills and the skill map.
 """
@@ -12,7 +12,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS_DIR = ROOT / "skills"
-OUT = ROOT / "router" / "SKILL_MAP_v1.0.1.md"
+OUT = ROOT / "router" / "SKILL_MAP_v1.3.2.md"
 
 FRONT_MATTER_RE = re.compile(r"^---\n(.*?)\n---\n", re.S)
 
@@ -49,7 +49,7 @@ def main():
         buckets[cat].sort()
 
     lines = [
-        "# Skill Map (v1.0.1)",
+        "# Skill Map (v1.3.2)",
         "",
         "This is a human-readable map from intents → primary skills.",
         "",

@@ -9,7 +9,7 @@ We use **Semantic Versioning**: `MAJOR.MINOR.PATCH`.
 
 ## Legacy tags (pre-1.0)
 Earlier internal snapshots existed during development, but are not shipped in this release.
-For open-source stability, we start semver at **1.0.0** and treat the `v1.0.1` snapshot as the last pre-1.0 milestone.
+For open-source stability, we start semver at **1.0.0** and treat the `v1.3.2` snapshot as the last pre-1.0 milestone.
 
 ## Backward compatibility promise (1.0+)
 - Existing skill files are never deleted; deprecated items are kept under `archive/` if needed.

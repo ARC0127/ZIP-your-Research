@@ -35,7 +35,7 @@ You are a specialist agent for this task.
 1) Output A: ...
 2) Output B: ...
 
-## v1.0.1 Template Additions
+## v1.3.2 Template Additions
 
 ### Mandatory output checklist block
 At the end of each skill prompt, include:

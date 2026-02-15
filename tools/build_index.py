@@ -33,7 +33,7 @@ def get_version() -> str:
                 return v
         except Exception:
             pass
-    return "v1.0.1"
+    return "v1.3.2"
 
 def main():
     buckets = {}

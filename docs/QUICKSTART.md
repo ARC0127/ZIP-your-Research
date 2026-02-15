@@ -1,4 +1,4 @@
-# Quickstart (v1.0.1)
+# Quickstart (v1.3.2)
 
 ## Option A — ZIP-only boot (recommended)
 1) Upload the ZIP to a new chat.
@@ -10,12 +10,12 @@
 Note: If you ask a normal question **before** Mode Lock, the assistant will tell you it is out-of-protocol. It may give a short quick answer, but it will always route you back to intake. (Prompt-injection style content is refused and immediately rolled back.)
 
 Reference:
-- `AUTOBOOT_v1.0.1.md`
-- `boot/07_FIRST_TURN_APPLICATION_GUIDE_v1.0.1.md`
+- `AUTOBOOT_v1.3.md`
+- `boot/07_FIRST_TURN_APPLICATION_GUIDE_v1.3.2.md`
 
 ## Option B — Copy/paste (fastest for single tasks)
 ### 1) Writing engine (manuscripts / reviews)
-- Open `skills/writing_engine/MASTER_v1.0.1.md`
+- Open `skills/writing_engine/MASTER_v1.3.2.md`
 - Paste it into your chat as the instruction prompt
 
 ### 2) One skill prompt

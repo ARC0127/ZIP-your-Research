@@ -1,4 +1,4 @@
-# Contributing (v1.0.1)
+# Contributing (v1.3.2)
 
 Thanks for improving this prompt/skill library.
 
@@ -28,6 +28,6 @@ Thanks for improving this prompt/skill library.
    - `python tools/validate_v7_1.py`
 
 ## Pull request checklist
-- [ ] CI (v1.0.1) passes
+- [ ] CI (v1.3.2) passes
 - [ ] New skills include Output Contract + Example
 - [ ] No deletion of existing content

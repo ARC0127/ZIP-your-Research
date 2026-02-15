@@ -1,4 +1,4 @@
-# Usage (v1.0.1)
+# Usage (v1.3.2)
 
 This repository supports two modes:
 
@@ -24,7 +24,7 @@ Each `skills/**/S*.md` file contains:
 
 ### Fast path
 1) Manuscript / reviews / venue constraints:
-   - Use `skills/writing_engine/MASTER_v1.0.1.md`
+   - Use `skills/writing_engine/MASTER_v1.3.2.md`
 2) Single task (ablation plan, repro audit, method check):
    - Pick a skill and paste it as-is.
 
@@ -33,4 +33,4 @@ Each `skills/**/S*.md` file contains:
 - Readability: no debug YAML in user-visible output by default.
 
 See:
-- `boot/04_MODE_LOCK_FORMAT_v1.0.1.md`
+- `boot/04_MODE_LOCK_FORMAT_v1.3.2.md`

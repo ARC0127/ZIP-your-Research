@@ -1,0 +1,210 @@
+version: v1.3.2
+category_weights:
+  research_core: 1.35
+  experiments: 1.25
+  reproducibility: 1.15
+  paper_ops: 1.05
+  composite: 1.1
+task_patterns:
+- name: logic_check
+  patterns:
+  - 逻辑核查
+  - 逻辑检查
+  - 自洽
+  - 矛盾
+  - 不一致
+  - argument coherence
+  - logic consistency
+  - contradiction
+  boost_skills:
+    S226: 4.0
+    S203: 1.8
+    S208: 1.5
+    S229: 1.2
+  boost_categories:
+    research_core: 0.3
+- name: method_correctness
+  patterns:
+  - 方法正确性
+  - 方法是否正确
+  - 正确性核查
+  - derivation check
+  - method validity
+  - algorithm correctness
+  boost_skills:
+    S227: 4.0
+    S212: 1.8
+    S303: 1.2
+    S402: 1.0
+  boost_categories:
+    research_core: 0.25
+    experiments: 0.15
+- name: calculation_correctness
+  patterns:
+  - 计算正确性
+  - 算错
+  - 推导算错
+  - 单位
+  - 量纲
+  - algebra
+  - unit check
+  - dimension
+  - numerical sanity
+  boost_skills:
+    S326: 4.0
+    S305: 1.5
+    S311: 1.2
+  boost_categories:
+    experiments: 0.35
+- name: paper_storyline
+  patterns:
+  - 论文整体思路
+  - 整体框架
+  - 整体逻辑
+  - storyline
+  - narrative
+  - paper coherence
+  - 框架是否连贯
+  boost_skills:
+    S229: 4.0
+    S225: 1.6
+    S201: 1.0
+    writing_engine: 0.8
+  boost_categories:
+    research_core: 0.2
+    paper_ops: 0.1
+- name: proof_check
+  patterns:
+  - 证明
+  - proof
+  - lemma
+  - 定理
+  - 推理
+  - 归纳
+  - 不等式证明
+  - proof sketch
+  boost_skills:
+    S230: 4.0
+    S226: 1.2
+    S227: 1.0
+  boost_categories:
+    research_core: 0.25
+- name: innovation_audit
+  patterns:
+  - 创新性
+  - 新颖性
+  - novelty
+  - innovation
+  - prior art
+  - 相关工作
+  - 是否已有工作
+  - 创新点
+  - 创新点搜索
+  - 新贡献
+  - related work
+  - prior work
+  boost_skills:
+    S228: 3.2
+    S231: 2.5
+    S224: 2.2
+    S211: 1.2
+    S233: 4.0
+    S234: 2.8
+  boost_categories:
+    research_core: 0.25
+- name: experiment_completeness
+  patterns:
+  - 实验完整性
+  - 消融是否完整
+  - missing ablation
+  - protocol completeness
+  - evaluation missing
+  - 缺少实验
+  boost_skills:
+    S327: 4.0
+    S302: 1.8
+    S303: 1.5
+    S512: 1.0
+  boost_categories:
+    experiments: 0.25
+    paper_ops: 0.1
+- name: paper_interpretation
+  patterns:
+  - 论文解读
+  - 精读
+  - 读论文
+  - summarize paper
+  - interpret paper
+  - paper breakdown
+  boost_skills:
+    S232: 3.8
+    S204: 1.8
+    S205: 1.3
+  boost_categories:
+    research_core: 0.2
+- name: sentence_rewrite
+  patterns:
+  - 句子改写
+  - 润色
+  - 改写
+  - polish
+  - rewrite sentence
+  - paraphrase
+  - 改写检索
+  boost_skills:
+    S526: 4.0
+    writing_engine: 1.5
+    S517: 1.0
+    S520: 0.8
+  boost_categories:
+    paper_ops: 0.2
+- name: scope_drift
+  patterns:
+  - 跑偏
+  - 偏题
+  - out of scope
+  - scope drift
+  - protocol check
+  - 锁死要求
+  - 模式锁
+  - MODE_LOCK
+  - CONFIRM CHANGE
+  - PROTOCOL_CHECK
+  boost_skills:
+    S432: 4.0
+    S430: 1.5
+    S431: 1.0
+  boost_categories:
+    reproducibility: 0.25
+secondary_suggestions:
+- if_primary_in:
+  - S226
+  - S229
+  suggest:
+  - S203
+  - S201
+- if_primary_in:
+  - S227
+  suggest:
+  - S212
+  - S402
+- if_primary_in:
+  - S326
+  suggest:
+  - S305
+  - S311
+- if_primary_in:
+  - S228
+  - S231
+  - S224
+  suggest:
+  - S211
+- if_primary_in:
+  - S327
+  suggest:
+  - S303
+  - S302
+- if_primary_in:
+  - S526
+  suggest:
+  - writing_engine

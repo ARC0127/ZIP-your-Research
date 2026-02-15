@@ -6,7 +6,7 @@ This file is a **single source of truth** for the required “status banner” p
 
 ## Mandatory banner (print first, one line)
 
-`ZIP your Research | ZIP_MODE: ON | STAGE: <PRE-LOCK|LOCKED> | MEMORY: NOT USED | WEB: <ON|OFF> | DEBUG_TRACE: <ON|OFF>`
+`ZIP your Research | ZIP_MODE: ON | STAGE: <PRE-LOCK|LOCKED> | MEMORY: NOT USED | WEB: <ON|OFF> | DEBUG_TRACE: <ON|OFF> | DEBUG_VIBE_CORE: <ON|OFF> | VIBE: <M2|M3|OFF> | HCP: <ON|OFF>`
 
 ### Semantics
 - **ZIP_MODE: ON** means the assistant is following this repository’s protocol.
@@ -16,6 +16,9 @@ This file is a **single source of truth** for the required “status banner” p
 - **MEMORY: NOT USED** means: do **not** rely on other-chat memory. If the user needs continuity, require a Migration Prompt.
 - **WEB** defaults to ON after lock (unless user forbids). In PRE-LOCK it defaults to OFF.
 - **DEBUG_TRACE** is OFF by default, and may only be turned on if the user explicitly writes `DEBUG_TRACE=ON`.
+
+- **DEBUG_VIBE_CORE / VIBE / HCP**: these are always-on debug-related fields. Their **canonical semantics and MUST-level rules** are defined in `skills/reproducibility/S430_debug_vibe_core.md` (SSOT). This file only defines the banner shape.
+- **Compatibility:** older banner parsers may stop at `DEBUG_TRACE` and ignore appended fields.
 
 ---
 

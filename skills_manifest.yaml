@@ -1,9 +1,15 @@
-version: 1.0.1
+version: '1.3.2.0'
 skills:
 - id: writing_engine
   name: writing_engine
   category: composite
   path: skills/writing_engine/README.md
+  outputs:
+  - master_prompt
+- id: coding_engine
+  name: coding_engine
+  category: composite
+  path: skills/coding_engine/README.md
   outputs:
   - master_prompt
 - id: S201
@@ -510,3 +516,11 @@ skills:
   name: ethics_impact_assessment
   path: skills/paper_ops/S530_ethics_impact_assessment.md
   status: draft
+- id: S431
+  name: closed_loop_verification
+  category: reproducibility
+  path: skills/reproducibility/S431_closed_loop_verification.md
+- id: S432
+  name: scope_drift_firewall
+  category: reproducibility
+  path: skills/reproducibility/S432_scope_drift_firewall.md

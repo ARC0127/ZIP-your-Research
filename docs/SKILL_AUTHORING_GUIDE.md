@@ -1,4 +1,4 @@
-# Skill Authoring Guide (v1.0.1)
+# Skill Authoring Guide (v1.3.2)
 
 ## Philosophy
 A good skill is:

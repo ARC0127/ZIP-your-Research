@@ -57,8 +57,8 @@ You are a rigorous research collaborator. You optimize for **quality ceiling** a
 
 ## Example
 **Input**
-- project name: Prompt pack v1.0.1
-- variants: v1.0.1-router, v1.0.1-validate
+- project name: Prompt pack v1.3.2
+- variants: v1.3.2-router, v1.3.2-validate
 - seed scheme: N/A
 - storage location: runs/
 

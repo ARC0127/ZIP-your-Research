@@ -1,4 +1,4 @@
-# Workflows (v1.0.1)
+# Workflows (v1.3.2)
 
 These are **copy/paste** workflow recipes that chain multiple skills. Each workflow is designed to produce a **2-hour deliverable** by default.
 
@@ -13,7 +13,7 @@ These are **copy/paste** workflow recipes that chain multiple skills. Each workf
 3) Use **S211 related_work_delta_table** to define *your* delta in one sentence and a table.
 4) Use **S301 minimal_decidable_experiment** to design a 2-hour experiment that can falsify your hypothesis.
 5) Use **S309 error_analysis_playbook** if results are negative/unstable.
-6) Use **writing_engine (MASTER_v1.0.1.md)** to convert the outcome into a paper-ready paragraph.
+6) Use **writing_engine (MASTER_v1.3.2.md)** to convert the outcome into a paper-ready paragraph.
 
 **Deliverables**
 - Claim-evidence matrix
@@ -40,7 +40,7 @@ Deliverables: response matrix + rebuttal text + edit list.
 2) **S419 data_versioning_and_checksum**: add checksums and version tags.
 3) **S424 citation_and_attribution_audit**: ensure licenses/credits.
 4) **S524 open_source_release_note_generator**: write release notes.
-5) `python tools/make_release.py --version v1.0.1`: produce a clean zip without `.git`.
+5) `python tools/make_release.py --version v1.3.2`: produce a clean zip without `.git`.
 
 Deliverables: dataset spec + checksums + release notes + release zip.
 

@@ -21,8 +21,8 @@ Docs: https://www.crossref.org/documentation/retrieve-metadata/rest-api/
 - Public API to search e-prints via the `export.arxiv.org/api/query` endpoint.
 Docs: https://info.arxiv.org/help/api/
 
-## How to add a new API (vibe coding path)
-1) Copy `interfaces/providers/_template_provider.py` → `my_provider.py`
+## How to add a new API (extension path)
+1) Copy `interfaces/providers/_template_provider.py` → `interfaces/providers/my_provider.py`
 2) Implement `search()`
 3) Add config under `interfaces/config.yaml`
 4) Test:
