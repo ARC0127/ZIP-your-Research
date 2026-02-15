@@ -144,6 +144,7 @@ Paste `evidence.json` (and `repropack/SCAN_REPORT.md`) back into Web chat for hi
 Design inspirations (agentic research workflows & teaching organization):
 - 日行迹 / FARS public descriptions (Ideation/Planning/Experiment/Writing + shared file system):
   - https://www.thepaper.cn/newsDetail_forward_32600597
+  - https://analemma.ai/fars/
 - Hello‑Agents (Datawhale): systematized agent tutorial + AI-native agent patterns:
   - https://github.com/datawhalechina/hello-agents
 
