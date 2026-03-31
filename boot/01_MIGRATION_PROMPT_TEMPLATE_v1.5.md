@@ -9,7 +9,7 @@ You are continuing an existing "ZIP-your-Research" workflow.
 
 1) Repository identity:
 - Repo name: ZIP-your-Research
-- Repo version: v1.5.0-wip
+- Repo version: v1.5.0
 - The user has uploaded the full repository ZIP again in this chat.
 
 2) Locked mode and constraints (authoritative unless the user explicitly changes them):

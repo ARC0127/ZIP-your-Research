@@ -1,8 +1,8 @@
-# Release Packaging (v1.5.0-wip)
+# Release Packaging (v1.5.0)
 
-This document describes the current packaging workflow for the `v1.5.0-wip` alignment line.
+This document describes the current packaging workflow for the formal `v1.5.0` release line.
 
-`v1.5.0-wip` is not a formal stable release yet. Treat it as a GitHub-ready working line with stricter validation and a stronger artifact/proof stack than `v1.4.4`.
+`v1.5.0` is the formal release that closes the alignment work started from `v1.4.4`, with stricter validation and a stronger artifact/proof stack.
 
 ## Current recommended flow
 
@@ -32,7 +32,7 @@ python3 tools/make_release.py
 
 With the current `VERSION`, the default package name is:
 
-- `ZIP-your-Research_v1.5.0-wip_release.zip`
+- `ZIP-your-Research_v1.5.0_release.zip`
 
 ## Version source of truth
 
@@ -43,15 +43,15 @@ With the current `VERSION`, the default package name is:
 If you need to override the version explicitly:
 
 ```bash
-python3 tools/make_release.py --version v1.5.0-wip
+python3 tools/make_release.py --version v1.5.0
 ```
 
 ## Release expectations for this line
 
 Before packaging, ensure all of the following are true:
 
-- `README.md` reflects the `v1.5.0-wip` posture
-- `CHANGELOG.md` has the latest `1.4.4 -> v1.5.0-wip` summary at the top
+- `README.md` reflects the `v1.5.0` release posture
+- `CHANGELOG.md` has the latest `1.4.4 -> v1.5.0` summary at the top
 - `proof_engine` has been rebuilt into `skills/proof_engine/MASTER_v1.5.md`
 - proof/completion/scientific-discipline regressions all pass
 - `artifacts/system_audit/report_v1.3.2.md` reflects the current workspace rather than the old `v1.4.4` copy

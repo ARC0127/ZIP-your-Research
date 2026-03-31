@@ -28,7 +28,7 @@ def parse_front_matter(text: str):
 def iter_skill_files():
     for p in sorted(SKILLS_DIR.rglob("*.md")):
         rel = p.relative_to(SKILLS_DIR).as_posix()
-        if "platform_oai_skills/rewrites/" in rel:
+        if "platform_zyr_skills/rewrites/" in rel:
             continue
         if SKILL_FILENAME_RE.match(p.name):
             yield p

@@ -1,9 +1,9 @@
 # Changelog
 
-## v1.5.0-wip (2026-03-30)
+## v1.5.0 (2026-03-30)
 
 ### Scope
-This is an alignment workline built on top of `zyr_v1.4.4_release_20260222`, not a formal stable release. The main goal is to harden ZYR for current GPT/Codex usage: better task completion discipline, stronger proof/theory handling, more durable artifacts, and less context loss across chats.
+This is the formal `v1.5.0` release built on top of `zyr_v1.4.4_release_20260222`. The release hardens ZYR for current GPT/Codex usage with stronger completion discipline, proof/theory handling, durable artifacts, and lower context loss across chats.
 
 ### Summary
 - Shifted the repo posture from mainly `lock-first + anti-drift` to `chat-first + lock-first + completion-first + scientific-discipline-first`.
@@ -52,14 +52,14 @@ This is an alignment workline built on top of `zyr_v1.4.4_release_20260222`, not
 - `README.md` was rewritten as a GitHub-facing v1.5 overview.
 
 ### Fixed
-- Skill scanning no longer misclassifies `skills/platform_oai_skills/rewrites/**` as normal skills.
-- Drift audit no longer treats `/home/oai/skills/**` snapshots or audit-document example paths as required local files.
+- Skill scanning no longer misclassifies `skills/platform_zyr_skills/rewrites/**` as normal skills.
+- Drift audit no longer treats `zyr_runtime_skills/**` snapshots or audit-document example paths as required local files.
 - `skills_manifest.yaml` was aligned to the actual skill set, including missing categories and proof-engine entries.
 - Proof outputs are now constrained by stable section templates instead of relying on freeform narrative.
 - Migration continuity is no longer treated as a short reminder; it is now expected to preserve objective, lock state, artifacts, completed checks, blockers, and next step.
 
 ### Validation
-The current `v1.5.0-wip` workline passes:
+The current `v1.5.0` release line passes:
 
 - `python3 tools/build_all.py`
 - `python3 tools/validate_v7_2.py`
@@ -74,7 +74,7 @@ The current `v1.5.0-wip` workline passes:
 - `python3 tools/simulate_proof_verification_v1_5.py`
 
 ### Notes
-- This entry summarizes the delta from `v1.4.4` to the current working `v1.5.0-wip` line.
+- This entry summarizes the delta from `v1.4.4` to the formal `v1.5.0` release line.
 - Historical entries below are kept for release archaeology and should not be read as the current repo posture.
 
 ## v1.3.2 (2026-02-15)
@@ -156,7 +156,7 @@ Agentic‑style **single‑conversation research closure** (ONECHAT_LOOP) + stro
 - Agentic architecture & attributions:
   - `docs/AGENTIC_ARCHITECTURE_v1.3.md`
   - `docs/HELLO_AGENTS_ADAPTATION_v1.3.md`
-  - `docs/ATTRIBUTION_v1.3.md`
+  - `docs/ATTRIBUTION.md`
 - Coding minimalism module:
   - `skills/coding_engine/modules/05_MINIMALISM.md`
 
@@ -294,11 +294,11 @@ System-level hardening for **instruction adherence under conversation perturbati
 ## v1.4.0 (2026-02-22)
 
 ### Goal
-Integrate the platform runtime artifact skills (`/home/oai/skills`) into a **repo-first, lossless** ZYR workflow: convert environment-only guidance into **portable templates + explicit QA loops**.
+Integrate the platform runtime artifact skills (`zyr_runtime_skills`) into a **repo-first, lossless** ZYR workflow: convert environment-only guidance into **portable templates + explicit QA loops**.
 
 ### Added
 - Full audit (DOCX/PDF/Spreadsheet) with template mapping + protocol diff:
-  - `docs/audits/AUDIT_platform_oai_skills_docs_pdfs_spreadsheets_vs_ZYR_v1.4.0_20260222.md`
+  - `docs/audits/AUDIT_platform_zyr_skills_docs_pdfs_spreadsheets_vs_ZYR_v1.4.0_20260222.md`
 - Short, copy/paste integration guide for artifact QA loops:
   - `docs/how_to_use/PLATFORM_SKILLS_INTEGRATION_v1.4.md`
 
@@ -315,17 +315,17 @@ Integrate the platform runtime artifact skills (`/home/oai/skills`) into a **rep
 ## v1.4.1 (2026-02-22)
 
 ### Goal
-Persist the runtime platform skills (`/home/oai/skills/**`) as a **standalone, repo-native module** inside ZYR, while keeping the release **lossless/additive**.
+Persist the runtime platform skills (`zyr_runtime_skills/**`) as a **standalone, repo-native module** inside ZYR, while keeping the release **lossless/additive**.
 
 ### Added
 - Standalone module:
-  - `skills/platform_oai_skills/README.md`
-  - `skills/platform_oai_skills/modules/00_OVERVIEW.md`
-  - `skills/platform_oai_skills/modules/01_PLATFORM_SNAPSHOT.md`
-  - `skills/platform_oai_skills/modules/02_TEMPLATE_LIBRARY.md`
-  - `skills/platform_oai_skills/modules/03_QA_LOOPS.md`
-  - `skills/platform_oai_skills/modules/04_ALIGNMENT_DIFF.md`
-  - `skills/platform_oai_skills/modules/05_MAINTENANCE_DIFFING.md`
+  - `skills/platform_zyr_skills/README.md`
+  - `skills/platform_zyr_skills/modules/00_OVERVIEW.md`
+  - `skills/platform_zyr_skills/modules/01_PLATFORM_SNAPSHOT.md`
+  - `skills/platform_zyr_skills/modules/02_TEMPLATE_LIBRARY.md`
+  - `skills/platform_zyr_skills/modules/03_QA_LOOPS.md`
+  - `skills/platform_zyr_skills/modules/04_ALIGNMENT_DIFF.md`
+  - `skills/platform_zyr_skills/modules/05_MAINTENANCE_DIFFING.md`
 
 ### Changed
 - Version bump to 1.4.1:
@@ -343,12 +343,12 @@ Persist the runtime platform skills (`/home/oai/skills/**`) as a **standalone, r
 ## v1.4.2 (2026-02-22)
 
 ### Goal
-把平台运行时路径 `/home/oai/skills/**` 的关键规约做“**读取→改写**”落地为 **ZYR 可迁移文本**：在不 vendoring 平台私有原文/代码的前提下，保留流程闭环与质量门槛。
+把平台运行时路径 `zyr_runtime_skills/**` 的关键规约做“**读取→改写**”落地为 **ZYR 可迁移文本**：在不 vendoring 平台私有原文/代码的前提下，保留流程闭环与质量门槛。
 
 ### Added
 - Standalone rewrites module (portable-first, auditable):
-  - `skills/platform_oai_skills/rewrites/README.md`
-  - `skills/platform_oai_skills/rewrites/runtime_rw_20260222/`
+  - `skills/platform_zyr_skills/rewrites/README.md`
+  - `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/`
     - `README.md`
     - `SOURCES.md` (platform source sha256)
     - `DOCX_SKILL_REWRITE_ZYR.md`
@@ -364,7 +364,7 @@ Persist the runtime platform skills (`/home/oai/skills/**`) as a **standalone, r
 - Version bump to 1.4.2:
   - `VERSION`, `README.md`, `INDEX.md`, `skills_manifest.yaml`, `docs/RELEASE.md`
 - Module landing page now references rewrites (append-only edit):
-  - `skills/platform_oai_skills/README.md`
+  - `skills/platform_zyr_skills/README.md`
 
 ### Notes
 - Additive / lossless: no file deletions.
@@ -375,11 +375,11 @@ Persist the runtime platform skills (`/home/oai/skills/**`) as a **standalone, r
 ## v1.4.3 (2026-02-22)
 
 ### Goal
-按“**逐文件**”粒度把平台运行时目录 `/home/oai/skills/**` 的 **28 个文件**全部做 **read→rewrite**，补齐上一轮主题式改写的覆盖空洞，并保持 **lossless/additive**。
+按“**逐文件**”粒度把平台运行时目录 `zyr_runtime_skills/**` 的 **28 个文件**全部做 **read→rewrite**，补齐上一轮主题式改写的覆盖空洞，并保持 **lossless/additive**。
 
 ### Added
 - Full coverage per-file rewrites (28 files):
-  - `skills/platform_oai_skills/rewrites/runtime_rw_20260222_f28/`
+  - `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/`
     - `README.md` / `SOURCES.md` / `INDEX.md`
     - `by_source/**` (28 rewrite docs; mirrors source structure)
 
@@ -387,8 +387,8 @@ Persist the runtime platform skills (`/home/oai/skills/**`) as a **standalone, r
 - Version bump to 1.4.3:
   - `VERSION`, `README.md`, `INDEX.md`, `skills_manifest.yaml`, `docs/RELEASE.md`
 - Module landing pages updated (append-only) to reference the full28 rewrite set:
-  - `skills/platform_oai_skills/README.md`
-  - `skills/platform_oai_skills/rewrites/README.md`
+  - `skills/platform_zyr_skills/README.md`
+  - `skills/platform_zyr_skills/rewrites/README.md`
 
 ### Notes
 - Additive / lossless: no file deletions; previous rewrites and audits remain authoritative.
@@ -400,11 +400,11 @@ Persist the runtime platform skills (`/home/oai/skills/**`) as a **standalone, r
 ## v1.4.4 (2026-02-22)
 
 ### Goal
-Make the **platform_oai_skills** module prompt content **English-only** to avoid language mixing inside downstream prompt artifacts, while keeping the repo **lossless/additive**.
+Make the **platform_zyr_skills** module prompt content **English-only** to avoid language mixing inside downstream prompt artifacts, while keeping the repo **lossless/additive**.
 
 ### Changed
 - Rewrote all Markdown files under:
-  - `skills/platform_oai_skills/**`
+  - `skills/platform_zyr_skills/**`
   to be **English-only** (no Chinese characters), including:
   - module landing pages (`README.md`, `modules/*.md`)
   - compact rewrites (`rewrites/runtime_rw_20260222/*.md`)
@@ -415,4 +415,4 @@ Make the **platform_oai_skills** module prompt content **English-only** to avoid
 
 ### Notes
 - Additive / lossless: no file deletions; file names and paths are unchanged.
-- This change is localized to the `platform_oai_skills` module; the rest of the repo remains untouched.
+- This change is localized to the `platform_zyr_skills` module; the rest of the repo remains untouched.

@@ -1,4 +1,4 @@
-version: '1.5.0-wip'
+version: '1.5.0'
 skills:
 - id: writing_engine
   name: writing_engine
@@ -570,8 +570,8 @@ skills:
   category: reproducibility
   path: skills/reproducibility/S433_formal_proof_adapter.md
   status: stable
-- id: platform_oai_skills
-  name: platform_oai_skills
+- id: platform_zyr_skills
+  name: platform_zyr_skills
   category: reproducibility
-  path: skills/platform_oai_skills/README.md
+  path: skills/platform_zyr_skills/README.md
   status: stable

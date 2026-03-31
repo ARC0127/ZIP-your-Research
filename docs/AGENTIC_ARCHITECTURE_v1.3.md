@@ -6,7 +6,7 @@
 ## Reference (FARS / 日行迹)
 FARS（Fully Automated Research System）在公开报道中被描述为由 Ideation、Planning、Experiment、Writing 四个智能体模块构成，并在共享文件系统中协作，文件系统同时承担工作空间与持久记忆。  
 本项目 1.3 的 ONECHAT_LOOP 以此为灵感：在单对话中用“阶段门控 + artifacts”去模拟“共享文件系统的持久记忆”。  
-(外部引用见本仓库 `docs/ATTRIBUTION_v1.3.md`)
+(外部引用见本仓库 `docs/ATTRIBUTION.md`)
 
 ## Layers
 - Control Plane: boot/ + router/（锁、范围、路由、验收）

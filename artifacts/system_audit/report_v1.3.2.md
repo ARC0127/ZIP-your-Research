@@ -1,6 +1,6 @@
-# System Audit Report — v1.5.0-wip
+# System Audit Report — v1.5.0
 
-- generated_at: 2026-03-31 04:12:29 UTC
+- generated_at: 2026-03-31 04:49:21 UTC
 
 ## 0) Forbidden file scan
 Result: **PASS**
@@ -9,12 +9,12 @@ Result: **PASS**
 Return code: `0`
 
 ```
-Wrote /home/arc/TRAIN/ZYR/zyr_v1.5.0_alignment_wip_20260330/ZIP-your-Research/skills/writing_engine/MASTER_v1.3.2.md
-Wrote /home/arc/TRAIN/ZYR/zyr_v1.5.0_alignment_wip_20260330/ZIP-your-Research/skills/writing_engine/MASTER_v1.3.2.md
-Wrote /home/arc/TRAIN/ZYR/zyr_v1.5.0_alignment_wip_20260330/ZIP-your-Research/skills/coding_engine/MASTER_v1.3.2.md
-Wrote /home/arc/TRAIN/ZYR/zyr_v1.5.0_alignment_wip_20260330/ZIP-your-Research/skills/proof_engine/MASTER_v1.5.md
-Wrote /home/arc/TRAIN/ZYR/zyr_v1.5.0_alignment_wip_20260330/ZIP-your-Research/INDEX.md
-Wrote /home/arc/TRAIN/ZYR/zyr_v1.5.0_alignment_wip_20260330/ZIP-your-Research/router/SKILL_MAP_v1.3.2.md
+Wrote /mnt/f/Git/Prompts-for-AI-Research-Assistant/ZIP-your-Research_v1.0.1_release/ZIP-your-Research/ZIP-your-Research/skills/writing_engine/MASTER_v1.3.2.md
+Wrote /mnt/f/Git/Prompts-for-AI-Research-Assistant/ZIP-your-Research_v1.0.1_release/ZIP-your-Research/ZIP-your-Research/skills/writing_engine/MASTER_v1.3.2.md
+Wrote /mnt/f/Git/Prompts-for-AI-Research-Assistant/ZIP-your-Research_v1.0.1_release/ZIP-your-Research/ZIP-your-Research/skills/coding_engine/MASTER_v1.3.2.md
+Wrote /mnt/f/Git/Prompts-for-AI-Research-Assistant/ZIP-your-Research_v1.0.1_release/ZIP-your-Research/ZIP-your-Research/skills/proof_engine/MASTER_v1.5.md
+Wrote /mnt/f/Git/Prompts-for-AI-Research-Assistant/ZIP-your-Research_v1.0.1_release/ZIP-your-Research/ZIP-your-Research/INDEX.md
+Wrote /mnt/f/Git/Prompts-for-AI-Research-Assistant/ZIP-your-Research_v1.0.1_release/ZIP-your-Research/ZIP-your-Research/router/SKILL_MAP_v1.3.2.md
 OK: build_all completed
 ```
 
@@ -36,7 +36,7 @@ CORPUS VALIDATION PASSED: 240 entries
 Return code: `0`
 
 ```
-Wrote /home/arc/TRAIN/ZYR/zyr_v1.5.0_alignment_wip_20260330/ZIP-your-Research/artifacts/locked_regression/report_v1.3.2.md
+Wrote /mnt/f/Git/Prompts-for-AI-Research-Assistant/ZIP-your-Research_v1.0.1_release/ZIP-your-Research/ZIP-your-Research/artifacts/locked_regression/report_v1.3.2.md
 ```
 
 ## 5) drift_audit_v1_3

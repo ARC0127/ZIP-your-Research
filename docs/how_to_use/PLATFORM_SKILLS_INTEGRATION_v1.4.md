@@ -1,6 +1,6 @@
 # Platform skills integration (DOCX • PDF • Spreadsheet) — ZYR v1.4.0
 
-**Status:** repo-native guidance distilled from the runtime path `/home/oai/skills/**`.  
+**Status:** repo-native guidance distilled from the runtime path `zyr_runtime_skills/**`.  
 **Goal:** 把“平台内置的交付闭环（渲染→逐页验收）”变成 ZYR 的可迁移流程，并显式标注环境耦合点。
 
 ---
@@ -81,9 +81,9 @@ pdftoppm -png docs/how_to_use/ZIP-your-Research_How_to_Use_v1.3.2.pdf artifacts/
 
 ---
 
-## 4) 与平台 `/home/oai/skills` 的关系（审计入口）
+## 4) 与平台 `zyr_runtime_skills` 的关系（审计入口）
 - 全量审计与对齐差异：
-  - `docs/audits/AUDIT_platform_oai_skills_docs_pdfs_spreadsheets_vs_ZYR_v1.4.0_20260222.md`
+  - `docs/audits/AUDIT_platform_zyr_skills_docs_pdfs_spreadsheets_vs_ZYR_v1.4.0_20260222.md`
 
 
 
@@ -91,6 +91,6 @@ pdftoppm -png docs/how_to_use/ZIP-your-Research_How_to_Use_v1.3.2.pdf artifacts/
 
 ## v1.4.1 入口变更（模块化）
 从 v1.4.1 起，平台 skills 的内容以独立模块形式沉淀在：
-- `skills/platform_oai_skills/`
+- `skills/platform_zyr_skills/`
 
 本文件保留作为 legacy 入口页；权威内容请以模块内文档与审计表为准。

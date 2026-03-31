@@ -39,7 +39,7 @@ IGNORE_MISSING_REFS = {
 }
 
 EXTERNAL_REF_PREFIXES = (
-    "/home/oai/skills/",
+    "zyr_runtime_skills/",
 )
 
 def parse_front_matter(text: str) -> Dict:
@@ -50,7 +50,7 @@ def parse_front_matter(text: str) -> Dict:
 
 def is_real_skill_file(path: Path) -> bool:
     rel = path.relative_to(SKILLS_DIR).as_posix()
-    if "platform_oai_skills/rewrites/" in rel:
+    if "platform_zyr_skills/rewrites/" in rel:
         return False
     return bool(SKILL_FILENAME_RE.match(path.name))
 

@@ -39,12 +39,12 @@ def scan_forbidden_files() -> list[str]:
     for p in ROOT.rglob("*"):
         if p.is_dir():
             continue
+        rel = p.relative_to(ROOT).as_posix()
         if p.suffix.lower() in FORBIDDEN_SUFFIXES:
-            bad.append(str(p.relative_to(ROOT)))
-        rel = p.as_posix()
+            bad.append(rel)
         for mk in FORBIDDEN_VERSION_MARKERS:
             if mk in rel:
-                bad.append(str(p.relative_to(ROOT)))
+                bad.append(rel)
                 break
     return sorted(set(bad))
 

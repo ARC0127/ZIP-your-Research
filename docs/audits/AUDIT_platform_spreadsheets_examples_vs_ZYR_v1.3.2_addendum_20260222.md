@@ -1,13 +1,13 @@
 # Audit: Platform Spreadsheet Example Scripts → Reusable Templates → Alignment vs ZIP-your-Research (v1.3.2)
 
 **Audit date:** 2026-02-22 (America/Los_Angeles)  
-**Scope:** platform runtime examples at `/home/oai/skills/spreadsheets/examples/**/*.py`  
+**Scope:** platform runtime examples at `zyr_runtime_skills/spreadsheets/examples/**/*.py`  
 **Deliverable in this repo:** this audit file (template-first, repo-native).  
 
 ---
 
 ## 0) Why this audit exists
-The platform runtime includes spreadsheet example scripts under `/home/oai/skills/spreadsheets/…`. Those scripts are **not** part of ZIP-your-Research. In a repo-first workflow, any “knowledge” that lives only in the runtime environment is **fragile** and breaks lossless migration.
+The platform runtime includes spreadsheet example scripts under `zyr_runtime_skills/spreadsheets/…`. Those scripts are **not** part of ZIP-your-Research. In a repo-first workflow, any “knowledge” that lives only in the runtime environment is **fragile** and breaks lossless migration.
 
 This audit converts the examples into:
 1) a **feature map** (what each example demonstrates),

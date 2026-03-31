@@ -27,10 +27,10 @@ IGNORE_MD_FILENAMES = {
 IGNORE_SOURCE_PREFIXES = (
     "artifacts/system_audit/",
     "docs/audits/",
-    "skills/platform_oai_skills/rewrites/",
+    "skills/platform_zyr_skills/rewrites/",
 )
 EXTERNAL_REF_PREFIXES = (
-    "/home/oai/skills/",
+    "zyr_runtime_skills/",
 )
 
 

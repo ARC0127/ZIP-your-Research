@@ -8,4 +8,4 @@ Hello‑Agents 是一个系统性智能体学习教程，强调从核心原理�
 3) 单对话的 agentic 仿真（ONECHAT_PLAYBOOK）
 4) 回归/扰动测试（tests/prompt_regression）
 
-外部引用见 `docs/ATTRIBUTION_v1.3.md`。
+外部引用见 `docs/ATTRIBUTION.md`。

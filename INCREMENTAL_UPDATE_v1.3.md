@@ -16,7 +16,7 @@
 - `docs/SKILLS.md`
 - `docs/AGENTIC_ARCHITECTURE_v1.3.md`
 - `docs/HELLO_AGENTS_ADAPTATION_v1.3.md`
-- `docs/ATTRIBUTION_v1.3.md`
+- `docs/ATTRIBUTION.md`
 
 ## 2) Expanded regression suite
 - `tests/prompt_regression/corpus_v1_3.jsonl`
