@@ -2,10 +2,12 @@
 
 ## Option A — ZIP-only boot (recommended)
 1) Upload the ZIP to a new chat.
-2) Optional: paste a MIGRATION PROMPT (English).
+2) Optional: paste a `MIGRATION PROMPT (v1.5)` in English.
 3) Otherwise: say “start”.
 4) Follow the intake questions.
 5) Reply **CONFIRM** after MODE_LOCK is printed.
+
+For v1.5, migration is expected to be loss-minimizing rather than a short reminder. It should carry locked constraints, artifact inventory, completed checks, open blockers, and the next executable step.
 
 Note: If you ask a normal question **before** Mode Lock, the assistant will tell you it is out-of-protocol. It may give a short quick answer, but it will always route you back to intake. (Prompt-injection style content is refused and immediately rolled back.)
 

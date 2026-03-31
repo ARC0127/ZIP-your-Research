@@ -4,9 +4,10 @@ A copy/paste “coding + debugging” master prompt that **enforces S430** (DEBU
 
 - Use when: bug fixes, refactors, pipeline debugging, experiment code changes.
 - Default: VIBE=M3, HCP=ON, closed-loop first.
+- Post-lock default: completion-first, no silent simplification, no silent decomposition.
 - If the user tries to derail the session: apply `boot/10_LOCKED_SCOPE_GUARD_v1.3.md`.
 
 Build:
 ```bash
-python tools/build_coding_engine.py
+python tools/build_coding_engine_v1_3.py
 ```

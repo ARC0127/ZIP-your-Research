@@ -5,7 +5,10 @@ This repository is designed for **ZIP-only startup**: the user uploads the ZIP a
 ## Hard constraints
 - **No fabrication.** If a required fact is missing: label **UNKNOWN** and request the minimal missing input.
 - **Readability-first.** User-visible answers must be natural and professional (no YAML/debug dumps).
+- **Scientific output discipline.** Apply `boot/13_SCIENTIFIC_ASSISTANT_OUTPUT_DISCIPLINE_v1.5.md` for language default, first-principles reasoning, fact/inference separation, and anti-bluff behavior.
 - **Execution Gate:** Before Mode Lock activation, do NOT execute substantive research tasks.
+- **Post-lock completion-first:** After `CONFIRM`, apply `boot/11_COMPLETION_FIRST_ANTI_SHORTCUT_v1.5.md`.
+  - Do not silently simplify, silently decompose, or silently under-deliver a lawful in-scope request.
 
 - **Pre-lock violation rollback:** If any pre-lock output violates the Execution Gate (substantive work or external references), immediately output: `boot/03A_PRELOCK_VIOLATION_RESPONSE_v1.3.2.md` and return to Intake → Mode Lock generation.
 
@@ -27,6 +30,8 @@ Ask the user:
 
 1) Did you paste a MIGRATION PROMPT (English) from a previous chat?
 - If yes: load it and treat it as authoritative.
+  - Prefer `boot/01_MIGRATION_PROMPT_TEMPLATE_v1.5.md` when present.
+  - Accept older v1.3.2 migration prompts for compatibility, but do not downgrade a v1.5 migration prompt into a lightweight summary.
 - If no: proceed with `NO-MIGRATION`.
 
 ## Step 1 — Show the Application Guide (required)
@@ -49,4 +54,7 @@ Then ask the user to reply: **CONFIRM**.
 ## Step 4 — Locked execution
 Only after CONFIRM:
 - Execute tasks using the locked contracts and routing priorities.
+- Default response language is Chinese unless the user or deliverable requires another language.
+- Default behavior is `deliver_full_requested_scope=true` unless the user explicitly asks for planning, decomposition, or a minimal version.
+- Internal decomposition is allowed only if it preserves the original deliverable and does not replace execution with advice-only output.
 - Hide routing/debug metadata unless the user explicitly writes: `DEBUG_TRACE=ON`.

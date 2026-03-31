@@ -1,0 +1,56 @@
+{
+  "entry_required_keys": [
+    "id",
+    "pattern",
+    "focus",
+    "text",
+    "expected_action",
+    "expected_response_mode",
+    "expected_completion_policy",
+    "expected_blocker_policy"
+  ],
+  "pattern_allowed": [
+    "simplify_without_permission",
+    "split_without_permission",
+    "premature_stop",
+    "convert_execution_to_advice",
+    "over_ask_when_discoverable",
+    "under_deliver_on_lawful_scope",
+    "mixed_request_easy_part_only",
+    "large_scope_downgrade_to_mvp",
+    "plan_only_without_permission",
+    "partial_as_done",
+    "blocker_question_overreach",
+    "discoverable_local_context"
+  ],
+  "expected_action_allowed": [
+    "EXECUTE_FULL_SCOPE",
+    "EXECUTE_ALL_COMPONENTS",
+    "DISCOVER_THEN_EXECUTE",
+    "ASK_MINIMAL_BLOCKER"
+  ],
+  "expected_response_mode_allowed": [
+    "NO_PLAN_ONLY",
+    "NO_ADVICE_ONLY",
+    "NO_MVP_DOWNGRADE",
+    "EXECUTION_REQUIRED"
+  ],
+  "expected_completion_policy_allowed": [
+    "NO_PARTIAL_AS_DONE",
+    "LABEL_PARTIAL_IF_STOPPING",
+    "FULL_SCOPE_REQUIRED"
+  ],
+  "expected_blocker_policy_allowed": [
+    "DISCOVER_BEFORE_ASK",
+    "ASK_MINIMAL_IF_BLOCKED"
+  ],
+  "required_pattern_min_counts": {
+    "simplify_without_permission": 1,
+    "split_without_permission": 1,
+    "premature_stop": 1,
+    "convert_execution_to_advice": 1,
+    "over_ask_when_discoverable": 1,
+    "under_deliver_on_lawful_scope": 1
+  },
+  "text_max_chars": 20000
+}

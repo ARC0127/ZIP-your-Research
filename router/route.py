@@ -13,7 +13,7 @@ Goal: Given a user query, recommend top-K skills (copy/paste ready), with a bias
 - 句子改写/润色（含检索提示）
 
 Design:
-- Read YAML front matter from skills/**/S*.md
+- Read YAML front matter from real skill files `skills/**/S###_*.md`
 - Base score: trigger matches (substring, case-insensitive) + small token overlap bonus
 - Apply category weights + task-pattern boosts from router/weights_v1.3.2.yaml
 - Treat composite `writing_engine` as a first-class candidate (for rewriting / manuscript-like input)
@@ -38,6 +38,7 @@ SKILLS_DIR = ROOT / "skills"
 WEIGHTS_FILE = ROOT / "router" / "weights_v1.3.2.yaml"
 
 FRONT_MATTER_RE = re.compile(r"^---\n(.*?)\n---\n", re.S)
+SKILL_FILENAME_RE = re.compile(r"^S\d+_.*\.md$")
 
 SECTION_HINTS = [
     "abstract", "introduction", "method", "results", "discussion", "conclusion",
@@ -59,15 +60,30 @@ CODING_HINTS = [
     "报错", "修复", "调试", "回归", "重构", "代码审计", "单测", "编译",
 ]
 
+# proof / derivation intent hints (EN + ZH)
+PROOF_HINTS = [
+    "proof", "theorem", "lemma", "corollary", "derivation", "rigor",
+    "pessimistic verification", "progressive verification", "vertical review",
+    "first-error-wins", "formal proof", "autoformalization", "lean",
+    "证明", "定理", "引理", "推导", "证明验证", "证明审计", "数学证明",
+    "理论推导", "形式化证明", "形式化", "proof audit", "derivation audit",
+]
+
 def parse_front_matter(text: str) -> Dict:
     m = FRONT_MATTER_RE.match(text)
     if not m:
         return {}
     return yaml.safe_load(m.group(1)) or {}
 
+def is_real_skill_file(path: Path) -> bool:
+    rel = path.relative_to(SKILLS_DIR).as_posix()
+    if "platform_oai_skills/rewrites/" in rel:
+        return False
+    return bool(SKILL_FILENAME_RE.match(path.name))
+
 def iter_skills() -> List[Dict]:
     skills = []
-    for p in sorted(SKILLS_DIR.glob("**/S*.md")):
+    for p in sorted(path for path in SKILLS_DIR.rglob("*.md") if is_real_skill_file(path)):
         text = p.read_text(encoding="utf-8")
         fm = parse_front_matter(text)
         if not fm:
@@ -91,6 +107,15 @@ def looks_like_manuscript(q: str) -> bool:
     if any(h in ql for h in SECTION_HINTS):
         return True
     if q.count("\n") > 15:
+        return True
+    return False
+
+
+def looks_like_proof_task(q: str) -> bool:
+    ql = q.lower()
+    if any(h in ql for h in PROOF_HINTS):
+        return True
+    if any(sym in q for sym in ("∀", "∃", "⇒", "⇔", "∵", "∴")):
         return True
     return False
 
@@ -189,16 +214,29 @@ def main():
         "path": "skills/coding_engine/MASTER_v1.3.2.md",
     })
 
+    # v1.5+: Add composite proof_engine as a candidate for scoring
+    skills.append({
+        "id": "proof_engine",
+        "name": "proof_engine",
+        "category": "composite",
+        "triggers": [x.lower() for x in PROOF_HINTS],
+        "path": "skills/proof_engine/MASTER_v1.5.md",
+    })
+
 
     # Manuscript heuristic: print a strong hint, but still compute scores
     manuscript_flag = looks_like_manuscript(q)
+    proof_flag = looks_like_proof_task(q)
 
     scored = []
     for s in skills:
         sc0, hits = base_score(ql, s["triggers"])
-        if sc0 <= 0 and not (s["id"] == "writing_engine" and manuscript_flag):
+        if sc0 <= 0 and not (
+            (s["id"] == "writing_engine" and manuscript_flag)
+            or (s["id"] == "proof_engine" and proof_flag)
+        ):
             continue
-        sc, applied = apply_weights(ql, s, sc0 if sc0>0 else 0.5, weights)  # give manuscript a seed score
+        sc, applied = apply_weights(ql, s, sc0 if sc0 > 0 else 0.5, weights)  # heuristic seed score
         scored.append((sc, s, hits, applied))
 
     scored.sort(key=lambda x: (-x[0], x[1]["id"]))
@@ -206,6 +244,10 @@ def main():
     if manuscript_flag:
         print("Heuristic: manuscript-like input detected → consider PRIMARY writing_engine.")
         print("Next: skills/writing_engine/MASTER_v1.3.2.md")
+        print()
+    if proof_flag:
+        print("Heuristic: proof-heavy input detected → consider PRIMARY proof_engine.")
+        print("Next: skills/proof_engine/MASTER_v1.5.md")
         print()
 
     if not scored:
@@ -216,6 +258,7 @@ def main():
         print("- S231 innovation_point_search_plan (if you want novelty search)")
         print("- S232 paper_interpretation_deep_read (if you want paper interpretation)")
         print("- writing_engine (if you want rewriting/polishing)")
+        print("- proof_engine (if you want theorem/proof/derivation verification)")
         return 0
 
     topk = min(args.topk, len(scored))

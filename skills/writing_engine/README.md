@@ -24,3 +24,4 @@ This pack preserves the original legacy modules (legacy) and exposes a single **
 ### Invariants (kept)
 - Module texts under `modules/` remain verbatim.
 - Evidence policy remains strict: **no fabrication**; label UNKNOWN; propose verification steps.
+- Post-lock execution is completion-first: do not silently turn rewrite/review requests into advice, outline, or a smaller subset of the requested edits.

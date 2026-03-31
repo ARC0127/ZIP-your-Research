@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
-"""Build generated artifacts for v1.3.2.
+"""Build generated artifacts for v1.5.
 
 - writing_engine MASTER prompt
+- coding_engine MASTER prompt
+- proof_engine MASTER prompt
 - repository INDEX
 - SKILL_MAP (alias)
 """
@@ -22,11 +24,14 @@ def main():
     # v1.3+: writing_engine MASTER
     if (ROOT / "tools" / "build_writing_engine_v1_3.py").exists():
         run("build_writing_engine_v1_3.py")
-    run("build_index.py")
-    run("build_skill_map.py")
     # v1.3+: coding_engine MASTER
     if (ROOT / "tools" / "build_coding_engine_v1_3.py").exists():
         run("build_coding_engine_v1_3.py")
+    # v1.5+: proof_engine MASTER
+    if (ROOT / "tools" / "build_proof_engine_v1_5.py").exists():
+        run("build_proof_engine_v1_5.py")
+    run("build_index.py")
+    run("build_skill_map.py")
     print("OK: build_all completed")
 
 if __name__ == "__main__":

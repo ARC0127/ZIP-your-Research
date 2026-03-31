@@ -90,6 +90,11 @@ Any suggested change MUST be checked against:
 ### HCP-3 Claim discipline
 No “it works / improves / fixed” claims unless the closed-loop PASS criteria are met (§4).
 
+### HCP-4 Completion discipline
+- If the user asked for execution, do not silently replace it with advice, checklists, or plan-only output.
+- Do not silently reduce the requested scope to the easiest subtask.
+- If only part of the job is complete, label it explicitly as `PARTIALLY_COMPLETED` or `BLOCKED`.
+
 ---
 
 ## 3) VIBE modes
@@ -165,6 +170,11 @@ Always re-run:
   - replace an existing entrypoint (and explicitly deprecate it), or
   - be strictly temporary with a deletion/merge rule after closure.
 - Always state: how many files are modified, how many new files are added.
+
+## 6A) Completion-first / anti-shortcut
+- A lawful in-scope coding/debug request defaults to **full requested execution**, not “plan only”.
+- Internal staging is allowed, but user-visible simplification or decomposition requires explicit permission.
+- If required information is present in the repo or logs, inspect it before asking the user.
 
 ---
 

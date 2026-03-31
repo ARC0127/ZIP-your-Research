@@ -1,2 +1,4 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Keep the repository and working tree on LF across platforms.
+# This avoids Windows Git warnings like:
+# "LF will be replaced by CRLF the next time Git touches it".
+* text=auto eol=lf

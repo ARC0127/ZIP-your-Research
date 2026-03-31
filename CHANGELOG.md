@@ -1,5 +1,82 @@
 # Changelog
 
+## v1.5.0-wip (2026-03-30)
+
+### Scope
+This is an alignment workline built on top of `zyr_v1.4.4_release_20260222`, not a formal stable release. The main goal is to harden ZYR for current GPT/Codex usage: better task completion discipline, stronger proof/theory handling, more durable artifacts, and less context loss across chats.
+
+### Summary
+- Shifted the repo posture from mainly `lock-first + anti-drift` to `chat-first + lock-first + completion-first + scientific-discipline-first`.
+- Added a proof-aware path for theorem/proof/derivation-heavy tasks.
+- Upgraded the artifact layer so state, evidence, proof traces, and failed branches do not disappear into chat history.
+- Replaced lightweight migration notes with a loss-minimizing migration template.
+- Extended deterministic regression beyond locked behavior into completion, proof verification, and scientific discipline.
+
+### Added
+- `proof_engine` composite workflow:
+  - `skills/proof_engine/README.md`
+  - `skills/proof_engine/MASTER_v1.5.md`
+  - `tools/build_proof_engine_v1_5.py`
+- New proof/theory skills:
+  - `S237_theorem_assumption_normalizer`
+  - `S240_pessimistic_proof_verification`
+  - `S241_progressive_proof_verification`
+  - `S433_formal_proof_adapter`
+- Proof-oriented templates and examples:
+  - canonical theorem normalization / lemma dependency / derivation ledger blocks
+  - long-proof audit examples for fatal flaw, rigor mismatch, and repair-then-reverify
+- Authoritative v1.5 artifacts:
+  - `artifacts/evidence_ledger.csv`
+  - `artifacts/source_archive_manifest.yaml`
+  - `artifacts/proof_casebook.md`
+  - `artifacts/negative_result_ledger.md`
+  - `artifacts/run_state.json`
+- Loss-minimizing migration support:
+  - `boot/01_MIGRATION_PROMPT_TEMPLATE_v1.5.md`
+- New regressions:
+  - `tests/compliance_v1_5/`
+  - `tests/scientific_discipline_v1_5/`
+  - expanded `tests/proof_verification_v1_5/`
+- Research/alignment notes under `research/` for auto-research systems, FARS, GPT-5.4 failure modes, and pessimistic verification.
+
+### Changed
+- Locked execution defaults now explicitly forbid silent simplification, silent decomposition, and partial-completion masquerading.
+- Scientific assistant output discipline is now explicit: Chinese by default, first-principles analysis, fact/inference split, strict honesty boundary, anti-heuristic-downgrade.
+- `MODE_LOCK` now carries a `Proof Verification Profile` for theorem/proof-heavy requests.
+- `C_calculation` and `F_proof_idea` are now bound to proof artifacts rather than prose-only outputs.
+- `boot/12_ONECHAT_DEEP_LOOP_v1.3.md` now uses v1.5 artifact semantics:
+  - source archive during ideation
+  - run state during planning/experiment/review
+  - proof casebook for proof-heavy tasks
+  - negative-result tracking for failed branches
+- `README.md` was rewritten as a GitHub-facing v1.5 overview.
+
+### Fixed
+- Skill scanning no longer misclassifies `skills/platform_oai_skills/rewrites/**` as normal skills.
+- Drift audit no longer treats `/home/oai/skills/**` snapshots or audit-document example paths as required local files.
+- `skills_manifest.yaml` was aligned to the actual skill set, including missing categories and proof-engine entries.
+- Proof outputs are now constrained by stable section templates instead of relying on freeform narrative.
+- Migration continuity is no longer treated as a short reminder; it is now expected to preserve objective, lock state, artifacts, completed checks, blockers, and next step.
+
+### Validation
+The current `v1.5.0-wip` workline passes:
+
+- `python3 tools/build_all.py`
+- `python3 tools/validate_v7_2.py`
+- `python3 tools/drift_audit_v1_3.py`
+- `python3 tools/validate_corpus_v1_3.py`
+- `python3 tools/simulate_locked_regression_v1_3.py --n 25 --seed 0`
+- `python3 tools/validate_completion_corpus_v1_5.py`
+- `python3 tools/simulate_completion_compliance_v1_5.py`
+- `python3 tools/validate_scientific_discipline_corpus_v1_5.py`
+- `python3 tools/simulate_scientific_discipline_v1_5.py`
+- `python3 tools/validate_proof_verification_corpus_v1_5.py`
+- `python3 tools/simulate_proof_verification_v1_5.py`
+
+### Notes
+- This entry summarizes the delta from `v1.4.4` to the current working `v1.5.0-wip` line.
+- Historical entries below are kept for release archaeology and should not be read as the current repo posture.
+
 ## v1.3.2 (2026-02-15)
 
 ### Goal
@@ -30,6 +107,11 @@ A **system-level normalization + audit pass**: remove legacy v1.0.1-named artifa
 
 ### Fixed
 - GitHub Actions CI now installs `PyYAML` via `requirements.txt`, preventing `ModuleNotFoundError: yaml` during `tools/build_all.py` and strict validation.
+
+### Addendum (2026-02-22)
+- Added spreadsheet example audit (template-first, repo-native):
+  - `docs/audits/AUDIT_platform_spreadsheets_examples_vs_ZYR_v1.3.2_addendum_20260222.md`
+
 
 ---
 
@@ -206,3 +288,131 @@ System-level hardening for **instruction adherence under conversation perturbati
 
 ### Fixed
 - Added `interfaces/__init__.py` to improve import compatibility across Python setups.
+
+---
+
+## v1.4.0 (2026-02-22)
+
+### Goal
+Integrate the platform runtime artifact skills (`/home/oai/skills`) into a **repo-first, lossless** ZYR workflow: convert environment-only guidance into **portable templates + explicit QA loops**.
+
+### Added
+- Full audit (DOCX/PDF/Spreadsheet) with template mapping + protocol diff:
+  - `docs/audits/AUDIT_platform_oai_skills_docs_pdfs_spreadsheets_vs_ZYR_v1.4.0_20260222.md`
+- Short, copy/paste integration guide for artifact QA loops:
+  - `docs/how_to_use/PLATFORM_SKILLS_INTEGRATION_v1.4.md`
+
+### Changed
+- Version bump to 1.4.0 (documentation-level additive release):
+  - `VERSION`, `README.md`, `INDEX.md`, `skills_manifest.yaml`, `docs/RELEASE.md`
+
+### Notes
+- Additive / lossless: no file deletions.
+- Platform-only capabilities are treated as **optional accelerators**, never as required user dependencies.
+
+---
+
+## v1.4.1 (2026-02-22)
+
+### Goal
+Persist the runtime platform skills (`/home/oai/skills/**`) as a **standalone, repo-native module** inside ZYR, while keeping the release **lossless/additive**.
+
+### Added
+- Standalone module:
+  - `skills/platform_oai_skills/README.md`
+  - `skills/platform_oai_skills/modules/00_OVERVIEW.md`
+  - `skills/platform_oai_skills/modules/01_PLATFORM_SNAPSHOT.md`
+  - `skills/platform_oai_skills/modules/02_TEMPLATE_LIBRARY.md`
+  - `skills/platform_oai_skills/modules/03_QA_LOOPS.md`
+  - `skills/platform_oai_skills/modules/04_ALIGNMENT_DIFF.md`
+  - `skills/platform_oai_skills/modules/05_MAINTENANCE_DIFFING.md`
+
+### Changed
+- Version bump to 1.4.1:
+  - `VERSION`, `README.md`, `INDEX.md`, `skills_manifest.yaml`, `docs/RELEASE.md`
+- Legacy entry page now points to the module (backward compatible):
+  - `docs/how_to_use/PLATFORM_SKILLS_INTEGRATION_v1.4.md`
+
+### Notes
+- Additive / lossless: no file deletions; existing audits remain authoritative.
+- The module stores **hash snapshots and portable templates**, not platform file contents.
+
+
+---
+
+## v1.4.2 (2026-02-22)
+
+### Goal
+把平台运行时路径 `/home/oai/skills/**` 的关键规约做“**读取→改写**”落地为 **ZYR 可迁移文本**：在不 vendoring 平台私有原文/代码的前提下，保留流程闭环与质量门槛。
+
+### Added
+- Standalone rewrites module (portable-first, auditable):
+  - `skills/platform_oai_skills/rewrites/README.md`
+  - `skills/platform_oai_skills/rewrites/runtime_rw_20260222/`
+    - `README.md`
+    - `SOURCES.md` (platform source sha256)
+    - `DOCX_SKILL_REWRITE_ZYR.md`
+    - `RENDER_DOCX_PIPELINE_REWRITE_ZYR.md`
+    - `PDF_SKILL_REWRITE_ZYR.md`
+    - `SPREADSHEET_SKILL_REWRITE_ZYR.md`
+    - `SPREADSHEET_ARTIFACT_CONCEPTS_REWRITE_ZYR.md`
+    - `SPREADSHEET_ENGINE_API_SURFACE_REWRITE_ZYR.md`
+    - `FORMULA_COMPAT_GUIDE_REWRITE_ZYR.md`
+    - `EXAMPLES_PLAYBOOK_REWRITE_ZYR.md`
+
+### Changed
+- Version bump to 1.4.2:
+  - `VERSION`, `README.md`, `INDEX.md`, `skills_manifest.yaml`, `docs/RELEASE.md`
+- Module landing page now references rewrites (append-only edit):
+  - `skills/platform_oai_skills/README.md`
+
+### Notes
+- Additive / lossless: no file deletions.
+- Rewrites are **not** verbatim copies; they are ZYR-native portable guidance with auditable source hashes.
+
+---
+
+## v1.4.3 (2026-02-22)
+
+### Goal
+按“**逐文件**”粒度把平台运行时目录 `/home/oai/skills/**` 的 **28 个文件**全部做 **read→rewrite**，补齐上一轮主题式改写的覆盖空洞，并保持 **lossless/additive**。
+
+### Added
+- Full coverage per-file rewrites (28 files):
+  - `skills/platform_oai_skills/rewrites/runtime_rw_20260222_f28/`
+    - `README.md` / `SOURCES.md` / `INDEX.md`
+    - `by_source/**` (28 rewrite docs; mirrors source structure)
+
+### Changed
+- Version bump to 1.4.3:
+  - `VERSION`, `README.md`, `INDEX.md`, `skills_manifest.yaml`, `docs/RELEASE.md`
+- Module landing pages updated (append-only) to reference the full28 rewrite set:
+  - `skills/platform_oai_skills/README.md`
+  - `skills/platform_oai_skills/rewrites/README.md`
+
+### Notes
+- Additive / lossless: no file deletions; previous rewrites and audits remain authoritative.
+- The full28 rewrites intentionally avoid verbatim vendoring of platform content; they preserve workflow/QA/constraints and provide portable equivalents.
+
+
+---
+
+## v1.4.4 (2026-02-22)
+
+### Goal
+Make the **platform_oai_skills** module prompt content **English-only** to avoid language mixing inside downstream prompt artifacts, while keeping the repo **lossless/additive**.
+
+### Changed
+- Rewrote all Markdown files under:
+  - `skills/platform_oai_skills/**`
+  to be **English-only** (no Chinese characters), including:
+  - module landing pages (`README.md`, `modules/*.md`)
+  - compact rewrites (`rewrites/runtime_rw_20260222/*.md`)
+  - full 28-file rewrites (`rewrites/runtime_rw_20260222_f28/**/*.md`)
+
+- Version bump to 1.4.4:
+  - `VERSION`, `README.md`, `INDEX.md`, `skills_manifest.yaml`, `docs/RELEASE.md`
+
+### Notes
+- Additive / lossless: no file deletions; file names and paths are unchanged.
+- This change is localized to the `platform_oai_skills` module; the rest of the repo remains untouched.

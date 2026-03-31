@@ -15,8 +15,9 @@ SKILLS_DIR = ROOT / "skills"
 OUT = ROOT / "router" / "SKILL_MAP_v1.3.2.md"
 
 FRONT_MATTER_RE = re.compile(r"^---\n(.*?)\n---\n", re.S)
+SKILL_FILENAME_RE = re.compile(r"^S\d+_.*\.md$")
 
-ORDER = ["research_core", "experiments", "reproducibility", "paper_ops"]
+ORDER = ["research_core", "experiments", "reproducibility", "paper_ops", "composite"]
 
 def parse_front_matter(text: str):
     m = FRONT_MATTER_RE.match(text)
@@ -24,13 +25,42 @@ def parse_front_matter(text: str):
         return None
     return yaml.safe_load(m.group(1)) or {}
 
+def iter_skill_files():
+    for p in sorted(SKILLS_DIR.rglob("*.md")):
+        rel = p.relative_to(SKILLS_DIR).as_posix()
+        if "platform_oai_skills/rewrites/" in rel:
+            continue
+        if SKILL_FILENAME_RE.match(p.name):
+            yield p
+
+
+def load_manifest_composites():
+    manifest = ROOT / "skills_manifest.yaml"
+    if not manifest.exists():
+        return []
+    data = yaml.safe_load(manifest.read_text(encoding="utf-8")) or {}
+    composites = []
+    for item in data.get("skills", []) or []:
+        if str(item.get("category", "")).strip() != "composite":
+            continue
+        sid = str(item.get("id", "")).strip()
+        name = str(item.get("name", sid)).strip()
+        path = str(item.get("path", "")).strip()
+        outputs = item.get("outputs", []) or []
+        trig = "generated composite"
+        if outputs:
+            trig += f"; outputs: {', '.join(str(x) for x in outputs[:3])}"
+        if sid and path:
+            composites.append((10**8, sid, name, path, trig))
+    return composites
+
 def idnum(sid: str) -> int:
     m = re.match(r"S(\d+)", sid)
     return int(m.group(1)) if m else 10**9
 
 def main():
     buckets = defaultdict(list)
-    for p in sorted(SKILLS_DIR.glob("**/S*.md")):
+    for p in iter_skill_files():
         fm = parse_front_matter(p.read_text(encoding="utf-8"))
         if not fm:
             continue
@@ -44,6 +74,9 @@ def main():
         if len(triggers) > 6:
             trig += ", ..."
         buckets[cat].append((idnum(sid), sid, name, p.relative_to(ROOT).as_posix(), trig))
+
+    for item in load_manifest_composites():
+        buckets["composite"].append(item)
 
     for cat in buckets:
         buckets[cat].sort()

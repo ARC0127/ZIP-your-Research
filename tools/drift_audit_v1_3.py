@@ -24,6 +24,14 @@ IGNORE_GLOBS = ("*", "?")
 IGNORE_MD_FILENAMES = {
     "CHANGELOG.md",
 }
+IGNORE_SOURCE_PREFIXES = (
+    "artifacts/system_audit/",
+    "docs/audits/",
+    "skills/platform_oai_skills/rewrites/",
+)
+EXTERNAL_REF_PREFIXES = (
+    "/home/oai/skills/",
+)
 
 
 def is_ignored_ref(ref: str) -> bool:
@@ -34,6 +42,8 @@ def is_ignored_ref(ref: str) -> bool:
 
     if "://" in ref:
         return True
+    if ref.startswith(EXTERNAL_REF_PREFIXES):
+        return True
     if any(ch in ref for ch in IGNORE_GLOBS):
         return True
     if any(ref.endswith(s) for s in IGNORE_SUFFIX):
@@ -42,12 +52,36 @@ def is_ignored_ref(ref: str) -> bool:
 
 
 def is_ignored_source(md_path: Path) -> bool:
+    rel = md_path.relative_to(ROOT).as_posix()
+    if any(rel.startswith(prefix) for prefix in IGNORE_SOURCE_PREFIXES):
+        return True
     name = md_path.name
     if name in IGNORE_MD_FILENAMES:
         return True
     if name.startswith("INCREMENTAL_UPDATE_"):
         return True
     return False
+
+
+def resolve_local_ref(md_path: Path, ref: str) -> list[Path]:
+    rel = Path(ref)
+    candidates = []
+    if ref.startswith("/"):
+        candidates.append(Path(ref))
+    elif ref.startswith("./") or ref.startswith("../"):
+        candidates.append((md_path.parent / rel).resolve())
+    else:
+        candidates.append((ROOT / rel).resolve())
+        candidates.append((md_path.parent / rel).resolve())
+
+    dedup = []
+    seen = set()
+    for candidate in candidates:
+        key = str(candidate)
+        if key not in seen:
+            seen.add(key)
+            dedup.append(candidate)
+    return dedup
 
 
 def main():
@@ -60,8 +94,10 @@ def main():
             ref = m.group(1).strip()
             if is_ignored_ref(ref):
                 continue
-            target = (ROOT / (ref[2:] if ref.startswith("./") else ref)).resolve()
-            if not target.exists():
+            candidates = resolve_local_ref(p, ref)
+            if ref.startswith("/") and not any(str(candidate).startswith(str(ROOT)) for candidate in candidates):
+                continue
+            if not any(candidate.exists() for candidate in candidates):
                 missing.append((p.relative_to(ROOT).as_posix(), ref))
 
     if missing:

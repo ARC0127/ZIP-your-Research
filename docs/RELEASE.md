@@ -1,61 +1,65 @@
-# Release packaging (v1.3.2)
+# Release Packaging (v1.5.0-wip)
 
-This project is optimized for **copy/paste** usage. For distribution, you often want a zip that excludes repo history (`.git`) and caches.
+This document describes the current packaging workflow for the `v1.5.0-wip` alignment line.
 
-## One-command release zip
+`v1.5.0-wip` is not a formal stable release yet. Treat it as a GitHub-ready working line with stricter validation and a stronger artifact/proof stack than `v1.4.4`.
+
+## Current recommended flow
+
 From the repository root:
 
 ```bash
-python tools/build_all.py
-python tools/validate_v7_2.py
-python tools/make_release.py --version v1.3.2
+python3 tools/build_all.py
+python3 tools/validate_v7_2.py
+python3 tools/drift_audit_v1_3.py
+python3 tools/validate_corpus_v1_3.py
+python3 tools/simulate_locked_regression_v1_3.py --n 25 --seed 0
+python3 tools/validate_completion_corpus_v1_5.py
+python3 tools/simulate_completion_compliance_v1_5.py
+python3 tools/validate_scientific_discipline_corpus_v1_5.py
+python3 tools/simulate_scientific_discipline_v1_5.py
+python3 tools/validate_proof_verification_corpus_v1_5.py
+python3 tools/simulate_proof_verification_v1_5.py
+python3 tools/system_audit_v1_3.py
+python3 tools/make_release.py
 ```
 
-This creates:
+## What this produces
 
-- `ZIP-your-Research_v1.3.2_release.zip`
+- regenerated composite prompts and indexes
+- refreshed deterministic reports under `artifacts/`
+- a clean zip named from `VERSION`
 
-## Why exclude `.git`?
-- Smaller downloads
-- Less confusion for users who only want prompts
-- Avoid accidentally shipping secrets in git history (still: do not commit secrets)
+With the current `VERSION`, the default package name is:
 
-## CI recommendation
-Keep `.github/workflows/ci_v7_2.yml` enabled so generated artifacts (INDEX and MASTER) remain in sync.
+- `ZIP-your-Research_v1.5.0-wip_release.zip`
 
----
+## Version source of truth
 
-## v1.2 recommended commands (drift-free)
+- `VERSION` is the packaging source of truth
+- `tools/make_release.py` reads `VERSION` by default
+- `skills_manifest.yaml`, `README.md`, and `CHANGELOG.md` should agree with `VERSION`
 
-From repo root:
+If you need to override the version explicitly:
 
 ```bash
-python tools/build_all.py
-python tools/validate_v7_2.py
-python tools/make_release.py --version v1.2
+python3 tools/make_release.py --version v1.5.0-wip
 ```
 
-Notes:
-- `tools/validate_v7_2.py` is now a shim to the strict validator `tools/validate_v1_3.py`.
-- CI should run strict validation to prevent doc/tool drift.
+## Release expectations for this line
 
+Before packaging, ensure all of the following are true:
 
----
+- `README.md` reflects the `v1.5.0-wip` posture
+- `CHANGELOG.md` has the latest `1.4.4 -> v1.5.0-wip` summary at the top
+- `proof_engine` has been rebuilt into `skills/proof_engine/MASTER_v1.5.md`
+- proof/completion/scientific-discipline regressions all pass
+- `artifacts/system_audit/report_v1.3.2.md` reflects the current workspace rather than the old `v1.4.4` copy
 
-## v1.3 recommended commands (ONECHAT + onboarding)
+## Why package without `.git`
 
-From repo root:
+- smaller distribution size
+- cleaner copy/paste usage for end users
+- lower risk of shipping irrelevant local history
 
-```bash
-python tools/build_all.py
-python tools/validate_v7_2.py
-python tools/gen_skills_catalog_v1_3.py
-python tools/make_release.py --version v1.3
-```
-
-This creates:
-- `ZIP-your-Research_v1.3_release.zip`
-
-Notes:
-- `build_all.py` will additionally generate `MASTER_v1.3` prompts if present.
-- The release should include the v1.3 onboarding docs and regression corpus.
+Do not rely on the release zip as a substitute for proper git history or reproducible release tagging.

@@ -40,3 +40,5 @@ quality_gates:
 ## 3) 关键硬规则（防跑偏）
 - LOCKED 阶段，OUT-OF-SCOPE 不提供“顺手回答”，否则会导致后续技能失效。
 - 任何协议变更必须走 `CONFIRM CHANGE`。
+- 对于 `IN-SCOPE TASK`，默认行为是继续完成原始合法范围，不允许擅自缩 scope、拆成更小任务，或把执行降级成建议。
+- 如果因为真实阻塞只能部分完成，必须明确标注 `PARTIALLY_COMPLETED` 或 `BLOCKED`，而不是伪装成完成。

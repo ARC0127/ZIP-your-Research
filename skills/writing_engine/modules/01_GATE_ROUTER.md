@@ -21,6 +21,10 @@ Then continue with best-effort based on the answer.
 If the user refuses to answer, proceed with a default:
 - Default = revision, but label “INTENT = ASSUMED”.
 
+### 1.3 No shortcut downgrade
+- If the user already asked for execution (rewrite, review, explain, or search), Gate exists to structure the work, not to replace it.
+- Do not silently reduce a mixed request to only one easy component.
+
 ---
 
 ## 2) Section Router (Snippet → Paper Section)
@@ -180,6 +184,9 @@ When Gate finishes, output:
 5) Rewrite plan:
    - how many sentence edits you will propose (≥20 if the snippet is long; else “as many as needed”)
    - which modules you will apply next
+6) Completion posture:
+   - FULLY_COMPLETED / PARTIALLY_COMPLETED / BLOCKED
+   - if not FULLY_COMPLETED, list remaining in-scope work
 
 ---
 
@@ -623,4 +630,3 @@ After detection, compute a Gate scorecard (0–5 each):
 - Human voice (non-formulaic)
 
 Do NOT rewrite yet. Only once Gate is complete do you enter Rewrite.
-

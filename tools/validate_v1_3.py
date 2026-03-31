@@ -6,7 +6,7 @@ Goals:
 - Fail fast on missing or inconsistent schema.
 
 Checks (baseline):
-- Every skills/**/S*.md has YAML front matter parseable by PyYAML.
+- Every real skill file `skills/**/S###_*.md` has YAML front matter parseable by PyYAML.
 - Required fields: id, name, category, triggers, inputs_required, outputs_required, quality_gates.
 - id uniqueness.
 - id should match filename prefix when applicable (S###_*.md).
@@ -31,11 +31,16 @@ SKILLS_DIR = ROOT / "skills"
 
 FRONT_MATTER_RE = re.compile(r"^---\n(.*?)\n---\n", re.S)
 BACKTICK_PATH_RE = re.compile(r"`([^`]+?\.(?:md|py|yaml|yml|json|txt|pdf))`")
+SKILL_FILENAME_RE = re.compile(r"^S\d+_.*\.md$")
 ALLOWED_CATEGORIES = {"research_core", "experiments", "reproducibility", "paper_ops", "composite"}
 
 IGNORE_MISSING_REFS = {
     "MODE_LOCK.md", "MODE_LOCK.json", "evidence.json",
 }
+
+EXTERNAL_REF_PREFIXES = (
+    "/home/oai/skills/",
+)
 
 def parse_front_matter(text: str) -> Dict:
     m = FRONT_MATTER_RE.match(text)
@@ -43,8 +48,36 @@ def parse_front_matter(text: str) -> Dict:
         return {}
     return yaml.safe_load(m.group(1)) or {}
 
+def is_real_skill_file(path: Path) -> bool:
+    rel = path.relative_to(SKILLS_DIR).as_posix()
+    if "platform_oai_skills/rewrites/" in rel:
+        return False
+    return bool(SKILL_FILENAME_RE.match(path.name))
+
 def iter_skill_files() -> List[Path]:
-    return sorted(SKILLS_DIR.glob("**/S*.md"))
+    return sorted(p for p in SKILLS_DIR.rglob("*.md") if is_real_skill_file(p))
+
+def resolve_local_ref(md_path: Path, ref: str) -> List[Path]:
+    raw = ref.strip()
+    rel = Path(raw)
+    candidates: List[Path] = []
+
+    if raw.startswith("/"):
+        candidates.append(Path(raw))
+    elif raw.startswith("./") or raw.startswith("../"):
+        candidates.append((md_path.parent / rel).resolve())
+    else:
+        candidates.append((ROOT / rel).resolve())
+        candidates.append((md_path.parent / rel).resolve())
+
+    dedup: List[Path] = []
+    seen = set()
+    for candidate in candidates:
+        key = str(candidate)
+        if key not in seen:
+            seen.add(key)
+            dedup.append(candidate)
+    return dedup
 
 def check_backtick_refs(md_path: Path, text: str) -> List[str]:
     errs = []
@@ -59,10 +92,14 @@ def check_backtick_refs(md_path: Path, text: str) -> List[str]:
         # allow glob patterns like skills/**/S*.md
         if "*" in ref or "?" in ref:
             continue
+        if ref.startswith(EXTERNAL_REF_PREFIXES):
+            continue
         if any(ref.endswith(x) for x in IGNORE_MISSING_REFS):
             continue
-        ref_path = (ROOT / (ref[2:] if ref.startswith("./") else ref)).resolve()
-        if not ref_path.exists():
+        candidates = resolve_local_ref(md_path, ref)
+        if ref.startswith("/") and not any(str(p).startswith(str(ROOT)) for p in candidates):
+            continue
+        if not any(p.exists() for p in candidates):
             errs.append(f"Missing referenced file `{ref}` in {md_path.relative_to(ROOT)}")
     return errs
 

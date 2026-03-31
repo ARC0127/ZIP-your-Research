@@ -22,7 +22,10 @@ def main():
     if not modules:
         raise SystemExit("No modules found in skills/writing_engine/modules")
 
-    parts = ["# MASTER v1.3.2 (Writing Engine)\n"]
+    parts = [
+        "# MASTER v1.3.2 (Writing Engine)\n",
+        "> **Execution rules:** `boot/11_COMPLETION_FIRST_ANTI_SHORTCUT_v1.5.md` applies after lock activation.\n\n---\n",
+    ]
     for p in modules:
         parts.append(p.read_text(encoding="utf-8").rstrip())
         parts.append("\n\n---\n")

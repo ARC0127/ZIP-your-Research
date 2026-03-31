@@ -6,4 +6,4 @@ Provide:
 - Regression matrix: baseline + main + second
 
 If commands are UNKNOWN, output placeholders and ask for the missing info.
-
+Do not claim completion unless the requested in-scope fix and verification scope were actually completed.

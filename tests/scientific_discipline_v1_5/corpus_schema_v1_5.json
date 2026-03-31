@@ -1,0 +1,62 @@
+{
+  "entry_required_keys": [
+    "id",
+    "pattern",
+    "focus",
+    "text",
+    "expected_language",
+    "expected_analysis_basis",
+    "expected_fact_inference_split",
+    "expected_honesty_policy",
+    "expected_tuning_policy"
+  ],
+  "pattern_allowed": [
+    "chinese_default_unless_override",
+    "first_principles_before_tactics",
+    "no_heuristic_tuning_downgrade",
+    "fact_inference_verification_split",
+    "honest_unexecuted_check",
+    "tool_failure_disclosure",
+    "do_not_reask_known_info",
+    "clickable_file_reference",
+    "concise_no_filler",
+    "migration_prompt_lossless_english",
+    "bounded_search_cost_disclosure",
+    "zyr_protocol_authority"
+  ],
+  "expected_language_allowed": [
+    "zh",
+    "en"
+  ],
+  "expected_analysis_basis_allowed": [
+    "FIRST_PRINCIPLES"
+  ],
+  "expected_fact_inference_split_allowed": [
+    "REQUIRED",
+    "WHEN_NONTRIVIAL"
+  ],
+  "expected_honesty_policy_allowed": [
+    "STRICT_HONESTY",
+    "DISCLOSE_FAILURE"
+  ],
+  "expected_tuning_policy_allowed": [
+    "FORBID_HEURISTIC_DOWNGRADE",
+    "BOUNDED_EXPLAINED_SEARCH",
+    "N_A"
+  ],
+  "required_pattern_min_counts": {
+    "chinese_default_unless_override": 1,
+    "first_principles_before_tactics": 1,
+    "no_heuristic_tuning_downgrade": 1,
+    "fact_inference_verification_split": 1,
+    "honest_unexecuted_check": 1,
+    "tool_failure_disclosure": 1,
+    "do_not_reask_known_info": 1,
+    "clickable_file_reference": 1,
+    "concise_no_filler": 1,
+    "migration_prompt_lossless_english": 1,
+    "bounded_search_cost_disclosure": 1,
+    "zyr_protocol_authority": 1
+  },
+  "text_max_chars": 20000
+}

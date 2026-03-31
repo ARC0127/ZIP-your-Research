@@ -1,0 +1,7 @@
+sources: []
+capture_policy:
+  archive_raw_sources: true
+  preserve_failed_paths: true
+  external_refs_allowed: true
+missing_sources: []
+notes: []

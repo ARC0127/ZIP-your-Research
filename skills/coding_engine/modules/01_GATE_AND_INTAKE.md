@@ -14,3 +14,7 @@ Ask only for the minimal missing items (UNKNOWN allowed):
 
 If the user provides none, do not guess. Output a minimal question set.
 
+After intake, default to **full requested execution**:
+- do not silently simplify the task
+- do not silently split it into a smaller ask
+- if the missing information is discoverable from the repo or logs, inspect it before asking

@@ -44,6 +44,8 @@ task_patterns:
   - 计算正确性
   - 算错
   - 推导算错
+  - 理论推导
+  - derivation audit
   - 单位
   - 量纲
   - algebra
@@ -52,8 +54,10 @@ task_patterns:
   - numerical sanity
   boost_skills:
     S326: 4.0
+    S241: 1.6
     S305: 1.5
     S311: 1.2
+    proof_engine: 1.1
   boost_categories:
     experiments: 0.35
 - name: paper_storyline
@@ -83,12 +87,27 @@ task_patterns:
   - 归纳
   - 不等式证明
   - proof sketch
+  - theorem
+  - derivation
+  - proof verification
+  - pessimistic verification
+  - progressive verification
+  - formal proof
+  - autoformalization
+  - Lean
+  - 形式化证明
   boost_skills:
     S230: 4.0
+    S237: 2.6
+    S240: 4.3
+    S241: 4.2
+    S433: 1.5
+    proof_engine: 2.0
     S226: 1.2
     S227: 1.0
   boost_categories:
     research_core: 0.25
+    composite: 0.12
 - name: innovation_audit
   patterns:
   - 创新性
@@ -193,6 +212,16 @@ secondary_suggestions:
   suggest:
   - S305
   - S311
+- if_primary_in:
+  - S230
+  - S237
+  - S240
+  - S241
+  - proof_engine
+  suggest:
+  - S235
+  - S326
+  - S433
 - if_primary_in:
   - S228
   - S231

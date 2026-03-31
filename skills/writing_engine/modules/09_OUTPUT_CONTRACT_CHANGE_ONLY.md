@@ -8,6 +8,7 @@ This module enforces the required output formatting for revision tasks.
 When rewriting user-provided text/LaTeX snippets: output ONLY the changed sentences.
 
 No summaries. No “before/after paragraphs”. No meta talk.
+Do not replace the requested rewrite with high-level advice unless the user explicitly asked for advice only.
 
 ---
 
@@ -53,6 +54,12 @@ If user says “light touch”:
 - min_edit=true, deep_rewrite=false
 If user says “aggressive”:
 - deep_rewrite=true, but evidence_lock remains true unless explicitly disabled
+
+## 3.1 Completion labeling
+If you cannot cover the full requested text span:
+- say `PARTIALLY_COMPLETED`
+- identify the remaining span
+- state the exact blocker or next executable step
 
 
 ---
@@ -116,4 +123,3 @@ If user says “aggressive”:
 - WHY: Removes padding.
 - RISK: NONE
 - STATUS: UNKNOWN
-

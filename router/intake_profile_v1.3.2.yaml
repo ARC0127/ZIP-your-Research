@@ -11,6 +11,11 @@ defaults:
   citation_mode: conservative
   web_browsing_policy: ALLOW
   debug_trace: 'OFF'
+  deliver_full_requested_scope: true
+  silent_simplification: forbid
+  silent_decomposition: forbid
+  partial_completion_labeling: required
+  discover_before_asking: true
 depth_policy_ref: boot/09_INTAKE_DEPTH_POLICY_v1.3.2.md
 domains:
 - key: A_logic
@@ -40,9 +45,9 @@ domains:
   questions:
   - 请标注你要核查的具体计算段（逐行编号/截图/LaTeX）。
   - 请说明符号约定与单位/量纲（如有），以及边界条件/初始条件。
-  - 你希望核查粒度：代数变形、微积分步骤、期望/概率推导、还是数值实现一致性？
+  - 你希望核查粒度：代数变形、微积分步骤、期望/概率推导、shape/单位一致性，还是 theorem-heavy 的逐步 derivation audit？
   - 是否需要我做“独立复算”（从上一行推到下一行），并指出最小错误点？
-  - 如果发现错误，是否允许我给出替代推导 + 可复现检查清单（sanity checks）？
+  - 如果发现错误，是否允许我给出替代推导、局部 verdict、以及 proof-engine 风格的验证记录？
 - key: E_innovation_correctness
   name: 创新思路正确性审计（想法是否站得住）
   primary_skills:
@@ -66,10 +71,13 @@ domains:
   primary_skills:
   - S230
   - S235
+  - S237
+  - S240
+  - S241
   questions:
-  - 你现在的证明结构分哪几步？每一步用到哪些引理/假设？
+  - 你现在的证明结构分哪几步？每一步用到哪些引理/假设？如果有 theorem statement，请一并给出。
   - 你最不确定的是哪一步？是技术引理、不等式、构造、还是边界条件？
-  - 你希望输出：proof skeleton（可写进论文）还是 gap list + alternative route？
+  - 你希望输出：proof skeleton、gap list、还是 pessimistic/progressive verification 风格的结论？
 - key: H_experiment_completeness
   name: 实验完整性检查（coverage, baselines, ablations, reporting）
   primary_skills:

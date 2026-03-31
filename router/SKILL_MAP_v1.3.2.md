@@ -78,10 +78,16 @@ Prefer using **one** primary skill per task.
   - triggers: 证明思路核查, proof gap, proof sketch audit, missing lemma, gap finder
 - **S236** `preregistration_builder` — skills/research_core/S236_preregistration_builder.md
   - triggers: preregistration, pre-registration, OSF registration, 预注册, analysis plan prereg
+- **S237** `theorem_assumption_normalizer` — skills/research_core/S237_theorem_assumption_normalizer.md
+  - triggers: theorem normalization, theorem assumptions, hidden assumptions, 证明前提整理, 定理规范化, theorem assumption audit
 - **S238** `systematic_review_protocol_builder` — skills/research_core/S238_systematic_review_protocol_builder.md
   - triggers: systematic review, PRISMA, meta-analysis protocol, 系统综述, PRISMA protocol
 - **S239** `study_screening_rubric_builder` — skills/research_core/S239_study_screening_rubric_builder.md
   - triggers: screening rubric, inclusion exclusion, 筛选标准, screening checklist
+- **S240** `pessimistic_proof_verification` — skills/research_core/S240_pessimistic_proof_verification.md
+  - triggers: pessimistic verification, proof verification, 证明验证, 证明审计, first-error-wins, theorem audit
+- **S241** `progressive_proof_verification` — skills/research_core/S241_progressive_proof_verification.md
+  - triggers: progressive verification, proof chunking, 逐层证明验证, 多尺度证明审计, vertical review, chunk verdict
 
 ## experiments
 
@@ -210,6 +216,8 @@ Prefer using **one** primary skill per task.
   - triggers: closed loop, 闭环, verification, 回归矩阵, regression matrix, sanity check
 - **S432** `scope_drift_firewall` — skills/reproducibility/S432_scope_drift_firewall.md
   - triggers: drift, scope drift, 跑偏, 偏题, out of scope, protocol check, ...
+- **S433** `formal_proof_adapter` — skills/reproducibility/S433_formal_proof_adapter.md
+  - triggers: lean, theorem prover, autoformalization, formal proof adapter, 形式化证明, Lean sketch
 
 ## paper_ops
 
@@ -273,3 +281,12 @@ Prefer using **one** primary skill per task.
   - triggers: data availability statement, code availability, disclosure, 透明度声明, competing interests
 - **S530** `ethics_impact_assessment` — skills/paper_ops/S530_ethics_impact_assessment.md
   - triggers: ethics statement, impact assessment, responsible AI, risk assessment, 伦理 影响评估
+
+## composite
+
+- **coding_engine** `coding_engine` — skills/coding_engine/README.md
+  - triggers: generated composite; outputs: master_prompt
+- **proof_engine** `proof_engine` — skills/proof_engine/README.md
+  - triggers: generated composite; outputs: master_prompt
+- **writing_engine** `writing_engine` — skills/writing_engine/README.md
+  - triggers: generated composite; outputs: master_prompt

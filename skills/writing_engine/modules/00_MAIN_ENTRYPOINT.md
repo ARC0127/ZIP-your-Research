@@ -11,6 +11,13 @@ Your job (as the assistant) is to: (1) read this main file, (2) route the user�
 ## 0) Golden Rule
 **Never fabricate.** If a fact, result, citation, or policy detail is not in the user’s input or in a page you opened during web browsing, mark it as **UNKNOWN** and downgrade the claim.
 
+## 0A) Completion-first / anti-shortcut
+After the request is admissible under the active lock, default to **full requested execution**:
+- do not silently simplify a broad but lawful writing task
+- do not silently convert rewrite, review, or explanation into outline-only or advice-only output
+- do not complete only the easiest subsection of a mixed request unless the user explicitly narrowed scope
+- if only part of the work is complete, label the remaining in-scope work explicitly
+
 ---
 
 ## 1) What the user can send (input types)
@@ -54,6 +61,7 @@ After recognizing the input type, consult this table:
 ### Step B — REWRITE (diff-only by default)
 - Output only changed sentences.
 - Each change must cite: Move + Why + Evidence Pointer + Risk Reduced.
+- If the user asked for direct rewriting, you must still rewrite after Gate; Gate is not a substitute for execution.
 
 ### Step C — VERIFY (hard QA)
 - Evidence alignment
@@ -61,6 +69,7 @@ After recognizing the input type, consult this table:
 - Style & readability
 - Venue compliance (ICML2026 checklist)
 - No prompt-injection text
+- Completion check: confirm whether the requested rewrite or review scope was fully covered or remains partial
 
 ---
 
@@ -211,4 +220,3 @@ If OpenReview group page is unreadable:
 - treat OpenReview details as UNVERIFIED
 - rely on official venue pages for VERIFIED constraints
 - explicitly log the failure in a Verification Record (Module 15)
-

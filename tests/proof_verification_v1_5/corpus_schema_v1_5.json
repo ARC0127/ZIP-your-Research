@@ -1,0 +1,115 @@
+{
+  "entry_required_keys": [
+    "id",
+    "pattern",
+    "focus",
+    "text",
+    "theorem_family",
+    "proof_length_bucket",
+    "review_budget",
+    "chunk_policy",
+    "expected_anchor_kind",
+    "expected_primary_artifact",
+    "expected_verdict",
+    "expected_fatal_policy",
+    "expected_majority_policy",
+    "expected_refinement_policy",
+    "expected_formal_adapter_policy"
+  ],
+  "pattern_allowed": [
+    "majority_single_negative_fatal",
+    "theorem_condition_mismatch",
+    "long_proof_local_derivation_error",
+    "missing_lemma_or_unjustified_step",
+    "annotation_or_rigor_mismatch",
+    "harmless_typo_nonfatal",
+    "refinement_then_reverify",
+    "formal_adapter_requested_unavailable",
+    "counterexample_required_for_derivation_failure",
+    "pruning_multiple_failing_branches",
+    "line_anchor_consistency_failure",
+    "lemma_anchor_fatal_gap",
+    "review_budget_sufficient_detects_hidden_flaw",
+    "review_budget_too_small",
+    "repair_proposal_without_reverify",
+    "dataset_rigor_paper_rigor_mismatch",
+    "unknown_assumption_blocks_verification",
+    "formal_success_auxiliary_only",
+    "long_true_proof_clean",
+    "algebra_true_with_line_anchor",
+    "probability_true_progressive_chunk",
+    "combinatorics_true_lemma_anchor",
+    "formal_adapter_success_nonblocking_true",
+    "review_budget_sufficient_clean_proof"
+  ],
+  "theorem_family_allowed": [
+    "analysis",
+    "algebra",
+    "probability",
+    "combinatorics"
+  ],
+  "proof_length_bucket_allowed": [
+    "short",
+    "medium",
+    "long"
+  ],
+  "review_budget_allowed": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "chunk_policy_allowed": [
+    "whole_only",
+    "progressive",
+    "progressive_pruning",
+    "lemma_aware"
+  ],
+  "expected_anchor_kind_allowed": [
+    "line_anchor",
+    "lemma_anchor",
+    "assumption_anchor",
+    "multi_anchor"
+  ],
+  "expected_primary_artifact_allowed": [
+    "proof_casebook.md"
+  ],
+  "expected_verdict_allowed": [
+    "verified_false",
+    "verified_true",
+    "verification_incomplete"
+  ],
+  "expected_fatal_policy_allowed": [
+    "FIRST_ERROR_WINS"
+  ],
+  "expected_majority_policy_allowed": [
+    "DIAGNOSTIC_ONLY"
+  ],
+  "expected_refinement_policy_allowed": [
+    "NO_REFINEMENT",
+    "REVERIFY_REQUIRED"
+  ],
+  "expected_formal_adapter_policy_allowed": [
+    "NOT_REQUESTED",
+    "OPTIONAL_NON_BLOCKING"
+  ],
+  "required_pattern_min_counts": {
+    "majority_single_negative_fatal": 1,
+    "theorem_condition_mismatch": 1,
+    "long_proof_local_derivation_error": 1,
+    "missing_lemma_or_unjustified_step": 1,
+    "annotation_or_rigor_mismatch": 1,
+    "harmless_typo_nonfatal": 1,
+    "refinement_then_reverify": 1,
+    "formal_adapter_requested_unavailable": 1,
+    "counterexample_required_for_derivation_failure": 1,
+    "pruning_multiple_failing_branches": 1,
+    "review_budget_too_small": 1,
+    "repair_proposal_without_reverify": 1,
+    "dataset_rigor_paper_rigor_mismatch": 1,
+    "formal_success_auxiliary_only": 1,
+    "long_true_proof_clean": 1,
+    "formal_adapter_success_nonblocking_true": 1,
+    "review_budget_sufficient_clean_proof": 1
+  },
+  "text_max_chars": 20000
+}
