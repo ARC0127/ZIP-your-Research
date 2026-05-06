@@ -1,14 +1,14 @@
 {
   "package": "ZIP-your-Research_v1.6.3_ci_doc_repair",
-  "built_at_utc": "2026-05-06T08:43:40Z",
+  "built_at_utc": "2026-05-06T11:30:40Z",
   "source_counts": {
-    "zyr": 431,
+    "zyr": 424,
     "rpws": 43,
     "awesome": 4,
     "figures": 70,
     "s340": 1
   },
-  "total_preserved_source_files": 549,
+  "total_preserved_source_files": 542,
   "files": [
     {
       "source_key": "zyr",
@@ -155,8 +155,8 @@
       "source_zip": "ZIP-your-Research-main.claude-code-runtime-updated-20260331.zip",
       "source_relpath": "README.md",
       "packed_relpath": "README.md",
-      "size_bytes": 9109,
-      "sha256": "02fb16b98dd95202099728e54a4346564dcd305fe69f07c9e3d79c8f4d6a1ccc",
+      "size_bytes": 16875,
+      "sha256": "a53abf95eb934cae3f466e72c8aea75f45aa53ee2c3cef61e03fcf0d5a3f19e4",
       "ext": ".md",
       "kind": "text"
     },
@@ -1259,16 +1259,6 @@
       "sha256": "21b7ebdf12754c0b3b25fd379d28e9c52c482ce589de34b967d30730c9a81c38",
       "ext": ".md",
       "kind": "text"
-    },
-    {
-      "source_key": "zyr",
-      "source_zip": "ZIP-your-Research-main.claude-code-runtime-updated-20260331.zip",
-      "source_relpath": "router/__pycache__/route.cpython-310.pyc",
-      "packed_relpath": "router/__pycache__/route.cpython-310.pyc",
-      "size_bytes": 10468,
-      "sha256": "8ef149a2e19bc34a067a6a38edc5fa74a8c0c073e41a293bc60fb7ea50c1dc3c",
-      "ext": ".pyc",
-      "kind": "binary_or_asset"
     },
     {
       "source_key": "zyr",
@@ -3969,66 +3959,6 @@
       "sha256": "a91c5956257f149a735c036bb91738520f6d58c91fded7146007c2d488bc33dd",
       "ext": ".jsonl",
       "kind": "text"
-    },
-    {
-      "source_key": "zyr",
-      "source_zip": "ZIP-your-Research-main.claude-code-runtime-updated-20260331.zip",
-      "source_relpath": "tools/__pycache__/build_all.cpython-310.pyc",
-      "packed_relpath": "tools/__pycache__/build_all.cpython-310.pyc",
-      "size_bytes": 1209,
-      "sha256": "56b728f6c2822c1a45da7aea45ddc0edf6d232f0b87c7770a628ca70f423d739",
-      "ext": ".pyc",
-      "kind": "binary_or_asset"
-    },
-    {
-      "source_key": "zyr",
-      "source_zip": "ZIP-your-Research-main.claude-code-runtime-updated-20260331.zip",
-      "source_relpath": "tools/__pycache__/build_index.cpython-310.pyc",
-      "packed_relpath": "tools/__pycache__/build_index.cpython-310.pyc",
-      "size_bytes": 2794,
-      "sha256": "33fa1e80b60b230011bc275682bc98099ea75a3235179bfebe1ccaffe05084da",
-      "ext": ".pyc",
-      "kind": "binary_or_asset"
-    },
-    {
-      "source_key": "zyr",
-      "source_zip": "ZIP-your-Research-main.claude-code-runtime-updated-20260331.zip",
-      "source_relpath": "tools/__pycache__/build_proof_engine_v1_5.cpython-310.pyc",
-      "packed_relpath": "tools/__pycache__/build_proof_engine_v1_5.cpython-310.pyc",
-      "size_bytes": 1852,
-      "sha256": "d26403158fc67a5ac56765a95d9c61362dd1fe8e9221a7c2b2e26bf799e8d94b",
-      "ext": ".pyc",
-      "kind": "binary_or_asset"
-    },
-    {
-      "source_key": "zyr",
-      "source_zip": "ZIP-your-Research-main.claude-code-runtime-updated-20260331.zip",
-      "source_relpath": "tools/__pycache__/build_skill_map.cpython-310.pyc",
-      "packed_relpath": "tools/__pycache__/build_skill_map.cpython-310.pyc",
-      "size_bytes": 3526,
-      "sha256": "46122bc5c09d83055affd82e82d3130d9a2ea1514036ab2195db50db9c2c37a4",
-      "ext": ".pyc",
-      "kind": "binary_or_asset"
-    },
-    {
-      "source_key": "zyr",
-      "source_zip": "ZIP-your-Research-main.claude-code-runtime-updated-20260331.zip",
-      "source_relpath": "tools/__pycache__/simulate_proof_verification_v1_5.cpython-310.pyc",
-      "packed_relpath": "tools/__pycache__/simulate_proof_verification_v1_5.cpython-310.pyc",
-      "size_bytes": 4098,
-      "sha256": "2479147d6e782f6832832fb984d4c3c95e968cbb29aaf94fe38c4cf827a9ad2c",
-      "ext": ".pyc",
-      "kind": "binary_or_asset"
-    },
-    {
-      "source_key": "zyr",
-      "source_zip": "ZIP-your-Research-main.claude-code-runtime-updated-20260331.zip",
-      "source_relpath": "tools/__pycache__/validate_proof_verification_corpus_v1_5.cpython-310.pyc",
-      "packed_relpath": "tools/__pycache__/validate_proof_verification_corpus_v1_5.cpython-310.pyc",
-      "size_bytes": 3697,
-      "sha256": "7c3efbea19d82d95b24f24a48e7c05349e557607e217c760bde6e63b93a7c607",
-      "ext": ".pyc",
-      "kind": "binary_or_asset"
     },
     {
       "source_key": "zyr",

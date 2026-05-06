@@ -1,30 +1,36 @@
 # ZIP-your-Research (ZYR) v1.6.3
 
-**ZIP-your-Research (ZYR)** is a repository-first research workflow system for GPT/Codex-style assistants. It provides a task-locking protocol, a deterministic routing layer, and a set of evidence-aware research skills so that complex research work can be continued, audited, revised, and packaged without losing task boundaries or file-state assumptions.
+**ZIP-your-Research (ZYR)** is a repository-first research workflow system for GPT/Codex-style assistants. It is designed for research tasks where the assistant must preserve task boundaries, evidence, file state, and final artifacts across long conversations and repeated revisions.
 
-ZYR is not an autonomous job runner. It is a control and verification layer: it tells an assistant how to identify the task, select the correct engine, preserve evidence, execute the work, and report what has or has not been verified.
+ZYR is not an autonomous job runner. It is a control-and-verification layer: it tells an assistant how to lock a task, select the correct engine, preserve evidence, execute the work, and report what has or has not been verified.
 
-## Design intent
+## What ZYR is for
 
-ZYR is designed for research conversations where correctness matters more than fluent surface completion. It is especially useful for:
+Use ZYR when the work is too important to be handled as ordinary chat. Typical use cases include:
 
-- manuscript and proposal revision;
-- claim-evidence and reviewer-style audits;
-- code repair and reproducibility checks;
-- experiment planning and result interpretation;
-- publication-quality figure workflows;
-- release packaging and migration handoff.
+- manuscript, proposal, recommendation-letter, and README revision;
+- claim-evidence review, proof-style audit, and reviewer-response preparation;
+- code repair, repository cleanup, release packaging, and CI validation;
+- experiment planning, result interpretation, metric sanity checks, and reproducibility review;
+- publication-quality figure planning, caption audit, and plotting-code repair;
+- loss-minimizing migration prompts and append-only project handoff.
 
-The core rule is simple: **lock the task before executing it, route the task to the correct engine, and verify the resulting artifact before accepting it.**
+The core rule is:
 
-## Execution model
+```text
+Lock the task before executing it.
+Route the task to the right engine.
+Verify the artifact before accepting the result.
+```
 
-A standard ZYR session follows the sequence below:
+## Execution flow
+
+A standard ZYR session follows the same state-machine logic as the earlier ZYR line:
 
 ```text
 repository or ZIP loaded
 → bootstrap protocol
-→ migration detection if applicable
+→ migration detection if needed
 → intake and task-boundary lock
 → MODE_LOCK
 → explicit CONFIRM when required
@@ -34,43 +40,45 @@ repository or ZIP loaded
 → artifact output and validation report
 ```
 
-The v1.6 line keeps the earlier ZYR state-machine and completion discipline. The v1.6.3 release makes the integrated writing/figure/S340 layer CI-clean, removes duplicate skill IDs, and formalizes the README and contribution rules.
+![ZIP-your-Research architecture](docs/assets/zyr_research_os_arch_v1_6.svg)
+
+The v1.6 line is additive: it keeps the boot, mode-lock, proof, completion, and migration discipline from v1.5, and adds explicit research-writing, figure-making, S340 writing-quality review, and no-omission release-validation workflows.
 
 ## Architecture
 
-| Plane | Purpose | Canonical paths |
+| Plane | Purpose | Main paths |
 |---|---|---|
-| Control plane | Bootstrap, migration, intake, mode lock, locked execution, global guardrails | `boot/`, `router/` |
+| Control plane | Bootstrap, migration detection, intake, mode lock, locked execution, and global guardrails | `boot/`, `router/` |
 | Engine plane | Composite execution engines for broad task families | `skills/proof_engine/`, `skills/writing_engine/`, `skills/coding_engine/` |
-| Skill plane | Atomic research, experiment, paper, reproducibility, and integrated S340 skills | `skills/research_core/`, `skills/exp/`, `skills/paper_ops/`, `skills/reproducibility/`, `skills/rwf_s340/` |
+| Skill plane | Research, experiment, paper-operation, reproducibility, and integrated writing/figure/S340 skills | `skills/research_core/`, `skills/exp/`, `skills/paper_ops/`, `skills/reproducibility/`, `skills/rwf_s340/` |
 | Source-preservation plane | Upstream and user-authored source materials retained for attribution and reference | `ext/src/` |
-| Validation plane | Manifests, checksums, path reports, validators, release audits | `manifests/`, `tools/`, `artifacts/` |
+| Validation plane | Manifests, checksums, path reports, validators, and release checks | `manifests/`, `tools/`, `artifacts/` |
 
-The canonical integrated v1.6 skills live under `skills/rwf_s340/`. The earlier duplicate wrapper files under `skills/rw/` and `skills/fig_ops/` were removed because strict validation requires one unique file per skill ID.
+## If I need X, which engine should I control?
 
-## Task-to-engine routing
+A useful ZYR instruction should specify the task type, the engine or skill stack, the input material, the required artifact, and the final validation. Use the table below as the default routing guide.
 
-Use this table when giving ZYR instructions. A high-quality prompt should specify what needs to be done and which engine or skill stack should be used.
-
-| Task | Control ZYR to call | Required or typical skills | Expected outcome |
+| If the task is... | Control ZYR to call... | Typical skills / files | Expected result |
 |---|---|---|---|
-| Start a new task or resume a migrated task | Bootstrap + router | `boot/00_BOOTSTRAP_PROTOCOL_v1.3.2.md`, `boot/04_MODE_LOCK_FORMAT_v1.3.2.md` | Locked task boundary, artifact type, acceptance criteria, and execution mode |
-| Verify a research idea, theorem, method, or explanation | `proof_engine` | `skills/proof_engine/MASTER_v1.5.md`, often `S203`, `S226`, `S227`, `S240`, `S241` | Fact/assumption/inference separation, contradiction checks, unsupported-claim report |
-| Write or restructure a manuscript section, proposal, research plan, or README narrative | `writing_engine` + integrated S340 route | `S601` + mandatory `S640`; add `S602` for claim-evidence review | Problem-gap-method-evidence structure before sentence-level polishing |
-| Conduct reviewer-style critique or line-level logic audit | `proof_engine` + integrated S340 route | `S602` + mandatory `S640`; often `S203`, `S226`, `S503` | Unsupported claims, weak causal links, missing evidence, and concrete revision actions |
-| Polish Chinese/English prose, compress text, expand text, translate, or reduce AI-like tone | `writing_engine` | `S603` + mandatory `S640` | Delta-aware revision that preserves locked facts, formulas, citations, and numbers |
-| Write result paragraphs, figure captions, table captions, or ablation narratives | `writing_engine` + integrated result route | `S604` + `S640`; add `S623` for visual claims | Evidence-bounded result narrative with correct metric direction and caption scope |
-| Design a scientific figure or architecture diagram | Integrated figure route | `S621` + `S623`; add `S622` for executable plotting | Claim-driven layout, panel semantics, caption plan, and visual risk check |
-| Generate or repair Matplotlib/SVG/PNG/PDF figure output | `coding_engine` + figure route | `S622` + `S621` + `S623`; add `S431` when execution is possible | Minimal executable plotting code and inspected figure output when possible |
-| Debug code, patch scripts, or prepare release code | `coding_engine` | `skills/coding_engine/MASTER_v1.3.2.md`, often `S402`, `S407`, `S421`, `S431`, `S432` | Minimal patch, changed-file list, runnable commands, and closed-loop verification |
-| Plan experiments, select metrics, design ablations, or check experimental completeness | `proof_engine` + experiment skills | `S301`-`S328`, especially `S301`, `S303`, `S305`, `S307`, `S327`, `S328` | Minimal decidable experiment design and claim-evidence alignment |
-| Package artifacts, audit reproducibility, or prepare an open-source release | `coding_engine` + reproducibility skills | `S407`, `S422`, `S424`, `S428`, `S431` | Reproducible artifact bundle with inventory, environment, checksums, and release notes |
-| Repair this ZYR package or validate ZIP/source completeness | `S650` validation route | `S650`, `tools/validate_no_omission.py`, `tools/validate_v7_2.py`, `tools/drift_audit_v1_3.py` | Duplicate/path/reference/manifest validation and release-ready ZIP |
-| Generate a migration prompt or append-only handoff | Migration workflow + `proof_engine` | `boot/01_MIGRATION_PROMPT_TEMPLATE_v1.5.md`, `S203`, `S226`; add `S650` for files | Loss-minimizing project state transfer with files, decisions, constraints, blockers, and next actions |
+| Start a new task or resume a migrated project | Bootstrap + router | `boot/00_BOOTSTRAP_PROTOCOL_v1.3.2.md`, `boot/04_MODE_LOCK_FORMAT_v1.3.2.md` | Locked task boundary, deliverable type, acceptance criteria, and execution mode |
+| Verify a research idea, theorem, derivation, or method claim | `proof_engine` | `skills/proof_engine/MASTER_v1.5.md`, often `S203`, `S226`, `S227`, `S240`, `S241` | Fact / assumption / inference separation, contradiction check, unsupported-claim report |
+| Review a manuscript for logic, contribution, and claim-evidence alignment | `proof_engine` + writing review route | `S602` + mandatory `S640` | Reviewer-style issues, section-level causal gaps, evidence mismatch, and concrete fixes |
+| Write or restructure a paper section, proposal, research plan, or README | `writing_engine` + S340 review | `S601` + mandatory `S640`; add `S602` for claim-evidence review | Problem-gap-method-evidence structure before sentence-level polish |
+| Revise prose, compress wording, expand reasoning, translate, or reduce AI-like tone | `writing_engine` | `S603` + mandatory `S640` | Delta-aware revision that preserves locked meaning, citations, numbers, formulas, and style constraints |
+| Revise a Word document with tracked/redline-style constraints | `writing_engine` + document workflow | `S603` + `S640`; add proof check after revision | Template-preserving Word revision, red-marked additions/changes, and revision report |
+| Write result paragraphs, table captions, figure captions, or ablation narratives | `writing_engine` + result-narrative route | `S604` + `S640`; add `S623` when a visual claim is involved | Evidence-bounded result narrative with correct metric direction and caption scope |
+| Plan experiments, choose metrics, design ablations, or check experimental completeness | `proof_engine` + experiment skills | `S301`-`S328`, especially `S301`, `S303`, `S305`, `S307`, `S327`, `S328` | Minimal decidable experiment design and claim-evidence alignment |
+| Analyze experiment results and decide whether a paper claim is supported | experiment workflow + `proof_engine` | `S602`, `S305`, `S307`, `S327`, `S328` | Claim-evidence matrix, counterexample check, metric-risk report, and narrative boundary |
+| Design a scientific figure or architecture diagram | figure workflow | `S621` + `S623`; add `S622` for executable plotting | Claim-driven layout, panel semantics, visual-risk check, and caption plan |
+| Generate or repair Matplotlib / SVG / PNG / PDF figure code | `coding_engine` + figure workflow | `S622` + `S621` + `S623`; add `S431` when execution is possible | Minimal executable plotting code and inspected output when possible |
+| Debug code, patch scripts, or prepare release code | `coding_engine` | `skills/coding_engine/MASTER_v1.3.2.md`, often `S402`, `S407`, `S421`, `S431`, `S432` | Smallest sufficient patch, changed-file list, runnable commands, and verification result |
+| Package artifacts, check reproducibility, or prepare an open-source release | `coding_engine` + reproducibility skills | `S407`, `S422`, `S424`, `S428`, `S431` | Inventory, environment notes, checksums, release notes, and validation result |
+| Validate this ZYR package, a ZIP, or a source-preservation update | release-validation route | `S650`, `tools/validate_no_omission.py`, `tools/validate_v7_2.py`, `tools/drift_audit_v1_3.py` | Duplicate/path/reference/manifest validation and package-readiness report |
+| Generate a migration prompt or append-only handoff | migration workflow + `proof_engine` | `boot/01_MIGRATION_PROMPT_TEMPLATE_v1.5.md`, `S203`, `S226`; add `S650` when files are involved | Loss-minimizing project state transfer with files, decisions, constraints, blockers, and next actions |
 
-## Efficient invocation pattern
+## Efficient prompt pattern
 
-Do not use vague instructions such as “call ZYR and optimize this.” Instead, bind the task to a route:
+Do not write only “call ZYR and optimize this.” Bind the task to a route:
 
 ```text
 Call ZYR v1.6.3 and execute under MODE_LOCK.
@@ -82,7 +90,7 @@ Hard constraints: [preserve template, redline edits, no fabricated checks, no un
 Final validation: report passed checks, failed checks, unverified items, and the next minimal action.
 ```
 
-For Chinese workflows, the same contract can be written as:
+Chinese prompt template:
 
 ```text
 调用 ZYR v1.6.3，按 MODE_LOCK 执行，不跳过 routing 和 validation。
@@ -94,7 +102,7 @@ For Chinese workflows, the same contract can be written as:
 最后必须输出：已完成内容、判断依据、验证结果、未验证项、下一步最小动作。
 ```
 
-## Canonical usage recipes
+## Usage recipes
 
 ### Paper logic audit
 
@@ -139,13 +147,13 @@ Constraints: check duplicate skill IDs, stale paths, manifests, checksums, path 
 
 ## Installation and validation
 
-Install the only runtime dependency used by the validators:
+Install validator dependencies:
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-Run the standard CI-equivalent validation from the repository root:
+Run the standard validation suite from the repository root:
 
 ```bash
 python tools/cleanup_legacy_duplicate_paths_v1_6_3.py
@@ -154,7 +162,7 @@ python tools/validate_v7_2.py
 python tools/drift_audit_v1_3.py
 ```
 
-Run the integrated package checks when validating a release ZIP or source-preservation update:
+Run the integrated release checks when validating a ZIP or source-preservation update:
 
 ```bash
 python tools/validate_no_omission.py
@@ -164,38 +172,56 @@ python router/route.py "matplotlib publication figure svg png"
 python router/route.py "ZIP release no omission checksum path length"
 ```
 
-If you are upgrading an existing Git checkout by copying files from a release ZIP, run the cleanup command before validation. It removes stale aliases such as `skills/experiments/` and older long-name skill files that can otherwise create duplicate skill IDs.
+If you update an existing Git checkout by copying files from a release ZIP, run the cleanup command before validation. Otherwise stale files left by the old checkout may still trigger duplicate skill IDs.
 
 ## Repository map
 
 ```text
 boot/                         bootstrap, migration, intake, mode lock, locked execution
 router/                       deterministic routing and route addenda
-router/ext_router/            integrated research-writing/figure/S340 routing notes
-skills/proof_engine/          proof, derivation, claim, and logic verification engine
-skills/writing_engine/        manuscript and prose rewriting engine
+router/ext_router/            integrated research-writing, figure, and S340 routing notes
+skills/proof_engine/          proof, derivation, claim, and logic-verification engine
+skills/writing_engine/        manuscript and prose-rewriting engine
 skills/coding_engine/         debugging, patching, and code-verification engine
 skills/research_core/         research framing, novelty, literature, and method checks
 skills/exp/                   experiment design, metrics, ablations, and sanity checks
 skills/paper_ops/             paper operations, rebuttal, captions, and release notes
 skills/reproducibility/       artifacts, dependency, security, and verification skills
-skills/rwf_s340/              canonical v1.6 integrated S601-S604, S621-S623, S640, S650 skills
+skills/rwf_s340/              integrated S601-S604, S621-S623, S640, and S650 workflows
 ext/src/                      preserved upstream and user-authored source materials
 manifests/                    source inventories, checksums, path reports, and release audits
 tools/                        validators, builders, cleanup scripts, and packaging utilities
 artifacts/                    durable task, evidence, proof, and release artifacts
 ```
 
-## Integrated sources and attribution
+## Acknowledgments and references
 
-The v1.6 line preserves integrated source materials under `ext/src/` and exposes them through ZYR-native wrapper skills under `skills/rwf_s340/`.
+ZYR is open work. Many of its engineering decisions were shaped by public research systems, proof-verification papers, open learning materials, and open-source writing/figure-making repositories. These works informed the design; they are not claimed here as original ZYR inventions.
 
-- `ext/src/rpws/`: research-paper writing source materials.
-- `ext/src/awesome/`: academic writing prompt collections and examples.
-- `ext/src/figures/`: scientific figure-making references, demos, scripts, and assets.
-- `ext/src/S340_v4.2_theory_global_skill_bundle/`: maintainer-authored S340 style-and-logic ruleset.
+Architecture and control-plane references include [Google AI co-scientist](https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/), [OpenAI deep research](https://openai.com/index/introducing-deep-research/), [A Vision for Auto Research with LLM Agents](https://arxiv.org/abs/2504.18765), [PiFlow](https://arxiv.org/abs/2505.15047), [AI-Researcher](https://arxiv.org/abs/2505.18705), [ResearStudio](https://arxiv.org/abs/2510.12194), [FS-Researcher](https://arxiv.org/abs/2602.01566), [OR-Agent](https://arxiv.org/abs/2602.13769), [EvoScientist](https://arxiv.org/abs/2603.08127), [ResearchPilot](https://arxiv.org/abs/2603.14629), [AI-Supervisor](https://arxiv.org/abs/2603.24402), and the public-description source for [FARS](https://www.thepaper.cn/newsDetail_forward_32600597).
 
-See `docs/EXTERNAL_SKILL_ATTRIBUTION_v1.6.md` for attribution details and integration boundaries.
+Proof and theory references include [Pessimistic Verification for Open-Ended Math Questions](https://arxiv.org/abs/2511.21522), [Hard2Verify](https://arxiv.org/abs/2510.13744), [Scaling Flaws of Verifier-Guided Search in Mathematical Reasoning](https://arxiv.org/abs/2502.00271), [Improving Value-based Process Verifier via Low-Cost Variance Reduction](https://arxiv.org/abs/2508.10539), [Asking LLMs to Verify First is Almost Free Lunch](https://arxiv.org/abs/2511.21734), [AI Mathematician](https://arxiv.org/abs/2505.22451), [StepProof](https://arxiv.org/abs/2506.10558), [Goedel-Prover](https://arxiv.org/abs/2502.07640), [Goedel-Prover-V2](https://arxiv.org/abs/2508.03613), [Leanabell-Prover-V2](https://arxiv.org/abs/2507.08649), and [APOLLO](https://arxiv.org/abs/2505.05758).
+
+Open learning and community references include [Hello-Agents (Datawhale)](https://github.com/datawhalechina/hello-agent).
+
+The v1.6 writing and figure workflows also integrate and preserve the following external sources with attribution:
+
+- [Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills), integrated under `ext/src/rpws/`, for reviewer-facing paper structure, section guides, and claim-evidence writing discipline.
+- [Prof. Peng Sida's open research notes](https://github.com/pengsida/learning_research), acknowledged through the upstream attribution of Research-Paper-Writing-Skills.
+- [awesome-ai-research-writing](https://github.com/Leey21/awesome-ai-research-writing), integrated under `ext/src/awesome/`, for academic-writing prompts, bilingual rewriting patterns, logic-checking prompts, and examples.
+- [figures4papers](https://github.com/ChenLiu-1996/figures4papers), integrated under `ext/src/figures/`, for scientific figure-design principles, plotting references, demonstrations, and assets.
+
+The external source trees are retained as source materials. ZYR adds routing wrappers, validation rules, and task contracts around them so that writing, figure, and release tasks can be executed under the same mode-lock and verification discipline as the rest of the package.
+
+For detailed attribution and integration boundaries, see:
+
+- `docs/ATTRIBUTION.md`
+- `docs/EXTERNAL_SKILL_ATTRIBUTION_v1.6.md`
+- `docs/integrated_external_skills/README_integrated_stack_v1.0.md`
+- `research/auto_research_inventory.md`
+- `research/engineering_alignment_matrix.md`
+- `research/fars_deep_dive.md`
+- `research/pessimistic_verification_lineage.md`
 
 ## Safety and acceptance rules
 
@@ -205,7 +231,7 @@ ZYR treats the following as mandatory:
 - do not report an unexecuted check as completed;
 - do not hide uncertainty inside polished prose;
 - do not reduce research problems to unsupported heuristic tuning;
-- do not accept writing output before the relevant S640 checks are satisfied;
+- do not accept writing output before the relevant S340 checks are satisfied;
 - do not call a package repaired until duplicate IDs, path references, manifests, and validation scripts have been checked.
 
 ## Maintainer and license
