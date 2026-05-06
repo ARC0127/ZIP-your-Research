@@ -8,8 +8,8 @@ Why this exists:
 - This script removes only known stale aliases when the canonical replacement exists.
 
 Usage:
-  python tools/cleanup_legacy_duplicate_paths_v1_6_4.py --dry-run
-  python tools/cleanup_legacy_duplicate_paths_v1_6_4.py
+  python tools/cleanup_legacy_duplicate_paths_v1_6_5.py --dry-run
+  python tools/cleanup_legacy_duplicate_paths_v1_6_5.py
 """
 from __future__ import annotations
 

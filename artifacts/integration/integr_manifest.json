@@ -5,7 +5,7 @@
   "integration_principle": "Preserve external source trees under ext/src and expose them through engine-bound ZYR wrappers.",
   "engines": {
     "writing_engine": "skills/writing_engine/MASTER_v1.3.2.md",
-    "figure_engine": "skills/figure_engine/MASTER_v1.6.4.md",
+    "figure_engine": "skills/figure_engine/MASTER_v1.6.5.md",
     "proof_engine": "skills/proof_engine/MASTER_v1.5.md",
     "coding_engine": "skills/coding_engine/MASTER_v1.3.2.md"
   },

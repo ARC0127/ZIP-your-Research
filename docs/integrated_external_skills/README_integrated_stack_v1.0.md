@@ -1,6 +1,6 @@
 # Integrated Research-Writing-Figure Stack
 
-This document describes the v1.6.4 integrated stack.
+This document describes the v1.6.5 integrated stack.
 
 ## Preserved external sources
 
@@ -14,7 +14,7 @@ They are source backends, not duplicated routable skill directories.
 
 ## ZYR-native execution layer
 
-The current v1.6.4 execution layer is:
+The current v1.6.5 execution layer is:
 
 ```text
 writing tasks
@@ -32,7 +32,7 @@ package validation
 → S650
 ```
 
-The integrated wrappers live under `skills/rwf_s340/`. The figure-engine master lives under `skills/figure_engine/MASTER_v1.6.4.md`.
+The integrated wrappers live under `skills/rwf_s340/`. The figure-engine master lives under `skills/figure_engine/MASTER_v1.6.5.md`.
 
 ## Non-omission guarantee
 

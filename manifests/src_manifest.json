@@ -1,6 +1,6 @@
 {
   "version": "1.6.5",
-  "generated_for": "ZYR v1.6.5 full clean release",
+  "generated_for": "ZYR v1.6.5 CI-fixed release",
   "files": [
     {
       "source_zip": "current_release_v1.6.5",
@@ -28,14 +28,14 @@
       "source_relpath": ".github/workflows/ci.yml",
       "packed_relpath": ".github/workflows/ci.yml",
       "size": 758,
-      "sha256": "8ad1e737ceb99bfea095eadd201145c8e53a40afbf231c309d0c5c0ee56fbb96"
+      "sha256": "26dd8317ad87b20ba175d2816f18317b42d9c32ff9025a1a0812e8f10a6650d2"
     },
     {
       "source_zip": "current_release_v1.6.5",
       "source_relpath": ".github/workflows/ci_v7_2.yml",
       "packed_relpath": ".github/workflows/ci_v7_2.yml",
       "size": 758,
-      "sha256": "8ad1e737ceb99bfea095eadd201145c8e53a40afbf231c309d0c5c0ee56fbb96"
+      "sha256": "26dd8317ad87b20ba175d2816f18317b42d9c32ff9025a1a0812e8f10a6650d2"
     },
     {
       "source_zip": "current_release_v1.6.5",
@@ -182,7 +182,7 @@
       "source_relpath": "artifacts/integration/integr_manifest.json",
       "packed_relpath": "artifacts/integration/integr_manifest.json",
       "size": 37422,
-      "sha256": "2df8d69326d500f24284a26d35ddc33ac240f5a646edbadb594d9cc4c5c961bb"
+      "sha256": "4f1fed7e5bf9400c410a4551ff2b19d17abda824f7977ddc0198b4addb6f190a"
     },
     {
       "source_zip": "current_release_v1.6.5",
@@ -686,7 +686,7 @@
       "source_relpath": "docs/integrated_external_skills/README_integrated_stack_v1.0.md",
       "packed_relpath": "docs/integrated_external_skills/README_integrated_stack_v1.0.md",
       "size": 1404,
-      "sha256": "bc5db2327732bb45d724a75eae6a82798812229e935e78cfd8dab1aa1fbd2bb6"
+      "sha256": "e9fdb047fcec94137ec0facc0201ef558d3e3d42de348da0529676a031804d3d"
     },
     {
       "source_zip": "current_release_v1.6.5",
@@ -1677,13 +1677,6 @@
     },
     {
       "source_zip": "current_release_v1.6.5",
-      "source_relpath": "manifests/RELEASE_AUDIT_v1.6.4.md",
-      "packed_relpath": "manifests/RELEASE_AUDIT_v1.6.4.md",
-      "size": 683,
-      "sha256": "ce0e8241f4c441ef2ee6ccc8654b812054a043d70de5592a3e1518a814a66e37"
-    },
-    {
-      "source_zip": "current_release_v1.6.5",
       "source_relpath": "manifests/ROUTE_SMOKE_TESTS_v1.6.json",
       "packed_relpath": "manifests/ROUTE_SMOKE_TESTS_v1.6.json",
       "size": 403,
@@ -1701,7 +1694,7 @@
       "source_relpath": "manifests/src_FILE_integr_TABLE.md",
       "packed_relpath": "manifests/src_FILE_integr_TABLE.md",
       "size": 45714,
-      "sha256": "8782056c4f41b800d81362f15cbf2f15e04563212d9e72272182faa206d8c67e"
+      "sha256": "3510a92bbe117b8185c50b7e6e6d80b7d9d18fcba5421479890db6c304dc5be3"
     },
     {
       "source_zip": "current_release_v1.6.5",
@@ -3548,8 +3541,8 @@
       "source_zip": "current_release_v1.6.5",
       "source_relpath": "skills/writing_engine/MASTER_v1.3.2.md",
       "packed_relpath": "skills/writing_engine/MASTER_v1.3.2.md",
-      "size": 201225,
-      "sha256": "32100c9c7943de56deb984b8325cdba31397adbbf60d0c0ce97d2c777ce029b8"
+      "size": 201227,
+      "sha256": "a0d4c6ad5262d8e9d1468eae4d0be05193ec040d177507537e76b3904b67c14c"
     },
     {
       "source_zip": "current_release_v1.6.5",
@@ -3829,7 +3822,7 @@
       "source_relpath": "tools/cleanup_legacy_duplicate_paths_v1_6_5.py",
       "packed_relpath": "tools/cleanup_legacy_duplicate_paths_v1_6_5.py",
       "size": 3645,
-      "sha256": "2cf69eeb2491112dc2fb715e4c7620a74fe4cf4a1deb04aefd16e55e08423f3c"
+      "sha256": "47177731386179593a0b919a2c8cb5a822334818f95f2a55079a4482c38b5e37"
     },
     {
       "source_zip": "current_release_v1.6.5",

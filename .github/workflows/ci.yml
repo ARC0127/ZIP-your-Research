@@ -17,7 +17,7 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
       - name: Remove stale duplicate paths from in-place upgrades
-        run: python tools/cleanup_legacy_duplicate_paths_v1_6_4.py
+        run: python tools/cleanup_legacy_duplicate_paths_v1_6_5.py
       - name: Build generated indexes
         run: python tools/build_all.py
       - name: Validate skill schema and unique IDs

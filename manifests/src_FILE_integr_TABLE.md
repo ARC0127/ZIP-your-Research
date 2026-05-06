@@ -1,4 +1,4 @@
-# Source File Integration Table — v1.6.4
+# Source File Integration Table — v1.6.5
 
 | source_key | packed_relpath | kind | size_bytes |
 |---|---|---:|---:|
@@ -95,9 +95,9 @@
 | zyr | `docs/audits/AUDIT_platform_zyr_skills_docs_pdfs_spr_40841d89.4.0_20260222.md` | text | 12032 |
 | zyr | `docs/dev/ADMIN_MODE.md` | text | 1904 |
 | zyr | `docs/dev/DEV_MODE.md` | text | 924 |
-| zyr | `docs/how_to_use/PLATFORM_SKILLS_integr_v1.6.4.md` | text | 2426 |
+| zyr | `docs/how_to_use/PLATFORM_SKILLS_integr_v1.6.5.md` | text | 2426 |
 | zyr | `docs/how_to_use/README.md` | text | 656 |
-| zyr | `docs/how_to_use/ZYR_ENGINE_BINDING_HOW_TO_USE_v1.6.4.md` | text | 3185 |
+| zyr | `docs/how_to_use/ZYR_ENGINE_BINDING_HOW_TO_USE_v1.6.5.md` | text | 3185 |
 | zyr | `docs/integrated_external_skills/LOGIC_RECONSTRUCTION_v1.0.md` | text | 2076 |
 | zyr | `docs/integrated_external_skills/README_integrated_stack_v1.0.md` | text | 1404 |
 | zyr | `docs/workflows/WF_DMS.md` | text | 632 |
@@ -299,7 +299,7 @@
 | zyr | `skills/exp/S327_experiment_completeness_check.md` | text | 2531 |
 | zyr | `skills/exp/S328_experiment_rigor_scorecard.md` | text | 1268 |
 | zyr | `skills/exp/S336_pre_analysis_plan_builder.md` | text | 1278 |
-| zyr | `skills/figure_engine/MASTER_v1.6.4.md` | text | 2158 |
+| zyr | `skills/figure_engine/MASTER_v1.6.5.md` | text | 2158 |
 | zyr | `skills/master_integrated/MASTER_research_write_fig_stack_v1.0.md` | text | 1690 |
 | zyr | `skills/paper_ops/S501_rebuttal_generator.md` | text | 1499 |
 | zyr | `skills/paper_ops/S502_reviewer_simulator.md` | text | 1485 |
@@ -546,7 +546,7 @@
 | zyr | `tools/build_proof_engine_v1_5.py` | text | 1481 |
 | zyr | `tools/build_skill_map.py` | text | 3373 |
 | zyr | `tools/build_write_engine_v1_3.py` | text | 1550 |
-| zyr | `tools/cleanup_legacy_duplicate_paths_v1_6_4.py` | text | 3645 |
+| zyr | `tools/cleanup_legacy_duplicate_paths_v1_6_5.py` | text | 3645 |
 | zyr | `tools/drift_audit_v1_3.py` | text | 3333 |
 | zyr | `tools/gen_fuzz_payloads_v1_3.py` | text | 663 |
 | zyr | `tools/gen_skills_catalog_v1_3.py` | text | 1176 |
