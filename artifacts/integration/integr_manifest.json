@@ -1,0 +1,855 @@
+{
+  "package_name": "ZYR Integrated Research-Writing-Figure Skills Pack",
+  "version": "v1.6.1-repaired-paths",
+  "created_utc": "2026-05-06T03:53:09.143465+00:00",
+  "base_zyr_zip": "ZIP-your-Research-main.claude-code-runtime-updated-20260331.zip",
+  "integration_principle": "additive ZYR-native S6xx skills + router hooks + verbatim source retention",
+  "new_skills": [
+    "skills/fig_ops/S621_publication_fig_design_theory.md",
+    "skills/fig_ops/S622_matplotlib_publication_script_builder.md",
+    "skills/fig_ops/S623_visual_claim_caption_audit.md",
+    "skills/master_integrated/MASTER_research_write_fig_stack_v1.0.md",
+    "skills/rw/S601_paper_story_section_arch.md",
+    "skills/rw/S602_claim_evidence_reverse_outline_review.md",
+    "skills/rw/S603_bilingual_human_voice_delta_rewrite.md",
+    "skills/rw/S604_experiment_result_narrative_and_ta_122557d2.md"
+  ],
+  "router_files_changed_or_added": [
+    "router/SKILL_MAP_v1.3.2.md",
+    "router/taxonomy.yaml",
+    "router/route.py",
+    "router/ext_router/ROUTER_ADDENDUM_research_write_figures_v1.0.md"
+  ],
+  "source_inventory": [
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": ".gitignore",
+      "size_bytes": 94,
+      "sha256": "cb1583eda203b35e8c9b2996866c4707e6fea73fe8df9488dc20a0123532eade",
+      "text_integrated": false
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "LICENSE",
+      "size_bytes": 1067,
+      "sha256": "35c09859b7c68b287e3943850006eea0f792a7ecb144c672146c5bbae0e6c09e",
+      "text_integrated": false
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "README.md",
+      "size_bytes": 2312,
+      "sha256": "37c5e07ce0c58c6ea3fb54e844d33da724e710095198fea459e70d974311b05b",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "README_zh.md",
+      "size_bytes": 2135,
+      "sha256": "5c5ebe460e487c31db1cbc08bf440f6b3ae8fc6cfe806238bbb81dc5f9de8634",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/SKILL.md",
+      "size_bytes": 4833,
+      "sha256": "1d55abfeb5203772879c4ae7332f08c672f3129a02de7cba8d07c7f1dff58ba9",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/agents/openai.yaml",
+      "size_bytes": 243,
+      "sha256": "8b3beea770d261fe257c5dde00803594aa436f225c768c1fca7f4904216d80de",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/abstract.md",
+      "size_bytes": 3628,
+      "sha256": "992251e754bdbe6d9e49070cde496f2ca23e78bfce940bd32421a2a70d01e574",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/conclusion.md",
+      "size_bytes": 1244,
+      "sha256": "64de66f24ceb42ff5cefb4498a8bd16f595661bbaa604d9cde6e743b39dab9c6",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/does-my-writing-flow-source.md",
+      "size_bytes": 4990,
+      "sha256": "49e9d1957f74c4e1daf30ec161c0d328d4187b534d50aab58ee12911eb474ce8",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/abstract/template-a.md",
+      "size_bytes": 950,
+      "sha256": "c4cec6346be6d76350bfacea36c1abad5bce669e810f7facc2c884b664a8d83e",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/abstract/template-b.md",
+      "size_bytes": 3265,
+      "sha256": "dc41e8d5206fca72dd41b2cd188ec447b7735b54c164b6da1785bd88c2e0b78d",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/abstract/template-c.md",
+      "size_bytes": 1750,
+      "sha256": "4f6269a1b1ad47055eb4287cdd0410ea1d1d1198dbf02d74671f50d3fa0d1447",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/abstract-examples.md",
+      "size_bytes": 875,
+      "sha256": "8228ce8ec4a35b8339bcb439c4292bb2d678e5be17af2ef1d7631d03ebf40010",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/index.md",
+      "size_bytes": 2402,
+      "sha256": "8652823627fd0f56a5e2be3eff192dcc5925f482380d7b45321cd9cfc6ba4b03",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/introduction/novel-task-challenge-decomposition.md",
+      "size_bytes": 1550,
+      "sha256": "5613ddd24911efde77aaf35a7ff883a9ef886b99b9863782aeec426282cd286c",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/introduction/pipeline-not-recommended-abstract-only.md",
+      "size_bytes": 2976,
+      "sha256": "33ab449b0eadc7cc968c0ff4cddcc4538811d2abc2a0497ebca15c629da80cd2",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/introduction/pipeline-version-1-one-contribution-multi-advantages.md",
+      "size_bytes": 2039,
+      "sha256": "a39b95c76a19f7fd214048dd2e8861d825495662b9144529326abc4ab94c7f23",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/introduction/pipeline-version-2-two-contributions.md",
+      "size_bytes": 2049,
+      "sha256": "fc6d13cfdd6e69b9bf7238e86f400e7d120d35c053718a56ae9faf442f0e86f1",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/introduction/pipeline-version-3-new-module-on-existing-pipeline.md",
+      "size_bytes": 1514,
+      "sha256": "71fe9465e12602517ca47a693572bd7db0c08b7cd046ae1c55ec88ba679e1d49",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/introduction/pipeline-version-4-observation-driven.md",
+      "size_bytes": 1441,
+      "sha256": "f5e59e8c578cd3996870c3863ac1f2ce503fe74ec76c909a66a9cb9100020e70",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/introduction/technical-challenge-version-1-existing-task.md",
+      "size_bytes": 2690,
+      "sha256": "470195180f159d7f240409c0685a927fea21c82ed7d7c766a03b76ed3765e276",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/introduction/technical-challenge-version-2-existing-task-insight-backed-by-traditional.md",
+      "size_bytes": 3848,
+      "sha256": "b90e9edf376f9dc2cac1fcbe9174b8878a090763dac08302a301c8b743301b1f",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/introduction/technical-challenge-version-3-novel-task.md",
+      "size_bytes": 1629,
+      "sha256": "3b3b58cc0cffe2e1ae1e192b2344223924f9dfb880eeae3c955e09cd923269ef",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/introduction/version-1-task-then-application.md",
+      "size_bytes": 727,
+      "sha256": "d9296f2f23e8589e068a06fd063d2b9291b30b630ffeac19f0cf0290fde52284",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/introduction/version-2-application-first.md",
+      "size_bytes": 405,
+      "sha256": "3f57603bd5fd56bc185a3d78f12edc43bd202e2593b01d1bda943f3745af7ea5",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/introduction/version-3-general-to-specific-setting.md",
+      "size_bytes": 847,
+      "sha256": "0afbf79dd9c47e65ec0d9debf08c701838b5398327a0864b8f8a0421ea786a2a",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/introduction/version-4-open-with-challenge.md",
+      "size_bytes": 1753,
+      "sha256": "974379058c3d5448bbb95ad989b68564ede2dc7e262f4b9bb82820058ad098b1",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/introduction-examples.md",
+      "size_bytes": 1544,
+      "sha256": "0fb5b62e4353f71e586f8873881d2a60a86ad756e02bd0e7ef626dcafa0e5d71",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/method/example-of-the-three-elements.md",
+      "size_bytes": 7442,
+      "sha256": "c00e7b93d473d4f963da55bb3b160ef2ab0d61b5b0f000c88e68aebfb9acd43e",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/method/method-writing-common-issues-note.md",
+      "size_bytes": 355,
+      "sha256": "265ca143a785401c29d754d022e761aca41cce7f17db316a3a12cf2e35b5bfa9",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/method/module-design-instant-ngp.md",
+      "size_bytes": 4558,
+      "sha256": "8a70816c83daed1a81ec97e3336016c5d6031088c47d5775ebca2c3ed6f755a5",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/method/module-motivation-patterns.md",
+      "size_bytes": 410,
+      "sha256": "0d1476b9e31662ecd135eec0ec70bc959f91235622e874e2a1e12a5234d195ce",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/method/module-triad-neural-body.md",
+      "size_bytes": 763,
+      "sha256": "eabc41af8b001bcab30bc8373bb44b798ab0a21d32045d01d6b672d49c1ed76f",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/method/neural-body-annotated-figure-text.md",
+      "size_bytes": 2845,
+      "sha256": "f671d284186011497291fcec22dadd1dabe835f60fb97dc607cfa0246d08b6be",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/method/overview-template.md",
+      "size_bytes": 2054,
+      "sha256": "3328ea5b1100e8068bfd94455486a5934d55a888bf0095df727eef9ec7eadf93",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/method/pre-writing-questions.md",
+      "size_bytes": 479,
+      "sha256": "b6466d5d6fbe8785a45a0b67134c9c08a0d8b3e14f2e17db2f2fe3a2053b3c69",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/method/section-skeleton.md",
+      "size_bytes": 110,
+      "sha256": "e437a48be1e608bed3200844e1033b8b9da900aa1e4512dccb80f778e6fe0590",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/examples/method-examples.md",
+      "size_bytes": 1028,
+      "sha256": "8a8499c32096fbdf9baac6d00d71df750fba2909d29a0bc37e559ebd02d10210",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/experiments.md",
+      "size_bytes": 4476,
+      "sha256": "c006493e48996121af46332af8a833b6607508773668ade35b374cb5081a8812",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/introduction.md",
+      "size_bytes": 15015,
+      "sha256": "dafee03483388185bf923fafd3bbf8b4988fc9e5672628690653892cc6367cd0",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/method.md",
+      "size_bytes": 6256,
+      "sha256": "a11a743cadd5137bb633c5d031f0d5d179e4092070696206bcd8c92de20df57c",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/paper-review.md",
+      "size_bytes": 5442,
+      "sha256": "74839347431dc8fbd178a7bbb25a5239825f00e50127d8bf67a95c4f2ee7a311",
+      "text_integrated": true
+    },
+    {
+      "source": "Research-Paper-Writing-Skills-main",
+      "path": "research-paper-writing/references/related-work.md",
+      "size_bytes": 1283,
+      "sha256": "2b37fce3ae4ea604492689215e835d45f85cc39ed74e6f6132b2723bbe506e0d",
+      "text_integrated": true
+    },
+    {
+      "source": "awesome-ai-research-writing-main",
+      "path": "README.md",
+      "size_bytes": 54198,
+      "sha256": "9fcc71034129799bf16d03834e9dcda71ee7aab457344c2f53af19a5d70646d1",
+      "text_integrated": true
+    },
+    {
+      "source": "awesome-ai-research-writing-main",
+      "path": "images/example.png",
+      "size_bytes": 755703,
+      "sha256": "e196197f38a45100d0a63a732f0b8c027bb80d41d1f58e4dc52f887fcb0b0a2b",
+      "text_integrated": false
+    },
+    {
+      "source": "awesome-ai-research-writing-main",
+      "path": "images/model-rank.png",
+      "size_bytes": 310842,
+      "sha256": "a41b91c0baaf5ea0a997ae6cb3f5df1c03b48140e12fd85c112d5c5d2fbe0341",
+      "text_integrated": false
+    },
+    {
+      "source": "awesome-ai-research-writing-main",
+      "path": "images/nano-banana.png",
+      "size_bytes": 12367681,
+      "sha256": "3bcd3bce5f76a5764af0163968c360b232481bf57d317fcaf0a10fceaa98e091",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": ".gitignore",
+      "size_bytes": 132,
+      "sha256": "b566b1212df319c71274d7573ee50de1b77542474268e03ecd81ec692b4511a9",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "README.md",
+      "size_bytes": 9897,
+      "sha256": "72ff41b999ad990e8a7dbaee004092847ffe299badfb19b4926e66f960e6509c",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "assets/Dispersion_motivation.png",
+      "size_bytes": 837657,
+      "sha256": "04c2f6ab2bedf8e6a19449f0260ef36f8ab736a93dccf19458cdc80d4b593547",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "assets/Dispersion_observation.png",
+      "size_bytes": 808992,
+      "sha256": "59846b700abcf89c2779abce27b5d667637f6429cf4a52ca1892c687359f2aa7",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "assets/Dispersion_observation_distillation.png",
+      "size_bytes": 616612,
+      "sha256": "134b0fcb07dbab1baa769854100fc9791b846f6f6c50591485564fc8492b6660",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "assets/ImmunoStruct_contrastive.png",
+      "size_bytes": 502211,
+      "sha256": "c2590ba1ecac5e1d0976df3be6e9fa4056dcdd78670201c6db461e3e4f18b0d0",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "assets/ImmunoStruct_results_CEDAR.png",
+      "size_bytes": 1281557,
+      "sha256": "f1f564e0c7221f24f4bffe14cce5b5df6786c75f7dfcf1b6d2be7566820050ec",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "assets/ImmunoStruct_results_IEDB.png",
+      "size_bytes": 956273,
+      "sha256": "2768b1a5ef0c501dc03c53c594a28e028df2cd57b51c4fd80c9a57906f6195c5",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "assets/ImmunoStruct_schematic.png",
+      "size_bytes": 972870,
+      "sha256": "2d3ddf56ae63b34ead168cb95b484881f934e61204a8740c67d6dc1678bbaf7d",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "assets/RNAGenScape_schematic.png",
+      "size_bytes": 1000298,
+      "sha256": "ef85b974a990b74c230dc1a80d3bb357f4f8a430d13c12c6120927c9fb797287",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_CellSpliceNet/figures/ablation.png",
+      "size_bytes": 355284,
+      "sha256": "3373085ababf07481a352fe542fd79a58701e0e052c5593ca56984008ddad027",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_CellSpliceNet/figures/comparison.png",
+      "size_bytes": 813084,
+      "sha256": "49d4ebc7d1867918b9d0167d8e821d8ce7845459a9da55a6fefcef87eeb7024d",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_CellSpliceNet/plot_ablation.py",
+      "size_bytes": 2964,
+      "sha256": "0d0959102afe26249199a60fb67d5c8bd282a6fdb9c7e024c51a9c42a6a58c7f",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_CellSpliceNet/plot_comparison.py",
+      "size_bytes": 3909,
+      "sha256": "4e888489587ca7d345893715cc8f34a9b92cc347ffe5b20291093df1c2f23bd6",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_Cflows/diffusion_swiss_roll.py",
+      "size_bytes": 3545,
+      "sha256": "2ecd52231b6f095d8471b94bcae58d6c844f14cc8494c6c1636887711cabe592",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_Cflows/figures/diffusion_swiss_roll.png",
+      "size_bytes": 1794980,
+      "sha256": "9f02fa4603dae748e3745b95b0ed252f2ba386da6101dc1be6c4a2a886c78eb0",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_Cflows/figures/fig2_comparison_GeneRegulatory.pdf",
+      "size_bytes": 24757,
+      "sha256": "30b1efaf3293a240c6646f076a14f702bb3556fd10a1fb791c23deb90d3ff40e",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_Cflows/figures/fig2_comparison_GeneRegulatory.png",
+      "size_bytes": 287419,
+      "sha256": "96075eb70285f4f72869b99398c9a923336fbc3a5188883d9e8415e1cc027a46",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_Cflows/figures/fig2_comparison_Trajectory.pdf",
+      "size_bytes": 19791,
+      "sha256": "465050a8f8c8be85eb3e8d17c16eaef3df50acc41b2bd212d2b6176d97efc78c",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_Cflows/figures/fig2_comparison_Trajectory.png",
+      "size_bytes": 388293,
+      "sha256": "91b214f745a99f1f2b472ddae7661dfa2d9241791768767180219315b89047ec",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_Cflows/figures/figX_comparison_Ablation.pdf",
+      "size_bytes": 19233,
+      "sha256": "d4c7b8013a24aa830a0f83b8cf5ffd917a932458e6a265f4b5f29e9a4389960a",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_Cflows/figures/figX_comparison_Ablation.png",
+      "size_bytes": 328952,
+      "sha256": "4f7b7b4b01a1b498540850ddabc217fd964eb37142e99a6ee6b5c26cf12aba7f",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_Cflows/plot_comparison_Ablation.py",
+      "size_bytes": 2506,
+      "sha256": "d5ab173adbf5be9486e8325f9904123fe7430c0c937e1eebd88dee38049cd787",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_Cflows/plot_comparison_GeneRegulatory.py",
+      "size_bytes": 3022,
+      "sha256": "8659356aa5b92a7969dd8e46144c4c68fe97850cb58c2da6a5b011b7daf88129",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_Cflows/plot_comparison_Trajectory.py",
+      "size_bytes": 2941,
+      "sha256": "bc154c3e99fd4895ceefefeef81298055a8cd42e5795547e1fe1632edabe5b69",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_Dispersion/figures/idea.png",
+      "size_bytes": 384839,
+      "sha256": "e805fb0f7ccdf8aa3ae764e8156cf6b61b6d56ef7dded0fc7556566e316649a3",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_Dispersion/figures/illustration.png",
+      "size_bytes": 762950,
+      "sha256": "2528309a41ba6edab9c377a2304c144813c0e99565239a849c427ab00a14643b",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_Dispersion/plot_idea.py",
+      "size_bytes": 2432,
+      "sha256": "c540a368c5a60b90fec950da8c5085d2ebfa47c367e3270fa3fb38176cf8134e",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_Dispersion/plot_illustration.py",
+      "size_bytes": 15472,
+      "sha256": "7f9c451d336f718a2c4287130a45ec4597b9fad43746de314a018655c639ec98",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_FPGM/figures/freq_prior.png",
+      "size_bytes": 641033,
+      "sha256": "0f8f77c4de67324cf7ddd7ee370a8ef39f10417b241142b9bacbc830677ff0fe",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_FPGM/plot_freq_prior.py",
+      "size_bytes": 6578,
+      "sha256": "d9c5a53ff6c76e9545ea0d65292841765e849d1076afc6a92f2127041740d8bf",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_ImmunoStruct/figures/bars_ablation_Cancer.png",
+      "size_bytes": 816715,
+      "sha256": "46c9e05df9d7c941628791ac447c5d84a29d942896ce3a13d00432e9f5c720ef",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_ImmunoStruct/figures/bars_ablation_IEDB.png",
+      "size_bytes": 1160225,
+      "sha256": "854fe931bde6ca6c50eda6b147907f00d8f10d74c3b40bad1714b903bf945f00",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_ImmunoStruct/figures/bars_comparison_Cancer.png",
+      "size_bytes": 799770,
+      "sha256": "0c35bb8a1fb21d5e30e16be152fc92959af580d9e24f04ccc61444adba8c7aa2",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_ImmunoStruct/figures/bars_comparison_IEDB.png",
+      "size_bytes": 757551,
+      "sha256": "18a52f7a910fe9c9ff06015f5a1e63527458a86c847f573eb96ba254d4645ac1",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_ImmunoStruct/plot_bars.py",
+      "size_bytes": 7707,
+      "sha256": "1d028144e620d1cfac66ea5ab57004dfa286d80214480c76d046d9f346fda408",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_ImmunoStruct/raw_data.py",
+      "size_bytes": 4459,
+      "sha256": "837be4150b7419085caa84746734099ccc78e0f3fb4242e91b81ce1bde6009ca",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_RNAGenScape/figures/manifold.png",
+      "size_bytes": 108276,
+      "sha256": "83e55ca23d8aa2fa591a46d3fe4f9d6ac11e17cbc9657e2615d883ea6deb937c",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_RNAGenScape/figures/manifold_holes.png",
+      "size_bytes": 1019896,
+      "sha256": "2ad2be6fa9c9165e800dba4d997850c9a426cbe9b441c78b76518335bcc3f948",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_RNAGenScape/figures/results_comparison_optimization.png",
+      "size_bytes": 850446,
+      "sha256": "4cf8539d0521b7268f0227b56cecddf2f70c1bb4bbcf9b5e3be886e95a54927a",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_RNAGenScape/figures/results_comparison_speed.png",
+      "size_bytes": 92362,
+      "sha256": "cd1fec84f615a43dbe91cc94bfbb94fe07e086fdd5d8191fbff2ec990e38d4f5",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_RNAGenScape/figures/results_sweep.png",
+      "size_bytes": 142120,
+      "sha256": "4db30b32b65e6b7160ebe025993c2ffdaf6e240d836c253419e91649d3da8deb",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_RNAGenScape/plot_comparison.py",
+      "size_bytes": 11236,
+      "sha256": "b2b30a212d084ae5ba7b82aa1fd830cbfea82a4eef507edfa1757b1734b250e3",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_RNAGenScape/plot_hole_manifold.py",
+      "size_bytes": 2547,
+      "sha256": "cc31a470f0364c19f094c1ef32ada4909fb53dab638f56a552fe55d44942ded1",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_RNAGenScape/plot_manifold.py",
+      "size_bytes": 1811,
+      "sha256": "aa6461c85b1d03b30f7e12824821c1149f1a4beb56394a20304126a592cf8021",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_RNAGenScape/plot_sweep.py",
+      "size_bytes": 2873,
+      "sha256": "123a14749450ef5895161b6823e7b8d217dbee181f39da954f5a8b2439be2961",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_VIGIL/figures/comparison_posttraining.png",
+      "size_bytes": 249289,
+      "sha256": "a6f2e75e7d8361754445d86ce04386b5764a46bf2cbc94e8df0c75ecf1bab142",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_VIGIL/figures/comparison_radar.png",
+      "size_bytes": 809841,
+      "sha256": "d6613715d9d4564fb0c7354430b227d43c9df04032e32b346601971381e5ba2d",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_VIGIL/plot_comparison_radar.py",
+      "size_bytes": 7397,
+      "sha256": "d30da4f6a14b33eb7e3350f6f9623caf58d178c099f961270a6e1c17aaaabbee",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_VIGIL/plot_posttraining.py",
+      "size_bytes": 2948,
+      "sha256": "bb1371ace0f1742eb99019c87e18ecc44588ff063141fed5775429e0e373dc1c",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_brainteaser/figures/brute_force.png",
+      "size_bytes": 1753162,
+      "sha256": "abb63055b0d49edbe9002e820294a622db1429d31b1d2446340036cf1db92607",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_brainteaser/figures/correctness_by_category.png",
+      "size_bytes": 655498,
+      "sha256": "bc2cc547f15430bc9af2ebdfba0b8cf1c73702e8fbea35d8b2953cc960da117b",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_brainteaser/figures/correctness_by_subcategory.png",
+      "size_bytes": 1100554,
+      "sha256": "b6639239da2fa9f2bec3eb096ec0db3942965ed38e57446de4b8a240a77c02c6",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_brainteaser/figures/rewriting.png",
+      "size_bytes": 410105,
+      "sha256": "0460f09210bc23c272602ecb8b3fcf3984f42fc055df3b0e4982eab50303607f",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_brainteaser/figures/selfcorrection_math.png",
+      "size_bytes": 611488,
+      "sha256": "71133ed59cc16f8c36a4e8b2325575d185f36a8534c29579d2eff177544e9e53",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_brainteaser/plot_brute_force.py",
+      "size_bytes": 10181,
+      "sha256": "46906a9de2e8a069a2d3022a78087b2933e2cd898a38800242d005ceec40057f",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_brainteaser/plot_correctness_by_category.py",
+      "size_bytes": 6403,
+      "sha256": "e84d87bf9cf8b7d8a184f558c02de91874215754075526aaa54586e68d931c1a",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_brainteaser/plot_correctness_by_subcategory.py",
+      "size_bytes": 6505,
+      "sha256": "fc9c20eaf00c7106b4752ad9638a6593c639721a12bfd42a748a6d439366d4af",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_brainteaser/plot_rewriting.py",
+      "size_bytes": 3694,
+      "sha256": "01939d1cc3807852ac4751ec143d5472193f1511381eae03bf0c01b33a367501",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_brainteaser/plot_selfcorrection_math.py",
+      "size_bytes": 4015,
+      "sha256": "7656335018d67ecaaae362e63669f22c709e51644681dc801f298356fb7fef7c",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_ophthal_review/figures/composition_heatmap.png",
+      "size_bytes": 279533,
+      "sha256": "38a9c4e8fd691cbd7dcb4f5b5abb69398b4974d32cad19a4a33819db1cb34f3a",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_ophthal_review/figures/trend_by_month.png",
+      "size_bytes": 364102,
+      "sha256": "66fe0f27f44697547b6cb219ff90696f54a6fef48984c9578ace258e0ebce4d4",
+      "text_integrated": false
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_ophthal_review/plot_composition.py",
+      "size_bytes": 3032,
+      "sha256": "8fb5469cc22f13a68a71ab462abd876856b30c93d1f616fe1bd3569da5aee427",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "figure_ophthal_review/plot_trend.py",
+      "size_bytes": 5531,
+      "sha256": "0a66624628f6e1da4f2da697e86ac79d46576d4bd552f5d585b2ceff05204811",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "scientific-figure-making/SKILL.md",
+      "size_bytes": 2242,
+      "sha256": "952300b4d0bd8fbd0c55aaa732a47a0abb8e9707bc80965c8e70221ef13f0292",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "scientific-figure-making/references/api.md",
+      "size_bytes": 5476,
+      "sha256": "12892f4940c153c8b2e75abe8eed8f96476989b0a75d65f0dc3d08118bf58269",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "scientific-figure-making/references/common-patterns.md",
+      "size_bytes": 3075,
+      "sha256": "1456736819f17c5a8bef0daaa58107355dd3212e1594afae5fb49279af2d6d67",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "scientific-figure-making/references/demos.md",
+      "size_bytes": 2528,
+      "sha256": "d0d8b630fe57e03eb750d1fac1a78b47feaaa84e09b9f054fda1b53cca7ea36f",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "scientific-figure-making/references/design-theory.md",
+      "size_bytes": 6738,
+      "sha256": "d34fa995a481588a33aab301591a9a2ae54dae8df34c74e0a13311582ef48d99",
+      "text_integrated": true
+    },
+    {
+      "source": "figures4papers-main",
+      "path": "scientific-figure-making/references/tutorials.md",
+      "size_bytes": 6411,
+      "sha256": "85469837614dc215bb6ae6455d28448886361f63a9819e8fb0d7c7faf7eb3c79",
+      "text_integrated": true
+    }
+  ],
+  "preserved_source_roots": {
+    "Research-Paper-Writing-Skills-main": "ext/src/rpws",
+    "awesome-ai-research-writing-main": "ext/src/awesome",
+    "figures4papers-main": "ext/src/figures"
+  },
+  "source_manifest": "manifests/src_manifest.json",
+  "source_key_map": {
+    "Research-Paper-Writing-Skills-main": "rpws",
+    "awesome-ai-research-writing-main": "awesome",
+    "figures4papers-main": "figures"
+  }
+}

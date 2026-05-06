@@ -91,63 +91,63 @@ Prefer using **one** primary skill per task.
 
 ## experiments
 
-- **S301** `minimal_decidable_experiment` — skills/experiments/S301_min_decidable_experiment.md
+- **S301** `minimal_decidable_experiment` — skills/exp/S301_min_decidable_experiment.md
   - triggers: 2-hour validation, quick experiment, MVP test
-- **S302** `ablation_planner` — skills/experiments/S302_ablation_planner.md
+- **S302** `ablation_planner` — skills/exp/S302_ablation_planner.md
   - triggers: ablation, component analysis, what matters
-- **S303** `evaluation_protocol_linter` — skills/experiments/S303_eval_protocol_linter.md
+- **S303** `evaluation_protocol_linter` — skills/exp/S303_eval_protocol_linter.md
   - triggers: eval protocol, benchmark audit, leakage check
-- **S304** `baseline_selection_protocol` — skills/experiments/S304_baseline_selection_protocol.md
+- **S304** `baseline_selection_protocol` — skills/exp/S304_baseline_selection_protocol.md
   - triggers: baseline selection, comparisons, fairness
-- **S305** `metric_design_and_sanity` — skills/experiments/S305_metric_design_and_sanity.md
+- **S305** `metric_design_and_sanity` — skills/exp/S305_metric_design_and_sanity.md
   - triggers: metrics, sanity check, normalization
-- **S306** `data_split_leakage_check` — skills/experiments/S306_data_split_leakage_check.md
+- **S306** `data_split_leakage_check` — skills/exp/S306_data_split_leakage_check.md
   - triggers: data split, leakage, train test
-- **S307** `ablation_interpretation_framework` — skills/experiments/S307_ablation_interpretation_framework.md
+- **S307** `ablation_interpretation_framework` — skills/exp/S307_ablation_interpretation_framework.md
   - triggers: ablation interpretation, causal, alternative explanations
-- **S308** `hyperparameter_budget_plan` — skills/experiments/S308_hyperparameter_budget_plan.md
+- **S308** `hyperparameter_budget_plan` — skills/exp/S308_hyperparameter_budget_plan.md
   - triggers: hyperparameter tuning, budget, search
-- **S309** `error_analysis_playbook` — skills/experiments/S309_error_analysis_playbook.md
+- **S309** `error_analysis_playbook` — skills/exp/S309_error_analysis_playbook.md
   - triggers: error analysis, failure cases, diagnostics
-- **S310** `compute_cost_reporting_template` — skills/experiments/S310_compute_cost_reporting_template.md
+- **S310** `compute_cost_reporting_template` — skills/exp/S310_compute_cost_reporting_template.md
   - triggers: compute cost, efficiency, reporting
-- **S311** `statistical_significance_sanity` — skills/experiments/S311_statistical_significance_sanity.md
+- **S311** `statistical_significance_sanity` — skills/exp/S311_statistical_significance_sanity.md
   - triggers: statistical significance, confidence intervals, seeds
-- **S312** `replication_study_design` — skills/experiments/S312_replication_study_design.md
+- **S312** `replication_study_design` — skills/exp/S312_replication_study_design.md
   - triggers: replication, reproduce baseline, study
-- **S313** `data_augmentation_risk_audit` — skills/experiments/S313_data_augmentation_risk_audit.md
+- **S313** `data_augmentation_risk_audit` — skills/exp/S313_data_augmentation_risk_audit.md
   - triggers: augmentation, leakage risk, robustness
-- **S314** `evaluation_suite_selection` — skills/experiments/S314_evaluation_suite_selection.md
+- **S314** `evaluation_suite_selection` — skills/exp/S314_evaluation_suite_selection.md
   - triggers: benchmark selection, suite, coverage
-- **S315** `stress_test_adversarial_cases` — skills/experiments/S315_stress_test_adversarial_cases.md
+- **S315** `stress_test_adversarial_cases` — skills/exp/S315_stress_test_adversarial_cases.md
   - triggers: stress test, adversarial, edge cases
-- **S316** `statistical_power_quickcheck` — skills/experiments/S316_statistical_power_quickcheck.md
+- **S316** `statistical_power_quickcheck` — skills/exp/S316_statistical_power_quickcheck.md
   - triggers: power analysis, sample size, effect size
-- **S317** `seed_sensitivity_protocol` — skills/experiments/S317_seed_sensitivity_protocol.md
+- **S317** `seed_sensitivity_protocol` — skills/exp/S317_seed_sensitivity_protocol.md
   - triggers: seed sensitivity, variance across seeds, stability
-- **S318** `experiment_logging_schema` — skills/experiments/S318_experiment_logging_schema.md
+- **S318** `experiment_logging_schema` — skills/exp/S318_experiment_logging_schema.md
   - triggers: logging schema, experiment tracking, artifact layout
-- **S319** `failure_case_generation` — skills/experiments/S319_failure_case_generation.md
+- **S319** `failure_case_generation` — skills/exp/S319_failure_case_generation.md
   - triggers: failure cases, stress test, corner cases
-- **S320** `hyperparam_search_reporting` — skills/experiments/S320_hyperparam_search_reporting.md
+- **S320** `hyperparam_search_reporting` — skills/exp/S320_hyperparam_search_reporting.md
   - triggers: hyperparameter search, tuning budget, fair comparison
-- **S321** `replicability_multi_machine` — skills/experiments/S321_replicability_multi_machine.md
+- **S321** `replicability_multi_machine` — skills/exp/S321_replicability_multi_machine.md
   - triggers: replicability, multi-machine check, environment drift
-- **S322** `visualization_plan_results` — skills/experiments/S322_visualization_plan_results.md
+- **S322** `visualization_plan_results` — skills/exp/S322_visualization_plan_results.md
   - triggers: plots, visualization plan, result figures
-- **S323** `rl_sanity_checks_pack` — skills/experiments/S323_rl_sanity_checks_pack.md
+- **S323** `rl_sanity_checks_pack` — skills/exp/S323_rl_sanity_checks_pack.md
   - triggers: RL sanity checks, debug RL, common mistakes
-- **S324** `compute_scaling_experiment` — skills/experiments/S324_compute_scaling_experiment.md
+- **S324** `compute_scaling_experiment` — skills/exp/S324_compute_scaling_experiment.md
   - triggers: scaling experiment, compute scaling, inference scaling
-- **S325** `experiment_registry_template` — skills/experiments/S325_experiment_registry_template.md
+- **S325** `experiment_registry_template` — skills/exp/S325_experiment_registry_template.md
   - triggers: experiment registry, pre-registration, plan locking
-- **S326** `calculation_correctness_check` — skills/experiments/S326_calculation_correctness_check.md
+- **S326** `calculation_correctness_check` — skills/exp/S326_calculation_correctness_check.md
   - triggers: 计算正确性核查, 算错了吗, unit check, dimension analysis, algebra check, numerical sanity check, ...
-- **S327** `experiment_completeness_check` — skills/experiments/S327_experiment_completeness_check.md
+- **S327** `experiment_completeness_check` — skills/exp/S327_experiment_completeness_check.md
   - triggers: 实验完整性检查, experiment completeness, missing ablations, protocol completeness, repro check for experiments
-- **S328** `experiment_rigor_scorecard` — skills/experiments/S328_experiment_rigor_scorecard.md
+- **S328** `experiment_rigor_scorecard` — skills/exp/S328_experiment_rigor_scorecard.md
   - triggers: 实验完整性检查, rigor scorecard, missing baselines, reporting checklist
-- **S336** `pre_analysis_plan_builder` — skills/experiments/S336_pre_analysis_plan_builder.md
+- **S336** `pre_analysis_plan_builder` — skills/exp/S336_pre_analysis_plan_builder.md
   - triggers: pre-analysis plan, analysis plan, 统计分析计划, decision rule plan
 
 ## reproducibility
@@ -290,3 +290,34 @@ Prefer using **one** primary skill per task.
   - triggers: generated composite; outputs: master_prompt
 - **writing_engine** `writing_engine` — skills/writing_engine/README.md
   - triggers: generated composite; outputs: master_prompt
+
+
+## rwf_s340_integrated
+
+- **rwf_s340_master** `research_writing_figure_s340_integrated_master` — skills/rwf_s340/MASTER.md
+  - triggers: manuscript, research plan, README architecture, figure design, S340, no-omission validation
+- **S601** `paper_story_section_architecture` — skills/rwf_s340/S601_paper_story_section_architecture.md
+  - triggers: paper story, manuscript architecture, Introduction structure, Method section, Experiments section, 论文结构, 论文主线
+  - mandatory companion: S640 for prose outputs
+- **S602** `claim_evidence_reverse_outline_review` — skills/rwf_s340/S602_claim_evidence_reverse_outline_review.md
+  - triggers: reverse outline, reviewer audit, claim evidence, paper review, 证据链, 逐行审查
+  - mandatory companion: S640
+- **S603** `bilingual_human_voice_delta_rewrite` — skills/rwf_s340/S603_bilingual_human_voice_delta_rewrite.md
+  - triggers: Chinese polish, English polish, bilingual rewrite, anti AI tone, 润色, 去AI味, 中英互译
+  - mandatory companion: S640
+- **S604** `experiment_result_narrative_and_caption` — skills/rwf_s340/S604_experiment_result_narrative_and_caption.md
+  - triggers: experiment analysis, result narrative, table caption, figure caption, ablation description, 实验分析, 图题, 表题
+  - mandatory companion: S640; add S623 for visual evidence
+- **S621** `publication_figure_design_theory` — skills/rwf_s340/S621_publication_figure_design_theory.md
+  - triggers: scientific figure, publication figure, visualization design, README architecture, 论文图, 科研绘图, 架构图
+  - companion: S623 for visual-claim audit
+- **S622** `matplotlib_publication_script_builder` — skills/rwf_s340/S622_matplotlib_publication_script_builder.md
+  - triggers: matplotlib, plotting script, grouped bar, heatmap, svg png pdf, 绘图脚本, 输出svg, 输出png
+  - companions: S621 and S623
+- **S623** `visual_claim_caption_audit` — skills/rwf_s340/S623_visual_claim_caption_audit.md
+  - triggers: figure audit, caption audit, visual claim, panel consistency, 图表审查, 图文一致
+- **S640** `s340_global_paper_logic_language_audit` — skills/rwf_s340/S640_s340_global_paper_logic_language_audit.md
+  - triggers: paper writing, manuscript, research plan, README text, polish, rewrite, forbidden phrases, 论文润色, 禁止词, 机械排比
+  - status: hard global writing/logic gate
+- **S650** `integrated_pack_no_omission_validation` — skills/rwf_s340/S650_integrated_pack_no_omission_validation.md
+  - triggers: validate integrated pack, no omission, checksum, path length, 压缩包无法打开, 文件名过长, 禁止遗漏

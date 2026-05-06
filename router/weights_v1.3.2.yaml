@@ -5,7 +5,74 @@ category_weights:
   reproducibility: 1.15
   paper_ops: 1.05
   composite: 1.1
+  research_writing_integrated: 1.45
+  figure_design_integrated: 1.35
+  s340_integrated: 1.60
+  reproducibility_integrated: 1.35
 task_patterns:
+- name: s340_hard_writing_gate
+  patterns:
+  - 论文润色
+  - 论文重构
+  - 写论文
+  - 研究计划
+  - manuscript
+  - paper writing
+  - polish
+  - rewrite
+  - anti AI tone
+  - 去AI味
+  - 禁止词
+  - 禁用短语
+  - 机械排比
+  - README
+  - 架构图文字
+  boost_skills:
+    S640: 5.0
+    S601: 2.4
+    S602: 2.0
+    S603: 2.2
+    S604: 1.8
+    rwf_s340_master: 2.0
+  boost_categories:
+    s340_integrated: 0.45
+    research_writing_integrated: 0.25
+- name: figure_publication_workflow
+  patterns:
+  - figure design
+  - scientific figure
+  - architecture diagram
+  - README architecture
+  - svg
+  - png
+  - plotting script
+  - matplotlib
+  - 论文图
+  - 架构图
+  - 绘图脚本
+  - 输出svg
+  - 物理边框
+  boost_skills:
+    S621: 4.0
+    S622: 3.2
+    S623: 3.6
+  boost_categories:
+    figure_design_integrated: 0.35
+- name: integrated_release_validation
+  patterns:
+  - no omission
+  - checksum
+  - path length
+  - release package
+  - zip repair
+  - 压缩包无法打开
+  - 文件名过长
+  - 完整性验证
+  - 禁止遗漏
+  boost_skills:
+    S650: 4.8
+  boost_categories:
+    reproducibility_integrated: 0.35
 - name: logic_check
   patterns:
   - 逻辑核查
@@ -237,3 +304,30 @@ secondary_suggestions:
   - S526
   suggest:
   - writing_engine
+
+- if_primary_in:
+  - S640
+  suggest:
+  - S601
+  - S602
+  - S603
+  - S604
+- if_primary_in:
+  - S601
+  - S602
+  - S603
+  - S604
+  suggest:
+  - S640
+- if_primary_in:
+  - S621
+  - S622
+  - S623
+  suggest:
+  - S623
+  - S640
+- if_primary_in:
+  - S650
+  suggest:
+  - S407
+  - S431

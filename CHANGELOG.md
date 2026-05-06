@@ -1,5 +1,79 @@
 # Changelog
 
+## v1.6.2 - README high-efficiency usage and engine-control recipes
+
+- Updated `README.md` to add a dedicated high-efficiency use protocol.
+- Added bilingual compact invocation templates that bind task type, engine/skills, input materials, target deliverable, hard constraints, and final validation.
+- Added ready-to-use route-bound prompts for paper logic audit, Word redline revision, research-plan restructuring, code repair/repository cleanup, experiment analysis, README/ZIP release validation, and migration handoff.
+- Clarified the low-efficiency pattern to avoid: vague “call ZYR and optimize/review/analyze” prompts without route binding.
+- Kept the original v1.6.1 repaired architecture and short-path layout unchanged.
+
+## v1.6.1 - path-consistency and README architecture repair
+
+- Repaired the Windows-safe v1.6.0 package without changing the original ZYR state-machine logic.
+- Rewrote `README.md` around the actual short-path repository layout and added an explicit task-to-engine control table: if the user needs a specific task, the README now says which ZYR engine and which skills should be invoked.
+- Standardized internal references to the actual short paths: `ext/src/`, `skills/rw/`, `skills/fig_ops/`, `skills/master_integrated/`, `router/ext_router/`, `manifests/src_manifest.json`, `manifests/src_FILE_integr_TABLE.md`, and `skills/rwf_s340/req_AND_forbid_phr.md`.
+- Reconciled `skills_manifest.yaml` against actual files under `skills/`.
+- Updated `tools/validate_no_omission.py` to read `manifests/src_manifest.json`.
+- Regenerated release checksums and path-length report after repair.
+- Added `manifests/REPAIR_AUDIT_v1.6.1.md` as the repair record.
+
+
+## v1.6.0 (2026-05-06)
+
+### Scope
+This release integrates external paper-writing, AI-research-writing, figure-making, and style/logic review materials into ZYR as a source-preserving, route-aware extension layer.
+
+### Added
+- Public architecture diagram: `docs/assets/zyr_research_os_arch_v1_6.svg`.
+- External source preservation roots:
+  - `ext/src/rpws/`
+  - `ext/src/awesome/`
+  - `ext/src/figures/`
+  - `ext/src/S340_v4.2_theory_global_skill_bundle/`
+- Integrated skills under `skills/rwf_s340/`:
+  - `S601` paper story and section architecture
+  - `S602` claim-evidence reverse-outline review
+  - `S603` bilingual human-voice delta rewrite
+  - `S604` experiment result narrative and caption
+  - `S621` publication figure design theory
+  - `S622` plotting-script builder
+  - `S623` visual claim and caption audit
+  - `S640` style and logic review layer
+  - `S650` no-omission validation
+- External attribution document: `docs/EXTERNAL_SKILL_ATTRIBUTION_v1.6.md`.
+- Source preservation manifests and validation scripts under `manifests/` and `tools/validate_no_omission.py`.
+
+### Changed
+- Version bump to `1.6.0`.
+- README now presents the repo as a three-plane research workflow operating system: control plane, workflow plane, validation plane.
+- `skills_manifest.yaml` includes the new integrated skill stack.
+
+### Validation
+- Original ZYR source files: 431.
+- Integrated external source files: 118.
+- Total preserved upstream source files: 549.
+- No missing source files were detected against the uploaded v1.5 ZYR zip and the four integrated source bundles.
+- ZIP CRC, checksum, script inventory, route tests, and path-length checks passed in the release-candidate build.
+
+### Notes
+- This is a source-preserving integration. External repositories are credited and kept under `ext/src/`; ZYR-native wrapper skills live under `skills/rwf_s340/`.
+
+
+
+
+## v1.6.0 addendum: S340 hard gate routing
+
+### Changed
+- Strengthened `S640` from a style-review wrapper into a mandatory global writing and logic gate for writing-like tasks.
+- Added `skills/rwf_s340/req_AND_forbid_phr.md` to bind S340 wording constraints, forbidden phrase patterns, and evidence-first writing rules into the routable skills layer.
+- Added `router/ext_router/ROUTER_REQUIREMENTS_BINDING_RWF_S340_v1.6.md` and updated router weights so manuscript, research-plan, README architecture, polishing, figure/caption, and release-validation tasks route into the integrated S6xx/S640/S650 stack.
+- Clarified that `S340 v4.2` is a maintainer/user-authored local ruleset, not an external GitHub dependency.
+
+### Validation
+- `python3 tools/validate_no_omission.py`
+- router smoke tests for paper polishing, forbidden-phrase review, architecture SVG figure generation, and path-length/no-omission release repair.
+
 ## v1.5.0 (2026-03-30)
 
 ### Scope

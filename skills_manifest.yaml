@@ -1,4 +1,4 @@
-version: '1.5.0'
+version: 1.6.2
 skills:
 - id: writing_engine
   name: writing_engine
@@ -33,7 +33,7 @@ skills:
 - id: S204
   name: literature_triage_pipeline
   category: research_core
-  path: skills/research_core/S204_literature_triage_pipeline.md
+  path: skills/research_core/S204_literature_triage_pipe.md
 - id: S205
   name: concept_map_builder
   category: research_core
@@ -45,7 +45,7 @@ skills:
 - id: S207
   name: contribution_claim_refinement
   category: research_core
-  path: skills/research_core/S207_contribution_claim_refinement.md
+  path: skills/research_core/S207_contrib_claim_refinement.md
 - id: S208
   name: assumption_risk_register
   category: research_core
@@ -85,7 +85,7 @@ skills:
 - id: S217
   name: contribution_type_selector
   category: research_core
-  path: skills/research_core/S217_contribution_type_selector.md
+  path: skills/research_core/S217_contrib_type_selector.md
 - id: S218
   name: assumptions_and_threats_audit
   category: research_core
@@ -164,111 +164,111 @@ skills:
 - id: S301
   name: minimal_decidable_experiment
   category: experiments
-  path: skills/experiments/S301_min_decidable_experiment.md
+  path: skills/exp/S301_min_decidable_experiment.md
 - id: S302
   name: ablation_planner
   category: experiments
-  path: skills/experiments/S302_ablation_planner.md
+  path: skills/exp/S302_ablation_planner.md
 - id: S303
   name: evaluation_protocol_linter
   category: experiments
-  path: skills/experiments/S303_eval_protocol_linter.md
+  path: skills/exp/S303_eval_protocol_linter.md
 - id: S304
   name: baseline_selection_protocol
   category: experiments
-  path: skills/experiments/S304_baseline_selection_protocol.md
+  path: skills/exp/S304_baseline_selection_protocol.md
 - id: S305
   name: metric_design_and_sanity
   category: experiments
-  path: skills/experiments/S305_metric_design_and_sanity.md
+  path: skills/exp/S305_metric_design_and_sanity.md
 - id: S306
   name: data_split_leakage_check
   category: experiments
-  path: skills/experiments/S306_data_split_leakage_check.md
+  path: skills/exp/S306_data_split_leakage_check.md
 - id: S307
   name: ablation_interpretation_framework
   category: experiments
-  path: skills/experiments/S307_ablation_interpretation_framework.md
+  path: skills/exp/S307_ablation_interpretation_framework.md
 - id: S308
   name: hyperparameter_budget_plan
   category: experiments
-  path: skills/experiments/S308_hyperparameter_budget_plan.md
+  path: skills/exp/S308_hyperparameter_budget_plan.md
 - id: S309
   name: error_analysis_playbook
   category: experiments
-  path: skills/experiments/S309_error_analysis_playbook.md
+  path: skills/exp/S309_error_analysis_playbook.md
 - id: S310
   name: compute_cost_reporting_template
   category: experiments
-  path: skills/experiments/S310_compute_cost_reporting_template.md
+  path: skills/exp/S310_compute_cost_reporting_template.md
 - id: S311
   name: statistical_significance_sanity
   category: experiments
-  path: skills/experiments/S311_statistical_significance_sanity.md
+  path: skills/exp/S311_statistical_significance_sanity.md
 - id: S312
   name: replication_study_design
   category: experiments
-  path: skills/experiments/S312_replication_study_design.md
+  path: skills/exp/S312_replication_study_design.md
 - id: S313
   name: data_augmentation_risk_audit
   category: experiments
-  path: skills/experiments/S313_data_augmentation_risk_audit.md
+  path: skills/exp/S313_data_augmentation_risk_audit.md
 - id: S314
   name: evaluation_suite_selection
   category: experiments
-  path: skills/experiments/S314_evaluation_suite_selection.md
+  path: skills/exp/S314_evaluation_suite_selection.md
 - id: S315
   name: stress_test_adversarial_cases
   category: experiments
-  path: skills/experiments/S315_stress_test_adversarial_cases.md
+  path: skills/exp/S315_stress_test_adversarial_cases.md
 - id: S316
   name: statistical_power_quickcheck
   category: experiments
-  path: skills/experiments/S316_statistical_power_quickcheck.md
+  path: skills/exp/S316_statistical_power_quickcheck.md
 - id: S317
   name: seed_sensitivity_protocol
   category: experiments
-  path: skills/experiments/S317_seed_sensitivity_protocol.md
+  path: skills/exp/S317_seed_sensitivity_protocol.md
 - id: S318
   name: experiment_logging_schema
   category: experiments
-  path: skills/experiments/S318_experiment_logging_schema.md
+  path: skills/exp/S318_experiment_logging_schema.md
 - id: S319
   name: failure_case_generation
   category: experiments
-  path: skills/experiments/S319_failure_case_generation.md
+  path: skills/exp/S319_failure_case_generation.md
 - id: S320
   name: hyperparam_search_reporting
   category: experiments
-  path: skills/experiments/S320_hyperparam_search_reporting.md
+  path: skills/exp/S320_hyperparam_search_reporting.md
 - id: S321
   name: replicability_multi_machine
   category: experiments
-  path: skills/experiments/S321_replicability_multi_machine.md
+  path: skills/exp/S321_replicability_multi_machine.md
 - id: S322
   name: visualization_plan_results
   category: experiments
-  path: skills/experiments/S322_visualization_plan_results.md
+  path: skills/exp/S322_visualization_plan_results.md
 - id: S323
   name: rl_sanity_checks_pack
   category: experiments
-  path: skills/experiments/S323_rl_sanity_checks_pack.md
+  path: skills/exp/S323_rl_sanity_checks_pack.md
 - id: S324
   name: compute_scaling_experiment
   category: experiments
-  path: skills/experiments/S324_compute_scaling_experiment.md
+  path: skills/exp/S324_compute_scaling_experiment.md
 - id: S325
   name: experiment_registry_template
   category: experiments
-  path: skills/experiments/S325_experiment_registry_template.md
+  path: skills/exp/S325_experiment_registry_template.md
 - id: S326
   name: calculation_correctness_check
   category: experiments
-  path: skills/experiments/S326_calculation_correctness_check.md
+  path: skills/exp/S326_calculation_correctness_check.md
 - id: S327
   name: experiment_completeness_check
   category: experiments
-  path: skills/experiments/S327_experiment_completeness_check.md
+  path: skills/exp/S327_experiment_completeness_check.md
 - id: S401
   name: reproducibility_checklist
   category: reproducibility
@@ -328,7 +328,7 @@ skills:
 - id: S415
   name: data_pipeline_invariance_tests
   category: reproducibility
-  path: skills/reproducibility/S415_data_pipeline_invariance_tests.md
+  path: skills/reproducibility/S415_data_pipe_invariance_tests.md
 - id: S416
   name: dependency_lockfile_strategy
   category: reproducibility
@@ -360,7 +360,7 @@ skills:
 - id: S423
   name: security_review_open_source
   category: reproducibility
-  path: skills/reproducibility/S423_security_review_open_source.md
+  path: skills/reproducibility/S423_security_review_open_src.md
 - id: S424
   name: citation_and_attribution_audit
   category: reproducibility
@@ -404,7 +404,7 @@ skills:
 - id: S509
   name: author_contribution_statement
   category: paper_ops
-  path: skills/paper_ops/S509_author_contribution_statement.md
+  path: skills/paper_ops/S509_author_contrib_statement.md
 - id: S510
   name: ethics_statement_generator
   category: paper_ops
@@ -416,11 +416,11 @@ skills:
 - id: S512
   name: figure_table_audit
   category: paper_ops
-  path: skills/paper_ops/S512_figure_table_audit.md
+  path: skills/paper_ops/S512_fig_table_audit.md
 - id: S513
   name: title_abstract_optimizer
   category: paper_ops
-  path: skills/paper_ops/S513_title_abstract_optimizer.md
+  path: skills/paper_ops/S513_title_abs_optimizer.md
 - id: S514
   name: talk_poster_outline
   category: paper_ops
@@ -428,7 +428,7 @@ skills:
 - id: S515
   name: open_source_release_plan
   category: paper_ops
-  path: skills/paper_ops/S515_open_source_release_plan.md
+  path: skills/paper_ops/S515_open_src_release_plan.md
 - id: S516
   name: camera_ready_checklist
   category: paper_ops
@@ -436,7 +436,7 @@ skills:
 - id: S517
   name: figure_table_caption_rewrite
   category: paper_ops
-  path: skills/paper_ops/S517_figure_table_caption_rewrite.md
+  path: skills/paper_ops/S517_fig_table_caption_rewrite.md
 - id: S518
   name: limitations_section_builder
   category: paper_ops
@@ -452,7 +452,7 @@ skills:
 - id: S521
   name: contribution_statement_refinement
   category: paper_ops
-  path: skills/paper_ops/S521_contribution_statement_refinement.md
+  path: skills/paper_ops/S521_contrib_statement_refinement.md
 - id: S522
   name: appendix_planner
   category: paper_ops
@@ -464,7 +464,7 @@ skills:
 - id: S524
   name: open_source_release_note_generator
   category: paper_ops
-  path: skills/paper_ops/S524_open_source_release_note_generator.md
+  path: skills/paper_ops/S524_open_src_release_note_generator.md
 - id: S525
   name: arxiv_metadata_preflight
   category: paper_ops
@@ -491,7 +491,7 @@ skills:
 - id: S328
   name: experiment_rigor_scorecard
   category: experiments
-  path: skills/experiments/S328_experiment_rigor_scorecard.md
+  path: skills/exp/S328_experiment_rigor_scorecard.md
   status: draft
 - id: S527
   name: claim_language_risk_linter
@@ -516,7 +516,7 @@ skills:
 - id: S336
   name: pre_analysis_plan_builder
   category: experiments
-  path: skills/experiments/S336_pre_analysis_plan_builder.md
+  path: skills/exp/S336_pre_analysis_plan_builder.md
   status: draft
 - id: S426
   name: data_management_sharing_plan_builder
@@ -575,3 +575,49 @@ skills:
   category: reproducibility
   path: skills/platform_zyr_skills/README.md
   status: stable
+- id: rwf_s340_master
+  name: research_writing_figure_s340_integrated_master
+  category: composite
+  path: skills/rwf_s340/MASTER.md
+  outputs:
+  - master_prompt
+- id: S601
+  name: paper_story_section_architecture
+  category: research_writing_integrated
+  path: skills/rwf_s340/S601_paper_story_section_arch.md
+- id: S602
+  name: claim_evidence_reverse_outline_review
+  category: research_writing_integrated
+  path: skills/rwf_s340/S602_claim_evidence_reverse_outline_review.md
+- id: S603
+  name: bilingual_human_voice_delta_rewrite
+  category: research_writing_integrated
+  path: skills/rwf_s340/S603_bilingual_human_voice_delta_rewrite.md
+- id: S604
+  name: experiment_result_narrative_and_caption
+  category: research_writing_integrated
+  path: skills/rwf_s340/S604_experiment_result_narrative_and_caption.md
+- id: S621
+  name: publication_figure_design_theory
+  category: figure_design_integrated
+  path: skills/rwf_s340/S621_publication_fig_design_theory.md
+- id: S622
+  name: matplotlib_publication_script_builder
+  category: figure_design_integrated
+  path: skills/rwf_s340/S622_matplotlib_publication_script_builder.md
+- id: S623
+  name: visual_claim_caption_audit
+  category: figure_design_integrated
+  path: skills/rwf_s340/S623_visual_claim_caption_audit.md
+- id: S640
+  name: s340_global_paper_logic_language_audit
+  category: s340_integrated
+  path: skills/rwf_s340/S640_s340_global_paper_logic_language_audit.md
+- id: S650
+  name: integrated_pack_no_omission_validation
+  category: reproducibility_integrated
+  path: skills/rwf_s340/S650_integrated_pack_no_omission_valid.md
+- id: rwf_s340_requirements
+  name: rwf_s340_hard_requirements_and_forbidden_phrase_gate
+  category: s340_integrated
+  path: skills/rwf_s340/req_AND_forbid_phr.md

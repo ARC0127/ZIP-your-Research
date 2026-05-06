@@ -52,6 +52,14 @@ WRITING_HINTS = [
     "icml", "neurips", "iclr", "cvpr", "aaai",
 ]
 
+RWF_S340_HINTS = [
+    "paper writing", "manuscript", "research plan", "readme architecture", "caption",
+    "anti ai tone", "forbidden phrase", "mechanical phrasing", "style logic",
+    "figure design", "architecture diagram", "svg", "png", "matplotlib",
+    "论文润色", "论文重构", "研究计划", "禁用短语", "禁止词", "机械排比",
+    "架构图", "科研绘图", "物理边框", "图文一致", "完整性验证", "禁止遗漏",
+]
+
 
 # coding/debug intent hints (EN + ZH)
 CODING_HINTS = [
@@ -116,6 +124,14 @@ def looks_like_proof_task(q: str) -> bool:
     if any(h in ql for h in PROOF_HINTS):
         return True
     if any(sym in q for sym in ("∀", "∃", "⇒", "⇔", "∵", "∴")):
+        return True
+    return False
+
+def looks_like_rwf_s340_task(q: str) -> bool:
+    ql = q.lower()
+    if any(h in ql for h in RWF_S340_HINTS):
+        return True
+    if looks_like_manuscript(q):
         return True
     return False
 
@@ -223,10 +239,20 @@ def main():
         "path": "skills/proof_engine/MASTER_v1.5.md",
     })
 
+    # v1.6+: Add integrated research-writing/figure/S340 master as a candidate.
+    skills.append({
+        "id": "rwf_s340_master",
+        "name": "research_writing_figure_s340_integrated_master",
+        "category": "composite",
+        "triggers": [x.lower() for x in RWF_S340_HINTS],
+        "path": "skills/rwf_s340/MASTER.md",
+    })
+
 
     # Manuscript heuristic: print a strong hint, but still compute scores
     manuscript_flag = looks_like_manuscript(q)
     proof_flag = looks_like_proof_task(q)
+    rwf_s340_flag = looks_like_rwf_s340_task(q)
 
     scored = []
     for s in skills:
@@ -234,6 +260,7 @@ def main():
         if sc0 <= 0 and not (
             (s["id"] == "writing_engine" and manuscript_flag)
             or (s["id"] == "proof_engine" and proof_flag)
+            or (s["id"] in {"rwf_s340_master", "S640"} and rwf_s340_flag)
         ):
             continue
         sc, applied = apply_weights(ql, s, sc0 if sc0 > 0 else 0.5, weights)  # heuristic seed score
@@ -248,6 +275,10 @@ def main():
     if proof_flag:
         print("Heuristic: proof-heavy input detected → consider PRIMARY proof_engine.")
         print("Next: skills/proof_engine/MASTER_v1.5.md")
+        print()
+    if rwf_s340_flag:
+        print("Hard requirement: RWF-S340 task detected → apply S640 as global writing/logic gate when prose is involved.")
+        print("Next: skills/rwf_s340/MASTER.md and skills/rwf_s340/S640_s340_global_paper_logic_language_audit.md")
         print()
 
     if not scored:

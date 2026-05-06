@@ -4,7 +4,11 @@ categories:
 - reproducibility
 - paper_ops
 - composite
-version: v1.3.2
+- research_writing_integrated
+- figure_design_integrated
+- s340_integrated
+- reproducibility_integrated
+version: v1.6.0
 intent_detection:
   notes:
   - Prefer 'writing_engine' when user provides manuscript text / PDF / review comments
@@ -15,6 +19,8 @@ intent_detection:
     leakage.
   - Prefer S5xx when user asks about submission strategy, rebuttal, camera-ready,
     review simulation.
+  - Prefer S640 as a mandatory global gate for writing-like tasks before S601/S602/S603/S604.
+  - Prefer S621/S622/S623 for figure, SVG, plotting script, caption, or visual-claim tasks.
 priority_rules:
 - rule: safety_and_truthfulness
   description: 'Apply evidence policy first: no fabrication; label UNKNOWN; propose
@@ -23,11 +29,16 @@ priority_rules:
   description: Default to a 2-hour deliverable plan unless user explicitly requests
     long-form.
 - rule: single_primary_skill
-  description: Return ONE primary skill prompt; optional secondary skill only if needed
-    for verification.
+  description: Return ONE primary skill prompt, but keep mandatory companions such as S640 visible for writing-like tasks.
+- rule: s340_hard_gate
+  description: S640 is a mandatory global style/logic gate for manuscript, research-plan, polishing, README architecture text, and caption tasks.
 composite_skills:
 - id: writing_engine
   purpose: Gate → Rewrite → Verify; venue constraints; web research protocol
   entry: skills/writing_engine/MASTER_v1.3.2.md
 tooling:
   router_cli: router/route.py
+
+- id: rwf_s340_master
+  purpose: Mandatory integrated research-writing, figure-production, S340 hard-requirement, and no-omission validation layer
+  entry: skills/rwf_s340/MASTER.md
