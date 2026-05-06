@@ -24,7 +24,7 @@ result paragraph / table caption / figure caption
 → S640 → S604 → S623 when visual evidence is involved
 
 figure design / README architecture diagram
-→ S621 → S622 when code or SVG/PNG output is required → S623
+→ S621 → S623; add S622 only when executable plotting, file export, or source-native diagram generation is required
 
 release packaging / source preservation / path-length repair
 → S650

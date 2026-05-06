@@ -16,7 +16,7 @@ Design:
 - Read YAML front matter from real skill files `skills/**/S###_*.md`
 - Base score: trigger matches (substring, case-insensitive) + small token overlap bonus
 - Apply category weights + task-pattern boosts from router/weights_v1.3.2.yaml
-- Treat composite `writing_engine` as a first-class candidate (for rewriting / manuscript-like input)
+- Treat composite `writing_engine` and `figure_engine` as first-class candidates
 - Output is stable and audit-friendly.
 
 Usage:
@@ -48,16 +48,25 @@ SECTION_HINTS = [
 # writing intent hints (EN + ZH)
 WRITING_HINTS = [
     "rewrite", "revise", "polish", "edit", "review", "camera-ready", "rebuttal",
-    "润色", "改写", "重写", "审稿", "降重", "表达", "措辞",
+    "write", "writing", "manuscript", "paper section", "readme prose", "abstract", "introduction", "method", "results",
+    "润色", "改写", "重写", "审稿", "降重", "表达", "措辞", "写作", "写东西", "摘要", "引言", "方法节", "实验节", "研究计划",
     "icml", "neurips", "iclr", "cvpr", "aaai",
+]
+
+FIGURE_HINTS = [
+    "figure", "plot", "diagram", "workflow diagram", "architecture diagram",
+    "scientific figure", "matplotlib", "chart", "graph", "visualization",
+    "画图", "绘图", "图", "流程图", "架构图", "科研绘图", "绘图脚本",
+    "svg", "png", "pdf", "figures4papers",
 ]
 
 RWF_S340_HINTS = [
     "paper writing", "manuscript", "research plan", "readme architecture", "caption",
     "anti ai tone", "forbidden phrase", "mechanical phrasing", "style logic",
-    "figure design", "architecture diagram", "svg", "png", "matplotlib",
+    "figure design", "architecture diagram", "workflow diagram", "figures4papers",
+    "source-native diagram", "svg", "png", "matplotlib", "writing engine", "figure engine",
     "论文润色", "论文重构", "研究计划", "禁用短语", "禁止词", "机械排比",
-    "架构图", "科研绘图", "物理边框", "图文一致", "完整性验证", "禁止遗漏",
+    "架构图", "流程图", "科研绘图", "物理边框", "图文一致", "完整性验证", "禁止遗漏",
 ]
 
 
@@ -119,11 +128,25 @@ def looks_like_manuscript(q: str) -> bool:
     return False
 
 
+def looks_like_writing_task(q: str) -> bool:
+    ql = q.lower()
+    if any(h in ql for h in WRITING_HINTS):
+        return True
+    if looks_like_manuscript(q):
+        return True
+    return False
+
 def looks_like_proof_task(q: str) -> bool:
     ql = q.lower()
     if any(h in ql for h in PROOF_HINTS):
         return True
     if any(sym in q for sym in ("∀", "∃", "⇒", "⇔", "∵", "∴")):
+        return True
+    return False
+
+def looks_like_figure_task(q: str) -> bool:
+    ql = q.lower()
+    if any(h in ql for h in FIGURE_HINTS):
         return True
     return False
 
@@ -221,6 +244,15 @@ def main():
         "path": "skills/writing_engine/MASTER_v1.3.2.md",
     })
 
+    # v1.6.3+: Add composite figure_engine as a candidate for scoring
+    skills.append({
+        "id": "figure_engine",
+        "name": "figure_engine",
+        "category": "composite",
+        "triggers": [x.lower() for x in FIGURE_HINTS],
+        "path": "skills/figure_engine/MASTER_v1.6.3.md",
+    })
+
     # v1.2+: Add composite coding_engine as a candidate for scoring
     skills.append({
         "id": "coding_engine",
@@ -251,14 +283,16 @@ def main():
 
     # Manuscript heuristic: print a strong hint, but still compute scores
     manuscript_flag = looks_like_manuscript(q)
+    writing_flag = looks_like_writing_task(q)
     proof_flag = looks_like_proof_task(q)
+    figure_flag = looks_like_figure_task(q)
     rwf_s340_flag = looks_like_rwf_s340_task(q)
 
     scored = []
     for s in skills:
         sc0, hits = base_score(ql, s["triggers"])
         if sc0 <= 0 and not (
-            (s["id"] == "writing_engine" and manuscript_flag)
+            (s["id"] == "writing_engine" and writing_flag)
             or (s["id"] == "proof_engine" and proof_flag)
             or (s["id"] in {"rwf_s340_master", "S640"} and rwf_s340_flag)
         ):
@@ -268,13 +302,17 @@ def main():
 
     scored.sort(key=lambda x: (-x[0], x[1]["id"]))
 
-    if manuscript_flag:
-        print("Heuristic: manuscript-like input detected → consider PRIMARY writing_engine.")
-        print("Next: skills/writing_engine/MASTER_v1.3.2.md")
+    if writing_flag:
+        print("Hard requirement: writing task detected → call writing_engine backed by Research-Paper-Writing-Skills.")
+        print("Next: skills/writing_engine/MASTER_v1.3.2.md and ext/src/rpws/")
         print()
     if proof_flag:
         print("Heuristic: proof-heavy input detected → consider PRIMARY proof_engine.")
         print("Next: skills/proof_engine/MASTER_v1.5.md")
+        print()
+    if figure_flag:
+        print("Hard requirement: figure task detected → call figure_engine backed by figures4papers.")
+        print("Next: inspect ext/src/figures/ first, then use skills/figure_engine/MASTER_v1.6.3.md")
         print()
     if rwf_s340_flag:
         print("Hard requirement: RWF-S340 task detected → apply S640 as global writing/logic gate when prose is involved.")

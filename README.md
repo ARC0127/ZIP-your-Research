@@ -8,18 +8,18 @@ ZYR is not an autonomous job runner. It is a control-and-verification layer: it 
 
 Use ZYR when the work is too important to be handled as ordinary chat. Typical use cases include:
 
-- manuscript, proposal, recommendation-letter, and README revision;
+- manuscript, proposal revision;
 - claim-evidence review, proof-style audit, and reviewer-response preparation;
 - code repair, repository cleanup, release packaging, and CI validation;
 - experiment planning, result interpretation, metric sanity checks, and reproducibility review;
-- publication-quality figure planning, caption audit, and plotting-code repair;
+- publication-quality figure planning, plotting-code adaptation, caption audit, and figure repair;
 - loss-minimizing migration prompts and append-only project handoff.
 
 The core rule is:
 
 ```text
 Lock the task before executing it.
-Route the task to the right engine.
+Route the task to the correct engine.
 Verify the artifact before accepting the result.
 ```
 
@@ -40,7 +40,7 @@ repository or ZIP loaded
 → artifact output and validation report
 ```
 
-![ZIP-your-Research architecture](docs/assets/zyr_research_os_arch_v1_6.svg)
+The README intentionally presents the flow as text. If a polished workflow figure is required, it should be produced through `figure_engine` rather than improvised directly inside the README.
 
 The v1.6 line is additive: it keeps the boot, mode-lock, proof, completion, and migration discipline from v1.5, and adds explicit research-writing, figure-making, S340 writing-quality review, and no-omission release-validation workflows.
 
@@ -49,10 +49,59 @@ The v1.6 line is additive: it keeps the boot, mode-lock, proof, completion, and 
 | Plane | Purpose | Main paths |
 |---|---|---|
 | Control plane | Bootstrap, migration detection, intake, mode lock, locked execution, and global guardrails | `boot/`, `router/` |
-| Engine plane | Composite execution engines for broad task families | `skills/proof_engine/`, `skills/writing_engine/`, `skills/coding_engine/` |
+| Engine plane | Composite execution engines for broad task families | `skills/proof_engine/`, `skills/writing_engine/`, `skills/figure_engine/`, `skills/coding_engine/` |
 | Skill plane | Research, experiment, paper-operation, reproducibility, and integrated writing/figure/S340 skills | `skills/research_core/`, `skills/exp/`, `skills/paper_ops/`, `skills/reproducibility/`, `skills/rwf_s340/` |
 | Source-preservation plane | Upstream and user-authored source materials retained for attribution and reference | `ext/src/` |
 | Validation plane | Manifests, checksums, path reports, validators, and release checks | `manifests/`, `tools/`, `artifacts/` |
+
+## Hard engine-binding rules
+
+These bindings are part of the internal contract, not optional suggestions.
+
+### Writing tasks
+
+Any task that involves visible writing must call **`writing_engine`**.
+
+This includes:
+- paper sections, proposals, recommendation letters, and README prose;
+- sentence rewriting, polishing, compression, expansion, translation, and anti-AI-tone editing;
+- result paragraphs, rebuttals, captions, and reviewer responses.
+
+`writing_engine` must be used together with the preserved **Research-Paper-Writing-Skills** source tree and the integrated writing wrappers:
+
+```text
+writing task
+→ writing_engine
+→ ext/src/rpws/ (Research-Paper-Writing-Skills)
+→ S601 / S602 / S603 / S604 as needed
+→ S640 as the global writing/logic gate
+```
+
+### Figure tasks
+
+Any task that involves figure-making must call **`figure_engine`**.
+
+This includes:
+- paper figures and README figures;
+- workflow, architecture, and mechanism diagrams;
+- plotting-code generation, repair, or adaptation;
+- caption audit when the visual itself is also being created or revised.
+
+`figure_engine` must be used together with the preserved **figures4papers** source tree and the integrated figure wrappers:
+
+```text
+figure task
+→ figure_engine
+→ inspect ext/src/figures/ first (figures4papers)
+→ S621 / S622 / S623 as needed
+→ coding_engine only when code execution or repair is required
+```
+
+Hard figure constraints:
+- inspect `figures4papers` before drawing; do not redraw from scratch if a close pattern already exists;
+- preserve source-code-first generation;
+- do not replace CSV / table / dataframe input logic with ad hoc hard-coded values unless the user explicitly changes the data source or no structured source exists;
+- treat SVG as an export format, not as a license to hand-draw a brittle figure.
 
 ## If I need X, which engine should I control?
 
@@ -62,15 +111,15 @@ A useful ZYR instruction should specify the task type, the engine or skill stack
 |---|---|---|---|
 | Start a new task or resume a migrated project | Bootstrap + router | `boot/00_BOOTSTRAP_PROTOCOL_v1.3.2.md`, `boot/04_MODE_LOCK_FORMAT_v1.3.2.md` | Locked task boundary, deliverable type, acceptance criteria, and execution mode |
 | Verify a research idea, theorem, derivation, or method claim | `proof_engine` | `skills/proof_engine/MASTER_v1.5.md`, often `S203`, `S226`, `S227`, `S240`, `S241` | Fact / assumption / inference separation, contradiction check, unsupported-claim report |
-| Review a manuscript for logic, contribution, and claim-evidence alignment | `proof_engine` + writing review route | `S602` + mandatory `S640` | Reviewer-style issues, section-level causal gaps, evidence mismatch, and concrete fixes |
-| Write or restructure a paper section, proposal, research plan, or README | `writing_engine` + S340 review | `S601` + mandatory `S640`; add `S602` for claim-evidence review | Problem-gap-method-evidence structure before sentence-level polish |
-| Revise prose, compress wording, expand reasoning, translate, or reduce AI-like tone | `writing_engine` | `S603` + mandatory `S640` | Delta-aware revision that preserves locked meaning, citations, numbers, formulas, and style constraints |
-| Revise a Word document with tracked/redline-style constraints | `writing_engine` + document workflow | `S603` + `S640`; add proof check after revision | Template-preserving Word revision, red-marked additions/changes, and revision report |
-| Write result paragraphs, table captions, figure captions, or ablation narratives | `writing_engine` + result-narrative route | `S604` + `S640`; add `S623` when a visual claim is involved | Evidence-bounded result narrative with correct metric direction and caption scope |
+| Review a manuscript for logic, contribution, and claim-evidence alignment | `writing_engine` + `proof_engine` | `ext/src/rpws/`, `S602`, mandatory `S640` | Reviewer-style issues, section-level causal gaps, evidence mismatch, and concrete fixes |
+| Write or restructure a paper section, proposal, research plan, or README | `writing_engine` | `skills/writing_engine/MASTER_v1.3.2.md`, `ext/src/rpws/`, `S601`, mandatory `S640` | Problem-gap-method-evidence structure before sentence-level polish |
+| Revise prose, compress wording, expand reasoning, translate, or reduce AI-like tone | `writing_engine` | `ext/src/rpws/`, `S603`, mandatory `S640` | Delta-aware revision that preserves locked meaning, citations, numbers, formulas, and style constraints |
+| Revise a Word document with tracked/redline-style constraints | `writing_engine` + document workflow | `ext/src/rpws/`, `S603`, `S640`; add proof check after revision | Template-preserving Word revision, red-marked additions/changes, and revision report |
+| Write result paragraphs, table captions, figure captions, or ablation narratives | `writing_engine` | `ext/src/rpws/`, `S604`, `S640`; add `S623` when checking visual-evidence consistency | Evidence-bounded result narrative with correct metric direction and caption scope |
 | Plan experiments, choose metrics, design ablations, or check experimental completeness | `proof_engine` + experiment skills | `S301`-`S328`, especially `S301`, `S303`, `S305`, `S307`, `S327`, `S328` | Minimal decidable experiment design and claim-evidence alignment |
 | Analyze experiment results and decide whether a paper claim is supported | experiment workflow + `proof_engine` | `S602`, `S305`, `S307`, `S327`, `S328` | Claim-evidence matrix, counterexample check, metric-risk report, and narrative boundary |
-| Design a scientific figure or architecture diagram | figure workflow | `S621` + `S623`; add `S622` for executable plotting | Claim-driven layout, panel semantics, visual-risk check, and caption plan |
-| Generate or repair Matplotlib / SVG / PNG / PDF figure code | `coding_engine` + figure workflow | `S622` + `S621` + `S623`; add `S431` when execution is possible | Minimal executable plotting code and inspected output when possible |
+| Design or revise a scientific figure, workflow diagram, or architecture explanation | `figure_engine` | `skills/figure_engine/MASTER_v1.6.3.md`, `ext/src/figures/`, `S621`, `S623`; add `S622` when code or export is needed | Claim-to-visual mapping, reuse of the closest figures4papers pattern, layout constraints, visual-risk check, and caption plan |
+| Generate or repair Matplotlib / SVG / PNG / PDF figure output | `figure_engine` + `coding_engine` | `ext/src/figures/`, `S622`, `S621`, `S623`; add `S431` when execution is possible | Deterministic source, figures4papers-based code adaptation, requested exports when suitable, and rendered-output inspection |
 | Debug code, patch scripts, or prepare release code | `coding_engine` | `skills/coding_engine/MASTER_v1.3.2.md`, often `S402`, `S407`, `S421`, `S431`, `S432` | Smallest sufficient patch, changed-file list, runnable commands, and verification result |
 | Package artifacts, check reproducibility, or prepare an open-source release | `coding_engine` + reproducibility skills | `S407`, `S422`, `S424`, `S428`, `S431` | Inventory, environment notes, checksums, release notes, and validation result |
 | Validate this ZYR package, a ZIP, or a source-preservation update | release-validation route | `S650`, `tools/validate_no_omission.py`, `tools/validate_v7_2.py`, `tools/drift_audit_v1_3.py` | Duplicate/path/reference/manifest validation and package-readiness report |
@@ -82,11 +131,11 @@ Do not write only “call ZYR and optimize this.” Bind the task to a route:
 
 ```text
 Call ZYR v1.6.3 and execute under MODE_LOCK.
-Task type: [paper audit / Word revision / code repair / experiment analysis / README rewrite / ZIP validation / migration prompt].
-Control engine / skills: [proof_engine / writing_engine / coding_engine / S640 / S650 / S601-S604 / S621-S623].
+Task type: [paper audit / Word revision / code repair / experiment analysis / README rewrite / ZIP validation / migration prompt / figure generation].
+Control engine / skills: [proof_engine / writing_engine / figure_engine / coding_engine / S640 / S650 / S601-S604 / S621-S623].
 Input materials: [files, text, ZIP, figures, logs, tables, experiment outputs].
 Target deliverable: [revised Word, Markdown report, runnable CLI, repaired ZIP, LaTeX, figure, migration prompt].
-Hard constraints: [preserve template, redline edits, no fabricated checks, no unsupported claims, no blind hyperparameter search, etc.].
+Hard constraints: [preserve template, redline edits, no fabricated checks, no unsupported claims, no blind hyperparameter search, preserve figures4papers data-loading logic, etc.].
 Final validation: report passed checks, failed checks, unverified items, and the next minimal action.
 ```
 
@@ -94,11 +143,11 @@ Chinese prompt template:
 
 ```text
 调用 ZYR v1.6.3，按 MODE_LOCK 执行，不跳过 routing 和 validation。
-任务类型：[论文审查 / Word 修订 / 代码修复 / 实验分析 / README 重构 / ZIP 发版检查 / 迁移 prompt]。
-指定 engine / skills：[proof_engine / writing_engine / coding_engine / S640 / S650 / S601-S604 / S621-S623]。
-输入材料：[文件、文本、ZIP、图片、日志、实验表格]。
+任务类型：[论文审查 / Word 修订 / 代码修复 / 实验分析 / README 重构 / ZIP 发版检查 / 迁移 prompt / 画图任务]。
+指定 engine / skills：[proof_engine / writing_engine / figure_engine / coding_engine / S640 / S650 / S601-S604 / S621-S623]。
+输入材料：[文件、文本、ZIP、图片、日志、实验表格、CSV 或其他结构化数据]。
 目标交付物：[修订版 Word / Markdown 报告 / 可运行 CLI / 修复后 ZIP / LaTeX / 图表 / 迁移 prompt]。
-硬约束：[不得遗漏原文、不得虚构已检查内容、保留模板、红色标注、禁止拍脑袋式调参等]。
+硬约束：[不得遗漏原文、不得虚构已检查内容、保留模板、红色标注、禁止拍脑袋式调参、优先复用 figures4papers 源码模式等]。
 最后必须输出：已完成内容、判断依据、验证结果、未验证项、下一步最小动作。
 ```
 
@@ -108,7 +157,7 @@ Chinese prompt template:
 
 ```text
 Call ZYR v1.6.3. Task type: paper logic and language audit.
-Control engine / skills: proof_engine + S602 + S640.
+Control engine / skills: writing_engine + proof_engine + S602 + S640.
 Focus: problem formulation, method-selection rationale, section causality, claim-evidence alignment, redundant wording, and AI-like phrasing.
 Deliverable: line-level issues, concrete replacements, and final verification report.
 ```
@@ -136,6 +185,23 @@ Call ZYR v1.6.3. Task type: experiment result analysis.
 Control engine / skills: experiment workflow + proof_engine + S602.
 Constraints: do not omit seeds, tables, metrics, or failure cases; separate facts, inference, and unsupported claims; output a claim-evidence matrix.
 ```
+
+### Figure workflow
+
+```text
+Call ZYR v1.6.3. Task type: scientific figure, workflow diagram, or figure repair.
+Control engine / skills: figure_engine + S621 + S623; add S622 only when executable plotting code or concrete file export is required.
+Constraints: lock the figure claim, data source, and target medium; inspect figures4papers first and select the closest source pattern; reuse and minimally adapt the upstream plotting logic; keep CSV / table / dataframe input logic unless an explicit change is justified; export the requested assets only after the source is in place.
+```
+
+Figure acceptance rules:
+
+- A figure must carry a specific claim; decorative diagrams are rejected.
+- Figure generation is source-first: inspect `ext/src/figures/` before writing new code.
+- Do not bypass a close figures4papers pattern and redraw from scratch without reason.
+- Do not fabricate values or silently replace structured input with hard-coded arrays.
+- SVG/PNG/PDF are deliverables, not substitutes for missing generating source.
+- Captions must describe what the visual actually supports, not what the surrounding prose wishes it supported.
 
 ### README or ZIP release validation
 
@@ -167,8 +233,8 @@ Run the integrated release checks when validating a ZIP or source-preservation u
 ```bash
 python tools/validate_no_omission.py
 python tools/validate_integrated_sources.py
-python router/route.py "paper writing S340 logic audit"
-python router/route.py "matplotlib publication figure svg png"
+python router/route.py "paper writing RPWS S340 logic audit"
+python router/route.py "figure engine figures4papers plotting code png pdf"
 python router/route.py "ZIP release no omission checksum path length"
 ```
 
@@ -182,6 +248,7 @@ router/                       deterministic routing and route addenda
 router/ext_router/            integrated research-writing, figure, and S340 routing notes
 skills/proof_engine/          proof, derivation, claim, and logic-verification engine
 skills/writing_engine/        manuscript and prose-rewriting engine
+skills/figure_engine/         figures4papers-backed figure engine
 skills/coding_engine/         debugging, patching, and code-verification engine
 skills/research_core/         research framing, novelty, literature, and method checks
 skills/exp/                   experiment design, metrics, ablations, and sanity checks
@@ -209,7 +276,7 @@ The v1.6 writing and figure workflows also integrate and preserve the following 
 - [Research-Paper-Writing-Skills](https://github.com/Master-cai/Research-Paper-Writing-Skills), integrated under `ext/src/rpws/`, for reviewer-facing paper structure, section guides, and claim-evidence writing discipline.
 - [Prof. Peng Sida's open research notes](https://github.com/pengsida/learning_research), acknowledged through the upstream attribution of Research-Paper-Writing-Skills.
 - [awesome-ai-research-writing](https://github.com/Leey21/awesome-ai-research-writing), integrated under `ext/src/awesome/`, for academic-writing prompts, bilingual rewriting patterns, logic-checking prompts, and examples.
-- [figures4papers](https://github.com/ChenLiu-1996/figures4papers), integrated under `ext/src/figures/`, for scientific figure-design principles, plotting references, demonstrations, and assets.
+- [figures4papers](https://github.com/ChenLiu-1996/figures4papers), integrated under `ext/src/figures/`, for scientific figure-design principles, plotting scripts, demonstrations, and reusable figure-generation patterns.
 
 The external source trees are retained as source materials. ZYR adds routing wrappers, validation rules, and task contracts around them so that writing, figure, and release tasks can be executed under the same mode-lock and verification discipline as the rest of the package.
 
@@ -222,18 +289,3 @@ For detailed attribution and integration boundaries, see:
 - `research/engineering_alignment_matrix.md`
 - `research/fars_deep_dive.md`
 - `research/pessimistic_verification_lineage.md`
-
-## Safety and acceptance rules
-
-ZYR treats the following as mandatory:
-
-- do not fabricate facts, citations, file states, command results, or experimental outcomes;
-- do not report an unexecuted check as completed;
-- do not hide uncertainty inside polished prose;
-- do not reduce research problems to unsupported heuristic tuning;
-- do not accept writing output before the relevant S340 checks are satisfied;
-- do not call a package repaired until duplicate IDs, path references, manifests, and validation scripts have been checked.
-
-## Maintainer and license
-
-Maintainer information is available in `docs/ABOUT_MAINTAINER.md`. This repository is released under the MIT License.

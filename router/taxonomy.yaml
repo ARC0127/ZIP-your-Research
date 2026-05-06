@@ -11,8 +11,7 @@ categories:
 version: v1.6.0
 intent_detection:
   notes:
-  - Prefer 'writing_engine' when user provides manuscript text / PDF / review comments
-    / venue constraints.
+  - Prefer 'writing_engine' when the user asks to write, rewrite, polish, or review prose. Writing tasks must bind to Research-Paper-Writing-Skills plus the integrated S601-S604 and S640 chain.
   - Prefer S3xx when user asks for validation, ablation, baselines, metrics, or a
     2-hour decision signal.
   - Prefer S4xx when user asks for reproducibility, code/data audits, dataset construction,
@@ -20,7 +19,7 @@ intent_detection:
   - Prefer S5xx when user asks about submission strategy, rebuttal, camera-ready,
     review simulation.
   - Prefer S640 as a mandatory global gate for writing-like tasks before S601/S602/S603/S604.
-  - Prefer S621/S622/S623 for figure, SVG, plotting script, caption, or visual-claim tasks.
+  - Prefer 'figure_engine' for figure, plotting script, caption, or visual-claim tasks. Figure tasks must inspect figures4papers first and preserve structured data-loading logic unless a documented change is required.
 priority_rules:
 - rule: safety_and_truthfulness
   description: 'Apply evidence policy first: no fabrication; label UNKNOWN; propose
@@ -34,8 +33,11 @@ priority_rules:
   description: S640 is a mandatory global style/logic gate for manuscript, research-plan, polishing, README architecture text, and caption tasks.
 composite_skills:
 - id: writing_engine
-  purpose: Gate → Rewrite → Verify; venue constraints; web research protocol
+  purpose: Visible writing tasks; RPWS-backed writing engine with integrated S601-S604 and S640
   entry: skills/writing_engine/MASTER_v1.3.2.md
+- id: figure_engine
+  purpose: Figure-making tasks; figures4papers-backed figure engine with integrated S621-S623
+  entry: skills/figure_engine/MASTER_v1.6.3.md
 tooling:
   router_cli: router/route.py
 

@@ -5464,7 +5464,6 @@
   ],
   "added_release_files": [
     "docs/EXTERNAL_SKILL_ATTRIBUTION_v1.6.md",
-    "docs/assets/zyr_research_os_arch_v1_6.svg",
     "manifests/*",
     "manifests/README_USAGE_AUDIT_v1.6.2.md",
     "manifests/REPAIR_AUDIT_v1.6.1.md",

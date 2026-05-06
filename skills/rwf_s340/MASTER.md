@@ -2,7 +2,7 @@
 id: rwf_s340_master
 name: research_writing_figure_s340_integrated_master
 category: composite
-version: v1.6.0
+version: v1.6.3
 ---
 
 # RWF-S340 Integrated Master Skill
@@ -11,25 +11,28 @@ This master integrates external research-writing and figure-making materials wit
 
 Preserved sources:
 
-- `ext/src/rpws/`: Research-Paper-Writing-Skills, all 43 source files preserved.
-- `ext/src/awesome/`: awesome-ai-research-writing, all 4 source files preserved.
-- `ext/src/figures/`: figures4papers, all 70 source files preserved, including plotting scripts and image/PDF assets.
+- `ext/src/rpws/`: Research-Paper-Writing-Skills, preserved as the primary external writing backend.
+- `ext/src/awesome/`: awesome-ai-research-writing, preserved as supplementary writing references and examples.
+- `ext/src/figures/`: figures4papers, preserved as the primary external figure backend, including plotting scripts and assets.
 - `ext/src/S340_v4.2_theory_global_skill_bundle/`: user-authored S340 v4.2 ruleset, all source content preserved.
 
 ## Mandatory operating chain
 
 ```text
 ZYR boot/state/guardrails
-→ router/route.py + router/ext_router/ROUTER_REQUIREMENTS_BINDING_RWF_S340_v1.6.md
-→ S640 global writing/logic hard gate for writing-like tasks
-→ S601/S602/S603/S604 for paper writing, review, rewriting, and result narratives
-→ S621/S622/S623 for figure design, script output, and visual-claim audit
-→ S650 for packaging, source preservation, checksum, and path-length validation
+→ router/route.py + router/ext_router/ROUTER_req_BINDING_RWF_S340_v1.6.md
+→ writing tasks: writing_engine → ext/src/rpws/ → S601/S602/S603/S604 → S640
+→ figure tasks: figure_engine → inspect ext/src/figures/ → S621/S622/S623
+→ release-validation tasks: S650
 ```
 
-## Hard requirement
+## Hard requirements
 
-`S640` is not optional for writing-like work. It must be applied whenever the task involves paper prose, research-plan prose, README architecture text, reviewer critique, rebuttal, CV research descriptions, translation, polishing, or figure/table captions.
+1. `writing_engine` is mandatory for visible writing tasks.
+2. `figure_engine` is mandatory for figure-making tasks.
+3. `S640` is mandatory for writing-like work.
+4. `figures4papers` inspection is mandatory before proposing a new figure implementation.
+5. CSV/table/dataframe loading logic should be preserved unless the data source is intentionally changed and documented.
 
 The detailed requirement and forbidden-phrase gate is:
 

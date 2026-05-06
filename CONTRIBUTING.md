@@ -2,7 +2,7 @@
 
 Thank you for improving ZIP-your-Research (ZYR). Contributions are welcome when they preserve the repository's central purpose: task-boundary discipline, evidence-aware execution, and verifiable research artifacts.
 
-This document defines the contribution rules for the v1.6 line.
+This document defines the contribution rules for the v1.6.3 line.
 
 ## Contribution principles
 
@@ -10,9 +10,11 @@ A contribution is acceptable only if it preserves the following invariants:
 
 1. **One skill ID maps to one canonical routable skill file.** Do not add alias files with the same `S###` identifier.
 2. **Evidence boundaries must remain explicit.** New prompts or skills must not encourage unsupported claims, fabricated verification, or hidden uncertainty.
-3. **Short paths are canonical.** Use `skills/exp/`, `skills/rwf_s340/`, `ext/src/`, `router/ext_router/`, and the current manifest filenames.
+3. **Canonical short paths remain authoritative.** Use `skills/exp/`, `skills/rwf_s340/`, `ext/src/`, `router/ext_router/`, and the current manifest filenames.
 4. **Builders and validators must pass.** A change is not complete until the repository builds and strict validation succeeds.
 5. **Historical material may be retained for attribution, but not as duplicate routable skills.** If a source is preserved, place it under `ext/src/` or a clearly non-routable reference path.
+6. **Writing tasks must remain bound to `writing_engine`.** Do not add a writing-facing workflow that bypasses `writing_engine`, `ext/src/rpws/`, and the integrated S601-S604 + S640 chain.
+7. **Figure tasks must remain bound to `figure_engine`.** Do not add a figure-facing workflow that bypasses `figure_engine`, `ext/src/figures/`, and the integrated S621-S623 chain.
 
 ## What to contribute
 
@@ -30,7 +32,46 @@ Do not contribute:
 - undocumented rewrites of existing behavior;
 - long-path aliases for files that already have Windows-safe canonical paths;
 - skills that convert research problems into unsupported heuristic tuning;
-- documentation that says a command or check passed unless it was actually executed.
+- documentation that says a command or check passed unless it was actually executed;
+- figure-generation instructions that ignore `figures4papers` when a close reusable pattern already exists;
+- ad hoc hard-coded replacement of CSV / table / dataframe figure inputs unless the data source is intentionally changed and documented.
+
+## Engine-binding policy
+
+ZYR v1.6.3 uses explicit engine bindings.
+
+### Writing engine
+
+Any visible writing request must route through:
+
+```text
+writing_engine
+→ ext/src/rpws/
+→ S601 / S602 / S603 / S604 as needed
+→ S640 as the global writing/logic gate
+```
+
+This covers manuscript sections, proposals, recommendation letters, README prose, rewrites, rebuttals, captions, result narratives, and reviewer-facing edits.
+
+### Figure engine
+
+Any figure-making request must route through:
+
+```text
+figure_engine
+→ inspect ext/src/figures/ first
+→ S621 / S622 / S623 as needed
+→ coding_engine only when execution or repair is required
+```
+
+This covers scientific figures, workflow or architecture diagrams, figure repair, plotting-code adaptation, and export requests.
+
+The figure engine is **figures4papers-backed**. Contributors must preserve the following behavior:
+- inspect `ext/src/figures/` before drawing;
+- reuse the closest existing plotting pattern when practical;
+- preserve source-code-first generation;
+- keep CSV / table / dataframe input logic unless there is a documented reason to change it;
+- treat SVG as an export target, not as permission to hand-draw a brittle figure.
 
 ## Skill authoring rules
 
@@ -68,11 +109,12 @@ Use the current canonical ranges unless a maintainer explicitly reserves a new r
 
 ## Integrated source policy
 
-External or user-authored source materials must be preserved under `ext/src/` and cited through wrapper skills or attribution documents. Do not turn every upstream file into a routable skill. The v1.6 integrated routes are canonicalized under:
+External or user-authored source materials must be preserved under `ext/src/` and cited through wrapper skills or attribution documents. Do not turn every upstream file into a routable skill. For v1.6.3, the key integrated backends are:
 
-```text
-skills/rwf_s340/
-```
+- `ext/src/rpws/` for Research-Paper-Writing-Skills;
+- `ext/src/awesome/` for supplementary writing prompts and examples;
+- `ext/src/figures/` for figures4papers;
+- `skills/rwf_s340/` for the integrated S6xx/S640/S650 wrappers.
 
 The directories `skills/rw/` and `skills/fig_ops/` are non-routable reference locations in v1.6.3. Do not add `S###_*.md` files there unless the validator and manifest are intentionally changed to support a new canonical route.
 
@@ -98,13 +140,13 @@ python tools/validate_v7_2.py
 python tools/drift_audit_v1_3.py
 ```
 
-For release-package changes, also run:
+For release-package or integrated-backend changes, also run:
 
 ```bash
 python tools/validate_no_omission.py
 python tools/validate_integrated_sources.py
-python router/route.py "paper writing S340 logic audit"
-python router/route.py "matplotlib publication figure svg png"
+python router/route.py "paper writing RPWS S340 logic audit"
+python router/route.py "figure engine figures4papers plotting code png pdf"
 python router/route.py "ZIP release no omission checksum path length"
 ```
 
@@ -118,8 +160,10 @@ A pull request should not be marked ready until all applicable commands pass or 
 - [ ] `README.md`, `skills_manifest.yaml`, and generated indexes are consistent when affected.
 - [ ] Builders and validators pass.
 - [ ] Any unverified claim, command, or external dependency is labeled honestly.
-- [ ] Release-facing changes include a changelog entry.
+- [ ] Release-facing changes include a changelog entry when appropriate.
+- [ ] Writing-facing changes preserve the `writing_engine` → RPWS → S6xx/S640 chain.
+- [ ] Figure-facing changes preserve the `figure_engine` → figures4papers → S621/S622/S623 chain.
 
 ## Review standard
 
-Maintainers should review contributions with a failure-first mindset. The first blocking issue should be fixed before polishing language or expanding scope. A contribution that looks fluent but weakens evidence tracking, routing discipline, or validation reliability should be rejected or revised.
+Maintainers should review contributions with a failure-first mindset. The first blocking issue should be fixed before polishing language or expanding scope. A contribution that looks fluent but weakens evidence tracking, routing discipline, validation reliability, or the writing/figure engine bindings should be rejected or revised.

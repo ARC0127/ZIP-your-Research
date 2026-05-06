@@ -29,7 +29,6 @@ All other original source files are byte-preserved unless explicitly listed as a
 
 ## New release files
 
-- `docs/assets/zyr_research_os_arch_v1_6.svg`
 - `docs/EXTERNAL_SKILL_ATTRIBUTION_v1.6.md`
 - `skills/rwf_s340/MASTER.md`
 - `skills/rwf_s340/S601_paper_story_section_architecture.md`

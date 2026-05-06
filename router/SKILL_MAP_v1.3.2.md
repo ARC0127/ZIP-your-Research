@@ -320,5 +320,7 @@ Prefer using **one** primary skill per task.
   - triggers: generated composite; outputs: master_prompt
 - **rwf_s340_master** `research_writing_figure_s340_integrated_master` — skills/rwf_s340/MASTER.md
   - triggers: generated composite; outputs: master_prompt
-- **writing_engine** `writing_engine` — skills/writing_engine/README.md
-  - triggers: generated composite; outputs: master_prompt
+- **figure_engine** `figure_engine` — skills/figure_engine/MASTER_v1.6.3.md
+  - triggers: generated composite; outputs: master_prompt; notes: figures4papers-backed figure engine
+- **writing_engine** `writing_engine` — skills/writing_engine/MASTER_v1.3.2.md
+  - triggers: generated composite; outputs: master_prompt; notes: RPWS-backed writing engine

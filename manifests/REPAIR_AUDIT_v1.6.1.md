@@ -22,7 +22,6 @@ The repaired package keeps the prior ZYR logic: boot → intake → MODE_LOCK �
 - `manifests/SOURCE_MANIFEST.json` → `manifests/src_manifest.json`
 - `manifests/SOURCE_FILE_INTEGRATION_TABLE.md` → `manifests/src_FILE_integr_TABLE.md`
 - `skills/rwf_s340/REQUIREMENTS_AND_FORBIDDEN_PHRASES.md` → `skills/rwf_s340/req_AND_forbid_phr.md`
-- `docs/assets/zyr_research_os_architecture_v1_6.svg` → `docs/assets/zyr_research_os_arch_v1_6.svg`
 
 ## Changed files
 - `CHANGELOG.md`

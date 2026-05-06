@@ -10,8 +10,8 @@ This addendum binds the v1.6 research-writing, figure, and S340 requirement laye
 | reviewer critique, line-level audit, claim-evidence matrix | `S602` | `S640` |
 | polishing, translation, anti-AI-tone rewrite, compression, expansion | `S603` | `S640` |
 | result paragraph, table caption, figure caption, ablation narrative | `S604` | `S640`; add `S623` for visual evidence |
-| figure design, README architecture diagram, visual explanation | `S621` | `S623`; add `S622` for executable SVG/PNG/PDF output |
-| plotting script, Matplotlib figure, SVG/PNG/PDF export | `S622` | `S621` + `S623` |
+| figure design, README architecture diagram, visual explanation | `S621` | `S623`; add `S622` only for executable plotting, file export, or source-native diagram generation |
+| plotting script, Matplotlib figure, SVG/PNG/PDF export | `S622` | `S621` + `S623`; reject or replace unsuitable SVG after rendered inspection |
 | integrated package, source preservation, zip repair, path-length issue | `S650` | none unless writing/release notes are also edited |
 
 ## S640 hard gate
