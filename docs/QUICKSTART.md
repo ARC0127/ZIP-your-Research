@@ -13,7 +13,7 @@ Note: If you ask a normal question **before** Mode Lock, the assistant will tell
 
 Reference:
 - `AUTOBOOT_v1.3.md`
-- `boot/07_FIRST_TURN_APPLICATION_GUIDE_v1.3.2.md`
+- `boot/07_FIRST_TURN_app_GUIDE_v1.3.2.md`
 
 ## Option B — Copy/paste (fastest for single tasks)
 ### 1) Writing engine (manuscripts / reviews)

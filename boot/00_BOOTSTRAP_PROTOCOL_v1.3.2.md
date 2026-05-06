@@ -35,7 +35,7 @@ Ask the user:
 - If no: proceed with `NO-MIGRATION`.
 
 ## Step 1 — Show the Application Guide (required)
-Print (user-visible): `boot/07_FIRST_TURN_APPLICATION_GUIDE_v1.3.2.md`
+Print (user-visible): `boot/07_FIRST_TURN_app_GUIDE_v1.3.2.md`
 
 ## Step 2 — Intake interview (required)
 Run the intake interview profile:

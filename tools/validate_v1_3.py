@@ -32,7 +32,11 @@ SKILLS_DIR = ROOT / "skills"
 FRONT_MATTER_RE = re.compile(r"^---\n(.*?)\n---\n", re.S)
 BACKTICK_PATH_RE = re.compile(r"`([^`]+?\.(?:md|py|yaml|yml|json|txt|pdf))`")
 SKILL_FILENAME_RE = re.compile(r"^S\d+_.*\.md$")
-ALLOWED_CATEGORIES = {"research_core", "experiments", "reproducibility", "paper_ops", "composite"}
+ALLOWED_CATEGORIES = {
+    "research_core", "experiments", "reproducibility", "paper_ops", "composite",
+    "research_writing_integrated", "figure_design_integrated", "s340_integrated",
+    "reproducibility_integrated",
+}
 
 IGNORE_MISSING_REFS = {
     "MODE_LOCK.md", "MODE_LOCK.json", "evidence.json",

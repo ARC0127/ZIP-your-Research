@@ -26,7 +26,12 @@ IGNORE_MD_FILENAMES = {
 }
 IGNORE_SOURCE_PREFIXES = (
     "artifacts/system_audit/",
+    "artifacts/integration/",
     "docs/audits/",
+    "docs/integrated_external_skills/",
+    "docs/how_to_use/",
+    "ext/src/",
+    "manifests/",
     "skills/platform_zyr_skills/rewrites/",
 )
 EXTERNAL_REF_PREFIXES = (

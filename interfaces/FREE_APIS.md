@@ -22,7 +22,7 @@ Docs: https://www.crossref.org/documentation/retrieve-metadata/rest-api/
 Docs: https://info.arxiv.org/help/api/
 
 ## How to add a new API (extension path)
-1) Copy `interfaces/providers/_template_provider.py` → `interfaces/providers/my_provider.py`
+1) Copy `interfaces/providers/template_provider.py` → `interfaces/providers/my_provider.py`
 2) Implement `search()`
 3) Add config under `interfaces/config.yaml`
 4) Test:

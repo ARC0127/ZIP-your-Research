@@ -14,7 +14,7 @@
 - `docs/ONBOARDING_FASTPATH_v1.3.md`
 - `docs/ONECHAT_PLAYBOOK_v1.3.md`
 - `docs/SKILLS.md`
-- `docs/AGENTIC_ARCHITECTURE_v1.3.md`
+- `docs/AGENTIC_arch_v1.3.md`
 - `docs/HELLO_AGENTS_ADAPTATION_v1.3.md`
 - `docs/ATTRIBUTION.md`
 
@@ -27,7 +27,7 @@
 - Updated to 1.3: `VERSION`, `skills_manifest.yaml`, README/INDEX headers.
 - Added v1.3.1 variants of LOCKED firewall docs:
   - `boot/10_LOCKED_SCOPE_GUARD_v1.3.md`
-  - `boot/11_REQUIREMENTS_LOCK_LOOP_v1.3.md`
+  - `boot/11_req_LOCK_LOOP_v1.3.md`
 
 ## 4) Recommended release commands
 ```bash

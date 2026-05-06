@@ -2,24 +2,37 @@
 id: S601
 name: paper_story_section_architecture
 category: research_writing_integrated
-version: v2.0
+version: v1.6.3
 triggers:
-  - paper story
-  - manuscript architecture
-  - Introduction structure
-  - Method section
-  - Experiments section
-  - Conclusion section
-  - 论文结构
-  - 论文主线
-  - 引言重构
-  - 方法节重构
-  - 实验节写作
+- paper story
+- manuscript architecture
+- Introduction structure
+- Method section
+- Experiments section
+- Conclusion section
+- 论文结构
+- 论文主线
+- 引言重构
+- 方法节重构
+- 实验节写作
+inputs_required:
+- target paper section or manuscript excerpt
+- task goal and target venue/reader when available
+- locked facts, formulas, references, and evidence anchors
+outputs_required:
+- section diagnosis
+- claim-evidence status
+- reverse outline or revised section
+- remaining risks or UNKNOWN items
+quality_gates:
+- problem-gap-method-evidence chain is explicit
+- locked content is preserved unless explicitly revised
+- S640 global language and logic gate is applied
 ---
 
 # S601 Paper Story and Section Architecture
 
-Use when writing, rewriting, or auditing research-paper sections. It combines ZYR writing discipline, `ext/rpws/research-paper-writing/SKILL.md`, the RPWS section guides, and S340.
+Use when writing, rewriting, or auditing research-paper sections. It combines ZYR writing discipline, `ext/src/rpws/paper_skill/SKILL.md`, the RPWS section guides, and S340.
 
 Procedure: lock artifact type and frozen content; build problem→gap→method→evidence chain; select the exact RPWS reference file for the target section; apply S340 truthfulness/structure/language constraints; output the actual revised section or precise line-level revision.
 

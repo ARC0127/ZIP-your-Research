@@ -1,5 +1,5 @@
 {
-  "package": "ZIP-your-Research_v1.6.2_readme_usage",
+  "package": "ZIP-your-Research_v1.6.3_ci_doc_repair",
   "built_at_utc": "2026-05-06T08:43:40Z",
   "source_counts": {
     "zyr": 431,
@@ -5502,27 +5502,49 @@
     }
   ],
   "release_modified_files": [
+    ".github/workflows/ci.yml",
+    ".github/workflows/ci_v7_2.yml",
     "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "INCREMENTAL_UPDATE_v1.3.md",
     "INDEX.md",
     "README.md",
+    "boot/00_BOOTSTRAP_PROTOCOL_v1.3.2.md",
+    "boot/01_GLOBAL_GUARDRAILS_v1.3.2.md",
+    "boot/12_ONECHAT_DEEP_LOOP_v1.3.md",
+    "docs/DEVELOPER_API.md",
+    "docs/QUICKSTART.md",
     "docs/SKILLS.md",
     "docs/SKILLS_INDEX_GENERATED_v1.3.md",
+    "interfaces/EXTENSIONS_OVERVIEW.md",
+    "interfaces/FREE_APIS.md",
     "router/SKILL_MAP_v1.3.2.md",
     "router/route.py",
     "router/taxonomy.yaml",
     "router/weights_v1.3.2.yaml",
+    "skills/writing_engine/MASTER_v1.3.2.md",
     "skills_manifest.yaml",
+    "tools/build_all.py",
+    "tools/build_skill_map.py",
+    "tools/drift_audit_v1_3.py",
     "tools/validate_no_omission.py",
+    "tools/validate_v1_3.py",
+    "tools/validate_v7_2.py",
     "v"
   ],
   "added_release_files": [
     "docs/EXTERNAL_SKILL_ATTRIBUTION_v1.6.md",
     "docs/assets/zyr_research_os_arch_v1_6.svg",
     "manifests/*",
+    "manifests/README_USAGE_AUDIT_v1.6.2.md",
     "manifests/REPAIR_AUDIT_v1.6.1.md",
+    "manifests/REPAIR_AUDIT_v1.6.3.md",
+    "requirements.txt",
     "router/ext_router/*",
+    "skills/fig_ops/README.md",
+    "skills/rw/README.md",
     "skills/rwf_s340/*",
-    "tools/validate_no_omission.py",
-    "manifests/README_USAGE_AUDIT_v1.6.2.md"
+    "tools/cleanup_legacy_duplicate_paths_v1_6_3.py",
+    "tools/validate_no_omission.py"
   ]
 }

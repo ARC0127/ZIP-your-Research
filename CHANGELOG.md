@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.6.3 - CI cleanup, canonical integrated skills, and formal documentation
+
+- Removed duplicate routable S601-S604 files from `skills/rw/` and S621-S623 files from `skills/fig_ops/`; the canonical integrated skills now live only under `skills/rwf_s340/`.
+- Added strict front-matter fields (`inputs_required`, `outputs_required`, `quality_gates`) to the canonical S601-S604, S621-S623, S640, and S650 skills.
+- Fixed stale integrated-source references to the actual short-path source tree under `ext/src/`.
+- Added `tools/cleanup_legacy_duplicate_paths_v1_6_3.py` for in-place GitHub upgrades where stale files from older layouts remain after copying a release ZIP.
+- Added `requirements.txt` to match the CI workflow while retaining `req.txt` as the short-path dependency file.
+- Rewrote `README.md` as a formal English project overview with a clear task-to-engine routing contract and without overlapping v1.6.1/v1.6.2 repair prose.
+- Rewrote `CONTRIBUTING.md` for the v1.6 line, including unique-ID rules, canonical path policy, front-matter requirements, cleanup instructions, and PR validation commands.
+- Updated CI to run stale-path cleanup before build and strict validation.
+
 ## v1.6.2 - README high-efficiency usage and engine-control recipes
 
 - Updated `README.md` to add a dedicated high-efficiency use protocol.
@@ -101,7 +112,7 @@ This is the formal `v1.5.0` release built on top of `zyr_v1.4.4_release_20260222
   - long-proof audit examples for fatal flaw, rigor mismatch, and repair-then-reverify
 - Authoritative v1.5 artifacts:
   - `artifacts/evidence_ledger.csv`
-  - `artifacts/source_archive_manifest.yaml`
+  - `artifacts/src_arch_manifest.yaml`
   - `artifacts/proof_casebook.md`
   - `artifacts/negative_result_ledger.md`
   - `artifacts/run_state.json`
@@ -228,7 +239,7 @@ Agentic‑style **single‑conversation research closure** (ONECHAT_LOOP) + stro
   - `docs/SKILLS.md` (human‑first catalog)
   - `tools/gen_skills_catalog_v1_3.py` (generates `docs/SKILLS_INDEX_GENERATED_v1.3.md`)
 - Agentic architecture & attributions:
-  - `docs/AGENTIC_ARCHITECTURE_v1.3.md`
+  - `docs/AGENTIC_arch_v1.3.md`
   - `docs/HELLO_AGENTS_ADAPTATION_v1.3.md`
   - `docs/ATTRIBUTION.md`
 - Coding minimalism module:
@@ -243,7 +254,7 @@ Agentic‑style **single‑conversation research closure** (ONECHAT_LOOP) + stro
 - Version bump to 1.3 (`VERSION`, `skills_manifest.yaml`, README/INDEX headers).
 - LOCKED scope guard + per‑turn requirements loop updated to v1.3:
   - `boot/10_LOCKED_SCOPE_GUARD_v1.3.md`
-  - `boot/11_REQUIREMENTS_LOCK_LOOP_v1.3.md`
+  - `boot/11_req_LOCK_LOOP_v1.3.md`
 
 ---
 
@@ -255,7 +266,7 @@ System-level hardening for **instruction adherence under conversation perturbati
 ### Added
 - LOCKED drift firewall:
   - `boot/10_LOCKED_SCOPE_GUARD_v1.3.md`
-  - `boot/11_REQUIREMENTS_LOCK_LOOP_v1.3.md`
+  - `boot/11_req_LOCK_LOOP_v1.3.md`
 - New reproducibility skills:
   - `S431_closed_loop_verification` (template for S430 PASS closure)
   - `S432_scope_drift_firewall` (maps user perturbations into an explicit state machine)
@@ -361,7 +372,7 @@ System-level hardening for **instruction adherence under conversation perturbati
 ## 1.0.1 — 2026-02-02
 
 ### Fixed
-- Added `interfaces/__init__.py` to improve import compatibility across Python setups.
+- Added `interfaces/init.py` to improve import compatibility across Python setups.
 
 ---
 

@@ -17,7 +17,7 @@ OUT = ROOT / "router" / "SKILL_MAP_v1.3.2.md"
 FRONT_MATTER_RE = re.compile(r"^---\n(.*?)\n---\n", re.S)
 SKILL_FILENAME_RE = re.compile(r"^S\d+_.*\.md$")
 
-ORDER = ["research_core", "experiments", "reproducibility", "paper_ops", "composite"]
+ORDER = ["research_core", "experiments", "reproducibility", "paper_ops", "research_writing_integrated", "figure_design_integrated", "s340_integrated", "reproducibility_integrated", "composite"]
 
 def parse_front_matter(text: str):
     m = FRONT_MATTER_RE.match(text)

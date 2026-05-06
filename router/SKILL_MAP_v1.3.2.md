@@ -12,13 +12,13 @@ Prefer using **one** primary skill per task.
   - triggers: novelty, positioning, related work map
 - **S203** `claim_evidence_matrix` — skills/research_core/S203_claim_evidence_matrix.md
   - triggers: claim evidence, support matrix, evidence audit
-- **S204** `literature_triage_pipeline` — skills/research_core/S204_literature_triage_pipeline.md
+- **S204** `literature_triage_pipeline` — skills/research_core/S204_literature_triage_pipe.md
   - triggers: literature triage, paper reading, related work
 - **S205** `concept_map_builder` — skills/research_core/S205_concept_map_builder.md
   - triggers: concept map, taxonomy, mental model
 - **S206** `research_gap_hypothesis_generator` — skills/research_core/S206_research_gap_hypothesis_generator.md
   - triggers: research gap, hypothesis, idea generation
-- **S207** `contribution_claim_refinement` — skills/research_core/S207_contribution_claim_refinement.md
+- **S207** `contribution_claim_refinement` — skills/research_core/S207_contrib_claim_refinement.md
   - triggers: contribution, claims, positioning
 - **S208** `assumption_risk_register` — skills/research_core/S208_assumption_risk_register.md
   - triggers: assumptions, risks, threats to validity
@@ -38,7 +38,7 @@ Prefer using **one** primary skill per task.
   - triggers: question decomposition, research tree, subquestions
 - **S216** `hypothesis_to_predictions` — skills/research_core/S216_hypothesis_to_predictions.md
   - triggers: hypothesis to prediction, measurable predictions, testable hypothesis
-- **S217** `contribution_type_selector` — skills/research_core/S217_contribution_type_selector.md
+- **S217** `contribution_type_selector` — skills/research_core/S217_contrib_type_selector.md
   - triggers: contribution taxonomy, what is my contribution, paper contribution type
 - **S218** `assumptions_and_threats_audit` — skills/research_core/S218_assumptions_and_threats_audit.md
   - triggers: assumptions audit, threats to validity, limitations planning
@@ -180,7 +180,7 @@ Prefer using **one** primary skill per task.
   - triggers: dependency risk, supply chain, security
 - **S414** `results_traceability_matrix` — skills/reproducibility/S414_results_traceability_matrix.md
   - triggers: traceability, results mapping, provenance
-- **S415** `data_pipeline_invariance_tests` — skills/reproducibility/S415_data_pipeline_invariance_tests.md
+- **S415** `data_pipeline_invariance_tests` — skills/reproducibility/S415_data_pipe_invariance_tests.md
   - triggers: data pipeline, invariance tests, unit tests
 - **S416** `dependency_lockfile_strategy` — skills/reproducibility/S416_dependency_lockfile_strategy.md
   - triggers: lock dependencies, reproducible env, pip/conda lock
@@ -196,7 +196,7 @@ Prefer using **one** primary skill per task.
   - triggers: evaluation script, robust evaluation, script hardening
 - **S422** `minimal_repro_bundle_creator` — skills/reproducibility/S422_minimal_repro_bundle_creator.md
   - triggers: repro bundle, minimal example, shareable package
-- **S423** `security_review_open_source` — skills/reproducibility/S423_security_review_open_source.md
+- **S423** `security_review_open_source` — skills/reproducibility/S423_security_review_open_src.md
   - triggers: security review, secrets scan, open source hygiene
 - **S424** `citation_and_attribution_audit` — skills/reproducibility/S424_citation_and_attribution_audit.md
   - triggers: citation audit, attribution, license compliance
@@ -237,23 +237,23 @@ Prefer using **one** primary skill per task.
   - triggers: review clustering, themes, response plan
 - **S508** `response_tone_alignment` — skills/paper_ops/S508_response_tone_alignment.md
   - triggers: tone, polite rebuttal, conflict de-escalation
-- **S509** `author_contribution_statement` — skills/paper_ops/S509_author_contribution_statement.md
+- **S509** `author_contribution_statement` — skills/paper_ops/S509_author_contrib_statement.md
   - triggers: author contributions, CRediT, statement
 - **S510** `ethics_statement_generator` — skills/paper_ops/S510_ethics_statement_generator.md
   - triggers: ethics statement, broader impacts, responsible AI
 - **S511** `appendix_structuring` — skills/paper_ops/S511_appendix_structuring.md
   - triggers: appendix, supplementary, structure
-- **S512** `figure_table_audit` — skills/paper_ops/S512_figure_table_audit.md
+- **S512** `figure_table_audit` — skills/paper_ops/S512_fig_table_audit.md
   - triggers: figure audit, table audit, clarity
-- **S513** `title_abstract_optimizer` — skills/paper_ops/S513_title_abstract_optimizer.md
+- **S513** `title_abstract_optimizer` — skills/paper_ops/S513_title_abs_optimizer.md
   - triggers: title, abstract, keywords
 - **S514** `talk_poster_outline` — skills/paper_ops/S514_talk_poster_outline.md
   - triggers: talk outline, poster, presentation
-- **S515** `open_source_release_plan` — skills/paper_ops/S515_open_source_release_plan.md
+- **S515** `open_source_release_plan` — skills/paper_ops/S515_open_src_release_plan.md
   - triggers: open source release, repo checklist, artifact
 - **S516** `camera_ready_checklist` — skills/paper_ops/S516_camera_ready_checklist.md
   - triggers: camera-ready, final submission, format check
-- **S517** `figure_table_caption_rewrite` — skills/paper_ops/S517_figure_table_caption_rewrite.md
+- **S517** `figure_table_caption_rewrite` — skills/paper_ops/S517_fig_table_caption_rewrite.md
   - triggers: caption rewrite, figure caption, table caption
 - **S518** `limitations_section_builder` — skills/paper_ops/S518_limitations_section_builder.md
   - triggers: limitations section, future work, honest disclosure
@@ -261,13 +261,13 @@ Prefer using **one** primary skill per task.
   - triggers: response matrix, reviewer table, rebuttal planning
 - **S520** `tone_and_rhetoric_polisher` — skills/paper_ops/S520_tone_and_rhetoric_polisher.md
   - triggers: tone polish, rhetoric, reduce overclaim
-- **S521** `contribution_statement_refinement` — skills/paper_ops/S521_contribution_statement_refinement.md
+- **S521** `contribution_statement_refinement` — skills/paper_ops/S521_contrib_statement_refinement.md
   - triggers: contribution statement, contributions list, main contributions
 - **S522** `appendix_planner` — skills/paper_ops/S522_appendix_planner.md
   - triggers: appendix plan, supplement planning, what goes where
 - **S523** `cover_letter_generator` — skills/paper_ops/S523_cover_letter_generator.md
   - triggers: cover letter, journal submission, editor letter
-- **S524** `open_source_release_note_generator` — skills/paper_ops/S524_open_source_release_note_generator.md
+- **S524** `open_source_release_note_generator` — skills/paper_ops/S524_open_src_release_note_generator.md
   - triggers: release notes, github release, version notes
 - **S525** `arxiv_metadata_preflight` — skills/paper_ops/S525_arxiv_metadata_preflight.md
   - triggers: arXiv submission, metadata, preflight check
@@ -282,42 +282,43 @@ Prefer using **one** primary skill per task.
 - **S530** `ethics_impact_assessment` — skills/paper_ops/S530_ethics_impact_assessment.md
   - triggers: ethics statement, impact assessment, responsible AI, risk assessment, 伦理 影响评估
 
+## research_writing_integrated
+
+- **S601** `paper_story_section_architecture` — skills/rwf_s340/S601_paper_story_section_arch.md
+  - triggers: paper story, manuscript architecture, Introduction structure, Method section, Experiments section, Conclusion section, ...
+- **S602** `claim_evidence_reverse_outline_review` — skills/rwf_s340/S602_claim_evidence_reverse_outline_review.md
+  - triggers: reverse outline, reviewer audit, claim evidence, paper review, 证据链, 逻辑审查, ...
+- **S603** `bilingual_human_voice_delta_rewrite` — skills/rwf_s340/S603_bilingual_human_voice_delta_rewrite.md
+  - triggers: Chinese polish, English polish, bilingual rewrite, human voice, anti AI tone, 润色, ...
+- **S604** `experiment_result_narrative_and_caption` — skills/rwf_s340/S604_experiment_result_narrative_and_caption.md
+  - triggers: experiment analysis, result narrative, table caption, figure caption, ablation description, 实验分析, ...
+
+## figure_design_integrated
+
+- **S621** `publication_figure_design_theory` — skills/rwf_s340/S621_publication_fig_design_theory.md
+  - triggers: scientific figure, publication figure, figure design, visualization design, 论文图, 科研绘图, ...
+- **S622** `matplotlib_publication_script_builder` — skills/rwf_s340/S622_matplotlib_publication_script_builder.md
+  - triggers: matplotlib, plotting script, grouped bar, heatmap, radar chart, trend plot, ...
+- **S623** `visual_claim_caption_audit` — skills/rwf_s340/S623_visual_claim_caption_audit.md
+  - triggers: figure audit, caption audit, visual claim, panel consistency, 图表审查, caption检查, ...
+
+## s340_integrated
+
+- **S640** `s340_global_paper_logic_language_audit` — skills/rwf_s340/S640_s340_global_paper_logic_language_audit.md
+  - triggers: S340, writing engine, proof engine, global paper audit, paper writing, manuscript, ...
+
+## reproducibility_integrated
+
+- **S650** `integrated_pack_no_omission_validation` — skills/rwf_s340/S650_integrated_pack_no_omission_valid.md
+  - triggers: validate integrated pack, no omission, checksum, source manifest, path length, 压缩包无法打开, ...
+
 ## composite
 
 - **coding_engine** `coding_engine` — skills/coding_engine/README.md
   - triggers: generated composite; outputs: master_prompt
 - **proof_engine** `proof_engine` — skills/proof_engine/README.md
   - triggers: generated composite; outputs: master_prompt
+- **rwf_s340_master** `research_writing_figure_s340_integrated_master` — skills/rwf_s340/MASTER.md
+  - triggers: generated composite; outputs: master_prompt
 - **writing_engine** `writing_engine` — skills/writing_engine/README.md
   - triggers: generated composite; outputs: master_prompt
-
-
-## rwf_s340_integrated
-
-- **rwf_s340_master** `research_writing_figure_s340_integrated_master` — skills/rwf_s340/MASTER.md
-  - triggers: manuscript, research plan, README architecture, figure design, S340, no-omission validation
-- **S601** `paper_story_section_architecture` — skills/rwf_s340/S601_paper_story_section_architecture.md
-  - triggers: paper story, manuscript architecture, Introduction structure, Method section, Experiments section, 论文结构, 论文主线
-  - mandatory companion: S640 for prose outputs
-- **S602** `claim_evidence_reverse_outline_review` — skills/rwf_s340/S602_claim_evidence_reverse_outline_review.md
-  - triggers: reverse outline, reviewer audit, claim evidence, paper review, 证据链, 逐行审查
-  - mandatory companion: S640
-- **S603** `bilingual_human_voice_delta_rewrite` — skills/rwf_s340/S603_bilingual_human_voice_delta_rewrite.md
-  - triggers: Chinese polish, English polish, bilingual rewrite, anti AI tone, 润色, 去AI味, 中英互译
-  - mandatory companion: S640
-- **S604** `experiment_result_narrative_and_caption` — skills/rwf_s340/S604_experiment_result_narrative_and_caption.md
-  - triggers: experiment analysis, result narrative, table caption, figure caption, ablation description, 实验分析, 图题, 表题
-  - mandatory companion: S640; add S623 for visual evidence
-- **S621** `publication_figure_design_theory` — skills/rwf_s340/S621_publication_figure_design_theory.md
-  - triggers: scientific figure, publication figure, visualization design, README architecture, 论文图, 科研绘图, 架构图
-  - companion: S623 for visual-claim audit
-- **S622** `matplotlib_publication_script_builder` — skills/rwf_s340/S622_matplotlib_publication_script_builder.md
-  - triggers: matplotlib, plotting script, grouped bar, heatmap, svg png pdf, 绘图脚本, 输出svg, 输出png
-  - companions: S621 and S623
-- **S623** `visual_claim_caption_audit` — skills/rwf_s340/S623_visual_claim_caption_audit.md
-  - triggers: figure audit, caption audit, visual claim, panel consistency, 图表审查, 图文一致
-- **S640** `s340_global_paper_logic_language_audit` — skills/rwf_s340/S640_s340_global_paper_logic_language_audit.md
-  - triggers: paper writing, manuscript, research plan, README text, polish, rewrite, forbidden phrases, 论文润色, 禁止词, 机械排比
-  - status: hard global writing/logic gate
-- **S650** `integrated_pack_no_omission_validation` — skills/rwf_s340/S650_integrated_pack_no_omission_validation.md
-  - triggers: validate integrated pack, no omission, checksum, path length, 压缩包无法打开, 文件名过长, 禁止遗漏

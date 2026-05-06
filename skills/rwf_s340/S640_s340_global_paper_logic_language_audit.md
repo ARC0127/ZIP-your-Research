@@ -2,33 +2,47 @@
 id: S640
 name: s340_global_paper_logic_language_audit
 category: s340_integrated
-version: v1.6.0
+version: v1.6.3
 triggers:
-  - S340
-  - writing engine
-  - proof engine
-  - global paper audit
-  - paper writing
-  - manuscript
-  - research plan
-  - README text
-  - polish
-  - rewrite
-  - revise
-  - anti AI tone
-  - forbidden phrases
-  - mechanical phrasing
-  - style logic review
-  - 论文润色
-  - 论文重构
-  - 研究计划
-  - 逻辑审查
-  - 公式图表引用核查
-  - 中英文合并
-  - 禁止词
-  - 禁用短语
-  - 机械排比
-  - 去AI味
+- S340
+- writing engine
+- proof engine
+- global paper audit
+- paper writing
+- manuscript
+- research plan
+- README text
+- polish
+- rewrite
+- revise
+- anti AI tone
+- forbidden phrases
+- mechanical phrasing
+- style logic review
+- 论文润色
+- 论文重构
+- 研究计划
+- 逻辑审查
+- 公式图表引用核查
+- 中英文合并
+- 禁止词
+- 禁用短语
+- 机械排比
+- 去AI味
+inputs_required:
+- writing artifact or excerpt
+- target reader and artifact type
+- locked facts/evidence/references/terminology
+- user-specific forbidden phrases or style constraints
+outputs_required:
+- logic-and-language audit
+- revised text or concrete revision operations
+- unsupported/UNKNOWN claim list
+- final S340 gate status
+quality_gates:
+- unsupported claims are not polished into certainty
+- vague transitions are replaced by causal logic
+- forbidden mechanical phrases and overclaims are removed
 ---
 
 # S640 S340 Global Paper Logic and Language Audit

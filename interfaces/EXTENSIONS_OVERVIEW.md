@@ -22,7 +22,7 @@ python3 tools/ra_cli.py providers search --provider openalex --query "offline re
 ```
 
 ## Where to add your own provider
-- Create `interfaces/providers/my_provider.py` based on `interfaces/providers/_template_provider.py`.
+- Create `interfaces/providers/my_provider.py` based on `interfaces/providers/template_provider.py`.
 - Register it in `interfaces/config.yaml`.
 
 See: `interfaces/provider_contract.md`.

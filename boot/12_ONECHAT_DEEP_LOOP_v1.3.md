@@ -18,7 +18,7 @@ SESSION_OVERRIDES:
 
 ## Phase contracts (minimal)
 ### Ideation
-Outputs: `artifacts/idea.md`, `artifacts/question.md`, `artifacts/related_keywords.md`, `artifacts/source_archive_manifest.yaml`, `artifacts/evidence_ledger.csv`
+Outputs: `artifacts/idea.md`, `artifacts/question.md`, `artifacts/related_keywords.md`, `artifacts/src_arch_manifest.yaml`, `artifacts/evidence_ledger.csv`
 
 ### Planning
 Outputs: `artifacts/plan.md`, `artifacts/experiment_manifest.yaml`, `artifacts/acceptance_criteria.md`, `artifacts/run_state.json`
@@ -41,7 +41,7 @@ Outputs: `artifacts/release_checklist.md`, `artifacts/next_steps.md`, `artifacts
 - `artifacts/evidence_ledger.csv` should map theorem/proof claims to the corresponding proof artifact sections.
 
 ## Per-turn rule
-In LOCKED execution: always run `boot/11_REQUIREMENTS_LOCK_LOOP_v1.3.md`, and refuse out-of-phase requests unless explicitly accepted by MODE_LOCK.
+In LOCKED execution: always run `boot/11_req_LOCK_LOOP_v1.3.md`, and refuse out-of-phase requests unless explicitly accepted by MODE_LOCK.
 
 ## When user perturbs the topic
 - classify as OUT_OF_SCOPE → refuse → re-anchor → offer CHANGE_REQUEST.

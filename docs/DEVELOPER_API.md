@@ -11,5 +11,5 @@
 
 ## Release checklist
 - Update `VERSION` and `CHANGELOG.md`
-- Run `tools/verify_v5_archive.py` (should pass)
+- Run `tools/verify_v5_arch.py` (should pass)
 - Ensure new files are additive

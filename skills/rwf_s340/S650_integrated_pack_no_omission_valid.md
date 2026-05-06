@@ -2,17 +2,31 @@
 id: S650
 name: integrated_pack_no_omission_validation
 category: reproducibility_integrated
-version: v2.0
+version: v1.6.3
 triggers:
-  - validate integrated pack
-  - no omission
-  - checksum
-  - source manifest
-  - path length
-  - 压缩包无法打开
-  - 文件名过长
-  - 完整性验证
-  - 禁止遗漏
+- validate integrated pack
+- no omission
+- checksum
+- source manifest
+- path length
+- 压缩包无法打开
+- 文件名过长
+- 完整性验证
+- 禁止遗漏
+inputs_required:
+- release tree or ZIP package
+- source manifests/checksum files when available
+- expected canonical path layout
+- CI failure log when available
+outputs_required:
+- missing/duplicate/stale path report
+- repair actions
+- validation command results
+- release ZIP or patch instructions when requested
+quality_gates:
+- duplicate skill IDs are eliminated
+- all referenced paths resolve or are explicitly external/ignored
+- CI validation commands pass before release is accepted
 ---
 
 # S650 Integrated Package No-Omission Validation

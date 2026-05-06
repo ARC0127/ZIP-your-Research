@@ -35,13 +35,15 @@ for item in manifest["source_inventory"]:
         mismatch.append(packed)
 
 required = [
-    "skills/rw/S601_paper_story_section_arch.md",
-    "skills/rw/S602_claim_evidence_reverse_outline_review.md",
-    "skills/rw/S603_bilingual_human_voice_delta_rewrite.md",
-    "skills/rw/S604_experiment_result_narrative_and_ta_122557d2.md",
-    "skills/fig_ops/S621_publication_fig_design_theory.md",
-    "skills/fig_ops/S622_matplotlib_publication_script_builder.md",
-    "skills/fig_ops/S623_visual_claim_caption_audit.md",
+    "skills/rwf_s340/S601_paper_story_section_arch.md",
+    "skills/rwf_s340/S602_claim_evidence_reverse_outline_review.md",
+    "skills/rwf_s340/S603_bilingual_human_voice_delta_rewrite.md",
+    "skills/rwf_s340/S604_experiment_result_narrative_and_caption.md",
+    "skills/rwf_s340/S621_publication_fig_design_theory.md",
+    "skills/rwf_s340/S622_matplotlib_publication_script_builder.md",
+    "skills/rwf_s340/S623_visual_claim_caption_audit.md",
+    "skills/rwf_s340/S640_s340_global_paper_logic_language_audit.md",
+    "skills/rwf_s340/S650_integrated_pack_no_omission_valid.md",
     "skills/master_integrated/MASTER_research_write_fig_stack_v1.0.md",
     "router/ext_router/ROUTER_ADDENDUM_research_write_figures_v1.0.md",
 ]

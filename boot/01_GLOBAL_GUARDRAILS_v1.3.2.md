@@ -70,7 +70,7 @@ This rule prevents the assistant from hallucinating a scope or inventing missing
 
 When **STAGE=LOCKED**, you MUST protect the lock from casual conversation drift.
 
-- Run the per-turn algorithm in: `boot/11_REQUIREMENTS_LOCK_LOOP_v1.3.md`
+- Run the per-turn algorithm in: `boot/11_req_LOCK_LOOP_v1.3.md`
 - Enforce out-of-scope handling using: `boot/10_LOCKED_SCOPE_GUARD_v1.3.md`
 
 **Key behavioral change (LOCKED stage):**  

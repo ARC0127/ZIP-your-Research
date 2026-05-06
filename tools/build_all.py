@@ -15,7 +15,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 def run(script: str):
-    p = subprocess.run([sys.executable, str(ROOT / "tools" / script)], cwd=str(ROOT))
+    cmd = [sys.executable]
+    if getattr(sys.flags, "no_site", 0):
+        cmd.append("-S")
+    cmd.append(str(ROOT / "tools" / script))
+    p = subprocess.run(cmd, cwd=str(ROOT))
     if p.returncode != 0:
         raise SystemExit(p.returncode)
 

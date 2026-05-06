@@ -14,7 +14,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 def main():
-    p = subprocess.run([sys.executable, str(ROOT / "tools" / "validate_v1_3.py")], cwd=str(ROOT))
+    cmd = [sys.executable]
+    if getattr(sys.flags, "no_site", 0):
+        cmd.append("-S")
+    cmd.append(str(ROOT / "tools" / "validate_v1_3.py"))
+    p = subprocess.run(cmd, cwd=str(ROOT))
     raise SystemExit(p.returncode)
 
 if __name__ == "__main__":

@@ -1,9 +1,5 @@
 # MASTER v1.3.2 (Writing Engine)
 
-> **Execution rules:** `boot/11_COMPLETION_FIRST_ANTI_SHORTCUT_v1.5.md` applies after lock activation.
-
----
-
 # Prompt Pack (Modular) — Main Entrypoint (Read This First)
 
 This ZIP contains:
