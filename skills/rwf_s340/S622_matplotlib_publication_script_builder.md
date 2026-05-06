@@ -2,7 +2,7 @@
 id: S622
 name: matplotlib_publication_script_builder
 category: figure_design_integrated
-version: v1.6.3
+version: v1.6.5
 triggers:
 - matplotlib
 - plotting script

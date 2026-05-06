@@ -2,7 +2,7 @@
 id: S603
 name: bilingual_human_voice_delta_rewrite
 category: research_writing_integrated
-version: v1.6.3
+version: v1.6.5
 triggers:
 - Chinese polish
 - English polish

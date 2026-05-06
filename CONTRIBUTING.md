@@ -2,7 +2,7 @@
 
 Thank you for improving ZIP-your-Research (ZYR). Contributions are welcome when they preserve the repository's central purpose: task-boundary discipline, evidence-aware execution, and verifiable research artifacts.
 
-This document defines the contribution rules for the v1.6.3 line.
+This document defines the contribution rules for the v1.6.5 line.
 
 ## Contribution principles
 
@@ -13,8 +13,9 @@ A contribution is acceptable only if it preserves the following invariants:
 3. **Canonical short paths remain authoritative.** Use `skills/exp/`, `skills/rwf_s340/`, `ext/src/`, `router/ext_router/`, and the current manifest filenames.
 4. **Builders and validators must pass.** A change is not complete until the repository builds and strict validation succeeds.
 5. **Historical material may be retained for attribution, but not as duplicate routable skills.** If a source is preserved, place it under `ext/src/` or a clearly non-routable reference path.
-6. **Writing tasks must remain bound to `writing_engine`.** Do not add a writing-facing workflow that bypasses `writing_engine`, `ext/src/rpws/`, and the integrated S601-S604 + S640 chain.
-7. **Figure tasks must remain bound to `figure_engine`.** Do not add a figure-facing workflow that bypasses `figure_engine`, `ext/src/figures/`, and the integrated S621-S623 chain.
+6. **Idea, method, and research-logic tasks must remain bound to `proof_engine`.** Do not add a research-construction workflow that bypasses `proof_engine`, the claim-evidence matrix, or logic/method correctness checks.
+7. **Writing tasks must remain bound to `writing_engine`.** Do not add a writing-facing workflow that bypasses `writing_engine`, `ext/src/rpws/`, and the integrated S601-S604 + S640 chain.
+8. **Figure tasks must remain bound to `figure_engine`.** Do not add a figure-facing workflow that bypasses `figure_engine`, `ext/src/figures/`, and the integrated S621-S623 chain.
 
 ## What to contribute
 
@@ -38,7 +39,22 @@ Do not contribute:
 
 ## Engine-binding policy
 
-ZYR v1.6.3 uses explicit engine bindings.
+ZYR v1.6.5 uses explicit engine bindings.
+
+### Proof engine
+
+Any idea, method, contribution, theorem, derivation, or paper-storyline construction request must route through:
+
+```text
+proof_engine
+→ S203 claim_evidence_matrix
+→ S226 logic_consistency_audit
+→ S227 method_correctness_audit
+→ S230 proof_idea_check
+→ S237 / S240 / S241 when assumptions, theorem sketches, or derivations matter
+```
+
+This gate must run before writing polish when the logical structure is still being formed.
 
 ### Writing engine
 
@@ -109,21 +125,21 @@ Use the current canonical ranges unless a maintainer explicitly reserves a new r
 
 ## Integrated source policy
 
-External or user-authored source materials must be preserved under `ext/src/` and cited through wrapper skills or attribution documents. Do not turn every upstream file into a routable skill. For v1.6.3, the key integrated backends are:
+External or user-authored source materials must be preserved under `ext/src/` and cited through wrapper skills or attribution documents. Do not turn every upstream file into a routable skill. For v1.6.5, the key integrated backends are:
 
 - `ext/src/rpws/` for Research-Paper-Writing-Skills;
 - `ext/src/awesome/` for supplementary writing prompts and examples;
 - `ext/src/figures/` for figures4papers;
 - `skills/rwf_s340/` for the integrated S6xx/S640/S650 wrappers.
 
-The directories `skills/rw/` and `skills/fig_ops/` are non-routable reference locations in v1.6.3. Do not add `S###_*.md` files there unless the validator and manifest are intentionally changed to support a new canonical route.
+Do not recreate removed compatibility directories such as the old research-writing or figure wrapper aliases. New routable writing/figure logic must go through the current engine bindings and integrated wrappers.
 
 ## In-place upgrade cleanup
 
 If you update an existing Git checkout by copying files from a release ZIP, stale files may remain from older path layouts. Before validating, run:
 
 ```bash
-python tools/cleanup_legacy_duplicate_paths_v1_6_3.py
+python tools/cleanup_legacy_duplicate_paths_v1_6_5.py
 ```
 
 This removes known duplicate aliases such as `skills/experiments/` and older long-name skill files when canonical replacements are present.
@@ -134,7 +150,7 @@ Run the following commands from the repository root:
 
 ```bash
 python -m pip install -r requirements.txt
-python tools/cleanup_legacy_duplicate_paths_v1_6_3.py
+python tools/cleanup_legacy_duplicate_paths_v1_6_5.py
 python tools/build_all.py
 python tools/validate_v7_2.py
 python tools/drift_audit_v1_3.py
@@ -161,6 +177,7 @@ A pull request should not be marked ready until all applicable commands pass or 
 - [ ] Builders and validators pass.
 - [ ] Any unverified claim, command, or external dependency is labeled honestly.
 - [ ] Release-facing changes include a changelog entry when appropriate.
+- [ ] Idea/method/storyline-facing changes preserve the `proof_engine` → S203/S226/S227/S230 chain.
 - [ ] Writing-facing changes preserve the `writing_engine` → RPWS → S6xx/S640 chain.
 - [ ] Figure-facing changes preserve the `figure_engine` → figures4papers → S621/S622/S623 chain.
 

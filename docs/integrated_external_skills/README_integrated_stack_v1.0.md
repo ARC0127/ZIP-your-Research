@@ -1,61 +1,58 @@
-# ZYR Integrated Research-Writing-Figure Skills Pack v1.0
+# Integrated Research-Writing-Figure Stack
 
-## What this package is
-This package is a full ZIP-your-Research integration of three external skill repositories:
+This document describes the v1.6.4 integrated stack.
 
-1. `Research-Paper-Writing-Skills-main`
-2. `awesome-ai-research-writing-main`
-3. `figures4papers-main`
+## Preserved external sources
 
-It keeps the original ZIP-your-Research repository intact as the base runtime, retains every file from the three external repositories, and adds ZYR-native S6xx skills plus router integration.
+The external source trees are preserved under `ext/src/`:
 
-## What was changed
-Inside `ZIP-your-Research-main_integrated/`:
+- `ext/src/rpws/` — Research-Paper-Writing-Skills;
+- `ext/src/awesome/` — awesome-ai-research-writing;
+- `ext/src/figures/` — figures4papers.
 
-- Original ZYR files are copied as the base.
-- All three external repositories are retained under `ext/src/`.
-- New ZYR-native skills are added:
-  - `skills/rw/S601_paper_story_section_architecture.md`
-  - `skills/rw/S602_claim_evidence_reverse_outline_review.md`
-  - `skills/rw/S603_bilingual_human_voice_delta_rewrite.md`
-  - `skills/rw/S604_experiment_result_narrative_and_table_caption.md`
-  - `skills/fig_ops/S621_publication_figure_design_theory.md`
-  - `skills/fig_ops/S622_matplotlib_publication_script_builder.md`
-  - `skills/fig_ops/S623_visual_claim_caption_audit.md`
-- A master entrypoint is added:
-  - `skills/master_integrated/MASTER_research_writing_figure_stack_v1.0.md`
-- Router integration is added:
-  - `router/ext_router/ROUTER_ADDENDUM_research_writing_figures_v1.0.md`
-  - appended entries in `router/SKILL_MAP_v1.3.2.md`
-  - updated `router/taxonomy.yaml`
-  - patched `router/route.py` with `research_writing_figure_stack` composite hints.
+They are source backends, not duplicated routable skill directories.
 
-## Non-skipping guarantee
-The integration does not discard source content. Every file from the three source repositories is copied into `ext/src/`, and source checksums are recorded in:
+## ZYR-native execution layer
 
-- `integr_manifest.json`
-- `CHECKSUMS.sha256`
+The current v1.6.4 execution layer is:
 
-Original ZIP archives are also preserved under `original_zips/` at the package root.
+```text
+writing tasks
+→ writing_engine
+→ ext/src/rpws/
+→ S601 / S602 / S603 / S604
+→ S640
 
-## How to use
-Use the integrated root as the ZYR repository:
+figure tasks
+→ figure_engine
+→ ext/src/figures/
+→ S621 / S622 / S623
 
-```bash
-cd ZIP-your-Research-main_integrated
-python router/route.py "帮我审查论文Introduction的逻辑和证据链" --topk 8
-python router/route.py "生成一个论文用matplotlib grouped bar svg和png" --topk 8
+package validation
+→ S650
 ```
 
-Expected route examples:
+The integrated wrappers live under `skills/rwf_s340/`. The figure-engine master lives under `skills/figure_engine/MASTER_v1.6.4.md`.
 
-- Paper structure / abstract / introduction / method / experiments → `S601`
-- Claim-evidence review / reverse outline / reviewer comments → `S602`
-- Chinese/English polish / anti-AI-style rewrite / delta output → `S603`
-- Experiment narrative / table caption / figure caption → `S604`
-- Publication figure design → `S621`
-- Matplotlib script generation → `S622`
-- Figure/caption claim audit → `S623`
+## Non-omission guarantee
 
-## Priority rule
-If an external-source recommendation conflicts with ZYR guardrails, the ZYR guardrail wins.
+The integration keeps the preserved external sources and records them in:
+
+- `manifests/src_manifest.json`
+- `manifests/src_FILE_integr_TABLE.md`
+- `manifests/SCRIPT_INVENTORY.md`
+
+Use these validators for release checks:
+
+```bash
+python tools/validate_no_omission.py
+python tools/validate_integrated_sources.py
+```
+
+## Routing examples
+
+```bash
+python router/route.py "paper writing RPWS S340 logic audit"
+python router/route.py "figure engine figures4papers plotting code png pdf"
+python router/route.py "ZIP release no omission checksum path length"
+```

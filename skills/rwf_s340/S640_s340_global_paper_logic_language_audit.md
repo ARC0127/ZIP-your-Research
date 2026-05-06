@@ -2,7 +2,7 @@
 id: S640
 name: s340_global_paper_logic_language_audit
 category: s340_integrated
-version: v1.6.3
+version: v1.6.5
 triggers:
 - S340
 - writing engine

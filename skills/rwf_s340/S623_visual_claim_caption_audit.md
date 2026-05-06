@@ -2,7 +2,7 @@
 id: S623
 name: visual_claim_caption_audit
 category: figure_design_integrated
-version: v1.6.3
+version: v1.6.5
 triggers:
 - figure caption
 - visual claim

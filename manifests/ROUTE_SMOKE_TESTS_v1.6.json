@@ -1,26 +1,19 @@
-[
-  {
-    "query": "README architecture workflow diagram",
-    "returncode": 0,
-    "stdout": "Hard requirement: RWF-S340 task detected → apply S640 as global writing/logic gate when prose is involved.\nNext: skills/rwf_s340/MASTER.md and skills/rwf_s340/S640_s340_global_paper_logic_language_audit.md\n\nPRIMARY: S621\nSECONDARY (verification/companion): S623, S640\n\nTop 4 matches:\n1. S621 | publication_figure_design_theory | figure_design_integrated | score=7.71\n   hits: workflow diagram\n   weights: cat*1.35, figure_publication_workflow:skill+4.0, figure_publication_workflow:cat*1.35\n   file: skills/rwf_s340/S621_publication_fig_design_theory.md\n2. S622 | matplotlib_publication_script_builder | figure_design_integrated | score=6.63\n   hits: workflow diagram\n   weights: cat*1.35, figure_publication_workflow:skill+3.2, figure_publication_workflow:cat*1.35\n   file: skills/rwf_s340/S622_matplotlib_publication_script_builder.md\n3. rwf_s340_master | research_writing_figure_s340_integrated_master | composite | score=3.34\n   hits: readme architecture, workflow diagram\n   weights: cat*1.10\n   file: skills/rwf_s340/MASTER.md\n4. S640 | s340_global_paper_logic_language_audit | s340_integrated | score=0.80\n   weights: cat*1.60\n   file: skills/rwf_s340/S640_s340_global_paper_logic_language_audit.md\n",
-    "stderr": ""
-  },
-  {
-    "query": "matplotlib plotting script svg png",
-    "returncode": 0,
-    "stdout": "Hard requirement: RWF-S340 task detected → apply S640 as global writing/logic gate when prose is involved.\nNext: skills/rwf_s340/MASTER.md and skills/rwf_s340/S640_s340_global_paper_logic_language_audit.md\n\nPRIMARY: S622\nSECONDARY (verification/companion): S623, S640\n\nTop 3 matches:\n1. S622 | matplotlib_publication_script_builder | figure_design_integrated | score=8.72\n   hits: matplotlib, plotting script\n   weights: cat*1.35, figure_publication_workflow:skill+3.2, figure_publication_workflow:cat*1.35\n   file: skills/rwf_s340/S622_matplotlib_publication_script_builder.md\n2. rwf_s340_master | research_writing_figure_s340_integrated_master | composite | score=3.59\n   hits: svg, png, matplotlib\n   weights: cat*1.10\n   file: skills/rwf_s340/MASTER.md\n3. S640 | s340_global_paper_logic_language_audit | s340_integrated | score=0.80\n   weights: cat*1.60\n   file: skills/rwf_s340/S640_s340_global_paper_logic_language_audit.md\n",
-    "stderr": ""
-  },
-  {
-    "query": "paper logic audit claim evidence S640",
-    "returncode": 0,
-    "stdout": "PRIMARY: S203\n\nTop 3 matches:\n1. S203 | claim_evidence_matrix | research_core | score=2.27\n   hits: claim evidence\n   weights: cat*1.35\n   file: skills/research_core/S203_claim_evidence_matrix.md\n2. S602 | claim_evidence_reverse_outline_review | research_writing_integrated | score=1.79\n   hits: claim evidence\n   weights: cat*1.45\n   file: skills/rwf_s340/S602_claim_evidence_reverse_outline_review.md\n3. S527 | claim_language_risk_linter | paper_ops | score=0.47\n   weights: cat*1.05\n   file: skills/paper_ops/S527_claim_language_risk_linter.md\n",
-    "stderr": ""
-  },
-  {
-    "query": "zip release no omission checksum duplicate skill id",
-    "returncode": 0,
-    "stdout": "PRIMARY: S650\nSECONDARY (verification/companion): S407, S431\n\nTop 2 matches:\n1. S650 | integrated_pack_no_omission_validation | reproducibility_integrated | score=10.70\n   hits: no omission, checksum\n   weights: cat*1.35, integrated_release_validation:skill+4.8, integrated_release_validation:cat*1.35\n   file: skills/rwf_s340/S650_integrated_pack_no_omission_valid.md\n2. S407 | artifact_packaging_release | reproducibility | score=1.28\n   hits: release\n   weights: cat*1.15\n   file: skills/reproducibility/S407_artifact_packaging_release.md\n",
-    "stderr": ""
-  }
-]
+{
+  "version": "1.6.4",
+  "tests": [
+    {
+      "query": "paper writing RPWS S340 logic audit",
+      "expected_primary": "writing_engine"
+    },
+    {
+      "query": "figure engine figures4papers plotting code png pdf",
+      "expected_primary": "figure_engine"
+    },
+    {
+      "query": "ZIP release no omission checksum path length",
+      "expected_contains": [
+        "S650"
+      ]
+    }
+  ]
+}

@@ -60,6 +60,16 @@ FIGURE_HINTS = [
     "svg", "png", "pdf", "figures4papers",
 ]
 
+IDEA_METHOD_HINTS = [
+    "research idea", "idea construction", "method design", "method rationale",
+    "theoretical framing", "claim formation", "contribution definition",
+    "paper storyline", "storyline construction", "problem formulation",
+    "hypothesis", "assumption audit", "research logic",
+    "研究思路", "思路构成", "构思", "方法设计", "方法构成", "方法依据",
+    "理论框架", "贡献定义", "贡献是否成立", "论文主线", "研究主线",
+    "问题定义", "问题设定", "claim-evidence", "证据链", "第一性原理",
+]
+
 RWF_S340_HINTS = [
     "paper writing", "manuscript", "research plan", "readme architecture", "caption",
     "anti ai tone", "forbidden phrase", "mechanical phrasing", "style logic",
@@ -133,6 +143,12 @@ def looks_like_writing_task(q: str) -> bool:
     if any(h in ql for h in WRITING_HINTS):
         return True
     if looks_like_manuscript(q):
+        return True
+    return False
+
+def looks_like_idea_method_task(q: str) -> bool:
+    ql = q.lower()
+    if any(h in ql for h in IDEA_METHOD_HINTS):
         return True
     return False
 
@@ -244,13 +260,13 @@ def main():
         "path": "skills/writing_engine/MASTER_v1.3.2.md",
     })
 
-    # v1.6.3+: Add composite figure_engine as a candidate for scoring
+    # v1.6.5+: Add composite figure_engine as a candidate for scoring
     skills.append({
         "id": "figure_engine",
         "name": "figure_engine",
         "category": "composite",
         "triggers": [x.lower() for x in FIGURE_HINTS],
-        "path": "skills/figure_engine/MASTER_v1.6.3.md",
+        "path": "skills/figure_engine/MASTER_v1.6.5.md",
     })
 
     # v1.2+: Add composite coding_engine as a candidate for scoring
@@ -267,7 +283,7 @@ def main():
         "id": "proof_engine",
         "name": "proof_engine",
         "category": "composite",
-        "triggers": [x.lower() for x in PROOF_HINTS],
+        "triggers": [x.lower() for x in (PROOF_HINTS + IDEA_METHOD_HINTS)],
         "path": "skills/proof_engine/MASTER_v1.5.md",
     })
 
@@ -284,6 +300,7 @@ def main():
     # Manuscript heuristic: print a strong hint, but still compute scores
     manuscript_flag = looks_like_manuscript(q)
     writing_flag = looks_like_writing_task(q)
+    idea_method_flag = looks_like_idea_method_task(q)
     proof_flag = looks_like_proof_task(q)
     figure_flag = looks_like_figure_task(q)
     rwf_s340_flag = looks_like_rwf_s340_task(q)
@@ -293,7 +310,7 @@ def main():
         sc0, hits = base_score(ql, s["triggers"])
         if sc0 <= 0 and not (
             (s["id"] == "writing_engine" and writing_flag)
-            or (s["id"] == "proof_engine" and proof_flag)
+            or (s["id"] == "proof_engine" and (proof_flag or idea_method_flag))
             or (s["id"] in {"rwf_s340_master", "S640"} and rwf_s340_flag)
         ):
             continue
@@ -306,13 +323,17 @@ def main():
         print("Hard requirement: writing task detected → call writing_engine backed by Research-Paper-Writing-Skills.")
         print("Next: skills/writing_engine/MASTER_v1.3.2.md and ext/src/rpws/")
         print()
+    if idea_method_flag:
+        print("Hard requirement: idea/method/storyline task detected → call proof_engine before writing_engine.")
+        print("Next: skills/proof_engine/MASTER_v1.5.md with S203/S226/S227/S230; add S237/S240/S241 when assumptions or derivations matter.")
+        print()
     if proof_flag:
         print("Heuristic: proof-heavy input detected → consider PRIMARY proof_engine.")
         print("Next: skills/proof_engine/MASTER_v1.5.md")
         print()
     if figure_flag:
         print("Hard requirement: figure task detected → call figure_engine backed by figures4papers.")
-        print("Next: inspect ext/src/figures/ first, then use skills/figure_engine/MASTER_v1.6.3.md")
+        print("Next: inspect ext/src/figures/ first, then use skills/figure_engine/MASTER_v1.6.5.md")
         print()
     if rwf_s340_flag:
         print("Hard requirement: RWF-S340 task detected → apply S640 as global writing/logic gate when prose is involved.")

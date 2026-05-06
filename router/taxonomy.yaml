@@ -8,10 +8,11 @@ categories:
 - figure_design_integrated
 - s340_integrated
 - reproducibility_integrated
-version: v1.6.0
+version: v1.6.5
 intent_detection:
   notes:
-  - Prefer 'writing_engine' when the user asks to write, rewrite, polish, or review prose. Writing tasks must bind to Research-Paper-Writing-Skills plus the integrated S601-S604 and S640 chain.
+  - Prefer 'proof_engine' when the user asks to construct or validate research ideas, method design, contribution framing, theoretical framing, paper storyline, assumptions, or derivations.
+  - Prefer 'writing_engine' when the user asks to write, rewrite, polish, or review prose. Writing tasks must bind to Research-Paper-Writing-Skills plus the integrated S601-S604 and S640 chain, with proof_engine first when the logic is still being formed.
   - Prefer S3xx when user asks for validation, ablation, baselines, metrics, or a
     2-hour decision signal.
   - Prefer S4xx when user asks for reproducibility, code/data audits, dataset construction,
@@ -29,15 +30,20 @@ priority_rules:
     long-form.
 - rule: single_primary_skill
   description: Return ONE primary skill prompt, but keep mandatory companions such as S640 visible for writing-like tasks.
+- rule: proof_hard_gate
+  description: proof_engine is mandatory for research idea construction, method design, theoretical framing, contribution definition, paper storyline construction, and proof/derivation checks.
 - rule: s340_hard_gate
   description: S640 is a mandatory global style/logic gate for manuscript, research-plan, polishing, README architecture text, and caption tasks.
 composite_skills:
+- id: proof_engine
+  purpose: Idea/method/storyline construction and proof-style verification
+  entry: skills/proof_engine/MASTER_v1.5.md
 - id: writing_engine
   purpose: Visible writing tasks; RPWS-backed writing engine with integrated S601-S604 and S640
   entry: skills/writing_engine/MASTER_v1.3.2.md
 - id: figure_engine
   purpose: Figure-making tasks; figures4papers-backed figure engine with integrated S621-S623
-  entry: skills/figure_engine/MASTER_v1.6.3.md
+  entry: skills/figure_engine/MASTER_v1.6.5.md
 tooling:
   router_cli: router/route.py
 

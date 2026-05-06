@@ -2,7 +2,7 @@
 id: S650
 name: integrated_pack_no_omission_validation
 category: reproducibility_integrated
-version: v1.6.3
+version: v1.6.5
 triggers:
 - validate integrated pack
 - no omission

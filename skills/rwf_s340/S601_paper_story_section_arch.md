@@ -2,7 +2,7 @@
 id: S601
 name: paper_story_section_architecture
 category: research_writing_integrated
-version: v1.6.3
+version: v1.6.5
 triggers:
 - paper story
 - manuscript architecture

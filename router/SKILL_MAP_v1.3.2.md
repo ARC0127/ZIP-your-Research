@@ -300,7 +300,7 @@ Prefer using **one** primary skill per task.
 - **S622** `matplotlib_publication_script_builder` — skills/rwf_s340/S622_matplotlib_publication_script_builder.md
   - triggers: matplotlib, plotting script, grouped bar, heatmap, radar chart, trend plot, ...
 - **S623** `visual_claim_caption_audit` — skills/rwf_s340/S623_visual_claim_caption_audit.md
-  - triggers: figure audit, caption audit, visual claim, panel consistency, 图表审查, caption检查, ...
+  - triggers: figure caption, visual claim, caption audit, figure audit, 图注, 视觉审查, ...
 
 ## s340_integrated
 
@@ -314,13 +314,13 @@ Prefer using **one** primary skill per task.
 
 ## composite
 
-- **coding_engine** `coding_engine` — skills/coding_engine/README.md
+- **coding_engine** `coding_engine` — skills/coding_engine/MASTER_v1.3.2.md
   - triggers: generated composite; outputs: master_prompt
-- **proof_engine** `proof_engine` — skills/proof_engine/README.md
+- **figure_engine** `figure_engine` — skills/figure_engine/MASTER_v1.6.5.md
+  - triggers: generated composite; outputs: master_prompt
+- **proof_engine** `proof_engine` — skills/proof_engine/MASTER_v1.5.md
   - triggers: generated composite; outputs: master_prompt
 - **rwf_s340_master** `research_writing_figure_s340_integrated_master` — skills/rwf_s340/MASTER.md
   - triggers: generated composite; outputs: master_prompt
-- **figure_engine** `figure_engine` — skills/figure_engine/MASTER_v1.6.3.md
-  - triggers: generated composite; outputs: master_prompt; notes: figures4papers-backed figure engine
 - **writing_engine** `writing_engine` — skills/writing_engine/MASTER_v1.3.2.md
-  - triggers: generated composite; outputs: master_prompt; notes: RPWS-backed writing engine
+  - triggers: generated composite; outputs: master_prompt

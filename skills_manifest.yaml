@@ -1,623 +1,1329 @@
-version: 1.6.3
+version: 1.6.5
 skills:
 - id: writing_engine
   name: writing_engine
   category: composite
-  path: skills/writing_engine/README.md
+  path: skills/writing_engine/MASTER_v1.3.2.md
+  outputs:
+  - master_prompt
+- id: figure_engine
+  name: figure_engine
+  category: composite
+  path: skills/figure_engine/MASTER_v1.6.5.md
   outputs:
   - master_prompt
 - id: coding_engine
   name: coding_engine
   category: composite
-  path: skills/coding_engine/README.md
+  path: skills/coding_engine/MASTER_v1.3.2.md
   outputs:
   - master_prompt
 - id: proof_engine
   name: proof_engine
   category: composite
-  path: skills/proof_engine/README.md
+  path: skills/proof_engine/MASTER_v1.5.md
   outputs:
   - master_prompt
-- id: S201
-  name: problem_framing_audit
-  category: research_core
-  path: skills/research_core/S201_problem_framing.md
-- id: S202
-  name: novelty_positioning_map
-  category: research_core
-  path: skills/research_core/S202_novelty_map.md
-- id: S203
-  name: claim_evidence_matrix
-  category: research_core
-  path: skills/research_core/S203_claim_evidence_matrix.md
-- id: S204
-  name: literature_triage_pipeline
-  category: research_core
-  path: skills/research_core/S204_literature_triage_pipe.md
-- id: S205
-  name: concept_map_builder
-  category: research_core
-  path: skills/research_core/S205_concept_map_builder.md
-- id: S206
-  name: research_gap_hypothesis_generator
-  category: research_core
-  path: skills/research_core/S206_research_gap_hypothesis_generator.md
-- id: S207
-  name: contribution_claim_refinement
-  category: research_core
-  path: skills/research_core/S207_contrib_claim_refinement.md
-- id: S208
-  name: assumption_risk_register
-  category: research_core
-  path: skills/research_core/S208_assumption_risk_register.md
-- id: S209
-  name: scope_minimization_2h
-  category: research_core
-  path: skills/research_core/S209_scope_minimization_2h.md
-- id: S210
-  name: terminology_definition_linter
-  category: research_core
-  path: skills/research_core/S210_terminology_definition_linter.md
-- id: S211
-  name: related_work_delta_table
-  category: research_core
-  path: skills/research_core/S211_related_work_delta_table.md
-- id: S212
-  name: problem_to_method_fit_check
-  category: research_core
-  path: skills/research_core/S212_problem_to_method_fit_check.md
-- id: S213
-  name: evaluation_goal_alignment
-  category: research_core
-  path: skills/research_core/S213_evaluation_goal_alignment.md
-- id: S214
-  name: thesis_statement_builder
-  category: research_core
-  path: skills/research_core/S214_thesis_statement_builder.md
-- id: S215
-  name: research_question_tree
-  category: research_core
-  path: skills/research_core/S215_research_question_tree.md
-- id: S216
-  name: hypothesis_to_predictions
-  category: research_core
-  path: skills/research_core/S216_hypothesis_to_predictions.md
-- id: S217
-  name: contribution_type_selector
-  category: research_core
-  path: skills/research_core/S217_contrib_type_selector.md
-- id: S218
-  name: assumptions_and_threats_audit
-  category: research_core
-  path: skills/research_core/S218_assumptions_and_threats_audit.md
-- id: S219
-  name: ethics_and_data_risk_screen
-  category: research_core
-  path: skills/research_core/S219_ethics_and_data_risk_screen.md
-- id: S220
-  name: grant_proposal_skeleton
-  category: research_core
-  path: skills/research_core/S220_grant_proposal_skeleton.md
-- id: S221
-  name: paper_reading_schedule_2h
-  category: research_core
-  path: skills/research_core/S221_paper_reading_schedule_2h.md
-- id: S222
-  name: idea_prioritization_matrix
-  category: research_core
-  path: skills/research_core/S222_idea_prioritization_matrix.md
-- id: S223
-  name: benchmark_selection_protocol
-  category: research_core
-  path: skills/research_core/S223_benchmark_selection_protocol.md
-- id: S224
-  name: novelty_verification_protocol
-  category: research_core
-  path: skills/research_core/S224_novelty_verification_protocol.md
-- id: S225
-  name: research_storyline_arc
-  category: research_core
-  path: skills/research_core/S225_research_storyline_arc.md
-- id: S226
-  name: logic_consistency_audit
-  category: research_core
-  path: skills/research_core/S226_logic_consistency_audit.md
-- id: S227
-  name: method_correctness_audit
-  category: research_core
-  path: skills/research_core/S227_method_correctness_audit.md
-- id: S228
-  name: innovation_novelty_audit
-  category: research_core
-  path: skills/research_core/S228_innovation_novelty_audit.md
-- id: S229
-  name: paper_storyline_integrity_check
-  category: research_core
-  path: skills/research_core/S229_paper_storyline_integrity_check.md
-- id: S230
-  name: proof_idea_check
-  category: research_core
-  path: skills/research_core/S230_proof_idea_check.md
-- id: S231
-  name: innovation_point_search_plan
-  category: research_core
-  path: skills/research_core/S231_innovation_point_search_plan.md
-- id: S232
-  name: paper_interpretation_deep_read
-  category: research_core
-  path: skills/research_core/S232_paper_interpretation_deep_read.md
-- id: S237
-  name: theorem_assumption_normalizer
-  category: research_core
-  path: skills/research_core/S237_theorem_assumption_normalizer.md
-  status: stable
-- id: S240
-  name: pessimistic_proof_verification
-  category: research_core
-  path: skills/research_core/S240_pessimistic_proof_verification.md
-  status: stable
-- id: S241
-  name: progressive_proof_verification
-  category: research_core
-  path: skills/research_core/S241_progressive_proof_verification.md
-  status: stable
-- id: S301
-  name: minimal_decidable_experiment
-  category: experiments
-  path: skills/exp/S301_min_decidable_experiment.md
-- id: S302
-  name: ablation_planner
-  category: experiments
-  path: skills/exp/S302_ablation_planner.md
-- id: S303
-  name: evaluation_protocol_linter
-  category: experiments
-  path: skills/exp/S303_eval_protocol_linter.md
-- id: S304
-  name: baseline_selection_protocol
-  category: experiments
-  path: skills/exp/S304_baseline_selection_protocol.md
-- id: S305
-  name: metric_design_and_sanity
-  category: experiments
-  path: skills/exp/S305_metric_design_and_sanity.md
-- id: S306
-  name: data_split_leakage_check
-  category: experiments
-  path: skills/exp/S306_data_split_leakage_check.md
-- id: S307
-  name: ablation_interpretation_framework
-  category: experiments
-  path: skills/exp/S307_ablation_interpretation_framework.md
-- id: S308
-  name: hyperparameter_budget_plan
-  category: experiments
-  path: skills/exp/S308_hyperparameter_budget_plan.md
-- id: S309
-  name: error_analysis_playbook
-  category: experiments
-  path: skills/exp/S309_error_analysis_playbook.md
-- id: S310
-  name: compute_cost_reporting_template
-  category: experiments
-  path: skills/exp/S310_compute_cost_reporting_template.md
-- id: S311
-  name: statistical_significance_sanity
-  category: experiments
-  path: skills/exp/S311_statistical_significance_sanity.md
-- id: S312
-  name: replication_study_design
-  category: experiments
-  path: skills/exp/S312_replication_study_design.md
-- id: S313
-  name: data_augmentation_risk_audit
-  category: experiments
-  path: skills/exp/S313_data_augmentation_risk_audit.md
-- id: S314
-  name: evaluation_suite_selection
-  category: experiments
-  path: skills/exp/S314_evaluation_suite_selection.md
-- id: S315
-  name: stress_test_adversarial_cases
-  category: experiments
-  path: skills/exp/S315_stress_test_adversarial_cases.md
-- id: S316
-  name: statistical_power_quickcheck
-  category: experiments
-  path: skills/exp/S316_statistical_power_quickcheck.md
-- id: S317
-  name: seed_sensitivity_protocol
-  category: experiments
-  path: skills/exp/S317_seed_sensitivity_protocol.md
-- id: S318
-  name: experiment_logging_schema
-  category: experiments
-  path: skills/exp/S318_experiment_logging_schema.md
-- id: S319
-  name: failure_case_generation
-  category: experiments
-  path: skills/exp/S319_failure_case_generation.md
-- id: S320
-  name: hyperparam_search_reporting
-  category: experiments
-  path: skills/exp/S320_hyperparam_search_reporting.md
-- id: S321
-  name: replicability_multi_machine
-  category: experiments
-  path: skills/exp/S321_replicability_multi_machine.md
-- id: S322
-  name: visualization_plan_results
-  category: experiments
-  path: skills/exp/S322_visualization_plan_results.md
-- id: S323
-  name: rl_sanity_checks_pack
-  category: experiments
-  path: skills/exp/S323_rl_sanity_checks_pack.md
-- id: S324
-  name: compute_scaling_experiment
-  category: experiments
-  path: skills/exp/S324_compute_scaling_experiment.md
-- id: S325
-  name: experiment_registry_template
-  category: experiments
-  path: skills/exp/S325_experiment_registry_template.md
-- id: S326
-  name: calculation_correctness_check
-  category: experiments
-  path: skills/exp/S326_calculation_correctness_check.md
-- id: S327
-  name: experiment_completeness_check
-  category: experiments
-  path: skills/exp/S327_experiment_completeness_check.md
-- id: S401
-  name: reproducibility_checklist
-  category: reproducibility
-  path: skills/reproducibility/S401_repro_checklist.md
-- id: S402
-  name: code_audit
-  category: reproducibility
-  path: skills/reproducibility/S402_code_audit.md
-- id: S403
-  name: dataset_spec
-  category: reproducibility
-  path: skills/reproducibility/S403_dataset_spec.md
-- id: S404
-  name: environment_capture_spec
-  category: reproducibility
-  path: skills/reproducibility/S404_environment_capture_spec.md
-- id: S405
-  name: seed_and_determinism_policy
-  category: reproducibility
-  path: skills/reproducibility/S405_seed_and_determinism_policy.md
-- id: S406
-  name: experiment_logging_schema
-  category: reproducibility
-  path: skills/reproducibility/S406_experiment_logging_schema.md
-- id: S407
-  name: artifact_packaging_release
-  category: reproducibility
-  path: skills/reproducibility/S407_artifact_packaging_release.md
-- id: S408
-  name: code_structure_refactor_plan
-  category: reproducibility
-  path: skills/reproducibility/S408_code_structure_refactor_plan.md
-- id: S409
-  name: dataset_card_writer
-  category: reproducibility
-  path: skills/reproducibility/S409_dataset_card_writer.md
-- id: S410
-  name: model_card_writer
-  category: reproducibility
-  path: skills/reproducibility/S410_model_card_writer.md
-- id: S411
-  name: privacy_ethics_checklist
-  category: reproducibility
-  path: skills/reproducibility/S411_privacy_ethics_checklist.md
-- id: S412
-  name: benchmark_reproduction_check
-  category: reproducibility
-  path: skills/reproducibility/S412_benchmark_reproduction_check.md
-- id: S413
-  name: dependency_risk_audit
-  category: reproducibility
-  path: skills/reproducibility/S413_dependency_risk_audit.md
-- id: S414
-  name: results_traceability_matrix
-  category: reproducibility
-  path: skills/reproducibility/S414_results_traceability_matrix.md
-- id: S415
-  name: data_pipeline_invariance_tests
-  category: reproducibility
-  path: skills/reproducibility/S415_data_pipe_invariance_tests.md
-- id: S416
-  name: dependency_lockfile_strategy
-  category: reproducibility
-  path: skills/reproducibility/S416_dependency_lockfile_strategy.md
-- id: S417
-  name: environment_capture_playbook
-  category: reproducibility
-  path: skills/reproducibility/S417_environment_capture_playbook.md
-- id: S418
-  name: determinism_settings_torch
-  category: reproducibility
-  path: skills/reproducibility/S418_determinism_settings_torch.md
-- id: S419
-  name: data_versioning_and_checksum
-  category: reproducibility
-  path: skills/reproducibility/S419_data_versioning_and_checksum.md
-- id: S420
-  name: logging_and_artifact_naming
-  category: reproducibility
-  path: skills/reproducibility/S420_logging_and_artifact_naming.md
-- id: S421
-  name: evaluation_script_hardening
-  category: reproducibility
-  path: skills/reproducibility/S421_evaluation_script_hardening.md
-- id: S422
-  name: minimal_repro_bundle_creator
-  category: reproducibility
-  path: skills/reproducibility/S422_minimal_repro_bundle_creator.md
-- id: S423
-  name: security_review_open_source
-  category: reproducibility
-  path: skills/reproducibility/S423_security_review_open_src.md
-- id: S424
-  name: citation_and_attribution_audit
-  category: reproducibility
-  path: skills/reproducibility/S424_citation_and_attribution_audit.md
-- id: S425
-  name: benchmark_reproduction_protocol
-  category: reproducibility
-  path: skills/reproducibility/S425_benchmark_reproduction_protocol.md
-- id: S501
-  name: rebuttal_generator
-  category: paper_ops
-  path: skills/paper_ops/S501_rebuttal_generator.md
-- id: S502
-  name: reviewer_simulator
-  category: paper_ops
-  path: skills/paper_ops/S502_reviewer_simulator.md
-- id: S503
-  name: submission_readiness_gate
-  category: paper_ops
-  path: skills/paper_ops/S503_submission_readiness_gate.md
-- id: S504
-  name: cover_letter_builder
-  category: paper_ops
-  path: skills/paper_ops/S504_cover_letter_builder.md
-- id: S505
-  name: camera_ready_checklist
-  category: paper_ops
-  path: skills/paper_ops/S505_camera_ready_checklist.md
-- id: S506
-  name: rebuttal_evidence_packager
-  category: paper_ops
-  path: skills/paper_ops/S506_rebuttal_evidence_packager.md
-- id: S507
-  name: reviewer_comment_clustering
-  category: paper_ops
-  path: skills/paper_ops/S507_reviewer_comment_clustering.md
-- id: S508
-  name: response_tone_alignment
-  category: paper_ops
-  path: skills/paper_ops/S508_response_tone_alignment.md
-- id: S509
-  name: author_contribution_statement
-  category: paper_ops
-  path: skills/paper_ops/S509_author_contrib_statement.md
-- id: S510
-  name: ethics_statement_generator
-  category: paper_ops
-  path: skills/paper_ops/S510_ethics_statement_generator.md
-- id: S511
-  name: appendix_structuring
-  category: paper_ops
-  path: skills/paper_ops/S511_appendix_structuring.md
-- id: S512
-  name: figure_table_audit
-  category: paper_ops
-  path: skills/paper_ops/S512_fig_table_audit.md
-- id: S513
-  name: title_abstract_optimizer
-  category: paper_ops
-  path: skills/paper_ops/S513_title_abs_optimizer.md
-- id: S514
-  name: talk_poster_outline
-  category: paper_ops
-  path: skills/paper_ops/S514_talk_poster_outline.md
-- id: S515
-  name: open_source_release_plan
-  category: paper_ops
-  path: skills/paper_ops/S515_open_src_release_plan.md
-- id: S516
-  name: camera_ready_checklist
-  category: paper_ops
-  path: skills/paper_ops/S516_camera_ready_checklist.md
-- id: S517
-  name: figure_table_caption_rewrite
-  category: paper_ops
-  path: skills/paper_ops/S517_fig_table_caption_rewrite.md
-- id: S518
-  name: limitations_section_builder
-  category: paper_ops
-  path: skills/paper_ops/S518_limitations_section_builder.md
-- id: S519
-  name: response_matrix_builder
-  category: paper_ops
-  path: skills/paper_ops/S519_response_matrix_builder.md
-- id: S520
-  name: tone_and_rhetoric_polisher
-  category: paper_ops
-  path: skills/paper_ops/S520_tone_and_rhetoric_polisher.md
-- id: S521
-  name: contribution_statement_refinement
-  category: paper_ops
-  path: skills/paper_ops/S521_contrib_statement_refinement.md
-- id: S522
-  name: appendix_planner
-  category: paper_ops
-  path: skills/paper_ops/S522_appendix_planner.md
-- id: S523
-  name: cover_letter_generator
-  category: paper_ops
-  path: skills/paper_ops/S523_cover_letter_generator.md
-- id: S524
-  name: open_source_release_note_generator
-  category: paper_ops
-  path: skills/paper_ops/S524_open_src_release_note_generator.md
-- id: S525
-  name: arxiv_metadata_preflight
-  category: paper_ops
-  path: skills/paper_ops/S525_arxiv_metadata_preflight.md
-- id: S526
-  name: sentence_rewrite_with_retrieval
-  category: paper_ops
-  path: skills/paper_ops/S526_sentence_rewrite_with_retrieval.md
-- id: S233
-  name: innovation_correctness_audit
-  category: research_core
-  path: skills/research_core/S233_innovation_correctness_audit.md
-  status: draft
-- id: S234
-  name: novelty_search_protocol
-  category: research_core
-  path: skills/research_core/S234_novelty_search_protocol.md
-  status: draft
-- id: S235
-  name: proof_gap_finder
-  category: research_core
-  path: skills/research_core/S235_proof_gap_finder.md
-  status: draft
-- id: S328
-  name: experiment_rigor_scorecard
-  category: experiments
-  path: skills/exp/S328_experiment_rigor_scorecard.md
-  status: draft
-- id: S527
-  name: claim_language_risk_linter
-  category: paper_ops
-  path: skills/paper_ops/S527_claim_language_risk_linter.md
-  status: draft
-- id: S236
-  name: preregistration_builder
-  category: research_core
-  path: skills/research_core/S236_preregistration_builder.md
-  status: draft
-- id: S238
-  name: systematic_review_protocol_builder
-  category: research_core
-  path: skills/research_core/S238_systematic_review_protocol_builder.md
-  status: draft
-- id: S239
-  name: study_screening_rubric_builder
-  category: research_core
-  path: skills/research_core/S239_study_screening_rubric_builder.md
-  status: draft
-- id: S336
-  name: pre_analysis_plan_builder
-  category: experiments
-  path: skills/exp/S336_pre_analysis_plan_builder.md
-  status: draft
-- id: S426
-  name: data_management_sharing_plan_builder
-  category: reproducibility
-  path: skills/reproducibility/S426_data_management_sharing_plan_builder.md
-  status: draft
-- id: S427
-  name: privacy_ip_sharing_constraints_audit
-  category: reproducibility
-  path: skills/reproducibility/S427_privacy_ip_sharing_constraints_audit.md
-  status: draft
-- id: S428
-  name: replication_package_builder
-  category: reproducibility
-  path: skills/reproducibility/S428_replication_package_builder.md
-  status: draft
-- id: S429
-  name: deterministic_seed_logging_policy
-  category: reproducibility
-  path: skills/reproducibility/S429_deterministic_seed_logging_policy.md
-  status: draft
-- id: S430
-  name: debug_vibe_core
-  category: reproducibility
-  path: skills/reproducibility/S430_debug_vibe_core.md
-- id: S528
-  name: reporting_checklist_generator
-  category: paper_ops
-  path: skills/paper_ops/S528_reporting_checklist_generator.md
-  status: draft
-- id: S529
-  name: transparency_disclosure_statements_builder
-  category: paper_ops
-  path: skills/paper_ops/S529_transparency_disclosure_statements_builder.md
-  status: draft
-- id: S530
-  name: ethics_impact_assessment
-  category: paper_ops
-  path: skills/paper_ops/S530_ethics_impact_assessment.md
-  status: draft
-- id: S431
-  name: closed_loop_verification
-  category: reproducibility
-  path: skills/reproducibility/S431_closed_loop_verification.md
-- id: S432
-  name: scope_drift_firewall
-  category: reproducibility
-  path: skills/reproducibility/S432_scope_drift_firewall.md
-- id: S433
-  name: formal_proof_adapter
-  category: reproducibility
-  path: skills/reproducibility/S433_formal_proof_adapter.md
-  status: stable
-- id: platform_zyr_skills
-  name: platform_zyr_skills
-  category: reproducibility
-  path: skills/platform_zyr_skills/README.md
-  status: stable
 - id: rwf_s340_master
   name: research_writing_figure_s340_integrated_master
   category: composite
   path: skills/rwf_s340/MASTER.md
   outputs:
   - master_prompt
+- id: S301
+  name: minimal_decidable_experiment
+  category: experiments
+  path: skills/exp/S301_min_decidable_experiment.md
+  triggers:
+  - 2-hour validation
+  - quick experiment
+  - MVP test
+- id: S302
+  name: ablation_planner
+  category: experiments
+  path: skills/exp/S302_ablation_planner.md
+  triggers:
+  - ablation
+  - component analysis
+  - what matters
+- id: S303
+  name: evaluation_protocol_linter
+  category: experiments
+  path: skills/exp/S303_eval_protocol_linter.md
+  triggers:
+  - eval protocol
+  - benchmark audit
+  - leakage check
+- id: S304
+  name: baseline_selection_protocol
+  category: experiments
+  path: skills/exp/S304_baseline_selection_protocol.md
+  triggers:
+  - baseline selection
+  - comparisons
+  - fairness
+- id: S305
+  name: metric_design_and_sanity
+  category: experiments
+  path: skills/exp/S305_metric_design_and_sanity.md
+  triggers:
+  - metrics
+  - sanity check
+  - normalization
+- id: S306
+  name: data_split_leakage_check
+  category: experiments
+  path: skills/exp/S306_data_split_leakage_check.md
+  triggers:
+  - data split
+  - leakage
+  - train test
+- id: S307
+  name: ablation_interpretation_framework
+  category: experiments
+  path: skills/exp/S307_ablation_interpretation_framework.md
+  triggers:
+  - ablation interpretation
+  - causal
+  - alternative explanations
+- id: S308
+  name: hyperparameter_budget_plan
+  category: experiments
+  path: skills/exp/S308_hyperparameter_budget_plan.md
+  triggers:
+  - hyperparameter tuning
+  - budget
+  - search
+- id: S309
+  name: error_analysis_playbook
+  category: experiments
+  path: skills/exp/S309_error_analysis_playbook.md
+  triggers:
+  - error analysis
+  - failure cases
+  - diagnostics
+- id: S310
+  name: compute_cost_reporting_template
+  category: experiments
+  path: skills/exp/S310_compute_cost_reporting_template.md
+  triggers:
+  - compute cost
+  - efficiency
+  - reporting
+- id: S311
+  name: statistical_significance_sanity
+  category: experiments
+  path: skills/exp/S311_statistical_significance_sanity.md
+  triggers:
+  - statistical significance
+  - confidence intervals
+  - seeds
+- id: S312
+  name: replication_study_design
+  category: experiments
+  path: skills/exp/S312_replication_study_design.md
+  triggers:
+  - replication
+  - reproduce baseline
+  - study
+- id: S313
+  name: data_augmentation_risk_audit
+  category: experiments
+  path: skills/exp/S313_data_augmentation_risk_audit.md
+  triggers:
+  - augmentation
+  - leakage risk
+  - robustness
+- id: S314
+  name: evaluation_suite_selection
+  category: experiments
+  path: skills/exp/S314_evaluation_suite_selection.md
+  triggers:
+  - benchmark selection
+  - suite
+  - coverage
+- id: S315
+  name: stress_test_adversarial_cases
+  category: experiments
+  path: skills/exp/S315_stress_test_adversarial_cases.md
+  triggers:
+  - stress test
+  - adversarial
+  - edge cases
+- id: S316
+  name: statistical_power_quickcheck
+  category: experiments
+  path: skills/exp/S316_statistical_power_quickcheck.md
+  triggers:
+  - power analysis
+  - sample size
+  - effect size
+- id: S317
+  name: seed_sensitivity_protocol
+  category: experiments
+  path: skills/exp/S317_seed_sensitivity_protocol.md
+  triggers:
+  - seed sensitivity
+  - variance across seeds
+  - stability
+- id: S318
+  name: experiment_logging_schema
+  category: experiments
+  path: skills/exp/S318_experiment_logging_schema.md
+  triggers:
+  - logging schema
+  - experiment tracking
+  - artifact layout
+- id: S319
+  name: failure_case_generation
+  category: experiments
+  path: skills/exp/S319_failure_case_generation.md
+  triggers:
+  - failure cases
+  - stress test
+  - corner cases
+- id: S320
+  name: hyperparam_search_reporting
+  category: experiments
+  path: skills/exp/S320_hyperparam_search_reporting.md
+  triggers:
+  - hyperparameter search
+  - tuning budget
+  - fair comparison
+- id: S321
+  name: replicability_multi_machine
+  category: experiments
+  path: skills/exp/S321_replicability_multi_machine.md
+  triggers:
+  - replicability
+  - multi-machine check
+  - environment drift
+- id: S322
+  name: visualization_plan_results
+  category: experiments
+  path: skills/exp/S322_visualization_plan_results.md
+  triggers:
+  - plots
+  - visualization plan
+  - result figures
+- id: S323
+  name: rl_sanity_checks_pack
+  category: experiments
+  path: skills/exp/S323_rl_sanity_checks_pack.md
+  triggers:
+  - RL sanity checks
+  - debug RL
+  - common mistakes
+- id: S324
+  name: compute_scaling_experiment
+  category: experiments
+  path: skills/exp/S324_compute_scaling_experiment.md
+  triggers:
+  - scaling experiment
+  - compute scaling
+  - inference scaling
+- id: S325
+  name: experiment_registry_template
+  category: experiments
+  path: skills/exp/S325_experiment_registry_template.md
+  triggers:
+  - experiment registry
+  - pre-registration
+  - plan locking
+- id: S326
+  name: calculation_correctness_check
+  category: experiments
+  path: skills/exp/S326_calculation_correctness_check.md
+  triggers:
+  - 计算正确性核查
+  - 算错了吗
+  - unit check
+  - dimension analysis
+  - algebra check
+  - numerical sanity check
+  - calculation correctness
+- id: S327
+  name: experiment_completeness_check
+  category: experiments
+  path: skills/exp/S327_experiment_completeness_check.md
+  triggers:
+  - 实验完整性检查
+  - experiment completeness
+  - missing ablations
+  - protocol completeness
+  - repro check for experiments
+- id: S328
+  name: experiment_rigor_scorecard
+  category: experiments
+  path: skills/exp/S328_experiment_rigor_scorecard.md
+  triggers:
+  - 实验完整性检查
+  - rigor scorecard
+  - missing baselines
+  - reporting checklist
+- id: S336
+  name: pre_analysis_plan_builder
+  category: experiments
+  path: skills/exp/S336_pre_analysis_plan_builder.md
+  triggers:
+  - pre-analysis plan
+  - analysis plan
+  - 统计分析计划
+  - decision rule plan
+- id: S501
+  name: rebuttal_generator
+  category: paper_ops
+  path: skills/paper_ops/S501_rebuttal_generator.md
+  triggers:
+  - rebuttal
+  - review response
+  - author response
+- id: S502
+  name: reviewer_simulator
+  category: paper_ops
+  path: skills/paper_ops/S502_reviewer_simulator.md
+  triggers:
+  - review simulation
+  - steelman
+  - rebuttal prep
+- id: S503
+  name: submission_readiness_gate
+  category: paper_ops
+  path: skills/paper_ops/S503_submission_readiness_gate.md
+  triggers:
+  - submission readiness
+  - final checklist
+  - deadline prep
+- id: S504
+  name: cover_letter_builder
+  category: paper_ops
+  path: skills/paper_ops/S504_cover_letter_builder.md
+  triggers:
+  - cover letter
+  - submission
+  - editor
+- id: S505
+  name: camera_ready_checklist
+  category: paper_ops
+  path: skills/paper_ops/S505_camera_ready_checklist.md
+  triggers:
+  - camera ready
+  - formatting
+  - final checks
+- id: S506
+  name: rebuttal_evidence_packager
+  category: paper_ops
+  path: skills/paper_ops/S506_rebuttal_evidence_packager.md
+  triggers:
+  - rebuttal evidence
+  - appendix
+  - artifact
+- id: S507
+  name: reviewer_comment_clustering
+  category: paper_ops
+  path: skills/paper_ops/S507_reviewer_comment_clustering.md
+  triggers:
+  - review clustering
+  - themes
+  - response plan
+- id: S508
+  name: response_tone_alignment
+  category: paper_ops
+  path: skills/paper_ops/S508_response_tone_alignment.md
+  triggers:
+  - tone
+  - polite rebuttal
+  - conflict de-escalation
+- id: S509
+  name: author_contribution_statement
+  category: paper_ops
+  path: skills/paper_ops/S509_author_contrib_statement.md
+  triggers:
+  - author contributions
+  - CRediT
+  - statement
+- id: S510
+  name: ethics_statement_generator
+  category: paper_ops
+  path: skills/paper_ops/S510_ethics_statement_generator.md
+  triggers:
+  - ethics statement
+  - broader impacts
+  - responsible AI
+- id: S511
+  name: appendix_structuring
+  category: paper_ops
+  path: skills/paper_ops/S511_appendix_structuring.md
+  triggers:
+  - appendix
+  - supplementary
+  - structure
+- id: S512
+  name: figure_table_audit
+  category: paper_ops
+  path: skills/paper_ops/S512_fig_table_audit.md
+  triggers:
+  - figure audit
+  - table audit
+  - clarity
+- id: S513
+  name: title_abstract_optimizer
+  category: paper_ops
+  path: skills/paper_ops/S513_title_abs_optimizer.md
+  triggers:
+  - title
+  - abstract
+  - keywords
+- id: S514
+  name: talk_poster_outline
+  category: paper_ops
+  path: skills/paper_ops/S514_talk_poster_outline.md
+  triggers:
+  - talk outline
+  - poster
+  - presentation
+- id: S515
+  name: open_source_release_plan
+  category: paper_ops
+  path: skills/paper_ops/S515_open_src_release_plan.md
+  triggers:
+  - open source release
+  - repo checklist
+  - artifact
+- id: S516
+  name: camera_ready_checklist
+  category: paper_ops
+  path: skills/paper_ops/S516_camera_ready_checklist.md
+  triggers:
+  - camera-ready
+  - final submission
+  - format check
+- id: S517
+  name: figure_table_caption_rewrite
+  category: paper_ops
+  path: skills/paper_ops/S517_fig_table_caption_rewrite.md
+  triggers:
+  - caption rewrite
+  - figure caption
+  - table caption
+- id: S518
+  name: limitations_section_builder
+  category: paper_ops
+  path: skills/paper_ops/S518_limitations_section_builder.md
+  triggers:
+  - limitations section
+  - future work
+  - honest disclosure
+- id: S519
+  name: response_matrix_builder
+  category: paper_ops
+  path: skills/paper_ops/S519_response_matrix_builder.md
+  triggers:
+  - response matrix
+  - reviewer table
+  - rebuttal planning
+- id: S520
+  name: tone_and_rhetoric_polisher
+  category: paper_ops
+  path: skills/paper_ops/S520_tone_and_rhetoric_polisher.md
+  triggers:
+  - tone polish
+  - rhetoric
+  - reduce overclaim
+- id: S521
+  name: contribution_statement_refinement
+  category: paper_ops
+  path: skills/paper_ops/S521_contrib_statement_refinement.md
+  triggers:
+  - contribution statement
+  - contributions list
+  - main contributions
+- id: S522
+  name: appendix_planner
+  category: paper_ops
+  path: skills/paper_ops/S522_appendix_planner.md
+  triggers:
+  - appendix plan
+  - supplement planning
+  - what goes where
+- id: S523
+  name: cover_letter_generator
+  category: paper_ops
+  path: skills/paper_ops/S523_cover_letter_generator.md
+  triggers:
+  - cover letter
+  - journal submission
+  - editor letter
+- id: S524
+  name: open_source_release_note_generator
+  category: paper_ops
+  path: skills/paper_ops/S524_open_src_release_note_generator.md
+  triggers:
+  - release notes
+  - github release
+  - version notes
+- id: S525
+  name: arxiv_metadata_preflight
+  category: paper_ops
+  path: skills/paper_ops/S525_arxiv_metadata_preflight.md
+  triggers:
+  - arXiv submission
+  - metadata
+  - preflight check
+- id: S526
+  name: sentence_rewrite_with_retrieval
+  category: paper_ops
+  path: skills/paper_ops/S526_sentence_rewrite_with_retrieval.md
+  triggers:
+  - 句子改写
+  - polish sentence
+  - rewrite sentence
+  - paraphrase
+  - 句子润色
+  - 检索改写
+  - rewrite with sources
+- id: S527
+  name: claim_language_risk_linter
+  category: paper_ops
+  path: skills/paper_ops/S527_claim_language_risk_linter.md
+  triggers:
+  - 句子改写
+  - overclaim
+  - claim audit
+  - 夸大
+  - risk linter
+- id: S528
+  name: reporting_checklist_generator
+  category: paper_ops
+  path: skills/paper_ops/S528_reporting_checklist_generator.md
+  triggers:
+  - reporting checklist
+  - Nature reporting summary
+  - PRISMA checklist
+  - reporting standards
+  - 透明度 清单
+- id: S529
+  name: transparency_disclosure_statements_builder
+  category: paper_ops
+  path: skills/paper_ops/S529_transparency_disclosure_statements_builder.md
+  triggers:
+  - data availability statement
+  - code availability
+  - disclosure
+  - 透明度声明
+  - competing interests
+- id: S530
+  name: ethics_impact_assessment
+  category: paper_ops
+  path: skills/paper_ops/S530_ethics_impact_assessment.md
+  triggers:
+  - ethics statement
+  - impact assessment
+  - responsible AI
+  - risk assessment
+  - 伦理 影响评估
+- id: S401
+  name: reproducibility_checklist
+  category: reproducibility
+  path: skills/reproducibility/S401_repro_checklist.md
+  triggers:
+  - repro checklist
+  - reproducibility
+  - artifact audit
+- id: S402
+  name: code_audit
+  category: reproducibility
+  path: skills/reproducibility/S402_code_audit.md
+  triggers:
+  - code audit
+  - repo review
+  - experiment hygiene
+- id: S403
+  name: dataset_spec
+  category: reproducibility
+  path: skills/reproducibility/S403_dataset_spec.md
+  triggers:
+  - dataset spec
+  - schema
+  - leakage audit
+- id: S404
+  name: environment_capture_spec
+  category: reproducibility
+  path: skills/reproducibility/S404_environment_capture_spec.md
+  triggers:
+  - environment
+  - dependencies
+  - lockfile
+- id: S405
+  name: seed_and_determinism_policy
+  category: reproducibility
+  path: skills/reproducibility/S405_seed_and_determinism_policy.md
+  triggers:
+  - seed
+  - determinism
+  - reproducibility
+- id: S406
+  name: experiment_logging_schema
+  category: reproducibility
+  path: skills/reproducibility/S406_experiment_logging_schema.md
+  triggers:
+  - logging
+  - wandb
+  - metadata schema
+- id: S407
+  name: artifact_packaging_release
+  category: reproducibility
+  path: skills/reproducibility/S407_artifact_packaging_release.md
+  triggers:
+  - artifact packaging
+  - release
+  - reproduce
+- id: S408
+  name: code_structure_refactor_plan
+  category: reproducibility
+  path: skills/reproducibility/S408_code_structure_refactor_plan.md
+  triggers:
+  - refactor
+  - code structure
+  - maintainability
+- id: S409
+  name: dataset_card_writer
+  category: reproducibility
+  path: skills/reproducibility/S409_dataset_card_writer.md
+  triggers:
+  - dataset card
+  - documentation
+  - datasheet
+- id: S410
+  name: model_card_writer
+  category: reproducibility
+  path: skills/reproducibility/S410_model_card_writer.md
+  triggers:
+  - model card
+  - documentation
+  - limitations
+- id: S411
+  name: privacy_ethics_checklist
+  category: reproducibility
+  path: skills/reproducibility/S411_privacy_ethics_checklist.md
+  triggers:
+  - privacy
+  - ethics
+  - compliance
+- id: S412
+  name: benchmark_reproduction_check
+  category: reproducibility
+  path: skills/reproducibility/S412_benchmark_reproduction_check.md
+  triggers:
+  - benchmark reproduce
+  - protocol
+  - compatibility
+- id: S413
+  name: dependency_risk_audit
+  category: reproducibility
+  path: skills/reproducibility/S413_dependency_risk_audit.md
+  triggers:
+  - dependency risk
+  - supply chain
+  - security
+- id: S414
+  name: results_traceability_matrix
+  category: reproducibility
+  path: skills/reproducibility/S414_results_traceability_matrix.md
+  triggers:
+  - traceability
+  - results mapping
+  - provenance
+- id: S415
+  name: data_pipeline_invariance_tests
+  category: reproducibility
+  path: skills/reproducibility/S415_data_pipe_invariance_tests.md
+  triggers:
+  - data pipeline
+  - invariance tests
+  - unit tests
+- id: S416
+  name: dependency_lockfile_strategy
+  category: reproducibility
+  path: skills/reproducibility/S416_dependency_lockfile_strategy.md
+  triggers:
+  - lock dependencies
+  - reproducible env
+  - pip/conda lock
+- id: S417
+  name: environment_capture_playbook
+  category: reproducibility
+  path: skills/reproducibility/S417_environment_capture_playbook.md
+  triggers:
+  - environment capture
+  - docker
+  - conda export
+- id: S418
+  name: determinism_settings_torch
+  category: reproducibility
+  path: skills/reproducibility/S418_determinism_settings_torch.md
+  triggers:
+  - torch deterministic
+  - seed everything
+  - nondeterminism
+- id: S419
+  name: data_versioning_and_checksum
+  category: reproducibility
+  path: skills/reproducibility/S419_data_versioning_and_checksum.md
+  triggers:
+  - data versioning
+  - checksums
+  - dataset integrity
+- id: S420
+  name: logging_and_artifact_naming
+  category: reproducibility
+  path: skills/reproducibility/S420_logging_and_artifact_naming.md
+  triggers:
+  - artifact naming
+  - log conventions
+  - run ids
+- id: S421
+  name: evaluation_script_hardening
+  category: reproducibility
+  path: skills/reproducibility/S421_evaluation_script_hardening.md
+  triggers:
+  - evaluation script
+  - robust evaluation
+  - script hardening
+- id: S422
+  name: minimal_repro_bundle_creator
+  category: reproducibility
+  path: skills/reproducibility/S422_minimal_repro_bundle_creator.md
+  triggers:
+  - repro bundle
+  - minimal example
+  - shareable package
+- id: S423
+  name: security_review_open_source
+  category: reproducibility
+  path: skills/reproducibility/S423_security_review_open_src.md
+  triggers:
+  - security review
+  - secrets scan
+  - open source hygiene
+- id: S424
+  name: citation_and_attribution_audit
+  category: reproducibility
+  path: skills/reproducibility/S424_citation_and_attribution_audit.md
+  triggers:
+  - citation audit
+  - attribution
+  - license compliance
+- id: S425
+  name: benchmark_reproduction_protocol
+  category: reproducibility
+  path: skills/reproducibility/S425_benchmark_reproduction_protocol.md
+  triggers:
+  - reproduce benchmark
+  - benchmark protocol
+  - paper reproduction
+- id: S426
+  name: data_management_sharing_plan_builder
+  category: reproducibility
+  path: skills/reproducibility/S426_data_management_sharing_plan_builder.md
+  triggers:
+  - data management plan
+  - DMS plan
+  - sharing plan
+  - 数据管理与共享计划
+  - NIH DMS
+- id: S427
+  name: privacy_ip_sharing_constraints_audit
+  category: reproducibility
+  path: skills/reproducibility/S427_privacy_ip_sharing_constraints_audit.md
+  triggers:
+  - privacy audit
+  - IP audit
+  - sharing constraints
+  - license constraints
+  - data rights
+- id: S428
+  name: replication_package_builder
+  category: reproducibility
+  path: skills/reproducibility/S428_replication_package_builder.md
+  triggers:
+  - replication package
+  - artifact bundle
+  - reproducibility package
+  - 复现包
+  - camera-ready artifact
+- id: S429
+  name: deterministic_seed_logging_policy
+  category: reproducibility
+  path: skills/reproducibility/S429_deterministic_seed_logging_policy.md
+  triggers:
+  - seed policy
+  - deterministic
+  - logging schema
+  - randomness control
+  - 复现 日志 随机种子
+- id: S430
+  name: debug_vibe_core
+  category: reproducibility
+  path: skills/reproducibility/S430_debug_vibe_core.md
+  triggers:
+  - vibe coding
+  - debug
+  - debugging
+  - 报错
+  - traceback
+  - crash
+  - 修复
+  - 回归
+  - pipeline
+  - regression
+  - 代码审计
+- id: S431
+  name: closed_loop_verification
+  category: reproducibility
+  path: skills/reproducibility/S431_closed_loop_verification.md
+  triggers:
+  - closed loop
+  - 闭环
+  - verification
+  - 回归矩阵
+  - regression matrix
+  - sanity check
+- id: S432
+  name: scope_drift_firewall
+  category: reproducibility
+  path: skills/reproducibility/S432_scope_drift_firewall.md
+  triggers:
+  - drift
+  - scope drift
+  - 跑偏
+  - 偏题
+  - out of scope
+  - protocol check
+  - 锁死要求
+- id: S433
+  name: formal_proof_adapter
+  category: reproducibility
+  path: skills/reproducibility/S433_formal_proof_adapter.md
+  triggers:
+  - lean
+  - theorem prover
+  - autoformalization
+  - formal proof adapter
+  - 形式化证明
+  - Lean sketch
+- id: S201
+  name: problem_framing_audit
+  category: research_core
+  path: skills/research_core/S201_problem_framing.md
+  triggers:
+  - problem framing
+  - research question
+  - scope audit
+- id: S202
+  name: novelty_positioning_map
+  category: research_core
+  path: skills/research_core/S202_novelty_map.md
+  triggers:
+  - novelty
+  - positioning
+  - related work map
+- id: S203
+  name: claim_evidence_matrix
+  category: research_core
+  path: skills/research_core/S203_claim_evidence_matrix.md
+  triggers:
+  - claim evidence
+  - support matrix
+  - evidence audit
+- id: S204
+  name: literature_triage_pipeline
+  category: research_core
+  path: skills/research_core/S204_literature_triage_pipe.md
+  triggers:
+  - literature triage
+  - paper reading
+  - related work
+- id: S205
+  name: concept_map_builder
+  category: research_core
+  path: skills/research_core/S205_concept_map_builder.md
+  triggers:
+  - concept map
+  - taxonomy
+  - mental model
+- id: S206
+  name: research_gap_hypothesis_generator
+  category: research_core
+  path: skills/research_core/S206_research_gap_hypothesis_generator.md
+  triggers:
+  - research gap
+  - hypothesis
+  - idea generation
+- id: S207
+  name: contribution_claim_refinement
+  category: research_core
+  path: skills/research_core/S207_contrib_claim_refinement.md
+  triggers:
+  - contribution
+  - claims
+  - positioning
+- id: S208
+  name: assumption_risk_register
+  category: research_core
+  path: skills/research_core/S208_assumption_risk_register.md
+  triggers:
+  - assumptions
+  - risks
+  - threats to validity
+- id: S209
+  name: scope_minimization_2h
+  category: research_core
+  path: skills/research_core/S209_scope_minimization_2h.md
+  triggers:
+  - reduce scope
+  - 2 hour
+  - minimum viable research
+- id: S210
+  name: terminology_definition_linter
+  category: research_core
+  path: skills/research_core/S210_terminology_definition_linter.md
+  triggers:
+  - terminology
+  - definitions
+  - notation
+- id: S211
+  name: related_work_delta_table
+  category: research_core
+  path: skills/research_core/S211_related_work_delta_table.md
+  triggers:
+  - related work
+  - delta table
+  - comparison
+- id: S212
+  name: problem_to_method_fit_check
+  category: research_core
+  path: skills/research_core/S212_problem_to_method_fit_check.md
+  triggers:
+  - method fit
+  - approach selection
+  - feasibility
+- id: S213
+  name: evaluation_goal_alignment
+  category: research_core
+  path: skills/research_core/S213_evaluation_goal_alignment.md
+  triggers:
+  - evaluation goals
+  - metrics selection
+  - alignment
+- id: S214
+  name: thesis_statement_builder
+  category: research_core
+  path: skills/research_core/S214_thesis_statement_builder.md
+  triggers:
+  - thesis statement
+  - paper narrative
+  - story
+- id: S215
+  name: research_question_tree
+  category: research_core
+  path: skills/research_core/S215_research_question_tree.md
+  triggers:
+  - question decomposition
+  - research tree
+  - subquestions
+- id: S216
+  name: hypothesis_to_predictions
+  category: research_core
+  path: skills/research_core/S216_hypothesis_to_predictions.md
+  triggers:
+  - hypothesis to prediction
+  - measurable predictions
+  - testable hypothesis
+- id: S217
+  name: contribution_type_selector
+  category: research_core
+  path: skills/research_core/S217_contrib_type_selector.md
+  triggers:
+  - contribution taxonomy
+  - what is my contribution
+  - paper contribution type
+- id: S218
+  name: assumptions_and_threats_audit
+  category: research_core
+  path: skills/research_core/S218_assumptions_and_threats_audit.md
+  triggers:
+  - assumptions audit
+  - threats to validity
+  - limitations planning
+- id: S219
+  name: ethics_and_data_risk_screen
+  category: research_core
+  path: skills/research_core/S219_ethics_and_data_risk_screen.md
+  triggers:
+  - ethics checklist
+  - data privacy
+  - responsible AI
+- id: S220
+  name: grant_proposal_skeleton
+  category: research_core
+  path: skills/research_core/S220_grant_proposal_skeleton.md
+  triggers:
+  - grant proposal
+  - project outline
+  - funding application
+- id: S221
+  name: paper_reading_schedule_2h
+  category: research_core
+  path: skills/research_core/S221_paper_reading_schedule_2h.md
+  triggers:
+  - paper reading plan
+  - study schedule
+  - reading pipeline
+- id: S222
+  name: idea_prioritization_matrix
+  category: research_core
+  path: skills/research_core/S222_idea_prioritization_matrix.md
+  triggers:
+  - prioritize ideas
+  - impact feasibility matrix
+  - choose research direction
+- id: S223
+  name: benchmark_selection_protocol
+  category: research_core
+  path: skills/research_core/S223_benchmark_selection_protocol.md
+  triggers:
+  - benchmark selection
+  - choose datasets
+  - evaluation suite
+- id: S224
+  name: novelty_verification_protocol
+  category: research_core
+  path: skills/research_core/S224_novelty_verification_protocol.md
+  triggers:
+  - novelty check
+  - prior work search
+  - is this new
+- id: S225
+  name: research_storyline_arc
+  category: research_core
+  path: skills/research_core/S225_research_storyline_arc.md
+  triggers:
+  - storyline
+  - paper narrative
+  - positioning
+- id: S226
+  name: logic_consistency_audit
+  category: research_core
+  path: skills/research_core/S226_logic_consistency_audit.md
+  triggers:
+  - 逻辑核查
+  - 逻辑检查
+  - 论证是否自洽
+  - contradiction check
+  - logic consistency
+  - argument coherence
+- id: S227
+  name: method_correctness_audit
+  category: research_core
+  path: skills/research_core/S227_method_correctness_audit.md
+  triggers:
+  - 方法正确性核查
+  - 方法是否正确
+  - algorithm correctness check
+  - method validity
+  - derivation check
+  - assumption check
+- id: S228
+  name: innovation_novelty_audit
+  category: research_core
+  path: skills/research_core/S228_innovation_novelty_audit.md
+  triggers:
+  - 创新性审查
+  - novelty audit
+  - innovation audit
+  - 贡献是否新
+  - 是否已有工作做过
+- id: S229
+  name: paper_storyline_integrity_check
+  category: research_core
+  path: skills/research_core/S229_paper_storyline_integrity_check.md
+  triggers:
+  - 论文整体思路核查
+  - storyline check
+  - paper coherence
+  - narrative integrity
+  - 整体框架是否连贯
+- id: S230
+  name: proof_idea_check
+  category: research_core
+  path: skills/research_core/S230_proof_idea_check.md
+  triggers:
+  - 证明思路核查
+  - proof sketch check
+  - lemma plan
+  - proof outline
+  - proof strategy
+- id: S231
+  name: innovation_point_search_plan
+  category: research_core
+  path: skills/research_core/S231_innovation_point_search_plan.md
+  triggers:
+  - 创新点搜索
+  - novelty search
+  - prior art search plan
+  - 新颖性检索
+  - 相关工作检索
+- id: S232
+  name: paper_interpretation_deep_read
+  category: research_core
+  path: skills/research_core/S232_paper_interpretation_deep_read.md
+  triggers:
+  - 论文解读
+  - paper interpretation
+  - deep read
+  - 精读
+  - 读论文总结
+- id: S233
+  name: innovation_correctness_audit
+  category: research_core
+  path: skills/research_core/S233_innovation_correctness_audit.md
+  triggers:
+  - innovation correctness
+  - idea validity
+  - 创新思路正确性
+  - idea stands up
+  - feasibility of idea
+- id: S234
+  name: novelty_search_protocol
+  category: research_core
+  path: skills/research_core/S234_novelty_search_protocol.md
+  triggers:
+  - 创新点搜索
+  - novelty search
+  - 查新
+  - related work search
+  - prior work search plan
+- id: S235
+  name: proof_gap_finder
+  category: research_core
+  path: skills/research_core/S235_proof_gap_finder.md
+  triggers:
+  - 证明思路核查
+  - proof gap
+  - proof sketch audit
+  - missing lemma
+  - gap finder
+- id: S236
+  name: preregistration_builder
+  category: research_core
+  path: skills/research_core/S236_preregistration_builder.md
+  triggers:
+  - preregistration
+  - pre-registration
+  - OSF registration
+  - 预注册
+  - analysis plan prereg
+- id: S237
+  name: theorem_assumption_normalizer
+  category: research_core
+  path: skills/research_core/S237_theorem_assumption_normalizer.md
+  triggers:
+  - theorem normalization
+  - theorem assumptions
+  - hidden assumptions
+  - 证明前提整理
+  - 定理规范化
+  - theorem assumption audit
+- id: S238
+  name: systematic_review_protocol_builder
+  category: research_core
+  path: skills/research_core/S238_systematic_review_protocol_builder.md
+  triggers:
+  - systematic review
+  - PRISMA
+  - meta-analysis protocol
+  - 系统综述
+  - PRISMA protocol
+- id: S239
+  name: study_screening_rubric_builder
+  category: research_core
+  path: skills/research_core/S239_study_screening_rubric_builder.md
+  triggers:
+  - screening rubric
+  - inclusion exclusion
+  - 筛选标准
+  - screening checklist
+- id: S240
+  name: pessimistic_proof_verification
+  category: research_core
+  path: skills/research_core/S240_pessimistic_proof_verification.md
+  triggers:
+  - pessimistic verification
+  - proof verification
+  - 证明验证
+  - 证明审计
+  - first-error-wins
+  - theorem audit
+- id: S241
+  name: progressive_proof_verification
+  category: research_core
+  path: skills/research_core/S241_progressive_proof_verification.md
+  triggers:
+  - progressive verification
+  - proof chunking
+  - 逐层证明验证
+  - 多尺度证明审计
+  - vertical review
+  - chunk verdict
 - id: S601
   name: paper_story_section_architecture
   category: research_writing_integrated
   path: skills/rwf_s340/S601_paper_story_section_arch.md
+  triggers:
+  - paper story
+  - manuscript architecture
+  - Introduction structure
+  - Method section
+  - Experiments section
+  - Conclusion section
+  - 论文结构
+  - 论文主线
+  - 引言重构
+  - 方法节重构
+  - 实验节写作
 - id: S602
   name: claim_evidence_reverse_outline_review
   category: research_writing_integrated
   path: skills/rwf_s340/S602_claim_evidence_reverse_outline_review.md
+  triggers:
+  - reverse outline
+  - reviewer audit
+  - claim evidence
+  - paper review
+  - 证据链
+  - 逻辑审查
+  - 审稿意见
+  - 逐行审查
 - id: S603
   name: bilingual_human_voice_delta_rewrite
   category: research_writing_integrated
   path: skills/rwf_s340/S603_bilingual_human_voice_delta_rewrite.md
+  triggers:
+  - Chinese polish
+  - English polish
+  - bilingual rewrite
+  - human voice
+  - anti AI tone
+  - 润色
+  - 去AI味
+  - 中文润色
+  - 英文润色
+  - 中英互译
 - id: S604
   name: experiment_result_narrative_and_caption
   category: research_writing_integrated
   path: skills/rwf_s340/S604_experiment_result_narrative_and_caption.md
+  triggers:
+  - experiment analysis
+  - result narrative
+  - table caption
+  - figure caption
+  - ablation description
+  - 实验分析
+  - 结果描述
+  - 图题
+  - 表题
+  - 消融实验
 - id: S621
   name: publication_figure_design_theory
   category: figure_design_integrated
   path: skills/rwf_s340/S621_publication_fig_design_theory.md
+  triggers:
+  - scientific figure
+  - publication figure
+  - figure design
+  - visualization design
+  - 论文图
+  - 科研绘图
+  - 图表设计
+  - 图形摘要
+  - workflow diagram
+  - architecture diagram
+  - 流程图
 - id: S622
   name: matplotlib_publication_script_builder
   category: figure_design_integrated
   path: skills/rwf_s340/S622_matplotlib_publication_script_builder.md
+  triggers:
+  - matplotlib
+  - plotting script
+  - grouped bar
+  - heatmap
+  - radar chart
+  - trend plot
+  - svg png pdf
+  - 绘图脚本
+  - 画图代码
+  - 输出svg
+  - 输出png
+  - workflow diagram
+  - architecture diagram
+  - 流程图
 - id: S623
   name: visual_claim_caption_audit
   category: figure_design_integrated
   path: skills/rwf_s340/S623_visual_claim_caption_audit.md
+  triggers:
+  - figure caption
+  - visual claim
+  - caption audit
+  - figure audit
+  - 图注
+  - 视觉审查
+  - 图文一致
+  - workflow audit
 - id: S640
   name: s340_global_paper_logic_language_audit
   category: s340_integrated
   path: skills/rwf_s340/S640_s340_global_paper_logic_language_audit.md
+  triggers:
+  - S340
+  - writing engine
+  - proof engine
+  - global paper audit
+  - paper writing
+  - manuscript
+  - research plan
+  - README text
+  - polish
+  - rewrite
+  - revise
+  - anti AI tone
+  - forbidden phrases
+  - mechanical phrasing
+  - style logic review
+  - 论文润色
+  - 论文重构
+  - 研究计划
+  - 逻辑审查
+  - 公式图表引用核查
+  - 中英文合并
+  - 禁止词
+  - 禁用短语
+  - 机械排比
+  - 去AI味
 - id: S650
   name: integrated_pack_no_omission_validation
   category: reproducibility_integrated
   path: skills/rwf_s340/S650_integrated_pack_no_omission_valid.md
-- id: rwf_s340_requirements
-  name: rwf_s340_hard_requirements_and_forbidden_phrase_gate
-  category: s340_integrated
-  path: skills/rwf_s340/req_AND_forbid_phr.md
+  triggers:
+  - validate integrated pack
+  - no omission
+  - checksum
+  - source manifest
+  - path length
+  - 压缩包无法打开
+  - 文件名过长
+  - 完整性验证
+  - 禁止遗漏

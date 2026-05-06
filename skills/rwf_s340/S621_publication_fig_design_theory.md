@@ -2,7 +2,7 @@
 id: S621
 name: publication_figure_design_theory
 category: figure_design_integrated
-version: v1.6.3
+version: v1.6.5
 triggers:
 - scientific figure
 - publication figure

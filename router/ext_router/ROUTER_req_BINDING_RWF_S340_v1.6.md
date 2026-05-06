@@ -6,13 +6,25 @@ This addendum binds the v1.6 research-writing, figure, and S340 requirement laye
 
 | User request | Primary engine | Mandatory companion |
 |---|---|---|
-| paper structure, Introduction, Method, Experiments, research-plan prose | `writing_engine` | `ext/src/rpws/` + `S601` + `S640` |
+| research idea, method design, contribution definition, theoretical framing, paper storyline | `proof_engine` | `S203` + `S226` + `S227` + `S230`; add `S237`/`S240`/`S241` when assumptions, theorem sketches, or derivations matter |
+| paper structure, Introduction, Method, Experiments, research-plan prose | `proof_engine` when logic is being formed, then `writing_engine` | `ext/src/rpws/` + `S601` + `S640` |
 | reviewer critique, line-level audit, claim-evidence matrix | `writing_engine` + `proof_engine` | `ext/src/rpws/` + `S602` + `S640` |
 | polishing, translation, anti-AI-tone rewrite, compression, expansion | `writing_engine` | `ext/src/rpws/` + `S603` + `S640` |
 | result paragraph, table caption, figure caption, ablation narrative | `writing_engine` | `ext/src/rpws/` + `S604` + `S640`; add `S623` for visual evidence |
 | figure design, README figure, visual explanation, workflow or architecture diagram | `figure_engine` | inspect `ext/src/figures/` first, then `S621` + `S623`; add `S622` only for executable plotting, file export, or code repair |
 | plotting script, Matplotlib figure, SVG/PNG/PDF export | `figure_engine` + `coding_engine` | inspect `ext/src/figures/` first, then `S622` + `S621` + `S623` |
 | integrated package, source preservation, zip repair, path-length issue | `S650` | none unless writing/release notes are also edited |
+
+## Proof hard gate
+
+For idea-like and method-like tasks, `proof_engine` is mandatory. This gate must run before writing polish when the user asks for research direction construction, method design, contribution framing, paper storyline construction, or theorem/proof/derivation checking.
+
+Non-negotiable proof rules:
+- separate facts, assumptions, inferences, and UNKNOWN items;
+- build a claim-evidence matrix before accepting a research claim;
+- check the first logical failure before improving wording;
+- use `S226` for logic consistency, `S227` for method correctness, `S230` for proof-idea checks, and `S237`/`S240`/`S241` when assumptions or derivations matter;
+- `writing_engine` may polish only after the logic is stable or the remaining uncertainty is explicitly labeled.
 
 ## Writing hard gate
 
@@ -34,4 +46,4 @@ Non-negotiable figure rules:
 
 ## Router behavior
 
-`router/route.py` discovers S6xx/S640/S650 files by YAML front matter and also treats `writing_engine`, `figure_engine`, and `rwf_s340_master` as composite candidates. When a query is writing-like, the router should signal the mandatory `writing_engine` + `S640` chain. When a query is figure-like, it should signal the mandatory `figure_engine` + `figures4papers` inspection step.
+`router/route.py` discovers S6xx/S640/S650 files by YAML front matter and also treats `proof_engine`, `writing_engine`, `figure_engine`, and `rwf_s340_master` as composite candidates. When a query is idea-like or method-like, it should signal the mandatory `proof_engine` gate. When a query is writing-like, the router should signal the mandatory `writing_engine` + `S640` chain. When a query is figure-like, it should signal the mandatory `figure_engine` + `figures4papers` inspection step.

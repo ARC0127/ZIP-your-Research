@@ -1,555 +1,572 @@
-# Source File Integration Table
+# Source File Integration Table — v1.6.4
 
-Total preserved upstream source files: 549
-
-| Source | Kind | Size | SHA-256 (12) | Original path | Packed path |
-|---|---:|---:|---|---|---|
-| zyr | text | 634 | `25b70ecd3a54` | `.claude/skills/zip-your-research/SKILL.md` | `.claude/skills/zip-your-research/SKILL.md` |
-| zyr | binary_or_asset | 185 | `6cd24282a9e1` | `.gitattributes` | `.gitattributes` |
-| zyr | text | 634 | `25b70ecd3a54` | `.github/skills/zip-your-research/SKILL.md` | `.github/skills/zip-your-research/SKILL.md` |
-| zyr | text | 490 | `f6a09df3c69e` | `.github/workflows/ci.yml` | `.github/workflows/ci.yml` |
-| zyr | text | 490 | `f6a09df3c69e` | `.github/workflows/ci_v7_2.yml` | `.github/workflows/ci_v7_2.yml` |
-| zyr | text | 2870 | `ce0d38298884` | `AGENTS.md` | `AGENTS.md` |
-| zyr | text | 790 | `e66fb05ebd1f` | `AUTOBOOT_v1.3.md` | `AUTOBOOT_v1.3.md` |
-| zyr | text | 18947 | `61797a028ac3` | `CHANGELOG.md` | `CHANGELOG.md` |
-| zyr | text | 1080 | `464fc2627c67` | `CONTRIBUTING.md` | `CONTRIBUTING.md` |
-| zyr | binary_or_asset | 11790 | `1f4dd2436671` | `Focus.xlsx` | `Focus.xlsx` |
-| zyr | text | 1238 | `ae9ef2ace8b2` | `INCREMENTAL_UPDATE_v1.3.1.md` | `INCREMENTAL_UPDATE_v1.3.1.md` |
-| zyr | text | 1513 | `bc68f7a28fa6` | `INCREMENTAL_UPDATE_v1.3.md` | `INCREMENTAL_UPDATE_v1.3.md` |
-| zyr | text | 13377 | `fee5c1235f8b` | `INDEX.md` | `INDEX.md` |
-| zyr | binary_or_asset | 1065 | `80cdbcc35aeb` | `LICENSE` | `LICENSE` |
-| zyr | text | 9109 | `02fb16b98dd9` | `README.md` | `README.md` |
-| zyr | binary_or_asset | 6 | `acb57a7135b2` | `VERSION` | `VERSION` |
-| zyr | text | 1466 | `e2728443f261` | `artifacts/README.md` | `artifacts/README.md` |
-| zyr | text | 71 | `3dfd77f0c094` | `artifacts/acceptance_criteria.md` | `artifacts/acceptance_criteria.md` |
-| zyr | text | 57 | `f4502cacb67c` | `artifacts/audit_report.md` | `artifacts/audit_report.md` |
-| zyr | text | 71 | `2af1a5054885` | `artifacts/changed_files.md` | `artifacts/changed_files.md` |
-| zyr | text | 32 | `ea168c0a7266` | `artifacts/claim_evidence_matrix.csv` | `artifacts/claim_evidence_matrix.csv` |
-| zyr | text | 6454 | `9219eff6fdcd` | `artifacts/completion_compliance/report_v1.5.md` | `artifacts/completion_compliance/report_v1.5.md` |
-| zyr | text | 22 | `96e394133357` | `artifacts/draft.md` | `artifacts/draft.md` |
-| zyr | text | 74 | `5b41fa36199e` | `artifacts/evidence_ledger.csv` | `artifacts/evidence_ledger.csv` |
-| zyr | text | 29 | `d24c9c071f08` | `artifacts/experiment_manifest.yaml` | `artifacts/experiment_manifest.yaml` |
-| zyr | text | 76 | `8af0d3510787` | `artifacts/idea.md` | `artifacts/idea.md` |
-| zyr | text | 10126 | `0838315a2967` | `artifacts/locked_regression/report_v1.3.2.md` | `artifacts/locked_regression/report_v1.3.2.md` |
-| zyr | text | 189 | `19c76b70be65` | `artifacts/negative_result_ledger.md` | `artifacts/negative_result_ledger.md` |
-| zyr | text | 17 | `f059d8b7cb5b` | `artifacts/next_steps.md` | `artifacts/next_steps.md` |
-| zyr | text | 45 | `2811423a77f1` | `artifacts/plan.md` | `artifacts/plan.md` |
-| zyr | text | 239 | `120aa541538f` | `artifacts/proof_casebook.md` | `artifacts/proof_casebook.md` |
-| zyr | text | 18085 | `44ebba5bb8c0` | `artifacts/proof_verification/report_v1.5.md` | `artifacts/proof_verification/report_v1.5.md` |
-| zyr | text | 75 | `dd432565387b` | `artifacts/question.md` | `artifacts/question.md` |
-| zyr | text | 73 | `38a3d071536a` | `artifacts/related_keywords.md` | `artifacts/related_keywords.md` |
-| zyr | text | 94 | `7ddbf98ab2d2` | `artifacts/release_checklist.md` | `artifacts/release_checklist.md` |
-| zyr | script | 80 | `5161d5e2b4c7` | `artifacts/repro_cmd.sh` | `artifacts/repro_cmd.sh` |
-| zyr | text | 40 | `0d31f22b5146` | `artifacts/risk_register.md` | `artifacts/risk_register.md` |
-| zyr | text | 152 | `f79d8b6ff29f` | `artifacts/run_state.json` | `artifacts/run_state.json` |
-| zyr | text | 0 | `e3b0c44298fc` | `artifacts/runlog.jsonl` | `artifacts/runlog.jsonl` |
-| zyr | text | 7124 | `1b8da8d0262f` | `artifacts/scientific_discipline/report_v1.5.md` | `artifacts/scientific_discipline/report_v1.5.md` |
-| zyr | text | 146 | `11463431c78b` | `artifacts/src_arch_manifest.yaml` | `artifacts/src_arch_manifest.yaml` |
-| zyr | text | 1601 | `d2cf06ea792f` | `artifacts/system_audit/report_v1.3.2.md` | `artifacts/system_audit/report_v1.3.2.md` |
-| zyr | text | 3659 | `e00071578a72` | `boot/00_BOOTSTRAP_PROTOCOL_v1.3.2.md` | `boot/00_BOOTSTRAP_PROTOCOL_v1.3.2.md` |
-| zyr | text | 1851 | `57a802ad4bbb` | `boot/00_RESPONSE_STATUS_BANNER_v1.3.2.md` | `boot/00_RESPONSE_STATUS_BANNER_v1.3.2.md` |
-| zyr | text | 2715 | `89db0572957f` | `boot/00_STATE_MACHINE_v1.3.2.md` | `boot/00_STATE_MACHINE_v1.3.2.md` |
-| zyr | text | 3918 | `d441a58802f4` | `boot/01_GLOBAL_GUARDRAILS_v1.3.2.md` | `boot/01_GLOBAL_GUARDRAILS_v1.3.2.md` |
-| zyr | text | 851 | `53c9d7de864d` | `boot/01_MIGRATION_PROMPT_TEMPLATE_v1.3.2.md` | `boot/01_MIGRATION_PROMPT_TEMPLATE_v1.3.2.md` |
-| zyr | text | 1565 | `3051e88a873b` | `boot/01_MIGRATION_PROMPT_TEMPLATE_v1.5.md` | `boot/01_MIGRATION_PROMPT_TEMPLATE_v1.5.md` |
-| zyr | text | 603 | `bcc985b34632` | `boot/02_MIGRATION_DETECTOR_v1.3.2.md` | `boot/02_MIGRATION_DETECTOR_v1.3.2.md` |
-| zyr | text | 3241 | `9f61acb05eba` | `boot/02_PRELOCK_VIOLATION_RESPONSE_v1.3.2.md` | `boot/02_PRELOCK_VIOLATION_RESPONSE_v1.3.2.md` |
-| zyr | text | 1708 | `26ac35d038b0` | `boot/03A_PRELOCK_VIOLATION_RESPONSE_v1.3.2.md` | `boot/03A_PRELOCK_VIOLATION_RESPONSE_v1.3.2.md` |
-| zyr | text | 1279 | `1850d0ea93d7` | `boot/03_INTAKE_INTERVIEW_FORM_v1.3.2.md` | `boot/03_INTAKE_INTERVIEW_FORM_v1.3.2.md` |
-| zyr | text | 1463 | `618f18ac224c` | `boot/03_PROMPT_SHIELD_CHECKLIST_v1.3.2.md` | `boot/03_PROMPT_SHIELD_CHECKLIST_v1.3.2.md` |
-| zyr | text | 8987 | `49cec35a0eed` | `boot/04_MODE_LOCK_FORMAT_v1.3.2.md` | `boot/04_MODE_LOCK_FORMAT_v1.3.2.md` |
-| zyr | text | 2420 | `f8c6822c154b` | `boot/05_LOCKED_RESPONSE_TEMPLATES_v1.3.2.md` | `boot/05_LOCKED_RESPONSE_TEMPLATES_v1.3.2.md` |
-| zyr | text | 494 | `556b066d8276` | `boot/06_ROUTING_DECISION_RECORD_v1.3.2.md` | `boot/06_ROUTING_DECISION_RECORD_v1.3.2.md` |
-| zyr | text | 2636 | `2a422cbfca05` | `boot/07_FIRST_TURN_app_GUIDE_v1.3.2.md` | `boot/07_FIRST_TURN_app_GUIDE_v1.3.2.md` |
-| zyr | text | 1124 | `0c1780d93e8e` | `boot/08_MODE_LOCK_SCHEMA_v1.3.2.json` | `boot/08_MODE_LOCK_SCHEMA_v1.3.2.json` |
-| zyr | text | 395 | `12d84798902e` | `boot/08_MODE_LOCK_TEMPLATE_v1.3.2.md` | `boot/08_MODE_LOCK_TEMPLATE_v1.3.2.md` |
-| zyr | text | 965 | `59dce794ea9c` | `boot/09_HCP_MINI_v1.3.2.md` | `boot/09_HCP_MINI_v1.3.2.md` |
-| zyr | text | 501 | `2cca18c8a6b6` | `boot/09_INTAKE_DEPTH_POLICY_v1.3.2.md` | `boot/09_INTAKE_DEPTH_POLICY_v1.3.2.md` |
-| zyr | text | 659 | `5028aed68719` | `boot/09_INTAKE_DEPTH_POLICY_v8_2.md` | `boot/09_INTAKE_DEPTH_POLICY_v8_2.md` |
-| zyr | text | 2611 | `86fbfb14a4a5` | `boot/10_LOCKED_SCOPE_GUARD_v1.3.md` | `boot/10_LOCKED_SCOPE_GUARD_v1.3.md` |
-| zyr | text | 2456 | `6da54683d81a` | `boot/11_COMPLETION_FIRST_ANTI_SHORTCUT_v1.5.md` | `boot/11_COMPLETION_FIRST_ANTI_SHORTCUT_v1.5.md` |
-| zyr | text | 1228 | `06895da6bcf0` | `boot/11_req_LOCK_LOOP_v1.3.md` | `boot/11_req_LOCK_LOOP_v1.3.md` |
-| zyr | text | 2138 | `6be302936b2b` | `boot/12_ONECHAT_DEEP_LOOP_v1.3.md` | `boot/12_ONECHAT_DEEP_LOOP_v1.3.md` |
-| zyr | text | 5378 | `867a75604059` | `boot/13_SCIENTIFIC_ASSISTANT_OUTPUT_DISCIPLINE_v1.5.md` | `boot/13_SCIENTIFIC_ASSISTANT_OUTPUT_DISCIPLINE_v1.5.md` |
-| zyr | text | 324 | `af3d03fe7898` | `docs/ABOUT_MAINTAINER.md` | `docs/ABOUT_MAINTAINER.md` |
-| zyr | text | 1153 | `8468e3f8d141` | `docs/AGENTIC_arch_v1.3.md` | `docs/AGENTIC_arch_v1.3.md` |
-| zyr | text | 7575 | `9683d60804b6` | `docs/ATTRIBUTION.md` | `docs/ATTRIBUTION.md` |
-| zyr | text | 1293 | `214a1f54df88` | `docs/DEBUG_VIBE_CORE_PLAYBOOK.md` | `docs/DEBUG_VIBE_CORE_PLAYBOOK.md` |
-| zyr | text | 570 | `3091ac9cf786` | `docs/DEVELOPER_API.md` | `docs/DEVELOPER_API.md` |
-| zyr | text | 607 | `fdd2b962aeb6` | `docs/DRIFT_POLICY.md` | `docs/DRIFT_POLICY.md` |
-| zyr | text | 526 | `c80a9d8a0fa2` | `docs/HELLO_AGENTS_ADAPTATION_v1.3.md` | `docs/HELLO_AGENTS_ADAPTATION_v1.3.md` |
-| zyr | text | 894 | `3625c4a412fd` | `docs/LEGAL.md` | `docs/LEGAL.md` |
-| zyr | text | 1273 | `3cb8b0acec62` | `docs/ONBOARDING_FASTPATH_v1.3.md` | `docs/ONBOARDING_FASTPATH_v1.3.md` |
-| zyr | text | 1238 | `84731356a5eb` | `docs/ONECHAT_PLAYBOOK_v1.3.md` | `docs/ONECHAT_PLAYBOOK_v1.3.md` |
-| zyr | text | 1004 | `06d9df96cd05` | `docs/PROMPT_REGRESSION.md` | `docs/PROMPT_REGRESSION.md` |
-| zyr | text | 1361 | `aba2bb49afe2` | `docs/QUICKSTART.md` | `docs/QUICKSTART.md` |
-| zyr | text | 2220 | `236e53f17f92` | `docs/RELEASE.md` | `docs/RELEASE.md` |
-| zyr | text | 1186 | `86f716c23e51` | `docs/SECURITY_PROMPT_INJECTION.md` | `docs/SECURITY_PROMPT_INJECTION.md` |
-| zyr | text | 2468 | `c9af96e94183` | `docs/SKILLS.md` | `docs/SKILLS.md` |
-| zyr | text | 12839 | `010dee1545f9` | `docs/SKILLS_INDEX_GENERATED_v1.3.md` | `docs/SKILLS_INDEX_GENERATED_v1.3.md` |
-| zyr | text | 704 | `01d3f0968810` | `docs/SKILL_AUTHORING_GUIDE.md` | `docs/SKILL_AUTHORING_GUIDE.md` |
-| zyr | text | 1298 | `6b1a35952daf` | `docs/USAGE.md` | `docs/USAGE.md` |
-| zyr | text | 731 | `fe9491a83f3b` | `docs/VERSIONING.md` | `docs/VERSIONING.md` |
-| zyr | text | 4927 | `bbe07393f840` | `docs/WORKFLOWS.md` | `docs/WORKFLOWS.md` |
-| zyr | text | 10799 | `bf416dd253b5` | `docs/audits/AUDIT_platform_spreadsheets_examples_vs_ZYR_v1.3.2_addendum_20260222.md` | `docs/audits/AUDIT_platform_spreadsheets_examples_vs_ZYR_v1.3.2_addendum_20260222.md` |
-| zyr | text | 12032 | `719361a50498` | `docs/audits/AUDIT_platform_zyr_skills_docs_pdfs_spreadsheets_vs_ZYR_v1.4.0_20260222.md` | `docs/audits/AUDIT_platform_zyr_skills_docs_pdfs_spreadsheets_vs_ZYR_v1.4.0_20260222.md` |
-| zyr | text | 1904 | `d1e738ca9a73` | `docs/dev/ADMIN_MODE.md` | `docs/dev/ADMIN_MODE.md` |
-| zyr | text | 924 | `06a659e85e08` | `docs/dev/DEV_MODE.md` | `docs/dev/DEV_MODE.md` |
-| zyr | text | 3798 | `2891704b4c5a` | `docs/how_to_use/PLATFORM_SKILLS_INTEGRATION_v1.4.md` | `docs/how_to_use/PLATFORM_SKILLS_INTEGRATION_v1.4.md` |
-| zyr | binary_or_asset | 31852 | `ceb3d181ba6f` | `docs/how_to_use/ZIP-your-Research_How_to_Use_v1.3.2.pdf` | `docs/how_to_use/ZIP-your-Research_How_to_Use_v1.3.2.pdf` |
-| zyr | text | 632 | `48a104a741fc` | `docs/workflows/WF_DMS.md` | `docs/workflows/WF_DMS.md` |
-| zyr | text | 378 | `de784ca06b1e` | `docs/workflows/WF_ETHICS.md` | `docs/workflows/WF_ETHICS.md` |
-| zyr | text | 856 | `4aea4f7864c5` | `docs/workflows/WF_PREREG.md` | `docs/workflows/WF_PREREG.md` |
-| zyr | text | 419 | `4e12a5e9c2b2` | `docs/workflows/WF_REPLICATION_PACKAGE.md` | `docs/workflows/WF_REPLICATION_PACKAGE.md` |
-| zyr | text | 428 | `28241969d648` | `docs/workflows/WF_REPORTING_CHECKLISTS.md` | `docs/workflows/WF_REPORTING_CHECKLISTS.md` |
-| zyr | text | 426 | `d99ec62b703e` | `docs/workflows/WF_SYSTEMATIC_REVIEW.md` | `docs/workflows/WF_SYSTEMATIC_REVIEW.md` |
-| zyr | text | 1173 | `0fff65e08ace` | `interfaces/EXTENSIONS_OVERVIEW.md` | `interfaces/EXTENSIONS_OVERVIEW.md` |
-| zyr | text | 1447 | `ef48243641fb` | `interfaces/FREE_APIS.md` | `interfaces/FREE_APIS.md` |
-| zyr | script | 48 | `80f60fad07bd` | `interfaces/init.py` | `interfaces/init.py` |
-| zyr | text | 901 | `a83dc9ad1cf2` | `interfaces/config.example.yaml` | `interfaces/config.example.yaml` |
-| zyr | text | 901 | `a83dc9ad1cf2` | `interfaces/config.yaml` | `interfaces/config.yaml` |
-| zyr | script | 44 | `570c50059827` | `interfaces/hooks/init.py` | `interfaces/hooks/init.py` |
-| zyr | script | 720 | `1b2a327fddca` | `interfaces/hooks/deduplicate_by_doi.py` | `interfaces/hooks/deduplicate_by_doi.py` |
-| zyr | text | 1023 | `a4bb6e034f55` | `interfaces/provider_contract.md` | `interfaces/provider_contract.md` |
-| zyr | script | 202 | `0e589a590430` | `interfaces/providers/init.py` | `interfaces/providers/init.py` |
-| zyr | script | 1042 | `4ce3df72e1ad` | `interfaces/providers/http_utils.py` | `interfaces/providers/http_utils.py` |
-| zyr | script | 912 | `ab6ae7299939` | `interfaces/providers/template_provider.py` | `interfaces/providers/template_provider.py` |
-| zyr | script | 2248 | `7777067ef7d2` | `interfaces/providers/arxiv.py` | `interfaces/providers/arxiv.py` |
-| zyr | script | 2300 | `2eef49a3667d` | `interfaces/providers/crossref.py` | `interfaces/providers/crossref.py` |
-| zyr | script | 912 | `ab6ae7299939` | `interfaces/providers/my_provider.py` | `interfaces/providers/my_provider.py` |
-| zyr | script | 2279 | `5d41a9519cbf` | `interfaces/providers/openalex.py` | `interfaces/providers/openalex.py` |
-| zyr | script | 2154 | `7434e49600d1` | `interfaces/providers/semantic_scholar.py` | `interfaces/providers/semantic_scholar.py` |
-| zyr | text | 1586 | `1d3c4db76da7` | `interfaces/specs/provider_result.schema.json` | `interfaces/specs/provider_result.schema.json` |
-| zyr | text | 12 | `8cfc3197b86b` | `requirements.txt` | `requirements.txt` |
-| zyr | text | 10318 | `325114413af6` | `research/auto_research_inventory.md` | `research/auto_research_inventory.md` |
-| zyr | text | 6784 | `bf149c64f5c1` | `research/engineering_alignment_matrix.md` | `research/engineering_alignment_matrix.md` |
-| zyr | text | 5453 | `0f800e0f03a3` | `research/fars_deep_dive.md` | `research/fars_deep_dive.md` |
-| zyr | text | 5504 | `16a95f0cd7e7` | `research/gpt54_failure_taxonomy.md` | `research/gpt54_failure_taxonomy.md` |
-| zyr | text | 12705 | `e8213e232ee5` | `research/pessimistic_verification_lineage.md` | `research/pessimistic_verification_lineage.md` |
-| zyr | text | 5134 | `c092bf9cad8a` | `router/INTAKE_CHECKLIST_v1.3.2.md` | `router/INTAKE_CHECKLIST_v1.3.2.md` |
-| zyr | text | 1367 | `d40301c6eb42` | `router/ROUTER_v1.3.2.md` | `router/ROUTER_v1.3.2.md` |
-| zyr | text | 22969 | `21b7ebdf1275` | `router/SKILL_MAP_v1.3.2.md` | `router/SKILL_MAP_v1.3.2.md` |
-| zyr | binary_or_asset | 10468 | `8ef149a2e19b` | `router/__pycache__/route.cpython-310.pyc` | `router/__pycache__/route.cpython-310.pyc` |
-| zyr | text | 5767 | `39903fcbbe03` | `router/intake_profile_v1.3.2.yaml` | `router/intake_profile_v1.3.2.yaml` |
-| zyr | text | 5450 | `55c7a55e12fc` | `router/intake_profile_v8_1.yaml` | `router/intake_profile_v8_1.yaml` |
-| zyr | text | 5450 | `55c7a55e12fc` | `router/intake_profile_v9_0.yaml` | `router/intake_profile_v9_0.yaml` |
-| zyr | script | 10361 | `e802bb6f5eae` | `router/route.py` | `router/route.py` |
-| zyr | text | 1187 | `e3ca79dde956` | `router/taxonomy.yaml` | `router/taxonomy.yaml` |
-| zyr | text | 3859 | `81f227bed51b` | `router/weights_v1.3.2.yaml` | `router/weights_v1.3.2.yaml` |
-| zyr | text | 3641 | `08455ddb09bc` | `skills/coding_engine/MASTER_v1.3.2.md` | `skills/coding_engine/MASTER_v1.3.2.md` |
-| zyr | text | 550 | `30133ec2db5a` | `skills/coding_engine/README.md` | `skills/coding_engine/README.md` |
-| zyr | text | 659 | `812fdcab28ff` | `skills/coding_engine/modules/00_HEADER.md` | `skills/coding_engine/modules/00_HEADER.md` |
-| zyr | text | 754 | `efb1e3dc0edb` | `skills/coding_engine/modules/01_GATE_AND_INTAKE.md` | `skills/coding_engine/modules/01_GATE_AND_INTAKE.md` |
-| zyr | text | 293 | `1c8a49cf7cee` | `skills/coding_engine/modules/02_DIAGNOSE.md` | `skills/coding_engine/modules/02_DIAGNOSE.md` |
-| zyr | text | 367 | `6480ccdbb092` | `skills/coding_engine/modules/03_PATCH_STYLE.md` | `skills/coding_engine/modules/03_PATCH_STYLE.md` |
-| zyr | text | 396 | `ca0cadc8b066` | `skills/coding_engine/modules/04_VERIFICATION.md` | `skills/coding_engine/modules/04_VERIFICATION.md` |
-| zyr | text | 863 | `8c9b4da6bbee` | `skills/coding_engine/modules/05_MINIMALISM.md` | `skills/coding_engine/modules/05_MINIMALISM.md` |
-| zyr | text | 1679 | `a38b8e93d9b1` | `skills/exp/S301_min_decidable_experiment.md` | `skills/exp/S301_min_decidable_experiment.md` |
-| zyr | text | 1578 | `c7bdddfd4e83` | `skills/exp/S302_ablation_planner.md` | `skills/exp/S302_ablation_planner.md` |
-| zyr | text | 1554 | `b80903260443` | `skills/exp/S303_eval_protocol_linter.md` | `skills/exp/S303_eval_protocol_linter.md` |
-| zyr | text | 2799 | `749e1d883383` | `skills/exp/S304_baseline_selection_protocol.md` | `skills/exp/S304_baseline_selection_protocol.md` |
-| zyr | text | 2740 | `be910f3e245f` | `skills/exp/S305_metric_design_and_sanity.md` | `skills/exp/S305_metric_design_and_sanity.md` |
-| zyr | text | 2783 | `0e77fa1c755d` | `skills/exp/S306_data_split_leakage_check.md` | `skills/exp/S306_data_split_leakage_check.md` |
-| zyr | text | 2776 | `68900037fe94` | `skills/exp/S307_ablation_interpretation_framework.md` | `skills/exp/S307_ablation_interpretation_framework.md` |
-| zyr | text | 2697 | `9854c1388d49` | `skills/exp/S308_hyperparameter_budget_plan.md` | `skills/exp/S308_hyperparameter_budget_plan.md` |
-| zyr | text | 2720 | `a29305aa5b83` | `skills/exp/S309_error_analysis_playbook.md` | `skills/exp/S309_error_analysis_playbook.md` |
-| zyr | text | 2750 | `8eefad47bf08` | `skills/exp/S310_compute_cost_reporting_template.md` | `skills/exp/S310_compute_cost_reporting_template.md` |
-| zyr | text | 2727 | `7599ccb6c69c` | `skills/exp/S311_statistical_significance_sanity.md` | `skills/exp/S311_statistical_significance_sanity.md` |
-| zyr | text | 2739 | `202e5e0cf1ba` | `skills/exp/S312_replication_study_design.md` | `skills/exp/S312_replication_study_design.md` |
-| zyr | text | 2747 | `c99c542c27d3` | `skills/exp/S313_data_augmentation_risk_audit.md` | `skills/exp/S313_data_augmentation_risk_audit.md` |
-| zyr | text | 2741 | `1d29032c98a3` | `skills/exp/S314_evaluation_suite_selection.md` | `skills/exp/S314_evaluation_suite_selection.md` |
-| zyr | text | 2747 | `85a0f99606a8` | `skills/exp/S315_stress_test_adversarial_cases.md` | `skills/exp/S315_stress_test_adversarial_cases.md` |
-| zyr | text | 2722 | `07577e6c9e79` | `skills/exp/S316_statistical_power_quickcheck.md` | `skills/exp/S316_statistical_power_quickcheck.md` |
-| zyr | text | 2471 | `6649d6e42021` | `skills/exp/S317_seed_sensitivity_protocol.md` | `skills/exp/S317_seed_sensitivity_protocol.md` |
-| zyr | text | 2531 | `86c7c2ca3dba` | `skills/exp/S318_experiment_logging_schema.md` | `skills/exp/S318_experiment_logging_schema.md` |
-| zyr | text | 2415 | `2bb91d90cc85` | `skills/exp/S319_failure_case_generation.md` | `skills/exp/S319_failure_case_generation.md` |
-| zyr | text | 2510 | `b4917a5cb6f7` | `skills/exp/S320_hyperparam_search_reporting.md` | `skills/exp/S320_hyperparam_search_reporting.md` |
-| zyr | text | 2514 | `f01ba566905f` | `skills/exp/S321_replicability_multi_machine.md` | `skills/exp/S321_replicability_multi_machine.md` |
-| zyr | text | 2574 | `2a17abf8aa8d` | `skills/exp/S322_visualization_plan_results.md` | `skills/exp/S322_visualization_plan_results.md` |
-| zyr | text | 2610 | `541b0530072d` | `skills/exp/S323_rl_sanity_checks_pack.md` | `skills/exp/S323_rl_sanity_checks_pack.md` |
-| zyr | text | 2589 | `3735499bd083` | `skills/exp/S324_compute_scaling_experiment.md` | `skills/exp/S324_compute_scaling_experiment.md` |
-| zyr | text | 2590 | `21ea99cf4b1f` | `skills/exp/S325_experiment_registry_template.md` | `skills/exp/S325_experiment_registry_template.md` |
-| zyr | text | 3950 | `56ca8fa6d9c5` | `skills/exp/S326_calculation_correctness_check.md` | `skills/exp/S326_calculation_correctness_check.md` |
-| zyr | text | 2531 | `66d6186242ac` | `skills/exp/S327_experiment_completeness_check.md` | `skills/exp/S327_experiment_completeness_check.md` |
-| zyr | text | 1268 | `75e0273c8b63` | `skills/exp/S328_experiment_rigor_scorecard.md` | `skills/exp/S328_experiment_rigor_scorecard.md` |
-| zyr | text | 1278 | `ac45f4cb57e7` | `skills/exp/S336_pre_analysis_plan_builder.md` | `skills/exp/S336_pre_analysis_plan_builder.md` |
-| zyr | text | 1499 | `87d14c5a9ba8` | `skills/paper_ops/S501_rebuttal_generator.md` | `skills/paper_ops/S501_rebuttal_generator.md` |
-| zyr | text | 1485 | `0ba1e809f0cc` | `skills/paper_ops/S502_reviewer_simulator.md` | `skills/paper_ops/S502_reviewer_simulator.md` |
-| zyr | text | 1437 | `9688fdfdb220` | `skills/paper_ops/S503_submission_readiness_gate.md` | `skills/paper_ops/S503_submission_readiness_gate.md` |
-| zyr | text | 2690 | `c246c2af98f4` | `skills/paper_ops/S504_cover_letter_builder.md` | `skills/paper_ops/S504_cover_letter_builder.md` |
-| zyr | text | 2740 | `7b0341f84506` | `skills/paper_ops/S505_camera_ready_checklist.md` | `skills/paper_ops/S505_camera_ready_checklist.md` |
-| zyr | text | 2591 | `949848060f81` | `skills/paper_ops/S506_rebuttal_evidence_packager.md` | `skills/paper_ops/S506_rebuttal_evidence_packager.md` |
-| zyr | text | 2596 | `1c4ef0427583` | `skills/paper_ops/S507_reviewer_comment_clustering.md` | `skills/paper_ops/S507_reviewer_comment_clustering.md` |
-| zyr | text | 2593 | `ea2e72f25bb1` | `skills/paper_ops/S508_response_tone_alignment.md` | `skills/paper_ops/S508_response_tone_alignment.md` |
-| zyr | text | 2599 | `bc88fdefb78f` | `skills/paper_ops/S509_author_contribution_statement.md` | `skills/paper_ops/S509_author_contribution_statement.md` |
-| zyr | text | 2603 | `7e7e71309814` | `skills/paper_ops/S510_ethics_statement_generator.md` | `skills/paper_ops/S510_ethics_statement_generator.md` |
-| zyr | text | 2576 | `1e6009852b51` | `skills/paper_ops/S511_appendix_structuring.md` | `skills/paper_ops/S511_appendix_structuring.md` |
-| zyr | text | 2572 | `017f1f5b69d5` | `skills/paper_ops/S512_figure_table_audit.md` | `skills/paper_ops/S512_figure_table_audit.md` |
-| zyr | text | 2575 | `7aadbcef5427` | `skills/paper_ops/S513_title_abstract_optimizer.md` | `skills/paper_ops/S513_title_abstract_optimizer.md` |
-| zyr | text | 2574 | `4e8a379d5134` | `skills/paper_ops/S514_talk_poster_outline.md` | `skills/paper_ops/S514_talk_poster_outline.md` |
-| zyr | text | 2741 | `1a3decb72412` | `skills/paper_ops/S515_open_source_release_plan.md` | `skills/paper_ops/S515_open_source_release_plan.md` |
-| zyr | text | 2531 | `a28f257b2e4f` | `skills/paper_ops/S516_camera_ready_checklist.md` | `skills/paper_ops/S516_camera_ready_checklist.md` |
-| zyr | text | 2410 | `413ccbfc080b` | `skills/paper_ops/S517_figure_table_caption_rewrite.md` | `skills/paper_ops/S517_figure_table_caption_rewrite.md` |
-| zyr | text | 2607 | `656928e86187` | `skills/paper_ops/S518_limitations_section_builder.md` | `skills/paper_ops/S518_limitations_section_builder.md` |
-| zyr | text | 2476 | `276dc0824bc9` | `skills/paper_ops/S519_response_matrix_builder.md` | `skills/paper_ops/S519_response_matrix_builder.md` |
-| zyr | text | 2497 | `7d77b4b2231b` | `skills/paper_ops/S520_tone_and_rhetoric_polisher.md` | `skills/paper_ops/S520_tone_and_rhetoric_polisher.md` |
-| zyr | text | 2516 | `bc295d99cd0a` | `skills/paper_ops/S521_contribution_statement_refinement.md` | `skills/paper_ops/S521_contribution_statement_refinement.md` |
-| zyr | text | 2441 | `e85e4a151e29` | `skills/paper_ops/S522_appendix_planner.md` | `skills/paper_ops/S522_appendix_planner.md` |
-| zyr | text | 2642 | `afaa02c22627` | `skills/paper_ops/S523_cover_letter_generator.md` | `skills/paper_ops/S523_cover_letter_generator.md` |
-| zyr | text | 2446 | `25a8eb1d38d8` | `skills/paper_ops/S524_open_source_release_note_generator.md` | `skills/paper_ops/S524_open_source_release_note_generator.md` |
-| zyr | text | 2535 | `f1cbd44b0222` | `skills/paper_ops/S525_arxiv_metadata_preflight.md` | `skills/paper_ops/S525_arxiv_metadata_preflight.md` |
-| zyr | text | 2598 | `fc9a397f1c8f` | `skills/paper_ops/S526_sentence_rewrite_with_retrieval.md` | `skills/paper_ops/S526_sentence_rewrite_with_retrieval.md` |
-| zyr | text | 1315 | `ecfc9e0af909` | `skills/paper_ops/S527_claim_language_risk_linter.md` | `skills/paper_ops/S527_claim_language_risk_linter.md` |
-| zyr | text | 1265 | `c59fe0443095` | `skills/paper_ops/S528_reporting_checklist_generator.md` | `skills/paper_ops/S528_reporting_checklist_generator.md` |
-| zyr | text | 1236 | `e74e0281824a` | `skills/paper_ops/S529_transparency_disclosure_statements_builder.md` | `skills/paper_ops/S529_transparency_disclosure_statements_builder.md` |
-| zyr | text | 1246 | `a3d6a072be5c` | `skills/paper_ops/S530_ethics_impact_assessment.md` | `skills/paper_ops/S530_ethics_impact_assessment.md` |
-| zyr | text | 3162 | `a795b6151522` | `skills/platform_zyr_skills/README.md` | `skills/platform_zyr_skills/README.md` |
-| zyr | text | 1728 | `e58d1d0599a3` | `skills/platform_zyr_skills/modules/00_OVERVIEW.md` | `skills/platform_zyr_skills/modules/00_OVERVIEW.md` |
-| zyr | text | 473 | `efa5c5ddc3a9` | `skills/platform_zyr_skills/modules/01_PLATFORM_SNAPSHOT.md` | `skills/platform_zyr_skills/modules/01_PLATFORM_SNAPSHOT.md` |
-| zyr | text | 1432 | `052bd5e625fb` | `skills/platform_zyr_skills/modules/02_TEMPLATE_LIBRARY.md` | `skills/platform_zyr_skills/modules/02_TEMPLATE_LIBRARY.md` |
-| zyr | text | 895 | `11e10283a076` | `skills/platform_zyr_skills/modules/03_QA_LOOPS.md` | `skills/platform_zyr_skills/modules/03_QA_LOOPS.md` |
-| zyr | text | 1052 | `d1b14a68f929` | `skills/platform_zyr_skills/modules/04_ALIGNMENT_DIFF.md` | `skills/platform_zyr_skills/modules/04_ALIGNMENT_DIFF.md` |
-| zyr | text | 896 | `51bd696dfbaf` | `skills/platform_zyr_skills/modules/05_MAINTENANCE_DIFFING.md` | `skills/platform_zyr_skills/modules/05_MAINTENANCE_DIFFING.md` |
-| zyr | text | 1598 | `8f0452b9b2bc` | `skills/platform_zyr_skills/modules/06_CLAUDE_CODE_RUNTIME_OVERVIEW.md` | `skills/platform_zyr_skills/modules/06_CLAUDE_CODE_RUNTIME_OVERVIEW.md` |
-| zyr | text | 1616 | `3e11aeb28da1` | `skills/platform_zyr_skills/modules/07_TOOL_QUERY_SESSION_MODEL.md` | `skills/platform_zyr_skills/modules/07_TOOL_QUERY_SESSION_MODEL.md` |
-| zyr | text | 1441 | `e7cc8af834d8` | `skills/platform_zyr_skills/modules/08_SKILL_PLUGIN_PACKAGING_MODEL.md` | `skills/platform_zyr_skills/modules/08_SKILL_PLUGIN_PACKAGING_MODEL.md` |
-| zyr | text | 1191 | `b34d4aea233b` | `skills/platform_zyr_skills/modules/09_REMOTE_IO_AND_BOUNDARIES.md` | `skills/platform_zyr_skills/modules/09_REMOTE_IO_AND_BOUNDARIES.md` |
-| zyr | text | 1398 | `c79e5bc2a65e` | `skills/platform_zyr_skills/modules/10_CLAUDE_CODE_MAINTENANCE_DIFFING.md` | `skills/platform_zyr_skills/modules/10_CLAUDE_CODE_MAINTENANCE_DIFFING.md` |
-| zyr | text | 828 | `4d52563aff9c` | `skills/platform_zyr_skills/rewrites/README.md` | `skills/platform_zyr_skills/rewrites/README.md` |
-| zyr | text | 1492 | `891221a112d7` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/AUTH_PROVIDER_BOUNDARIES_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/AUTH_PROVIDER_BOUNDARIES_REWRITE_ZYR.md` |
-| zyr | text | 1879 | `280273c7bd37` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/PLUGIN_RUNTIME_AND_PACKAGING_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/PLUGIN_RUNTIME_AND_PACKAGING_REWRITE_ZYR.md` |
-| zyr | text | 1496 | `756a0731d39d` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/QUERY_ENGINE_AND_SESSION_STATE_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/QUERY_ENGINE_AND_SESSION_STATE_REWRITE_ZYR.md` |
-| zyr | text | 780 | `aabb66e62419` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/README.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/README.md` |
-| zyr | text | 1359 | `d183ceb82b12` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/REMOTE_IO_AND_PERMISSION_BRIDGING_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/REMOTE_IO_AND_PERMISSION_BRIDGING_REWRITE_ZYR.md` |
-| zyr | text | 1236 | `14dd44042bf4` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/SKILL_DISCOVERY_AND_FRONTMATTER_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/SKILL_DISCOVERY_AND_FRONTMATTER_REWRITE_ZYR.md` |
-| zyr | text | 2715 | `33e715f2611d` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/SOURCES.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/SOURCES.md` |
-| zyr | text | 1516 | `93fd5213ff1b` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/TOOL_CONTRACT_AND_PERMISSIONS_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/TOOL_CONTRACT_AND_PERMISSIONS_REWRITE_ZYR.md` |
-| zyr | text | 2416 | `d4487c81a18e` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/INDEX.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/INDEX.md` |
-| zyr | text | 352 | `6687962bf242` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/README.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/README.md` |
-| zyr | text | 2715 | `33e715f2611d` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/SOURCES.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/SOURCES.md` |
-| zyr | text | 1562 | `854ff84171ec` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/core_runtime/QueryEngine_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/core_runtime/QueryEngine_REWRITE_ZYR.md` |
-| zyr | text | 1627 | `ac0a1185cc33` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/core_runtime/Tool_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/core_runtime/Tool_REWRITE_ZYR.md` |
-| zyr | text | 1614 | `5df116ebae2c` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/core_runtime/sessionStorage_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/core_runtime/sessionStorage_REWRITE_ZYR.md` |
-| zyr | text | 1542 | `25fa943ab31f` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/core_runtime/tools_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/core_runtime/tools_REWRITE_ZYR.md` |
-| zyr | text | 1498 | `951702f3dd61` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/non_goals_boundaries/auth_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/non_goals_boundaries/auth_REWRITE_ZYR.md` |
-| zyr | text | 1530 | `4572cc439820` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/non_goals_boundaries/bridgeEnabled_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/non_goals_boundaries/bridgeEnabled_REWRITE_ZYR.md` |
-| zyr | text | 1392 | `cab25ea758bf` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/non_goals_boundaries/client_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/non_goals_boundaries/client_REWRITE_ZYR.md` |
-| zyr | text | 1313 | `a3f601684527` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/non_goals_boundaries/configs_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/non_goals_boundaries/configs_REWRITE_ZYR.md` |
-| zyr | text | 1584 | `35020f85a80c` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/remote_runtime/remoteIO_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/remote_runtime/remoteIO_REWRITE_ZYR.md` |
-| zyr | text | 1514 | `6336a3a3f8e6` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/remote_runtime/remotePermissionBridge_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/remote_runtime/remotePermissionBridge_REWRITE_ZYR.md` |
-| zyr | text | 1475 | `6f5c89b472e1` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/skills_plugins/builtinPlugins_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/skills_plugins/builtinPlugins_REWRITE_ZYR.md` |
-| zyr | text | 1595 | `b9a2a4f32922` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/skills_plugins/loadPluginCommands_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/skills_plugins/loadPluginCommands_REWRITE_ZYR.md` |
-| zyr | text | 1592 | `81ab98af3006` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/skills_plugins/loadSkillsDir_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/skills_plugins/loadSkillsDir_REWRITE_ZYR.md` |
-| zyr | text | 1457 | `ab2fb9af80b0` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/skills_plugins/pluginLoader_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/skills_plugins/pluginLoader_REWRITE_ZYR.md` |
-| zyr | text | 1487 | `01fc9340e214` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/skills_plugins/plugin_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/skills_plugins/plugin_REWRITE_ZYR.md` |
-| zyr | text | 638 | `c2c2e7628ad3` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/DOCX_SKILL_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/DOCX_SKILL_REWRITE_ZYR.md` |
-| zyr | text | 369 | `2cebd54ed816` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/EXAMPLES_PLAYBOOK_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/EXAMPLES_PLAYBOOK_REWRITE_ZYR.md` |
-| zyr | text | 310 | `037eca22bc37` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/FORMULA_COMPAT_GUIDE_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/FORMULA_COMPAT_GUIDE_REWRITE_ZYR.md` |
-| zyr | text | 388 | `0573a33bde0f` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/PDF_SKILL_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/PDF_SKILL_REWRITE_ZYR.md` |
-| zyr | text | 239 | `ac07208a2cb2` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/README.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/README.md` |
-| zyr | text | 564 | `3c7e805be415` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/RENDER_DOCX_PIPELINE_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/RENDER_DOCX_PIPELINE_REWRITE_ZYR.md` |
-| zyr | text | 4069 | `963d4d4e15ab` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/SOURCES.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/SOURCES.md` |
-| zyr | text | 323 | `f213c8d4b270` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/SPREADSHEET_ARTIFACT_CONCEPTS_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/SPREADSHEET_ARTIFACT_CONCEPTS_REWRITE_ZYR.md` |
-| zyr | text | 282 | `f3eceb5fe732` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/SPREADSHEET_ENGINE_API_SURFACE_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/SPREADSHEET_ENGINE_API_SURFACE_REWRITE_ZYR.md` |
-| zyr | text | 600 | `72e09a8d68fe` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/SPREADSHEET_SKILL_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/SPREADSHEET_SKILL_REWRITE_ZYR.md` |
-| zyr | text | 4642 | `c5dd55e5608c` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/INDEX.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/INDEX.md` |
-| zyr | text | 329 | `9e5c64f67485` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/README.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/README.md` |
-| zyr | text | 4921 | `0c6b23121272` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/SOURCES.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/SOURCES.md` |
-| zyr | text | 1876 | `66c51cfdbeea` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/docs/render_docx_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/docs/render_docx_REWRITE_ZYR.md` |
-| zyr | text | 1912 | `fbbee4d3ab18` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/docs/skill_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/docs/skill_REWRITE_ZYR.md` |
-| zyr | text | 1374 | `6208646cafb6` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/pdfs/skill_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/pdfs/skill_REWRITE_ZYR.md` |
-| zyr | text | 1468 | `42e937d57ab6` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/artifact_tool_spreadsheet_formulas_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/artifact_tool_spreadsheet_formulas_REWRITE_ZYR.md` |
-| zyr | text | 1381 | `32c8d1949843` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/artifact_tool_spreadsheets_api_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/artifact_tool_spreadsheets_api_REWRITE_ZYR.md` |
-| zyr | text | 2318 | `92f7f1021378` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/create_basic_spreadsheet_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/create_basic_spreadsheet_REWRITE_ZYR.md` |
-| zyr | text | 2273 | `cd1451b9fd51` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/create_spreadsheet_with_styling_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/create_spreadsheet_with_styling_REWRITE_ZYR.md` |
-| zyr | text | 1236 | `9db9688164f9` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/change_existing_charts_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/change_existing_charts_REWRITE_ZYR.md` |
-| zyr | text | 1404 | `154c5b5b74cf` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/cite_cells_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/cite_cells_REWRITE_ZYR.md` |
-| zyr | text | 1589 | `6b38d517c3d9` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/create_area_chart_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/create_area_chart_REWRITE_ZYR.md` |
-| zyr | text | 1583 | `4458add6304d` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/create_bar_chart_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/create_bar_chart_REWRITE_ZYR.md` |
-| zyr | text | 1613 | `9528a9f1e97a` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/create_doughnut_chart_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/create_doughnut_chart_REWRITE_ZYR.md` |
-| zyr | text | 1589 | `b005808d7672` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/create_line_chart_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/create_line_chart_REWRITE_ZYR.md` |
-| zyr | text | 1583 | `3ae7dc3fea1e` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/create_pie_chart_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/create_pie_chart_REWRITE_ZYR.md` |
-| zyr | text | 1421 | `d7dd8ca5bbc4` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/create_tables_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/create_tables_REWRITE_ZYR.md` |
-| zyr | text | 1150 | `44060bac8d86` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/set_cell_borders_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/set_cell_borders_REWRITE_ZYR.md` |
-| zyr | text | 947 | `39a895bc8d8e` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/set_cell_fills_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/set_cell_fills_REWRITE_ZYR.md` |
-| zyr | text | 996 | `798580eeeb63` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/set_cell_width_height_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/set_cell_width_height_REWRITE_ZYR.md` |
-| zyr | text | 1239 | `7c3d00997977` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/set_conditional_formatting_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/set_conditional_formatting_REWRITE_ZYR.md` |
-| zyr | text | 945 | `5ccd180df7ef` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/set_font_styles_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/set_font_styles_REWRITE_ZYR.md` |
-| zyr | text | 878 | `2b6773957622` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/set_merge_cells_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/set_merge_cells_REWRITE_ZYR.md` |
-| zyr | text | 979 | `86805f9e58ff` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/set_number_formats_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/set_number_formats_REWRITE_ZYR.md` |
-| zyr | text | 941 | `a9d45180f510` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/set_text_alignment_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/set_text_alignment_REWRITE_ZYR.md` |
-| zyr | text | 957 | `ba46d9625e2c` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/set_wrap_text_styles_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/features/set_wrap_text_styles_REWRITE_ZYR.md` |
-| zyr | text | 1668 | `4ded09afbe9a` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/read_existing_spreadsheet_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/read_existing_spreadsheet_REWRITE_ZYR.md` |
-| zyr | text | 1607 | `fdcc1b9cd939` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/styling_spreadsheet_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/examples/styling_spreadsheet_REWRITE_ZYR.md` |
-| zyr | text | 2056 | `fb8a6eabd66f` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/skill_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/skill_REWRITE_ZYR.md` |
-| zyr | text | 1467 | `ac1ee2a04ee4` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/spreadsheet_REWRITE_ZYR.md` | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/spreadsheet_REWRITE_ZYR.md` |
-| zyr | text | 15639 | `7f07ca577e98` | `skills/proof_engine/MASTER_v1.5.md` | `skills/proof_engine/MASTER_v1.5.md` |
-| zyr | text | 1170 | `eee8ed1e85e0` | `skills/proof_engine/README.md` | `skills/proof_engine/README.md` |
-| zyr | text | 808 | `3f5c96c54b39` | `skills/proof_engine/modules/00_HEADER.md` | `skills/proof_engine/modules/00_HEADER.md` |
-| zyr | text | 1992 | `1841df32f2c5` | `skills/proof_engine/modules/01_PROFILE_AND_ROUTING.md` | `skills/proof_engine/modules/01_PROFILE_AND_ROUTING.md` |
-| zyr | text | 1271 | `58be76819129` | `skills/proof_engine/modules/02_PESSIMISTIC_VERIFICATION.md` | `skills/proof_engine/modules/02_PESSIMISTIC_VERIFICATION.md` |
-| zyr | text | 1101 | `47eea0dee6b4` | `skills/proof_engine/modules/03_PROGRESSIVE_VERIFICATION.md` | `skills/proof_engine/modules/03_PROGRESSIVE_VERIFICATION.md` |
-| zyr | text | 951 | `696b8af7c28f` | `skills/proof_engine/modules/04_REFINEMENT_LOOP.md` | `skills/proof_engine/modules/04_REFINEMENT_LOOP.md` |
-| zyr | text | 855 | `73a823ccb4a0` | `skills/proof_engine/modules/05_FORMAL_ADAPTER.md` | `skills/proof_engine/modules/05_FORMAL_ADAPTER.md` |
-| zyr | text | 3003 | `2a9c89c67fa1` | `skills/proof_engine/modules/06_CANONICAL_OUTPUT_TEMPLATES.md` | `skills/proof_engine/modules/06_CANONICAL_OUTPUT_TEMPLATES.md` |
-| zyr | text | 5200 | `225bdb778dd5` | `skills/proof_engine/modules/07_LONG_PROOF_AUDIT_EXAMPLES.md` | `skills/proof_engine/modules/07_LONG_PROOF_AUDIT_EXAMPLES.md` |
-| zyr | text | 1518 | `1503498d8a2e` | `skills/reproducibility/S401_repro_checklist.md` | `skills/reproducibility/S401_repro_checklist.md` |
-| zyr | text | 1504 | `760a9215caf9` | `skills/reproducibility/S402_code_audit.md` | `skills/reproducibility/S402_code_audit.md` |
-| zyr | text | 1557 | `a9dcdf594037` | `skills/reproducibility/S403_dataset_spec.md` | `skills/reproducibility/S403_dataset_spec.md` |
-| zyr | text | 2727 | `4ebaa0308b44` | `skills/reproducibility/S404_environment_capture_spec.md` | `skills/reproducibility/S404_environment_capture_spec.md` |
-| zyr | text | 2650 | `1274be4697ce` | `skills/reproducibility/S405_seed_and_determinism_policy.md` | `skills/reproducibility/S405_seed_and_determinism_policy.md` |
-| zyr | text | 2705 | `f344547db890` | `skills/reproducibility/S406_experiment_logging_schema.md` | `skills/reproducibility/S406_experiment_logging_schema.md` |
-| zyr | text | 2652 | `a91e1f9b69e4` | `skills/reproducibility/S407_artifact_packaging_release.md` | `skills/reproducibility/S407_artifact_packaging_release.md` |
-| zyr | text | 2659 | `e2db4e6dff8d` | `skills/reproducibility/S408_code_structure_refactor_plan.md` | `skills/reproducibility/S408_code_structure_refactor_plan.md` |
-| zyr | text | 2680 | `a44d31a671ee` | `skills/reproducibility/S409_dataset_card_writer.md` | `skills/reproducibility/S409_dataset_card_writer.md` |
-| zyr | text | 2634 | `4c6e5ce5258e` | `skills/reproducibility/S410_model_card_writer.md` | `skills/reproducibility/S410_model_card_writer.md` |
-| zyr | text | 2637 | `ebf98ab0b5e8` | `skills/reproducibility/S411_privacy_ethics_checklist.md` | `skills/reproducibility/S411_privacy_ethics_checklist.md` |
-| zyr | text | 2662 | `4d39788c954e` | `skills/reproducibility/S412_benchmark_reproduction_check.md` | `skills/reproducibility/S412_benchmark_reproduction_check.md` |
-| zyr | text | 2643 | `dd602ca22394` | `skills/reproducibility/S413_dependency_risk_audit.md` | `skills/reproducibility/S413_dependency_risk_audit.md` |
-| zyr | text | 2657 | `a3b1a9b46d4e` | `skills/reproducibility/S414_results_traceability_matrix.md` | `skills/reproducibility/S414_results_traceability_matrix.md` |
-| zyr | text | 2665 | `1b585fd0eeee` | `skills/reproducibility/S415_data_pipeline_invariance_tests.md` | `skills/reproducibility/S415_data_pipeline_invariance_tests.md` |
-| zyr | text | 2529 | `61ab34fe1ef1` | `skills/reproducibility/S416_dependency_lockfile_strategy.md` | `skills/reproducibility/S416_dependency_lockfile_strategy.md` |
-| zyr | text | 2432 | `e847fb37191a` | `skills/reproducibility/S417_environment_capture_playbook.md` | `skills/reproducibility/S417_environment_capture_playbook.md` |
-| zyr | text | 2440 | `96da8ec0bf77` | `skills/reproducibility/S418_determinism_settings_torch.md` | `skills/reproducibility/S418_determinism_settings_torch.md` |
-| zyr | text | 2326 | `f26c68581acc` | `skills/reproducibility/S419_data_versioning_and_checksum.md` | `skills/reproducibility/S419_data_versioning_and_checksum.md` |
-| zyr | text | 2335 | `43341f385fd9` | `skills/reproducibility/S420_logging_and_artifact_naming.md` | `skills/reproducibility/S420_logging_and_artifact_naming.md` |
-| zyr | text | 2434 | `893781b35786` | `skills/reproducibility/S421_evaluation_script_hardening.md` | `skills/reproducibility/S421_evaluation_script_hardening.md` |
-| zyr | text | 2408 | `41edfcb0597a` | `skills/reproducibility/S422_minimal_repro_bundle_creator.md` | `skills/reproducibility/S422_minimal_repro_bundle_creator.md` |
-| zyr | text | 2395 | `521481aeffd0` | `skills/reproducibility/S423_security_review_open_source.md` | `skills/reproducibility/S423_security_review_open_source.md` |
-| zyr | text | 2469 | `593451b4a378` | `skills/reproducibility/S424_citation_and_attribution_audit.md` | `skills/reproducibility/S424_citation_and_attribution_audit.md` |
-| zyr | text | 2464 | `c41855000d45` | `skills/reproducibility/S425_benchmark_reproduction_protocol.md` | `skills/reproducibility/S425_benchmark_reproduction_protocol.md` |
-| zyr | text | 1352 | `cf5c78eb1fbd` | `skills/reproducibility/S426_data_management_sharing_plan_builder.md` | `skills/reproducibility/S426_data_management_sharing_plan_builder.md` |
-| zyr | text | 1190 | `3a0c9070151a` | `skills/reproducibility/S427_privacy_ip_sharing_constraints_audit.md` | `skills/reproducibility/S427_privacy_ip_sharing_constraints_audit.md` |
-| zyr | text | 1387 | `428c4884bf5f` | `skills/reproducibility/S428_replication_package_builder.md` | `skills/reproducibility/S428_replication_package_builder.md` |
-| zyr | text | 1350 | `d55f819cd63a` | `skills/reproducibility/S429_deterministic_seed_logging_policy.md` | `skills/reproducibility/S429_deterministic_seed_logging_policy.md` |
-| zyr | text | 7010 | `726f27213ab3` | `skills/reproducibility/S430_debug_vibe_core.md` | `skills/reproducibility/S430_debug_vibe_core.md` |
-| zyr | text | 2589 | `4702a93f4a83` | `skills/reproducibility/S431_closed_loop_verification.md` | `skills/reproducibility/S431_closed_loop_verification.md` |
-| zyr | text | 1563 | `927d878143f2` | `skills/reproducibility/S432_scope_drift_firewall.md` | `skills/reproducibility/S432_scope_drift_firewall.md` |
-| zyr | text | 2346 | `4b6921c73f3c` | `skills/reproducibility/S433_formal_proof_adapter.md` | `skills/reproducibility/S433_formal_proof_adapter.md` |
-| zyr | text | 2022 | `da0c4cbcb913` | `skills/research_core/S201_problem_framing.md` | `skills/research_core/S201_problem_framing.md` |
-| zyr | text | 1960 | `a3fc88edbe21` | `skills/research_core/S202_novelty_map.md` | `skills/research_core/S202_novelty_map.md` |
-| zyr | text | 1637 | `aef3ef5a1f0e` | `skills/research_core/S203_claim_evidence_matrix.md` | `skills/research_core/S203_claim_evidence_matrix.md` |
-| zyr | text | 2811 | `dcc74b9384e5` | `skills/research_core/S204_literature_triage_pipeline.md` | `skills/research_core/S204_literature_triage_pipeline.md` |
-| zyr | text | 2746 | `cf20aff9016f` | `skills/research_core/S205_concept_map_builder.md` | `skills/research_core/S205_concept_map_builder.md` |
-| zyr | text | 2814 | `d54e9c5b1f0e` | `skills/research_core/S206_research_gap_hypothesis_generator.md` | `skills/research_core/S206_research_gap_hypothesis_generator.md` |
-| zyr | text | 2650 | `86ad6882e172` | `skills/research_core/S207_contribution_claim_refinement.md` | `skills/research_core/S207_contribution_claim_refinement.md` |
-| zyr | text | 2646 | `a838a62dacad` | `skills/research_core/S208_assumption_risk_register.md` | `skills/research_core/S208_assumption_risk_register.md` |
-| zyr | text | 2646 | `1c257c131729` | `skills/research_core/S209_scope_minimization_2h.md` | `skills/research_core/S209_scope_minimization_2h.md` |
-| zyr | text | 2651 | `ce261c22be2c` | `skills/research_core/S210_terminology_definition_linter.md` | `skills/research_core/S210_terminology_definition_linter.md` |
-| zyr | text | 2644 | `e4aff7925899` | `skills/research_core/S211_related_work_delta_table.md` | `skills/research_core/S211_related_work_delta_table.md` |
-| zyr | text | 2656 | `c6a6b83d015d` | `skills/research_core/S212_problem_to_method_fit_check.md` | `skills/research_core/S212_problem_to_method_fit_check.md` |
-| zyr | text | 2655 | `97effd9e5291` | `skills/research_core/S213_evaluation_goal_alignment.md` | `skills/research_core/S213_evaluation_goal_alignment.md` |
-| zyr | text | 2647 | `6358a582cca7` | `skills/research_core/S214_thesis_statement_builder.md` | `skills/research_core/S214_thesis_statement_builder.md` |
-| zyr | text | 2654 | `91a4205ebec1` | `skills/research_core/S215_research_question_tree.md` | `skills/research_core/S215_research_question_tree.md` |
-| zyr | text | 3290 | `c1f3a229fe2f` | `skills/research_core/S216_hypothesis_to_predictions.md` | `skills/research_core/S216_hypothesis_to_predictions.md` |
-| zyr | text | 2880 | `32df45348977` | `skills/research_core/S217_contribution_type_selector.md` | `skills/research_core/S217_contribution_type_selector.md` |
-| zyr | text | 2972 | `248c4dad8736` | `skills/research_core/S218_assumptions_and_threats_audit.md` | `skills/research_core/S218_assumptions_and_threats_audit.md` |
-| zyr | text | 2831 | `157ef6613b78` | `skills/research_core/S219_ethics_and_data_risk_screen.md` | `skills/research_core/S219_ethics_and_data_risk_screen.md` |
-| zyr | text | 2744 | `bc58c852191b` | `skills/research_core/S220_grant_proposal_skeleton.md` | `skills/research_core/S220_grant_proposal_skeleton.md` |
-| zyr | text | 2632 | `01e536022456` | `skills/research_core/S221_paper_reading_schedule_2h.md` | `skills/research_core/S221_paper_reading_schedule_2h.md` |
-| zyr | text | 2596 | `1b66a1ea4b4d` | `skills/research_core/S222_idea_prioritization_matrix.md` | `skills/research_core/S222_idea_prioritization_matrix.md` |
-| zyr | text | 2618 | `4473fc9f2696` | `skills/research_core/S223_benchmark_selection_protocol.md` | `skills/research_core/S223_benchmark_selection_protocol.md` |
-| zyr | text | 2764 | `f57ac5ef6599` | `skills/research_core/S224_novelty_verification_protocol.md` | `skills/research_core/S224_novelty_verification_protocol.md` |
-| zyr | text | 2712 | `aac9e1286e35` | `skills/research_core/S225_research_storyline_arc.md` | `skills/research_core/S225_research_storyline_arc.md` |
-| zyr | text | 2833 | `6aef6371614d` | `skills/research_core/S226_logic_consistency_audit.md` | `skills/research_core/S226_logic_consistency_audit.md` |
-| zyr | text | 2820 | `e5bbd5d0bd3e` | `skills/research_core/S227_method_correctness_audit.md` | `skills/research_core/S227_method_correctness_audit.md` |
-| zyr | text | 2600 | `649fce6bb825` | `skills/research_core/S228_innovation_novelty_audit.md` | `skills/research_core/S228_innovation_novelty_audit.md` |
-| zyr | text | 2460 | `a98fcf0c5bea` | `skills/research_core/S229_paper_storyline_integrity_check.md` | `skills/research_core/S229_paper_storyline_integrity_check.md` |
-| zyr | text | 4193 | `4c0d12130a0f` | `skills/research_core/S230_proof_idea_check.md` | `skills/research_core/S230_proof_idea_check.md` |
-| zyr | text | 2491 | `6bae8148fa59` | `skills/research_core/S231_innovation_point_search_plan.md` | `skills/research_core/S231_innovation_point_search_plan.md` |
-| zyr | text | 2325 | `97f77b724023` | `skills/research_core/S232_paper_interpretation_deep_read.md` | `skills/research_core/S232_paper_interpretation_deep_read.md` |
-| zyr | text | 1957 | `9af47b247154` | `skills/research_core/S233_innovation_correctness_audit.md` | `skills/research_core/S233_innovation_correctness_audit.md` |
-| zyr | text | 1587 | `6d46509b7494` | `skills/research_core/S234_novelty_search_protocol.md` | `skills/research_core/S234_novelty_search_protocol.md` |
-| zyr | text | 2564 | `ce6716d32a8b` | `skills/research_core/S235_proof_gap_finder.md` | `skills/research_core/S235_proof_gap_finder.md` |
-| zyr | text | 1677 | `7365c8cbf4fa` | `skills/research_core/S236_preregistration_builder.md` | `skills/research_core/S236_preregistration_builder.md` |
-| zyr | text | 2815 | `c59674a3399b` | `skills/research_core/S237_theorem_assumption_normalizer.md` | `skills/research_core/S237_theorem_assumption_normalizer.md` |
-| zyr | text | 1416 | `10735f89f126` | `skills/research_core/S238_systematic_review_protocol_builder.md` | `skills/research_core/S238_systematic_review_protocol_builder.md` |
-| zyr | text | 1154 | `46a98140c930` | `skills/research_core/S239_study_screening_rubric_builder.md` | `skills/research_core/S239_study_screening_rubric_builder.md` |
-| zyr | text | 3239 | `fb0b3ff4b2d4` | `skills/research_core/S240_pessimistic_proof_verification.md` | `skills/research_core/S240_pessimistic_proof_verification.md` |
-| zyr | text | 3042 | `ec09dc1e835d` | `skills/research_core/S241_progressive_proof_verification.md` | `skills/research_core/S241_progressive_proof_verification.md` |
-| zyr | text | 200908 | `ab0aa1eefa28` | `skills/writing_engine/MASTER_v1.3.2.md` | `skills/writing_engine/MASTER_v1.3.2.md` |
-| zyr | text | 1474 | `e5a97a1f32cb` | `skills/writing_engine/README.md` | `skills/writing_engine/README.md` |
-| zyr | text | 33912 | `a3b62cbd38b3` | `skills/writing_engine/legacy_master_prompt.md` | `skills/writing_engine/legacy_master_prompt.md` |
-| zyr | text | 9783 | `af844d138dae` | `skills/writing_engine/modules/00_MAIN_ENTRYPOINT.md` | `skills/writing_engine/modules/00_MAIN_ENTRYPOINT.md` |
-| zyr | text | 26530 | `e0b2a94e6b19` | `skills/writing_engine/modules/01_GATE_ROUTER.md` | `skills/writing_engine/modules/01_GATE_ROUTER.md` |
-| zyr | text | 26579 | `e14216569683` | `skills/writing_engine/modules/02_REWRITE_ENGINE.md` | `skills/writing_engine/modules/02_REWRITE_ENGINE.md` |
-| zyr | text | 26731 | `bb735e6e1aea` | `skills/writing_engine/modules/03_VERIFY_QA_ICML.md` | `skills/writing_engine/modules/03_VERIFY_QA_ICML.md` |
-| zyr | text | 26780 | `dc4501d0a0dd` | `skills/writing_engine/modules/04_WEB_RESEARCH_PROTOCOL.md` | `skills/writing_engine/modules/04_WEB_RESEARCH_PROTOCOL.md` |
-| zyr | text | 25781 | `a280ed9320f0` | `skills/writing_engine/modules/05_PDF_WORKFLOWS.md` | `skills/writing_engine/modules/05_PDF_WORKFLOWS.md` |
-| zyr | text | 24922 | `b3247f709625` | `skills/writing_engine/modules/06_STYLE_HUMAN_VOICE.md` | `skills/writing_engine/modules/06_STYLE_HUMAN_VOICE.md` |
-| zyr | text | 10549 | `4e2d75ff7f5d` | `skills/writing_engine/modules/07_VENUE_RULES_ICML_NEURIPS_ICLR.md` | `skills/writing_engine/modules/07_VENUE_RULES_ICML_NEURIPS_ICLR.md` |
-| zyr | text | 3219 | `827a690fbe3e` | `skills/writing_engine/modules/08_OPENREVIEW_FIRST_PLAYBOOK.md` | `skills/writing_engine/modules/08_OPENREVIEW_FIRST_PLAYBOOK.md` |
-| zyr | text | 3976 | `010d45cf37ee` | `skills/writing_engine/modules/09_OUTPUT_CONTRACT_CHANGE_ONLY.md` | `skills/writing_engine/modules/09_OUTPUT_CONTRACT_CHANGE_ONLY.md` |
-| zyr | text | 4101 | `f0a851c58081` | `skills/writing_engine/modules/10_SECTION_MOVE_MAP.md` | `skills/writing_engine/modules/10_SECTION_MOVE_MAP.md` |
-| zyr | text | 2742 | `8cf7b409cf3e` | `skills/writing_engine/modules/11_SCORING_SWITCHES.md` | `skills/writing_engine/modules/11_SCORING_SWITCHES.md` |
-| zyr | text | 663 | `423e2056276a` | `skills/writing_engine/modules/12_CHANGELOG_v2.md` | `skills/writing_engine/modules/12_CHANGELOG_v2.md` |
-| zyr | text | 3175 | `aefdd109a867` | `skills/writing_engine/modules/13_TOP_VENUE_CONSTRAINT_MATRIX.md` | `skills/writing_engine/modules/13_TOP_VENUE_CONSTRAINT_MATRIX.md` |
-| zyr | text | 1808 | `f5616e158045` | `skills/writing_engine/modules/14_ICML2026_PROGRAMMATIC_HARD_CONSTRAINTS.md` | `skills/writing_engine/modules/14_ICML2026_PROGRAMMATIC_HARD_CONSTRAINTS.md` |
-| zyr | text | 1490 | `b41fd67d2b94` | `skills/writing_engine/modules/15_VERIFICATION_RECORD_TEMPLATE.md` | `skills/writing_engine/modules/15_VERIFICATION_RECORD_TEMPLATE.md` |
-| zyr | text | 1831 | `86221e603678` | `skills/writing_engine/modules/16_KNOWN_GAPS_AND_NEXT_STEPS.md` | `skills/writing_engine/modules/16_KNOWN_GAPS_AND_NEXT_STEPS.md` |
-| zyr | text | 18575 | `1b0df4fde1d1` | `skills_manifest.yaml` | `skills_manifest.yaml` |
-| zyr | text | 1101 | `428f594a5bc2` | `templates/evidence_citation_policy.md` | `templates/evidence_citation_policy.md` |
-| zyr | text | 1198 | `162c320dda4d` | `templates/skill_template.md` | `templates/skill_template.md` |
-| zyr | text | 551 | `4ee71481ef64` | `templates/workflow_chain_template.md` | `templates/workflow_chain_template.md` |
-| zyr | text | 1415 | `530a1dc5618b` | `tests/compliance_v1_5/corpus_schema_v1_5.json` | `tests/compliance_v1_5/corpus_schema_v1_5.json` |
-| zyr | text | 4616 | `4bcd24dd27ff` | `tests/compliance_v1_5/corpus_v1_5.jsonl` | `tests/compliance_v1_5/corpus_v1_5.jsonl` |
-| zyr | text | 367 | `335570f6bf95` | `tests/prompt_regression/corpus_schema_v1_3.json` | `tests/prompt_regression/corpus_schema_v1_3.json` |
-| zyr | text | 49362 | `a8765d85812c` | `tests/prompt_regression/corpus_v1_3.jsonl` | `tests/prompt_regression/corpus_v1_3.jsonl` |
-| zyr | binary_or_asset | 3145728 | `4cd4edbab374` | `tests/prompt_regression/fuzz_payloads_v1_3.bin` | `tests/prompt_regression/fuzz_payloads_v1_3.bin` |
-| zyr | text | 3139 | `697f11bfaeea` | `tests/proof_verification_v1_5/corpus_schema_v1_5.json` | `tests/proof_verification_v1_5/corpus_schema_v1_5.json` |
-| zyr | text | 15617 | `cf27101cb538` | `tests/proof_verification_v1_5/corpus_v1_5.jsonl` | `tests/proof_verification_v1_5/corpus_v1_5.jsonl` |
-| zyr | text | 1617 | `d234297fb220` | `tests/scientific_discipline_v1_5/corpus_schema_v1_5.json` | `tests/scientific_discipline_v1_5/corpus_schema_v1_5.json` |
-| zyr | text | 4692 | `a91c5956257f` | `tests/scientific_discipline_v1_5/corpus_v1_5.jsonl` | `tests/scientific_discipline_v1_5/corpus_v1_5.jsonl` |
-| zyr | binary_or_asset | 1209 | `56b728f6c282` | `tools/__pycache__/build_all.cpython-310.pyc` | `tools/__pycache__/build_all.cpython-310.pyc` |
-| zyr | binary_or_asset | 2794 | `33fa1e80b60b` | `tools/__pycache__/build_index.cpython-310.pyc` | `tools/__pycache__/build_index.cpython-310.pyc` |
-| zyr | binary_or_asset | 1852 | `d26403158fc6` | `tools/__pycache__/build_proof_engine_v1_5.cpython-310.pyc` | `tools/__pycache__/build_proof_engine_v1_5.cpython-310.pyc` |
-| zyr | binary_or_asset | 3526 | `46122bc5c09d` | `tools/__pycache__/build_skill_map.cpython-310.pyc` | `tools/__pycache__/build_skill_map.cpython-310.pyc` |
-| zyr | binary_or_asset | 4098 | `2479147d6e78` | `tools/__pycache__/simulate_proof_verification_v1_5.cpython-310.pyc` | `tools/__pycache__/simulate_proof_verification_v1_5.cpython-310.pyc` |
-| zyr | binary_or_asset | 3697 | `7c3efbea19d8` | `tools/__pycache__/validate_proof_verification_corpus_v1_5.cpython-310.pyc` | `tools/__pycache__/validate_proof_verification_corpus_v1_5.cpython-310.pyc` |
-| zyr | script | 992 | `8f815c23f9e2` | `tools/build.py` | `tools/build.py` |
-| zyr | script | 1063 | `2d9af7fe6525` | `tools/build_all.py` | `tools/build_all.py` |
-| zyr | script | 1308 | `1b8625d9e6e9` | `tools/build_coding_engine_v1_3.py` | `tools/build_coding_engine_v1_3.py` |
-| zyr | script | 2679 | `a20df7fe7288` | `tools/build_index.py` | `tools/build_index.py` |
-| zyr | script | 1481 | `31ffd9fa16f1` | `tools/build_proof_engine_v1_5.py` | `tools/build_proof_engine_v1_5.py` |
-| zyr | script | 3265 | `dc4e19c08b4e` | `tools/build_skill_map.py` | `tools/build_skill_map.py` |
-| zyr | script | 1219 | `b9c15dbf4cf1` | `tools/build_write_engine_v1_3.py` | `tools/build_write_engine_v1_3.py` |
-| zyr | script | 3205 | `fa4ac5369e5e` | `tools/drift_audit_v1_3.py` | `tools/drift_audit_v1_3.py` |
-| zyr | script | 663 | `46b3d58ec169` | `tools/gen_fuzz_payloads_v1_3.py` | `tools/gen_fuzz_payloads_v1_3.py` |
-| zyr | script | 1176 | `6b9f77478c2c` | `tools/gen_skills_catalog_v1_3.py` | `tools/gen_skills_catalog_v1_3.py` |
-| zyr | script | 42987 | `7652413ab744` | `tools/how_to_use/gen_ZIP-your-Research_HowToUse_v1_0_1.py` | `tools/how_to_use/gen_ZIP-your-Research_HowToUse_v1_0_1.py` |
-| zyr | script | 43001 | `68bc80677183` | `tools/how_to_use/gen_ZIP-your-Research_HowToUse_v1_3_2.py` | `tools/how_to_use/gen_ZIP-your-Research_HowToUse_v1_3_2.py` |
-| zyr | script | 1843 | `df21c97b08cc` | `tools/make_release.py` | `tools/make_release.py` |
-| zyr | script | 4174 | `364bb84caf03` | `tools/ra_cli.py` | `tools/ra_cli.py` |
-| zyr | script | 955 | `885450d992c7` | `tools/render_intake_questions_v8_2.py` | `tools/render_intake_questions_v8_2.py` |
-| zyr | script | 4364 | `1c7bd35a1f1a` | `tools/simulate_completion_compliance_v1_5.py` | `tools/simulate_completion_compliance_v1_5.py` |
-| zyr | script | 5330 | `82b8d8e3b8b5` | `tools/simulate_locked_regression_v1_3.py` | `tools/simulate_locked_regression_v1_3.py` |
-| zyr | script | 7300 | `0e65e3df6dbc` | `tools/simulate_proof_verification_v1_5.py` | `tools/simulate_proof_verification_v1_5.py` |
-| zyr | script | 5729 | `4c6b77642b30` | `tools/simulate_scientific_discipline_v1_5.py` | `tools/simulate_scientific_discipline_v1_5.py` |
-| zyr | script | 3065 | `2d1efc2741b2` | `tools/system_audit_v1_3.py` | `tools/system_audit_v1_3.py` |
-| zyr | script | 1682 | `db23f600886f` | `tools/validate.py` | `tools/validate.py` |
-| zyr | script | 3895 | `fad5b398d315` | `tools/validate_completion_corpus_v1_5.py` | `tools/validate_completion_corpus_v1_5.py` |
-| zyr | script | 2345 | `85872c07cf5d` | `tools/validate_corpus_v1_3.py` | `tools/validate_corpus_v1_3.py` |
-| zyr | script | 7542 | `85fface6520f` | `tools/validate_proof_verification_corpus_v1_5.py` | `tools/validate_proof_verification_corpus_v1_5.py` |
-| zyr | script | 4430 | `07763ecb9397` | `tools/validate_scientific_discipline_corpus_v1_5.py` | `tools/validate_scientific_discipline_corpus_v1_5.py` |
-| zyr | script | 5476 | `6b87bd78b0c3` | `tools/validate_v1_3.py` | `tools/validate_v1_3.py` |
-| zyr | script | 492 | `009f2f1340bd` | `tools/validate_v7_1.py` | `tools/validate_v7_1.py` |
-| zyr | script | 460 | `5afa1357244d` | `tools/validate_v7_2.py` | `tools/validate_v7_2.py` |
-| zyr | script | 726 | `4319817b4d2a` | `tools/verify_v5_arch.py` | `tools/verify_v5_arch.py` |
-| rpws | binary_or_asset | 94 | `cb1583eda203` | `.gitignore` | `ext/src/rpws/.gitignore` |
-| rpws | binary_or_asset | 1067 | `35c09859b7c6` | `LICENSE` | `ext/src/rpws/LICENSE` |
-| rpws | text | 2312 | `37c5e07ce0c5` | `README.md` | `ext/src/rpws/README.md` |
-| rpws | text | 2135 | `5c5ebe460e48` | `README_zh.md` | `ext/src/rpws/README_zh.md` |
-| rpws | text | 4833 | `1d55abfeb520` | `research-paper-writing/SKILL.md` | `ext/src/rpws/research-paper-writing/SKILL.md` |
-| rpws | text | 243 | `8b3beea770d2` | `research-paper-writing/agents/openai.yaml` | `ext/src/rpws/research-paper-writing/agents/openai.yaml` |
-| rpws | text | 3628 | `992251e754bd` | `research-paper-writing/references/abstract.md` | `ext/src/rpws/research-paper-writing/references/abstract.md` |
-| rpws | text | 1244 | `64de66f24ceb` | `research-paper-writing/references/conclusion.md` | `ext/src/rpws/research-paper-writing/references/conclusion.md` |
-| rpws | text | 4990 | `49e9d1957f74` | `research-paper-writing/references/does-my-writing-flow-source.md` | `ext/src/rpws/research-paper-writing/references/does-my-writing-flow-source.md` |
-| rpws | text | 875 | `8228ce8ec4a3` | `research-paper-writing/references/examples/abstract-examples.md` | `ext/src/rpws/research-paper-writing/references/examples/abstract-examples.md` |
-| rpws | text | 950 | `c4cec6346be6` | `research-paper-writing/references/examples/abstract/template-a.md` | `ext/src/rpws/research-paper-writing/references/examples/abstract/template-a.md` |
-| rpws | text | 3265 | `dc41e8d5206f` | `research-paper-writing/references/examples/abstract/template-b.md` | `ext/src/rpws/research-paper-writing/references/examples/abstract/template-b.md` |
-| rpws | text | 1750 | `4f6269a1b1ad` | `research-paper-writing/references/examples/abstract/template-c.md` | `ext/src/rpws/research-paper-writing/references/examples/abstract/template-c.md` |
-| rpws | text | 2402 | `8652823627fd` | `research-paper-writing/references/examples/index.md` | `ext/src/rpws/research-paper-writing/references/examples/index.md` |
-| rpws | text | 1544 | `0fb5b62e4353` | `research-paper-writing/references/examples/introduction-examples.md` | `ext/src/rpws/research-paper-writing/references/examples/introduction-examples.md` |
-| rpws | text | 1550 | `5613ddd24911` | `research-paper-writing/references/examples/introduction/novel-task-challenge-decomposition.md` | `ext/src/rpws/research-paper-writing/references/examples/introduction/novel-task-challenge-decomposition.md` |
-| rpws | text | 2976 | `33ab449b0ead` | `research-paper-writing/references/examples/introduction/pipeline-not-recommended-abstract-only.md` | `ext/src/rpws/research-paper-writing/references/examples/introduction/pipeline-not-recommended-abstract-only.md` |
-| rpws | text | 2039 | `a39b95c76a19` | `research-paper-writing/references/examples/introduction/pipeline-version-1-one-contribution-multi-advantages.md` | `ext/src/rpws/research-paper-writing/references/examples/introduction/pipeline-version-1-one-contribution-multi-advantages.md` |
-| rpws | text | 2049 | `fc6d13cfdd6e` | `research-paper-writing/references/examples/introduction/pipeline-version-2-two-contributions.md` | `ext/src/rpws/research-paper-writing/references/examples/introduction/pipeline-version-2-two-contributions.md` |
-| rpws | text | 1514 | `71fe9465e126` | `research-paper-writing/references/examples/introduction/pipeline-version-3-new-module-on-existing-pipeline.md` | `ext/src/rpws/research-paper-writing/references/examples/introduction/pipeline-version-3-new-module-on-existing-pipeline.md` |
-| rpws | text | 1441 | `f5e59e8c578c` | `research-paper-writing/references/examples/introduction/pipeline-version-4-observation-driven.md` | `ext/src/rpws/research-paper-writing/references/examples/introduction/pipeline-version-4-observation-driven.md` |
-| rpws | text | 2690 | `470195180f15` | `research-paper-writing/references/examples/introduction/technical-challenge-version-1-existing-task.md` | `ext/src/rpws/research-paper-writing/references/examples/introduction/technical-challenge-version-1-existing-task.md` |
-| rpws | text | 3848 | `b90e9edf376f` | `research-paper-writing/references/examples/introduction/technical-challenge-version-2-existing-task-insight-backed-by-traditional.md` | `ext/src/rpws/research-paper-writing/references/examples/introduction/technical-challenge-version-2-existing-task-insight-backed-by-traditional.md` |
-| rpws | text | 1629 | `3b3b58cc0cff` | `research-paper-writing/references/examples/introduction/technical-challenge-version-3-novel-task.md` | `ext/src/rpws/research-paper-writing/references/examples/introduction/technical-challenge-version-3-novel-task.md` |
-| rpws | text | 727 | `d9296f2f23e8` | `research-paper-writing/references/examples/introduction/version-1-task-then-application.md` | `ext/src/rpws/research-paper-writing/references/examples/introduction/version-1-task-then-application.md` |
-| rpws | text | 405 | `3f57603bd5fd` | `research-paper-writing/references/examples/introduction/version-2-application-first.md` | `ext/src/rpws/research-paper-writing/references/examples/introduction/version-2-application-first.md` |
-| rpws | text | 847 | `0afbf79dd9c4` | `research-paper-writing/references/examples/introduction/version-3-general-to-specific-setting.md` | `ext/src/rpws/research-paper-writing/references/examples/introduction/version-3-general-to-specific-setting.md` |
-| rpws | text | 1753 | `974379058c3d` | `research-paper-writing/references/examples/introduction/version-4-open-with-challenge.md` | `ext/src/rpws/research-paper-writing/references/examples/introduction/version-4-open-with-challenge.md` |
-| rpws | text | 1028 | `8a8499c32096` | `research-paper-writing/references/examples/method-examples.md` | `ext/src/rpws/research-paper-writing/references/examples/method-examples.md` |
-| rpws | text | 7442 | `c00e7b93d473` | `research-paper-writing/references/examples/method/example-of-the-three-elements.md` | `ext/src/rpws/research-paper-writing/references/examples/method/example-of-the-three-elements.md` |
-| rpws | text | 355 | `265ca143a785` | `research-paper-writing/references/examples/method/method-writing-common-issues-note.md` | `ext/src/rpws/research-paper-writing/references/examples/method/method-writing-common-issues-note.md` |
-| rpws | text | 4558 | `8a70816c83da` | `research-paper-writing/references/examples/method/module-design-instant-ngp.md` | `ext/src/rpws/research-paper-writing/references/examples/method/module-design-instant-ngp.md` |
-| rpws | text | 410 | `0d1476b9e316` | `research-paper-writing/references/examples/method/module-motivation-patterns.md` | `ext/src/rpws/research-paper-writing/references/examples/method/module-motivation-patterns.md` |
-| rpws | text | 763 | `eabc41af8b00` | `research-paper-writing/references/examples/method/module-triad-neural-body.md` | `ext/src/rpws/research-paper-writing/references/examples/method/module-triad-neural-body.md` |
-| rpws | text | 2845 | `f671d2841860` | `research-paper-writing/references/examples/method/neural-body-annotated-figure-text.md` | `ext/src/rpws/research-paper-writing/references/examples/method/neural-body-annotated-figure-text.md` |
-| rpws | text | 2054 | `3328ea5b1100` | `research-paper-writing/references/examples/method/overview-template.md` | `ext/src/rpws/research-paper-writing/references/examples/method/overview-template.md` |
-| rpws | text | 479 | `b6466d5d6fbe` | `research-paper-writing/references/examples/method/pre-writing-questions.md` | `ext/src/rpws/research-paper-writing/references/examples/method/pre-writing-questions.md` |
-| rpws | text | 110 | `e437a48be1e6` | `research-paper-writing/references/examples/method/section-skeleton.md` | `ext/src/rpws/research-paper-writing/references/examples/method/section-skeleton.md` |
-| rpws | text | 4476 | `c006493e4899` | `research-paper-writing/references/experiments.md` | `ext/src/rpws/research-paper-writing/references/experiments.md` |
-| rpws | text | 15015 | `dafee0348338` | `research-paper-writing/references/introduction.md` | `ext/src/rpws/research-paper-writing/references/introduction.md` |
-| rpws | text | 6256 | `a11a743cadd5` | `research-paper-writing/references/method.md` | `ext/src/rpws/research-paper-writing/references/method.md` |
-| rpws | text | 5442 | `74839347431d` | `research-paper-writing/references/paper-review.md` | `ext/src/rpws/research-paper-writing/references/paper-review.md` |
-| rpws | text | 1283 | `2b37fce3ae4e` | `research-paper-writing/references/related-work.md` | `ext/src/rpws/research-paper-writing/references/related-work.md` |
-| awesome | text | 54198 | `9fcc71034129` | `README.md` | `ext/src/awesome/README.md` |
-| awesome | binary_or_asset | 755703 | `e196197f38a4` | `images/example.png` | `ext/src/awesome/images/example.png` |
-| awesome | binary_or_asset | 310842 | `a41b91c0baaf` | `images/model-rank.png` | `ext/src/awesome/images/model-rank.png` |
-| awesome | binary_or_asset | 12367681 | `3bcd3bce5f76` | `images/nano-banana.png` | `ext/src/awesome/images/nano-banana.png` |
-| figures | binary_or_asset | 132 | `b566b1212df3` | `.gitignore` | `ext/src/figures/.gitignore` |
-| figures | text | 9897 | `72ff41b999ad` | `README.md` | `ext/src/figures/README.md` |
-| figures | binary_or_asset | 837657 | `04c2f6ab2bed` | `assets/Dispersion_motivation.png` | `ext/src/figures/assets/Dispersion_motivation.png` |
-| figures | binary_or_asset | 808992 | `59846b700abc` | `assets/Dispersion_observation.png` | `ext/src/figures/assets/Dispersion_observation.png` |
-| figures | binary_or_asset | 616612 | `134b0fcb07db` | `assets/Dispersion_observation_distillation.png` | `ext/src/figures/assets/Dispersion_observation_distillation.png` |
-| figures | binary_or_asset | 502211 | `c2590ba1ecac` | `assets/ImmunoStruct_contrastive.png` | `ext/src/figures/assets/ImmunoStruct_contrastive.png` |
-| figures | binary_or_asset | 1281557 | `f1f564e0c722` | `assets/ImmunoStruct_results_CEDAR.png` | `ext/src/figures/assets/ImmunoStruct_results_CEDAR.png` |
-| figures | binary_or_asset | 956273 | `2768b1a5ef0c` | `assets/ImmunoStruct_results_IEDB.png` | `ext/src/figures/assets/ImmunoStruct_results_IEDB.png` |
-| figures | binary_or_asset | 972870 | `2d3ddf56ae63` | `assets/ImmunoStruct_schematic.png` | `ext/src/figures/assets/ImmunoStruct_schematic.png` |
-| figures | binary_or_asset | 1000298 | `ef85b974a990` | `assets/RNAGenScape_schematic.png` | `ext/src/figures/assets/RNAGenScape_schematic.png` |
-| figures | binary_or_asset | 355284 | `3373085ababf` | `figure_CellSpliceNet/figures/ablation.png` | `ext/src/figures/figure_CellSpliceNet/figures/ablation.png` |
-| figures | binary_or_asset | 813084 | `49d4ebc7d186` | `figure_CellSpliceNet/figures/comparison.png` | `ext/src/figures/figure_CellSpliceNet/figures/comparison.png` |
-| figures | script | 2964 | `0d0959102afe` | `figure_CellSpliceNet/plot_ablation.py` | `ext/src/figures/figure_CellSpliceNet/plot_ablation.py` |
-| figures | script | 3909 | `4e888489587c` | `figure_CellSpliceNet/plot_comparison.py` | `ext/src/figures/figure_CellSpliceNet/plot_comparison.py` |
-| figures | script | 3545 | `2ecd52231b6f` | `figure_Cflows/diffusion_swiss_roll.py` | `ext/src/figures/figure_Cflows/diffusion_swiss_roll.py` |
-| figures | binary_or_asset | 1794980 | `9f02fa4603da` | `figure_Cflows/figures/diffusion_swiss_roll.png` | `ext/src/figures/figure_Cflows/figures/diffusion_swiss_roll.png` |
-| figures | binary_or_asset | 24757 | `30b1efaf3293` | `figure_Cflows/figures/fig2_comparison_GeneRegulatory.pdf` | `ext/src/figures/figure_Cflows/figures/fig2_comparison_GeneRegulatory.pdf` |
-| figures | binary_or_asset | 287419 | `96075eb70285` | `figure_Cflows/figures/fig2_comparison_GeneRegulatory.png` | `ext/src/figures/figure_Cflows/figures/fig2_comparison_GeneRegulatory.png` |
-| figures | binary_or_asset | 19791 | `465050a8f8c8` | `figure_Cflows/figures/fig2_comparison_Trajectory.pdf` | `ext/src/figures/figure_Cflows/figures/fig2_comparison_Trajectory.pdf` |
-| figures | binary_or_asset | 388293 | `91b214f745a9` | `figure_Cflows/figures/fig2_comparison_Trajectory.png` | `ext/src/figures/figure_Cflows/figures/fig2_comparison_Trajectory.png` |
-| figures | binary_or_asset | 19233 | `d4c7b8013a24` | `figure_Cflows/figures/figX_comparison_Ablation.pdf` | `ext/src/figures/figure_Cflows/figures/figX_comparison_Ablation.pdf` |
-| figures | binary_or_asset | 328952 | `4f7b7b4b01a1` | `figure_Cflows/figures/figX_comparison_Ablation.png` | `ext/src/figures/figure_Cflows/figures/figX_comparison_Ablation.png` |
-| figures | script | 2506 | `d5ab173adbf5` | `figure_Cflows/plot_comparison_Ablation.py` | `ext/src/figures/figure_Cflows/plot_comparison_Ablation.py` |
-| figures | script | 3022 | `8659356aa5b9` | `figure_Cflows/plot_comparison_GeneRegulatory.py` | `ext/src/figures/figure_Cflows/plot_comparison_GeneRegulatory.py` |
-| figures | script | 2941 | `bc154c3e99fd` | `figure_Cflows/plot_comparison_Trajectory.py` | `ext/src/figures/figure_Cflows/plot_comparison_Trajectory.py` |
-| figures | binary_or_asset | 384839 | `e805fb0f7ccd` | `figure_Dispersion/figures/idea.png` | `ext/src/figures/figure_Dispersion/figures/idea.png` |
-| figures | binary_or_asset | 762950 | `2528309a41ba` | `figure_Dispersion/figures/illustration.png` | `ext/src/figures/figure_Dispersion/figures/illustration.png` |
-| figures | script | 2432 | `c540a368c5a6` | `figure_Dispersion/plot_idea.py` | `ext/src/figures/figure_Dispersion/plot_idea.py` |
-| figures | script | 15472 | `7f9c451d336f` | `figure_Dispersion/plot_illustration.py` | `ext/src/figures/figure_Dispersion/plot_illustration.py` |
-| figures | binary_or_asset | 641033 | `0f8f77c4de67` | `figure_FPGM/figures/freq_prior.png` | `ext/src/figures/figure_FPGM/figures/freq_prior.png` |
-| figures | script | 6578 | `d9c5a53ff6c7` | `figure_FPGM/plot_freq_prior.py` | `ext/src/figures/figure_FPGM/plot_freq_prior.py` |
-| figures | binary_or_asset | 816715 | `46c9e05df9d7` | `figure_ImmunoStruct/figures/bars_ablation_Cancer.png` | `ext/src/figures/figure_ImmunoStruct/figures/bars_ablation_Cancer.png` |
-| figures | binary_or_asset | 1160225 | `854fe931bde6` | `figure_ImmunoStruct/figures/bars_ablation_IEDB.png` | `ext/src/figures/figure_ImmunoStruct/figures/bars_ablation_IEDB.png` |
-| figures | binary_or_asset | 799770 | `0c35bb8a1fb2` | `figure_ImmunoStruct/figures/bars_comparison_Cancer.png` | `ext/src/figures/figure_ImmunoStruct/figures/bars_comparison_Cancer.png` |
-| figures | binary_or_asset | 757551 | `18a52f7a910f` | `figure_ImmunoStruct/figures/bars_comparison_IEDB.png` | `ext/src/figures/figure_ImmunoStruct/figures/bars_comparison_IEDB.png` |
-| figures | script | 7707 | `1d028144e620` | `figure_ImmunoStruct/plot_bars.py` | `ext/src/figures/figure_ImmunoStruct/plot_bars.py` |
-| figures | script | 4459 | `837be4150b74` | `figure_ImmunoStruct/raw_data.py` | `ext/src/figures/figure_ImmunoStruct/raw_data.py` |
-| figures | binary_or_asset | 108276 | `83e55ca23d8a` | `figure_RNAGenScape/figures/manifold.png` | `ext/src/figures/figure_RNAGenScape/figures/manifold.png` |
-| figures | binary_or_asset | 1019896 | `2ad2be6fa9c9` | `figure_RNAGenScape/figures/manifold_holes.png` | `ext/src/figures/figure_RNAGenScape/figures/manifold_holes.png` |
-| figures | binary_or_asset | 850446 | `4cf8539d0521` | `figure_RNAGenScape/figures/results_comparison_optimization.png` | `ext/src/figures/figure_RNAGenScape/figures/results_comparison_optimization.png` |
-| figures | binary_or_asset | 92362 | `cd1fec84f615` | `figure_RNAGenScape/figures/results_comparison_speed.png` | `ext/src/figures/figure_RNAGenScape/figures/results_comparison_speed.png` |
-| figures | binary_or_asset | 142120 | `4db30b32b65e` | `figure_RNAGenScape/figures/results_sweep.png` | `ext/src/figures/figure_RNAGenScape/figures/results_sweep.png` |
-| figures | script | 11236 | `b2b30a212d08` | `figure_RNAGenScape/plot_comparison.py` | `ext/src/figures/figure_RNAGenScape/plot_comparison.py` |
-| figures | script | 2547 | `cc31a470f036` | `figure_RNAGenScape/plot_hole_manifold.py` | `ext/src/figures/figure_RNAGenScape/plot_hole_manifold.py` |
-| figures | script | 1811 | `aa6461c85b1d` | `figure_RNAGenScape/plot_manifold.py` | `ext/src/figures/figure_RNAGenScape/plot_manifold.py` |
-| figures | script | 2873 | `123a14749450` | `figure_RNAGenScape/plot_sweep.py` | `ext/src/figures/figure_RNAGenScape/plot_sweep.py` |
-| figures | binary_or_asset | 249289 | `a6f2e75e7d83` | `figure_VIGIL/figures/comparison_posttraining.png` | `ext/src/figures/figure_VIGIL/figures/comparison_posttraining.png` |
-| figures | binary_or_asset | 809841 | `d6613715d9d4` | `figure_VIGIL/figures/comparison_radar.png` | `ext/src/figures/figure_VIGIL/figures/comparison_radar.png` |
-| figures | script | 7397 | `d30da4f6a14b` | `figure_VIGIL/plot_comparison_radar.py` | `ext/src/figures/figure_VIGIL/plot_comparison_radar.py` |
-| figures | script | 2948 | `bb1371ace0f1` | `figure_VIGIL/plot_posttraining.py` | `ext/src/figures/figure_VIGIL/plot_posttraining.py` |
-| figures | binary_or_asset | 1753162 | `abb63055b0d4` | `figure_brainteaser/figures/brute_force.png` | `ext/src/figures/figure_brainteaser/figures/brute_force.png` |
-| figures | binary_or_asset | 655498 | `bc2cc547f154` | `figure_brainteaser/figures/correctness_by_category.png` | `ext/src/figures/figure_brainteaser/figures/correctness_by_category.png` |
-| figures | binary_or_asset | 1100554 | `b6639239da2f` | `figure_brainteaser/figures/correctness_by_subcategory.png` | `ext/src/figures/figure_brainteaser/figures/correctness_by_subcategory.png` |
-| figures | binary_or_asset | 410105 | `0460f09210bc` | `figure_brainteaser/figures/rewriting.png` | `ext/src/figures/figure_brainteaser/figures/rewriting.png` |
-| figures | binary_or_asset | 611488 | `71133ed59cc1` | `figure_brainteaser/figures/selfcorrection_math.png` | `ext/src/figures/figure_brainteaser/figures/selfcorrection_math.png` |
-| figures | script | 10181 | `46906a9de2e8` | `figure_brainteaser/plot_brute_force.py` | `ext/src/figures/figure_brainteaser/plot_brute_force.py` |
-| figures | script | 6403 | `e84d87bf9cf8` | `figure_brainteaser/plot_correctness_by_category.py` | `ext/src/figures/figure_brainteaser/plot_correctness_by_category.py` |
-| figures | script | 6505 | `fc9c20eaf00c` | `figure_brainteaser/plot_correctness_by_subcategory.py` | `ext/src/figures/figure_brainteaser/plot_correctness_by_subcategory.py` |
-| figures | script | 3694 | `01939d1cc380` | `figure_brainteaser/plot_rewriting.py` | `ext/src/figures/figure_brainteaser/plot_rewriting.py` |
-| figures | script | 4015 | `7656335018d6` | `figure_brainteaser/plot_selfcorrection_math.py` | `ext/src/figures/figure_brainteaser/plot_selfcorrection_math.py` |
-| figures | binary_or_asset | 279533 | `38a9c4e8fd69` | `figure_ophthal_review/figures/composition_heatmap.png` | `ext/src/figures/figure_ophthal_review/figures/composition_heatmap.png` |
-| figures | binary_or_asset | 364102 | `66fe0f27f446` | `figure_ophthal_review/figures/trend_by_month.png` | `ext/src/figures/figure_ophthal_review/figures/trend_by_month.png` |
-| figures | script | 3032 | `8fb5469cc22f` | `figure_ophthal_review/plot_composition.py` | `ext/src/figures/figure_ophthal_review/plot_composition.py` |
-| figures | script | 5531 | `0a66624628f6` | `figure_ophthal_review/plot_trend.py` | `ext/src/figures/figure_ophthal_review/plot_trend.py` |
-| figures | text | 2242 | `952300b4d0bd` | `scientific-figure-making/SKILL.md` | `ext/src/figures/scientific-figure-making/SKILL.md` |
-| figures | text | 5476 | `12892f4940c1` | `scientific-figure-making/references/api.md` | `ext/src/figures/scientific-figure-making/references/api.md` |
-| figures | text | 3075 | `1456736819f1` | `scientific-figure-making/references/common-patterns.md` | `ext/src/figures/scientific-figure-making/references/common-patterns.md` |
-| figures | text | 2528 | `d0d8b630fe57` | `scientific-figure-making/references/demos.md` | `ext/src/figures/scientific-figure-making/references/demos.md` |
-| figures | text | 6738 | `d34fa995a481` | `scientific-figure-making/references/design-theory.md` | `ext/src/figures/scientific-figure-making/references/design-theory.md` |
-| figures | text | 6411 | `85469837614d` | `scientific-figure-making/references/tutorials.md` | `ext/src/figures/scientific-figure-making/references/tutorials.md` |
-| s340 | text | 64183 | `ef50320e69f9` | `S340_v4.2_theory_global_skill.md` | `ext/src/S340_v4.2_theory_global_skill_bundle/S340_v4.2_theory_global_skill.md` |
+| source_key | packed_relpath | kind | size_bytes |
+|---|---|---:|---:|
+| zyr | `.claude/skills/zip-your-research/SKILL.md` | text | 634 |
+| zyr | `.gitattributes` | binary | 185 |
+| zyr | `.github/skills/zip-your-research/SKILL.md` | text | 634 |
+| zyr | `.github/workflows/ci.yml` | text | 758 |
+| zyr | `.github/workflows/ci_v7_2.yml` | text | 758 |
+| zyr | `AGENTS.md` | text | 2870 |
+| zyr | `AUTOBOOT_v1.3.md` | text | 790 |
+| zyr | `CHANGELOG.md` | text | 2203 |
+| zyr | `CONTRIBUTING.md` | text | 8303 |
+| zyr | `Focus.xlsx` | binary | 11790 |
+| zyr | `INCREMENTAL_UPDATE_v1.3.1.md` | text | 1238 |
+| zyr | `INCREMENTAL_UPDATE_v1.3.md` | text | 1496 |
+| zyr | `INDEX.md` | text | 14435 |
+| zyr | `LICENSE` | binary | 1065 |
+| zyr | `README.md` | text | 22232 |
+| zyr | `artifacts/README.md` | text | 1466 |
+| zyr | `artifacts/acceptance_criteria.md` | text | 71 |
+| zyr | `artifacts/audit_report.md` | text | 57 |
+| zyr | `artifacts/changed_files.md` | text | 71 |
+| zyr | `artifacts/claim_evidence_matrix.csv` | text | 32 |
+| zyr | `artifacts/completion_compliance/report_v1.5.md` | text | 6454 |
+| zyr | `artifacts/draft.md` | text | 22 |
+| zyr | `artifacts/evidence_ledger.csv` | text | 74 |
+| zyr | `artifacts/experiment_manifest.yaml` | text | 29 |
+| zyr | `artifacts/idea.md` | text | 76 |
+| zyr | `artifacts/integration/integr_manifest.json` | text | 37422 |
+| zyr | `artifacts/integration/src_FILE_integr_TABLE.md` | text | 14827 |
+| zyr | `artifacts/locked_regression/report_v1.3.2.md` | text | 10126 |
+| zyr | `artifacts/negative_result_ledger.md` | text | 189 |
+| zyr | `artifacts/next_steps.md` | text | 17 |
+| zyr | `artifacts/plan.md` | text | 45 |
+| zyr | `artifacts/proof_casebook.md` | text | 239 |
+| zyr | `artifacts/proof_verification/report_v1.5.md` | text | 18085 |
+| zyr | `artifacts/question.md` | text | 75 |
+| zyr | `artifacts/related_keywords.md` | text | 73 |
+| zyr | `artifacts/release_checklist.md` | text | 94 |
+| zyr | `artifacts/repro_cmd.sh` | text | 80 |
+| zyr | `artifacts/risk_register.md` | text | 40 |
+| zyr | `artifacts/run_state.json` | text | 152 |
+| zyr | `artifacts/runlog.jsonl` | binary | 0 |
+| zyr | `artifacts/scientific_discipline/report_v1.5.md` | text | 7124 |
+| zyr | `artifacts/src_arch_manifest.yaml` | text | 146 |
+| zyr | `artifacts/system_audit/report_v1.3.2.md` | text | 1601 |
+| zyr | `boot/00_BOOTSTRAP_PROTOCOL_v1.3.2.md` | text | 3651 |
+| zyr | `boot/00_RESPONSE_STATUS_BANNER_v1.3.2.md` | text | 1851 |
+| zyr | `boot/00_STATE_MACHINE_v1.3.2.md` | text | 2715 |
+| zyr | `boot/01_GLOBAL_GUARDRAILS_v1.3.2.md` | text | 3909 |
+| zyr | `boot/01_MIGRATION_PROMPT_TEMPLATE_v1.3.2.md` | text | 851 |
+| zyr | `boot/01_MIGRATION_PROMPT_TEMPLATE_v1.5.md` | text | 1565 |
+| zyr | `boot/02_MIGRATION_DETECTOR_v1.3.2.md` | text | 603 |
+| zyr | `boot/02_PRELOCK_VIOLATION_RESPONSE_v1.3.2.md` | text | 3241 |
+| zyr | `boot/03A_PRELOCK_VIOLATION_RESPONSE_v1.3.2.md` | text | 1708 |
+| zyr | `boot/03_INTAKE_INTERVIEW_FORM_v1.3.2.md` | text | 1279 |
+| zyr | `boot/03_PROMPT_SHIELD_CHECKLIST_v1.3.2.md` | text | 1463 |
+| zyr | `boot/04_MODE_LOCK_FORMAT_v1.3.2.md` | text | 8987 |
+| zyr | `boot/05_LOCKED_RESPONSE_TEMPLATES_v1.3.2.md` | text | 2420 |
+| zyr | `boot/06_ROUTING_DECISION_RECORD_v1.3.2.md` | text | 494 |
+| zyr | `boot/07_FIRST_TURN_app_GUIDE_v1.3.2.md` | text | 2636 |
+| zyr | `boot/08_MODE_LOCK_SCHEMA_v1.3.2.json` | text | 1124 |
+| zyr | `boot/08_MODE_LOCK_TEMPLATE_v1.3.2.md` | text | 395 |
+| zyr | `boot/09_HCP_MINI_v1.3.2.md` | text | 965 |
+| zyr | `boot/09_INTAKE_DEPTH_POLICY_v1.3.2.md` | text | 501 |
+| zyr | `boot/09_INTAKE_DEPTH_POLICY_v8_2.md` | text | 659 |
+| zyr | `boot/10_LOCKED_SCOPE_GUARD_v1.3.md` | text | 2611 |
+| zyr | `boot/11_COMPLETION_FIRST_ANTI_SHORTCUT_v1.5.md` | text | 2456 |
+| zyr | `boot/11_req_LOCK_LOOP_v1.3.md` | text | 1228 |
+| zyr | `boot/12_ONECHAT_DEEP_LOOP_v1.3.md` | text | 2123 |
+| zyr | `boot/13_SCIENTIFIC_ASSISTANT_OUTPUT_DISCIPLINE_v1.5.md` | text | 5378 |
+| zyr | `docs/ABOUT_MAINTAINER.md` | text | 324 |
+| zyr | `docs/AGENTIC_arch_v1.3.md` | text | 1153 |
+| zyr | `docs/ATTRIBUTION.md` | text | 7575 |
+| zyr | `docs/DEBUG_VIBE_CORE_PLAYBOOK.md` | text | 1293 |
+| zyr | `docs/DEVELOPER_API.md` | text | 567 |
+| zyr | `docs/DRIFT_POLICY.md` | text | 607 |
+| zyr | `docs/EXTERNAL_SKILL_ATTRIBUTION_v1.6.md` | text | 2448 |
+| zyr | `docs/HELLO_AGENTS_ADAPTATION_v1.3.md` | text | 526 |
+| zyr | `docs/LEGAL.md` | text | 894 |
+| zyr | `docs/ONBOARDING_FASTPATH_v1.3.md` | text | 1273 |
+| zyr | `docs/ONECHAT_PLAYBOOK_v1.3.md` | text | 1238 |
+| zyr | `docs/PROMPT_REGRESSION.md` | text | 1004 |
+| zyr | `docs/QUICKSTART.md` | text | 1353 |
+| zyr | `docs/RELEASE.md` | text | 2220 |
+| zyr | `docs/SECURITY_PROMPT_INJECTION.md` | text | 1186 |
+| zyr | `docs/SKILLS.md` | text | 2468 |
+| zyr | `docs/SKILLS_INDEX_GENERATED_v1.3.md` | text | 14277 |
+| zyr | `docs/SKILL_AUTHORING_GUIDE.md` | text | 704 |
+| zyr | `docs/USAGE.md` | text | 1298 |
+| zyr | `docs/VERSIONING.md` | text | 731 |
+| zyr | `docs/WORKFLOWS.md` | text | 4927 |
+| zyr | `docs/audits/AUDIT_platform_spreadsheets_examples_vs_ZYR_v1.3.2_addendum_20260222.md` | text | 10799 |
+| zyr | `docs/audits/AUDIT_platform_zyr_skills_docs_pdfs_spr_40841d89.4.0_20260222.md` | text | 12032 |
+| zyr | `docs/dev/ADMIN_MODE.md` | text | 1904 |
+| zyr | `docs/dev/DEV_MODE.md` | text | 924 |
+| zyr | `docs/how_to_use/PLATFORM_SKILLS_integr_v1.6.4.md` | text | 2426 |
+| zyr | `docs/how_to_use/README.md` | text | 656 |
+| zyr | `docs/how_to_use/ZYR_ENGINE_BINDING_HOW_TO_USE_v1.6.4.md` | text | 3185 |
+| zyr | `docs/integrated_external_skills/LOGIC_RECONSTRUCTION_v1.0.md` | text | 2076 |
+| zyr | `docs/integrated_external_skills/README_integrated_stack_v1.0.md` | text | 1404 |
+| zyr | `docs/workflows/WF_DMS.md` | text | 632 |
+| zyr | `docs/workflows/WF_ETHICS.md` | text | 378 |
+| zyr | `docs/workflows/WF_PREREG.md` | text | 856 |
+| zyr | `docs/workflows/WF_REPLICATION_PACKAGE.md` | text | 419 |
+| zyr | `docs/workflows/WF_REPORTING_CHECKLISTS.md` | text | 428 |
+| zyr | `docs/workflows/WF_SYSTEMATIC_REVIEW.md` | text | 426 |
+| s340 | `ext/src/S340_v4.2_theory_global_skill_bundle/S340_v4.2_theory_global_skill.md` | text | 64183 |
+| awesome | `ext/src/awesome/README.md` | text | 54198 |
+| awesome | `ext/src/awesome/images/example.png` | binary | 755703 |
+| awesome | `ext/src/awesome/images/model_rank.png` | binary | 310842 |
+| awesome | `ext/src/awesome/images/nano_banana.png` | binary | 12367681 |
+| figures | `ext/src/figures/.gitignore` | binary | 132 |
+| figures | `ext/src/figures/README.md` | text | 9897 |
+| figures | `ext/src/figures/assets/Dispersion_motiv.png` | binary | 837657 |
+| figures | `ext/src/figures/assets/Dispersion_obs.png` | binary | 808992 |
+| figures | `ext/src/figures/assets/Dispersion_obs_distillation.png` | binary | 616612 |
+| figures | `ext/src/figures/assets/ImmunoStruct_contrastive.png` | binary | 502211 |
+| figures | `ext/src/figures/assets/ImmunoStruct_results_CEDAR.png` | binary | 1281557 |
+| figures | `ext/src/figures/assets/ImmunoStruct_results_IEDB.png` | binary | 956273 |
+| figures | `ext/src/figures/assets/ImmunoStruct_schematic.png` | binary | 972870 |
+| figures | `ext/src/figures/assets/RNAGenScape_schematic.png` | binary | 1000298 |
+| figures | `ext/src/figures/fig_skill/SKILL.md` | text | 2242 |
+| figures | `ext/src/figures/fig_skill/ref/api.md` | text | 5476 |
+| figures | `ext/src/figures/fig_skill/ref/common_patterns.md` | text | 3075 |
+| figures | `ext/src/figures/fig_skill/ref/demos.md` | text | 2528 |
+| figures | `ext/src/figures/fig_skill/ref/design_theory.md` | text | 6738 |
+| figures | `ext/src/figures/fig_skill/ref/tutorials.md` | text | 6411 |
+| figures | `ext/src/figures/figure_CellSpliceNet/figures/ablation.png` | binary | 355284 |
+| figures | `ext/src/figures/figure_CellSpliceNet/figures/comparison.png` | binary | 813084 |
+| figures | `ext/src/figures/figure_CellSpliceNet/plot_ablation.py` | text | 2964 |
+| figures | `ext/src/figures/figure_CellSpliceNet/plot_comparison.py` | text | 3909 |
+| figures | `ext/src/figures/figure_Cflows/diffusion_swiss_roll.py` | text | 3545 |
+| figures | `ext/src/figures/figure_Cflows/figures/diffusion_swiss_roll.png` | binary | 1794980 |
+| figures | `ext/src/figures/figure_Cflows/figures/fig2_comparison_GeneRegulatory.pdf` | binary | 24757 |
+| figures | `ext/src/figures/figure_Cflows/figures/fig2_comparison_GeneRegulatory.png` | binary | 287419 |
+| figures | `ext/src/figures/figure_Cflows/figures/fig2_comparison_Trajectory.pdf` | binary | 19791 |
+| figures | `ext/src/figures/figure_Cflows/figures/fig2_comparison_Trajectory.png` | binary | 388293 |
+| figures | `ext/src/figures/figure_Cflows/figures/figX_comparison_Ablation.pdf` | binary | 19233 |
+| figures | `ext/src/figures/figure_Cflows/figures/figX_comparison_Ablation.png` | binary | 328952 |
+| figures | `ext/src/figures/figure_Cflows/plot_comparison_Ablation.py` | text | 2506 |
+| figures | `ext/src/figures/figure_Cflows/plot_comparison_GeneRegulatory.py` | text | 3022 |
+| figures | `ext/src/figures/figure_Cflows/plot_comparison_Trajectory.py` | text | 2941 |
+| figures | `ext/src/figures/figure_Dispersion/figures/idea.png` | binary | 384839 |
+| figures | `ext/src/figures/figure_Dispersion/figures/illustration.png` | binary | 762950 |
+| figures | `ext/src/figures/figure_Dispersion/plot_idea.py` | text | 2432 |
+| figures | `ext/src/figures/figure_Dispersion/plot_illustration.py` | text | 15472 |
+| figures | `ext/src/figures/figure_FPGM/figures/freq_prior.png` | binary | 641033 |
+| figures | `ext/src/figures/figure_FPGM/plot_freq_prior.py` | text | 6578 |
+| figures | `ext/src/figures/figure_ImmunoStruct/figures/bars_ablation_Cancer.png` | binary | 816715 |
+| figures | `ext/src/figures/figure_ImmunoStruct/figures/bars_ablation_IEDB.png` | binary | 1160225 |
+| figures | `ext/src/figures/figure_ImmunoStruct/figures/bars_comparison_Cancer.png` | binary | 799770 |
+| figures | `ext/src/figures/figure_ImmunoStruct/figures/bars_comparison_IEDB.png` | binary | 757551 |
+| figures | `ext/src/figures/figure_ImmunoStruct/plot_bars.py` | text | 7707 |
+| figures | `ext/src/figures/figure_ImmunoStruct/raw_data.py` | text | 4459 |
+| figures | `ext/src/figures/figure_RNAGenScape/figures/manifold.png` | binary | 108276 |
+| figures | `ext/src/figures/figure_RNAGenScape/figures/manifold_holes.png` | binary | 1019896 |
+| figures | `ext/src/figures/figure_RNAGenScape/figures/results_comparison_optimization.png` | binary | 850446 |
+| figures | `ext/src/figures/figure_RNAGenScape/figures/results_comparison_speed.png` | binary | 92362 |
+| figures | `ext/src/figures/figure_RNAGenScape/figures/results_sweep.png` | binary | 142120 |
+| figures | `ext/src/figures/figure_RNAGenScape/plot_comparison.py` | text | 11236 |
+| figures | `ext/src/figures/figure_RNAGenScape/plot_hole_manifold.py` | text | 2547 |
+| figures | `ext/src/figures/figure_RNAGenScape/plot_manifold.py` | text | 1811 |
+| figures | `ext/src/figures/figure_RNAGenScape/plot_sweep.py` | text | 2873 |
+| figures | `ext/src/figures/figure_VIGIL/figures/comparison_posttraining.png` | binary | 249289 |
+| figures | `ext/src/figures/figure_VIGIL/figures/comparison_radar.png` | binary | 809841 |
+| figures | `ext/src/figures/figure_VIGIL/plot_comparison_radar.py` | text | 7397 |
+| figures | `ext/src/figures/figure_VIGIL/plot_posttraining.py` | text | 2948 |
+| figures | `ext/src/figures/figure_brainteaser/figures/brute_force.png` | binary | 1753162 |
+| figures | `ext/src/figures/figure_brainteaser/figures/correctness_by_category.png` | binary | 655498 |
+| figures | `ext/src/figures/figure_brainteaser/figures/correctness_by_subcategory.png` | binary | 1100554 |
+| figures | `ext/src/figures/figure_brainteaser/figures/rewriting.png` | binary | 410105 |
+| figures | `ext/src/figures/figure_brainteaser/figures/selfcorrection_math.png` | binary | 611488 |
+| figures | `ext/src/figures/figure_brainteaser/plot_brute_force.py` | text | 10181 |
+| figures | `ext/src/figures/figure_brainteaser/plot_correctness_by_category.py` | text | 6403 |
+| figures | `ext/src/figures/figure_brainteaser/plot_correctness_by_subcategory.py` | text | 6505 |
+| figures | `ext/src/figures/figure_brainteaser/plot_rewriting.py` | text | 3694 |
+| figures | `ext/src/figures/figure_brainteaser/plot_selfcorrection_math.py` | text | 4015 |
+| figures | `ext/src/figures/figure_ophthal_review/figures/composition_heatmap.png` | binary | 279533 |
+| figures | `ext/src/figures/figure_ophthal_review/figures/trend_by_month.png` | binary | 364102 |
+| figures | `ext/src/figures/figure_ophthal_review/plot_composition.py` | text | 3032 |
+| figures | `ext/src/figures/figure_ophthal_review/plot_trend.py` | text | 5531 |
+| rpws | `ext/src/rpws/.gitignore` | binary | 94 |
+| rpws | `ext/src/rpws/LICENSE` | binary | 1067 |
+| rpws | `ext/src/rpws/README.md` | text | 2312 |
+| rpws | `ext/src/rpws/README_zh.md` | text | 2135 |
+| rpws | `ext/src/rpws/paper_skill/SKILL.md` | text | 4833 |
+| rpws | `ext/src/rpws/paper_skill/agents/openai.yaml` | text | 243 |
+| rpws | `ext/src/rpws/paper_skill/ref/abs.md` | text | 3628 |
+| rpws | `ext/src/rpws/paper_skill/ref/conclusion.md` | text | 1244 |
+| rpws | `ext/src/rpws/paper_skill/ref/does_my_write_flow_src.md` | text | 4990 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/abs_examples.md` | text | 875 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/abstract/template_a.md` | text | 950 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/abstract/template_b.md` | text | 3265 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/abstract/template_c.md` | text | 1750 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/index.md` | text | 2402 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/intro/novel_task_chal_decomp.md` | text | 1550 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/intro/pipe_not_rec_abs_only.md` | text | 2976 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/intro/pipe_v_1_one_contrib_multi_adv.md` | text | 2039 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/intro/pipe_v_2_two_contributions.md` | text | 2049 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/intro/pipe_v_3_new_mod_on_exist_pipe.md` | text | 1514 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/intro/pipe_v_4_obs_drv.md` | text | 1441 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/intro/tech_chal_v_1_exist_task.md` | text | 2690 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/intro/tech_chal_v_2_exist_task_insight_backed_by_trad.md` | text | 3848 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/intro/tech_chal_v_3_novel_task.md` | text | 1629 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/intro/v_1_task_then_app.md` | text | 727 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/intro/v_2_app_first.md` | text | 405 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/intro/v_3_gen_to_spec_set.md` | text | 847 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/intro/v_4_open_with_chal.md` | text | 1753 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/introduction_examples.md` | text | 1544 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/method/example_of_the_three_elem.md` | text | 7442 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/method/method_write_common_issues_note.md` | text | 355 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/method/mod_design_inst_ngp.md` | text | 4558 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/method/mod_motiv_patterns.md` | text | 410 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/method/mod_triad_neural_body.md` | text | 763 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/method/neural_body_annot_fig_txt.md` | text | 2845 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/method/overview_template.md` | text | 2054 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/method/pre_write_q.md` | text | 479 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/method/section_skeleton.md` | text | 110 |
+| rpws | `ext/src/rpws/paper_skill/ref/ex/method_examples.md` | text | 1028 |
+| rpws | `ext/src/rpws/paper_skill/ref/experiments.md` | text | 4476 |
+| rpws | `ext/src/rpws/paper_skill/ref/introduction.md` | text | 15015 |
+| rpws | `ext/src/rpws/paper_skill/ref/method.md` | text | 6256 |
+| rpws | `ext/src/rpws/paper_skill/ref/paper_review.md` | text | 5442 |
+| rpws | `ext/src/rpws/paper_skill/ref/related_work.md` | text | 1283 |
+| zyr | `interfaces/EXTENSIONS_OVERVIEW.md` | text | 1172 |
+| zyr | `interfaces/FREE_APIS.md` | text | 1446 |
+| zyr | `interfaces/config.example.yaml` | text | 901 |
+| zyr | `interfaces/config.yaml` | text | 901 |
+| zyr | `interfaces/hooks/deduplicate_by_doi.py` | text | 720 |
+| zyr | `interfaces/hooks/init.py` | text | 44 |
+| zyr | `interfaces/init.py` | text | 48 |
+| zyr | `interfaces/provider_contract.md` | text | 1023 |
+| zyr | `interfaces/providers/arxiv.py` | text | 2248 |
+| zyr | `interfaces/providers/crossref.py` | text | 2300 |
+| zyr | `interfaces/providers/http_utils.py` | text | 1042 |
+| zyr | `interfaces/providers/init.py` | text | 202 |
+| zyr | `interfaces/providers/my_provider.py` | text | 912 |
+| zyr | `interfaces/providers/openalex.py` | text | 2279 |
+| zyr | `interfaces/providers/semantic_scholar.py` | text | 2154 |
+| zyr | `interfaces/providers/template_provider.py` | text | 912 |
+| zyr | `interfaces/specs/provider_result.schema.json` | text | 1586 |
+| zyr | `manifests/ROUTE_SMOKE_TESTS_v1.6.json` | text | 403 |
+| zyr | `manifests/SCRIPT_INVENTORY.md` | text | 6673 |
+| zyr | `req.txt` | text | 12 |
+| zyr | `requirements.txt` | text | 12 |
+| zyr | `research/auto_research_inventory.md` | text | 10318 |
+| zyr | `research/engineering_alignment_matrix.md` | text | 6784 |
+| zyr | `research/fars_deep_dive.md` | text | 5453 |
+| zyr | `research/gpt54_failure_taxonomy.md` | text | 5504 |
+| zyr | `research/pessimistic_verification_lineage.md` | text | 12705 |
+| zyr | `router/INTAKE_CHECKLIST_v1.3.2.md` | text | 5134 |
+| zyr | `router/ROUTER_v1.3.2.md` | text | 1367 |
+| zyr | `router/SKILL_MAP_v1.3.2.md` | text | 25132 |
+| zyr | `router/ext_router/ROUTER_ADDENDUM_RWF_S340_v2.md` | text | 1772 |
+| zyr | `router/ext_router/ROUTER_ADDENDUM_research_write_figures_v1.0.md` | text | 2576 |
+| zyr | `router/ext_router/ROUTER_req_BINDING_RWF_S340_v1.6.md` | text | 3913 |
+| zyr | `router/intake_profile_v1.3.2.yaml` | text | 5767 |
+| zyr | `router/intake_profile_v8_1.yaml` | text | 5450 |
+| zyr | `router/intake_profile_v9_0.yaml` | text | 5450 |
+| zyr | `router/route.py` | text | 14512 |
+| zyr | `router/taxonomy.yaml` | text | 2833 |
+| zyr | `router/weights_v1.3.2.yaml` | text | 6365 |
+| zyr | `skills/coding_engine/MASTER_v1.3.2.md` | text | 3641 |
+| zyr | `skills/coding_engine/README.md` | text | 550 |
+| zyr | `skills/coding_engine/modules/00_HEADER.md` | text | 659 |
+| zyr | `skills/coding_engine/modules/01_GATE_AND_INTAKE.md` | text | 754 |
+| zyr | `skills/coding_engine/modules/02_DIAGNOSE.md` | text | 293 |
+| zyr | `skills/coding_engine/modules/03_PATCH_STYLE.md` | text | 367 |
+| zyr | `skills/coding_engine/modules/04_VERIFICATION.md` | text | 396 |
+| zyr | `skills/coding_engine/modules/05_MINIMALISM.md` | text | 863 |
+| zyr | `skills/exp/S301_min_decidable_experiment.md` | text | 1679 |
+| zyr | `skills/exp/S302_ablation_planner.md` | text | 1578 |
+| zyr | `skills/exp/S303_eval_protocol_linter.md` | text | 1554 |
+| zyr | `skills/exp/S304_baseline_selection_protocol.md` | text | 2799 |
+| zyr | `skills/exp/S305_metric_design_and_sanity.md` | text | 2740 |
+| zyr | `skills/exp/S306_data_split_leakage_check.md` | text | 2783 |
+| zyr | `skills/exp/S307_ablation_interpretation_framework.md` | text | 2776 |
+| zyr | `skills/exp/S308_hyperparameter_budget_plan.md` | text | 2697 |
+| zyr | `skills/exp/S309_error_analysis_playbook.md` | text | 2720 |
+| zyr | `skills/exp/S310_compute_cost_reporting_template.md` | text | 2750 |
+| zyr | `skills/exp/S311_statistical_significance_sanity.md` | text | 2727 |
+| zyr | `skills/exp/S312_replication_study_design.md` | text | 2739 |
+| zyr | `skills/exp/S313_data_augmentation_risk_audit.md` | text | 2747 |
+| zyr | `skills/exp/S314_evaluation_suite_selection.md` | text | 2741 |
+| zyr | `skills/exp/S315_stress_test_adversarial_cases.md` | text | 2747 |
+| zyr | `skills/exp/S316_statistical_power_quickcheck.md` | text | 2722 |
+| zyr | `skills/exp/S317_seed_sensitivity_protocol.md` | text | 2471 |
+| zyr | `skills/exp/S318_experiment_logging_schema.md` | text | 2531 |
+| zyr | `skills/exp/S319_failure_case_generation.md` | text | 2415 |
+| zyr | `skills/exp/S320_hyperparam_search_reporting.md` | text | 2510 |
+| zyr | `skills/exp/S321_replicability_multi_machine.md` | text | 2514 |
+| zyr | `skills/exp/S322_visualization_plan_results.md` | text | 2574 |
+| zyr | `skills/exp/S323_rl_sanity_checks_pack.md` | text | 2610 |
+| zyr | `skills/exp/S324_compute_scaling_experiment.md` | text | 2589 |
+| zyr | `skills/exp/S325_experiment_registry_template.md` | text | 2590 |
+| zyr | `skills/exp/S326_calculation_correctness_check.md` | text | 3950 |
+| zyr | `skills/exp/S327_experiment_completeness_check.md` | text | 2531 |
+| zyr | `skills/exp/S328_experiment_rigor_scorecard.md` | text | 1268 |
+| zyr | `skills/exp/S336_pre_analysis_plan_builder.md` | text | 1278 |
+| zyr | `skills/figure_engine/MASTER_v1.6.4.md` | text | 2158 |
+| zyr | `skills/master_integrated/MASTER_research_write_fig_stack_v1.0.md` | text | 1690 |
+| zyr | `skills/paper_ops/S501_rebuttal_generator.md` | text | 1499 |
+| zyr | `skills/paper_ops/S502_reviewer_simulator.md` | text | 1485 |
+| zyr | `skills/paper_ops/S503_submission_readiness_gate.md` | text | 1437 |
+| zyr | `skills/paper_ops/S504_cover_letter_builder.md` | text | 2690 |
+| zyr | `skills/paper_ops/S505_camera_ready_checklist.md` | text | 2740 |
+| zyr | `skills/paper_ops/S506_rebuttal_evidence_packager.md` | text | 2591 |
+| zyr | `skills/paper_ops/S507_reviewer_comment_clustering.md` | text | 2596 |
+| zyr | `skills/paper_ops/S508_response_tone_alignment.md` | text | 2593 |
+| zyr | `skills/paper_ops/S509_author_contrib_statement.md` | text | 2599 |
+| zyr | `skills/paper_ops/S510_ethics_statement_generator.md` | text | 2603 |
+| zyr | `skills/paper_ops/S511_appendix_structuring.md` | text | 2576 |
+| zyr | `skills/paper_ops/S512_fig_table_audit.md` | text | 2572 |
+| zyr | `skills/paper_ops/S513_title_abs_optimizer.md` | text | 2575 |
+| zyr | `skills/paper_ops/S514_talk_poster_outline.md` | text | 2574 |
+| zyr | `skills/paper_ops/S515_open_src_release_plan.md` | text | 2741 |
+| zyr | `skills/paper_ops/S516_camera_ready_checklist.md` | text | 2531 |
+| zyr | `skills/paper_ops/S517_fig_table_caption_rewrite.md` | text | 2410 |
+| zyr | `skills/paper_ops/S518_limitations_section_builder.md` | text | 2607 |
+| zyr | `skills/paper_ops/S519_response_matrix_builder.md` | text | 2476 |
+| zyr | `skills/paper_ops/S520_tone_and_rhetoric_polisher.md` | text | 2497 |
+| zyr | `skills/paper_ops/S521_contrib_statement_refinement.md` | text | 2516 |
+| zyr | `skills/paper_ops/S522_appendix_planner.md` | text | 2441 |
+| zyr | `skills/paper_ops/S523_cover_letter_generator.md` | text | 2642 |
+| zyr | `skills/paper_ops/S524_open_src_release_note_generator.md` | text | 2446 |
+| zyr | `skills/paper_ops/S525_arxiv_metadata_preflight.md` | text | 2535 |
+| zyr | `skills/paper_ops/S526_sentence_rewrite_with_retrieval.md` | text | 2598 |
+| zyr | `skills/paper_ops/S527_claim_language_risk_linter.md` | text | 1315 |
+| zyr | `skills/paper_ops/S528_reporting_checklist_generator.md` | text | 1265 |
+| zyr | `skills/paper_ops/S529_transparency_disclosure_statements_builder.md` | text | 1236 |
+| zyr | `skills/paper_ops/S530_ethics_impact_assessment.md` | text | 1246 |
+| zyr | `skills/platform_zyr_skills/README.md` | text | 3162 |
+| zyr | `skills/platform_zyr_skills/modules/00_OVERVIEW.md` | text | 1728 |
+| zyr | `skills/platform_zyr_skills/modules/01_PLATFORM_SNAPSHOT.md` | text | 473 |
+| zyr | `skills/platform_zyr_skills/modules/02_TEMPLATE_LIBRARY.md` | text | 1432 |
+| zyr | `skills/platform_zyr_skills/modules/03_QA_LOOPS.md` | text | 895 |
+| zyr | `skills/platform_zyr_skills/modules/04_ALIGNMENT_DIFF.md` | text | 1052 |
+| zyr | `skills/platform_zyr_skills/modules/05_MAINTENANCE_DIFFING.md` | text | 896 |
+| zyr | `skills/platform_zyr_skills/modules/06_CLAUDE_CODE_RUNTIME_OVERVIEW.md` | text | 1598 |
+| zyr | `skills/platform_zyr_skills/modules/07_TOOL_QUERY_SESSION_MODEL.md` | text | 1616 |
+| zyr | `skills/platform_zyr_skills/modules/08_SKILL_PLUGIN_PACKAGING_MODEL.md` | text | 1441 |
+| zyr | `skills/platform_zyr_skills/modules/09_REMOTE_IO_AND_BOUNDARIES.md` | text | 1191 |
+| zyr | `skills/platform_zyr_skills/modules/10_CLAUDE_CODE_MAINTENANCE_DIFFING.md` | text | 1398 |
+| zyr | `skills/platform_zyr_skills/rewrites/README.md` | text | 828 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/AUTH_PROVIDER_BOUNDARIES_REWRITE_ZYR.md` | text | 1492 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/PLUGIN_RUNTIME_AND_PACKAGING_REWRITE_ZYR.md` | text | 1879 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/QUERY_ENGINE_AND_SESSION_STATE_REWRITE_ZYR.md` | text | 1496 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/README.md` | text | 780 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/REMOTE_IO_AND_PERMISSION_BRIDGING_REWRITE_ZYR.md` | text | 1359 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/SKILL_DISCOVERY_AND_FRONTMATTER_REWRITE_ZYR.md` | text | 1236 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/SOURCES.md` | text | 2715 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331/TOOL_CONTRACT_AND_PERMISSIONS_REWRITE_ZYR.md` | text | 1516 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/INDEX.md` | text | 2416 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/README.md` | text | 352 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/SOURCES.md` | text | 2715 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/core_runtime/QueryEngine_REWRITE_ZYR.md` | text | 1562 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/core_runtime/Tool_REWRITE_ZYR.md` | text | 1627 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/core_runtime/sessionStorage_REWRITE_ZYR.md` | text | 1614 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/core_runtime/tools_REWRITE_ZYR.md` | text | 1542 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/non_goals_boundaries/auth_REWRITE_ZYR.md` | text | 1498 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/non_goals_boundaries/bridgeEnabled_REWRITE_ZYR.md` | text | 1530 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/non_goals_boundaries/client_REWRITE_ZYR.md` | text | 1392 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/non_goals_boundaries/configs_REWRITE_ZYR.md` | text | 1313 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/remote_runtime/remoteIO_REWRITE_ZYR.md` | text | 1584 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/remote_runtime/remotePermissionBridge_REWRITE_ZYR.md` | text | 1514 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/skills_plugins/builtinPlugins_REWRITE_ZYR.md` | text | 1475 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/skills_plugins/loadPluginCommands_REWRITE_ZYR.md` | text | 1595 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/skills_plugins/loadSkillsDir_REWRITE_ZYR.md` | text | 1592 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/skills_plugins/pluginLoader_REWRITE_ZYR.md` | text | 1457 |
+| zyr | `skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/by_source/skills_plugins/plugin_REWRITE_ZYR.md` | text | 1487 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/DOCX_SKILL_REWRITE_ZYR.md` | text | 638 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/EXAMPLES_PLAYBOOK_REWRITE_ZYR.md` | text | 369 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/FORMULA_COMPAT_GUIDE_REWRITE_ZYR.md` | text | 310 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/PDF_SKILL_REWRITE_ZYR.md` | text | 388 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/README.md` | text | 239 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/RENDER_DOCX_pipe_REWRITE_ZYR.md` | text | 564 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/SOURCES.md` | text | 4069 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/SPREADSHEET_ARTIFACT_CONCEPTS_REWRITE_ZYR.md` | text | 323 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/SPREADSHEET_ENGINE_API_SURFACE_REWRITE_ZYR.md` | text | 282 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222/SPREADSHEET_SKILL_REWRITE_ZYR.md` | text | 600 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/INDEX.md` | text | 4642 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/README.md` | text | 329 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/SOURCES.md` | text | 4921 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/docs/render_docx_REWRITE_ZYR.md` | text | 1876 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/docs/skill_REWRITE_ZYR.md` | text | 1912 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/pdfs/skill_REWRITE_ZYR.md` | text | 1374 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/artifact_tool_spreadsheet_formulas_REWRITE_ZYR.md` | text | 1468 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/artifact_tool_spreadsheets_api_REWRITE_ZYR.md` | text | 1381 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/create_basic_spreadsheet_REWRITE_ZYR.md` | text | 2318 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/create_spreadsheet_with_styling_REWRITE_ZYR.md` | text | 2273 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/features/change_exist_charts_REWRITE_ZYR.md` | text | 1236 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/features/cite_cells_REWRITE_ZYR.md` | text | 1404 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/features/create_area_chart_REWRITE_ZYR.md` | text | 1589 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/features/create_bar_chart_REWRITE_ZYR.md` | text | 1583 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/features/create_doughnut_chart_REWRITE_ZYR.md` | text | 1613 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/features/create_line_chart_REWRITE_ZYR.md` | text | 1589 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/features/create_pie_chart_REWRITE_ZYR.md` | text | 1583 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/features/create_tables_REWRITE_ZYR.md` | text | 1421 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/features/set_cell_borders_REWRITE_ZYR.md` | text | 1150 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/features/set_cell_fills_REWRITE_ZYR.md` | text | 947 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/features/set_cell_width_height_REWRITE_ZYR.md` | text | 996 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/features/set_font_styles_REWRITE_ZYR.md` | text | 945 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/features/set_merge_cells_REWRITE_ZYR.md` | text | 878 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/features/set_number_formats_REWRITE_ZYR.md` | text | 979 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/features/set_txt_alignment_REWRITE_ZYR.md` | text | 941 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/features/set_wrap_txt_styles_REWRITE_ZYR.md` | text | 957 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/read_exist_spreadsheet_REWRITE_ZYR.md` | text | 1668 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/ex/styling_spreadsheet_REWRITE_ZYR.md` | text | 1607 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/skill_REWRITE_ZYR.md` | text | 2056 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/by_source/spreadsheets/spreadsheet_REWRITE_ZYR.md` | text | 1467 |
+| zyr | `skills/platform_zyr_skills/rewrites/runtime_rw_2_bfbad/by_source/spreadsheets/ex/features/set_conditional_formatting_REWRITE_ZYR.md` | text | 1239 |
+| zyr | `skills/proof_engine/MASTER_v1.5.md` | text | 16058 |
+| zyr | `skills/proof_engine/README.md` | text | 1170 |
+| zyr | `skills/proof_engine/modules/00_HEADER.md` | text | 808 |
+| zyr | `skills/proof_engine/modules/01_PROFILE_AND_ROUTING.md` | text | 1992 |
+| zyr | `skills/proof_engine/modules/02_PESSIMISTIC_VERIFICATION.md` | text | 1271 |
+| zyr | `skills/proof_engine/modules/03_PROGRESSIVE_VERIFICATION.md` | text | 1101 |
+| zyr | `skills/proof_engine/modules/04_REFINEMENT_LOOP.md` | text | 951 |
+| zyr | `skills/proof_engine/modules/05_FORMAL_ADAPTER.md` | text | 855 |
+| zyr | `skills/proof_engine/modules/06_CANONICAL_OUTPUT_TEMPLATES.md` | text | 3003 |
+| zyr | `skills/proof_engine/modules/07_LONG_PROOF_AUDIT_EXAMPLES.md` | text | 5200 |
+| zyr | `skills/reproducibility/S401_repro_checklist.md` | text | 1518 |
+| zyr | `skills/reproducibility/S402_code_audit.md` | text | 1504 |
+| zyr | `skills/reproducibility/S403_dataset_spec.md` | text | 1557 |
+| zyr | `skills/reproducibility/S404_environment_capture_spec.md` | text | 2727 |
+| zyr | `skills/reproducibility/S405_seed_and_determinism_policy.md` | text | 2650 |
+| zyr | `skills/reproducibility/S406_experiment_logging_schema.md` | text | 2705 |
+| zyr | `skills/reproducibility/S407_artifact_packaging_release.md` | text | 2652 |
+| zyr | `skills/reproducibility/S408_code_structure_refactor_plan.md` | text | 2659 |
+| zyr | `skills/reproducibility/S409_dataset_card_writer.md` | text | 2680 |
+| zyr | `skills/reproducibility/S410_model_card_writer.md` | text | 2634 |
+| zyr | `skills/reproducibility/S411_privacy_ethics_checklist.md` | text | 2637 |
+| zyr | `skills/reproducibility/S412_benchmark_reproduction_check.md` | text | 2662 |
+| zyr | `skills/reproducibility/S413_dependency_risk_audit.md` | text | 2643 |
+| zyr | `skills/reproducibility/S414_results_traceability_matrix.md` | text | 2657 |
+| zyr | `skills/reproducibility/S415_data_pipe_invariance_tests.md` | text | 2665 |
+| zyr | `skills/reproducibility/S416_dependency_lockfile_strategy.md` | text | 2529 |
+| zyr | `skills/reproducibility/S417_environment_capture_playbook.md` | text | 2432 |
+| zyr | `skills/reproducibility/S418_determinism_settings_torch.md` | text | 2440 |
+| zyr | `skills/reproducibility/S419_data_versioning_and_checksum.md` | text | 2326 |
+| zyr | `skills/reproducibility/S420_logging_and_artifact_naming.md` | text | 2335 |
+| zyr | `skills/reproducibility/S421_evaluation_script_hardening.md` | text | 2434 |
+| zyr | `skills/reproducibility/S422_minimal_repro_bundle_creator.md` | text | 2408 |
+| zyr | `skills/reproducibility/S423_security_review_open_src.md` | text | 2395 |
+| zyr | `skills/reproducibility/S424_citation_and_attribution_audit.md` | text | 2469 |
+| zyr | `skills/reproducibility/S425_benchmark_reproduction_protocol.md` | text | 2464 |
+| zyr | `skills/reproducibility/S426_data_management_sharing_plan_builder.md` | text | 1352 |
+| zyr | `skills/reproducibility/S427_privacy_ip_sharing_constraints_audit.md` | text | 1190 |
+| zyr | `skills/reproducibility/S428_replication_package_builder.md` | text | 1387 |
+| zyr | `skills/reproducibility/S429_deterministic_seed_logging_policy.md` | text | 1350 |
+| zyr | `skills/reproducibility/S430_debug_vibe_core.md` | text | 7010 |
+| zyr | `skills/reproducibility/S431_closed_loop_verification.md` | text | 2589 |
+| zyr | `skills/reproducibility/S432_scope_drift_firewall.md` | text | 1563 |
+| zyr | `skills/reproducibility/S433_formal_proof_adapter.md` | text | 2346 |
+| zyr | `skills/research_core/S201_problem_framing.md` | text | 2022 |
+| zyr | `skills/research_core/S202_novelty_map.md` | text | 1960 |
+| zyr | `skills/research_core/S203_claim_evidence_matrix.md` | text | 1637 |
+| zyr | `skills/research_core/S204_literature_triage_pipe.md` | text | 2811 |
+| zyr | `skills/research_core/S205_concept_map_builder.md` | text | 2746 |
+| zyr | `skills/research_core/S206_research_gap_hypothesis_generator.md` | text | 2814 |
+| zyr | `skills/research_core/S207_contrib_claim_refinement.md` | text | 2650 |
+| zyr | `skills/research_core/S208_assumption_risk_register.md` | text | 2646 |
+| zyr | `skills/research_core/S209_scope_minimization_2h.md` | text | 2646 |
+| zyr | `skills/research_core/S210_terminology_definition_linter.md` | text | 2651 |
+| zyr | `skills/research_core/S211_related_work_delta_table.md` | text | 2644 |
+| zyr | `skills/research_core/S212_problem_to_method_fit_check.md` | text | 2656 |
+| zyr | `skills/research_core/S213_evaluation_goal_alignment.md` | text | 2655 |
+| zyr | `skills/research_core/S214_thesis_statement_builder.md` | text | 2647 |
+| zyr | `skills/research_core/S215_research_question_tree.md` | text | 2654 |
+| zyr | `skills/research_core/S216_hypothesis_to_predictions.md` | text | 3290 |
+| zyr | `skills/research_core/S217_contrib_type_selector.md` | text | 2880 |
+| zyr | `skills/research_core/S218_assumptions_and_threats_audit.md` | text | 2972 |
+| zyr | `skills/research_core/S219_ethics_and_data_risk_screen.md` | text | 2831 |
+| zyr | `skills/research_core/S220_grant_proposal_skeleton.md` | text | 2744 |
+| zyr | `skills/research_core/S221_paper_reading_schedule_2h.md` | text | 2632 |
+| zyr | `skills/research_core/S222_idea_prioritization_matrix.md` | text | 2596 |
+| zyr | `skills/research_core/S223_benchmark_selection_protocol.md` | text | 2618 |
+| zyr | `skills/research_core/S224_novelty_verification_protocol.md` | text | 2764 |
+| zyr | `skills/research_core/S225_research_storyline_arc.md` | text | 2712 |
+| zyr | `skills/research_core/S226_logic_consistency_audit.md` | text | 2833 |
+| zyr | `skills/research_core/S227_method_correctness_audit.md` | text | 2820 |
+| zyr | `skills/research_core/S228_innovation_novelty_audit.md` | text | 2600 |
+| zyr | `skills/research_core/S229_paper_storyline_integrity_check.md` | text | 2460 |
+| zyr | `skills/research_core/S230_proof_idea_check.md` | text | 4193 |
+| zyr | `skills/research_core/S231_innovation_point_search_plan.md` | text | 2491 |
+| zyr | `skills/research_core/S232_paper_interpretation_deep_read.md` | text | 2325 |
+| zyr | `skills/research_core/S233_innovation_correctness_audit.md` | text | 1957 |
+| zyr | `skills/research_core/S234_novelty_search_protocol.md` | text | 1587 |
+| zyr | `skills/research_core/S235_proof_gap_finder.md` | text | 2564 |
+| zyr | `skills/research_core/S236_preregistration_builder.md` | text | 1677 |
+| zyr | `skills/research_core/S237_theorem_assumption_normalizer.md` | text | 2815 |
+| zyr | `skills/research_core/S238_systematic_review_protocol_builder.md` | text | 1416 |
+| zyr | `skills/research_core/S239_study_screening_rubric_builder.md` | text | 1154 |
+| zyr | `skills/research_core/S240_pessimistic_proof_verification.md` | text | 3239 |
+| zyr | `skills/research_core/S241_progressive_proof_verification.md` | text | 3042 |
+| zyr | `skills/rwf_s340/MASTER.md` | text | 2313 |
+| zyr | `skills/rwf_s340/S601_paper_story_section_arch.md` | text | 1817 |
+| zyr | `skills/rwf_s340/S602_claim_evidence_reverse_outline_review.md` | text | 1697 |
+| zyr | `skills/rwf_s340/S603_bilingual_human_voice_delta_rewrite.md` | text | 1662 |
+| zyr | `skills/rwf_s340/S604_experiment_result_narrative_and_caption.md` | text | 1611 |
+| zyr | `skills/rwf_s340/S621_publication_fig_design_theory.md` | text | 3275 |
+| zyr | `skills/rwf_s340/S622_matplotlib_publication_script_builder.md` | text | 2537 |
+| zyr | `skills/rwf_s340/S623_visual_claim_caption_audit.md` | text | 1770 |
+| zyr | `skills/rwf_s340/S640_s340_global_paper_logic_language_audit.md` | text | 3616 |
+| zyr | `skills/rwf_s340/S650_integrated_pack_no_omission_valid.md` | text | 1531 |
+| zyr | `skills/rwf_s340/req_AND_forbid_phr.md` | text | 5189 |
+| zyr | `skills/writing_engine/MASTER_v1.3.2.md` | text | 201223 |
+| zyr | `skills/writing_engine/README.md` | text | 1474 |
+| zyr | `skills/writing_engine/legacy_master_prompt.md` | text | 33912 |
+| zyr | `skills/writing_engine/modules/00_MAIN_ENTRYPOINT.md` | text | 9783 |
+| zyr | `skills/writing_engine/modules/01_GATE_ROUTER.md` | text | 26530 |
+| zyr | `skills/writing_engine/modules/02_REWRITE_ENGINE.md` | text | 26579 |
+| zyr | `skills/writing_engine/modules/03_VERIFY_QA_ICML.md` | text | 26731 |
+| zyr | `skills/writing_engine/modules/04_WEB_RESEARCH_PROTOCOL.md` | text | 26780 |
+| zyr | `skills/writing_engine/modules/05_PDF_WORKFLOWS.md` | text | 25781 |
+| zyr | `skills/writing_engine/modules/06_STYLE_HUMAN_VOICE.md` | text | 24922 |
+| zyr | `skills/writing_engine/modules/07_VENUE_RULES_ICML_NEURIPS_ICLR.md` | text | 10549 |
+| zyr | `skills/writing_engine/modules/08_OPENREVIEW_FIRST_PLAYBOOK.md` | text | 3219 |
+| zyr | `skills/writing_engine/modules/09_OUTPUT_CONTRACT_CHANGE_ONLY.md` | text | 3976 |
+| zyr | `skills/writing_engine/modules/10_SECTION_MOVE_MAP.md` | text | 4101 |
+| zyr | `skills/writing_engine/modules/11_SCORING_SWITCHES.md` | text | 2742 |
+| zyr | `skills/writing_engine/modules/12_CHANGELOG_v2.md` | text | 663 |
+| zyr | `skills/writing_engine/modules/13_TOP_VENUE_CONSTRAINT_MATRIX.md` | text | 3175 |
+| zyr | `skills/writing_engine/modules/14_ICML2026_PROGRAMMATIC_HARD_CONSTRAINTS.md` | text | 1808 |
+| zyr | `skills/writing_engine/modules/15_VERIFICATION_RECORD_TEMPLATE.md` | text | 1490 |
+| zyr | `skills/writing_engine/modules/16_KNOWN_GAPS_AND_NEXT_STEPS.md` | text | 1831 |
+| zyr | `skills_manifest.yaml` | text | 32344 |
+| zyr | `templates/evidence_citation_policy.md` | text | 1101 |
+| zyr | `templates/skill_template.md` | text | 1198 |
+| zyr | `templates/workflow_chain_template.md` | text | 551 |
+| zyr | `tests/compliance_v1_5/corpus_schema_v1_5.json` | text | 1415 |
+| zyr | `tests/compliance_v1_5/corpus_v1_5.jsonl` | binary | 4616 |
+| zyr | `tests/prompt_regression/corpus_schema_v1_3.json` | text | 367 |
+| zyr | `tests/prompt_regression/corpus_v1_3.jsonl` | binary | 49362 |
+| zyr | `tests/prompt_regression/fuzz_payloads_v1_3.bin` | binary | 3145728 |
+| zyr | `tests/proof_verification_v1_5/corpus_schema_v1_5.json` | text | 3139 |
+| zyr | `tests/proof_verification_v1_5/corpus_v1_5.jsonl` | binary | 15617 |
+| zyr | `tests/scientific_discipline_v1_5/corpus_schema_v1_5.json` | text | 1617 |
+| zyr | `tests/scientific_discipline_v1_5/corpus_v1_5.jsonl` | binary | 4692 |
+| zyr | `tools/build.py` | text | 1432 |
+| zyr | `tools/build_all.py` | text | 1158 |
+| zyr | `tools/build_coding_engine_v1_3.py` | text | 1308 |
+| zyr | `tools/build_index.py` | text | 2679 |
+| zyr | `tools/build_proof_engine_v1_5.py` | text | 1481 |
+| zyr | `tools/build_skill_map.py` | text | 3373 |
+| zyr | `tools/build_write_engine_v1_3.py` | text | 1550 |
+| zyr | `tools/cleanup_legacy_duplicate_paths_v1_6_4.py` | text | 3645 |
+| zyr | `tools/drift_audit_v1_3.py` | text | 3333 |
+| zyr | `tools/gen_fuzz_payloads_v1_3.py` | text | 663 |
+| zyr | `tools/gen_skills_catalog_v1_3.py` | text | 1176 |
+| zyr | `tools/make_release.py` | text | 1843 |
+| zyr | `tools/ra_cli.py` | text | 4174 |
+| zyr | `tools/render_intake_q_v8_2.py` | text | 955 |
+| zyr | `tools/simulate_completion_compliance_v1_5.py` | text | 4364 |
+| zyr | `tools/simulate_locked_regression_v1_3.py` | text | 5330 |
+| zyr | `tools/simulate_proof_verification_v1_5.py` | text | 7300 |
+| zyr | `tools/simulate_scientific_discipline_v1_5.py` | text | 5729 |
+| zyr | `tools/system_audit_v1_3.py` | text | 3065 |
+| zyr | `tools/validate.py` | text | 1682 |
+| zyr | `tools/validate_completion_corpus_v1_5.py` | text | 3895 |
+| zyr | `tools/validate_corpus_v1_3.py` | text | 2345 |
+| zyr | `tools/validate_integrated_sources.py` | text | 2395 |
+| zyr | `tools/validate_no_omission.py` | text | 1299 |
+| zyr | `tools/validate_proof_verification_corpus_v1_5.py` | text | 7542 |
+| zyr | `tools/validate_scientific_discipline_corpus_v1_5.py` | text | 4430 |
+| zyr | `tools/validate_v1_3.py` | text | 5599 |
+| zyr | `tools/validate_v7_1.py` | text | 492 |
+| zyr | `tools/validate_v7_2.py` | text | 555 |
+| zyr | `tools/verify_v5_arch.py` | text | 726 |
+| zyr | `v` | binary | 6 |

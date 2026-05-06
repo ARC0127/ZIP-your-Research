@@ -2,7 +2,7 @@
 id: S604
 name: experiment_result_narrative_and_caption
 category: research_writing_integrated
-version: v1.6.3
+version: v1.6.5
 triggers:
 - experiment analysis
 - result narrative

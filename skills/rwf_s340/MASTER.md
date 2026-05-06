@@ -2,7 +2,7 @@
 id: rwf_s340_master
 name: research_writing_figure_s340_integrated_master
 category: composite
-version: v1.6.3
+version: v1.6.5
 ---
 
 # RWF-S340 Integrated Master Skill
@@ -21,18 +21,20 @@ Preserved sources:
 ```text
 ZYR boot/state/guardrails
 → router/route.py + router/ext_router/ROUTER_req_BINDING_RWF_S340_v1.6.md
-→ writing tasks: writing_engine → ext/src/rpws/ → S601/S602/S603/S604 → S640
+→ idea/method/storyline tasks: proof_engine → S203/S226/S227/S230 → S237/S240/S241 when needed
+→ writing tasks: proof_engine first when logic is being formed, then writing_engine → ext/src/rpws/ → S601/S602/S603/S604 → S640
 → figure tasks: figure_engine → inspect ext/src/figures/ → S621/S622/S623
 → release-validation tasks: S650
 ```
 
 ## Hard requirements
 
-1. `writing_engine` is mandatory for visible writing tasks.
-2. `figure_engine` is mandatory for figure-making tasks.
-3. `S640` is mandatory for writing-like work.
-4. `figures4papers` inspection is mandatory before proposing a new figure implementation.
-5. CSV/table/dataframe loading logic should be preserved unless the data source is intentionally changed and documented.
+1. `proof_engine` is mandatory for research idea construction, method design, theoretical framing, claim formation, contribution definition, paper storyline construction, and proof/derivation checking.
+2. `writing_engine` is mandatory for visible writing tasks.
+3. `figure_engine` is mandatory for figure-making tasks.
+4. `S640` is mandatory for writing-like work.
+5. `figures4papers` inspection is mandatory before proposing a new figure implementation.
+6. CSV/table/dataframe loading logic should be preserved unless the data source is intentionally changed and documented.
 
 The detailed requirement and forbidden-phrase gate is:
 

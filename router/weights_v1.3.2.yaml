@@ -1,4 +1,4 @@
-version: v1.3.2
+version: v1.6.5
 category_weights:
   research_core: 1.35
   experiments: 1.25
@@ -10,6 +10,45 @@ category_weights:
   s340_integrated: 1.60
   reproducibility_integrated: 1.35
 task_patterns:
+- name: proof_required_idea_method_storyline
+  patterns:
+  - research idea
+  - idea construction
+  - method design
+  - method rationale
+  - theoretical framing
+  - claim formation
+  - contribution definition
+  - paper storyline
+  - storyline construction
+  - problem formulation
+  - research logic
+  - 研究思路
+  - 思路构成
+  - 构思
+  - 方法设计
+  - 方法构成
+  - 方法依据
+  - 理论框架
+  - 贡献定义
+  - 贡献是否成立
+  - 论文主线
+  - 研究主线
+  - 问题定义
+  - 问题设定
+  - 证据链
+  - 第一性原理
+  boost_skills:
+    proof_engine: 5.5
+    S203: 2.6
+    S226: 2.8
+    S227: 2.8
+    S230: 3.0
+    S237: 1.8
+    S240: 2.0
+    S241: 2.0
+  boost_categories:
+    research_core: 0.35
 - name: s340_hard_writing_gate
   patterns:
   - 论文润色
@@ -149,6 +188,10 @@ task_patterns:
     S225: 1.6
     S201: 1.0
     writing_engine: 0.8
+    proof_engine: 3.0
+    S203: 1.4
+    S226: 1.6
+    S227: 1.4
   boost_categories:
     research_core: 0.2
     paper_ops: 0.1

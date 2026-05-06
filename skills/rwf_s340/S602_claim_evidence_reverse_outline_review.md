@@ -2,7 +2,7 @@
 id: S602
 name: claim_evidence_reverse_outline_review
 category: research_writing_integrated
-version: v1.6.3
+version: v1.6.5
 triggers:
 - reverse outline
 - reviewer audit

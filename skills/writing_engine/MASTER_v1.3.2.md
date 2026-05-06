@@ -1,6 +1,8 @@
 # MASTER v1.3.2 (Writing Engine)
 
-> **v1.6.3 binding addendum:** Any visible writing task in ZYR must call `writing_engine`. In the v1.6.3 stack, `writing_engine` is backed by `ext/src/rpws/` (Research-Paper-Writing-Skills) and must use the integrated wrappers `S601`/`S602`/`S603`/`S604` together with `S640` as the global writing and logic gate.
+
+> **v1.6.5 binding addendum:** Any visible writing task in ZYR must call `writing_engine`. In the v1.6.5 stack, `writing_engine` is backed by `ext/src/rpws/` (Research-Paper-Writing-Skills) and must use the integrated wrappers `S601`/`S602`/`S603`/`S604` together with `S640` as the global writing and logic gate.
+
 
 > **Execution rules:** `boot/11_COMPLETION_FIRST_ANTI_SHORTCUT_v1.5.md` applies after lock activation.
 
