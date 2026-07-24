@@ -48,3 +48,13 @@ The source trees are preserved under `ext/src/`. The S6xx/S640/S650 files are ro
 - `manifests/src_FILE_integr_TABLE.md`
 - `manifests/SCRIPT_INVENTORY.md`
 - `tools/validate_no_omission.py`
+
+## v1.7 safe-release profile addendum
+
+The preservation statements above apply to the full development checkout.
+The default safety release is a capability-declared subset: consult
+`manifests/RELEASE_CAPABILITIES.yaml` before invoking an external backend.
+When that manifest or the declared local path reports an unavailable source,
+return its explicit unavailable/degraded status and never claim that the
+excluded tree was inspected. Release completeness is measured against the
+fail-closed release policy, not against license-blocked source trees.

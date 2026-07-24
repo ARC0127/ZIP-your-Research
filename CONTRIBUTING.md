@@ -2,7 +2,7 @@
 
 Thank you for improving ZIP-your-Research (ZYR). Contributions are welcome when they preserve the repository's central purpose: task-boundary discipline, evidence-aware execution, and verifiable research artifacts.
 
-This document defines the contribution rules for the v1.6.5 line.
+This document defines the contribution rules for the v1.6.6 line.
 
 ## Contribution principles
 
@@ -39,7 +39,7 @@ Do not contribute:
 
 ## Engine-binding policy
 
-ZYR v1.6.5 uses explicit engine bindings.
+ZYR v1.6.6 uses explicit engine bindings.
 
 ### Proof engine
 
@@ -125,7 +125,7 @@ Use the current canonical ranges unless a maintainer explicitly reserves a new r
 
 ## Integrated source policy
 
-External or user-authored source materials must be preserved under `ext/src/` and cited through wrapper skills or attribution documents. Do not turn every upstream file into a routable skill. For v1.6.5, the key integrated backends are:
+External or user-authored source materials must be preserved under `ext/src/` and cited through wrapper skills or attribution documents. Do not turn every upstream file into a routable skill. Since v1.6.5, the key integrated backends are:
 
 - `ext/src/rpws/` for Research-Paper-Writing-Skills;
 - `ext/src/awesome/` for supplementary writing prompts and examples;

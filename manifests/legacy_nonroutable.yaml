@@ -1,0 +1,56 @@
+schema_version: 1
+hash_algorithm: sha256
+policy:
+  routable: false
+  preserve_history: true
+  canonical_mapping: skills_manifest.yaml
+  note: Historical paths remain in the repository but are never active routing entries.
+entries:
+- {id: S301, path: skills/experiments/S301_min_decidable_experiment.md, sha256: a38b8e93d9b14be6c04d4ab554a4cc38e27a6d7e2fc8426b77bc592113dcae5e}
+- {id: S302, path: skills/experiments/S302_ablation_planner.md, sha256: c7bdddfd4e83de4b99c6c01c97a40dcc09e01e297d6375f6b50439623e711f37}
+- {id: S303, path: skills/experiments/S303_eval_protocol_linter.md, sha256: b8090326044336098bdf92aff0ee62222bca0be69f2ee4faa436689b0e2278ff}
+- {id: S304, path: skills/experiments/S304_baseline_selection_protocol.md, sha256: 749e1d8833834691b34eca036c7cb4e99b97671570cbf95f133dd5dbb98bfdee}
+- {id: S305, path: skills/experiments/S305_metric_design_and_sanity.md, sha256: be910f3e245f97f63ccedebedf9cece79d4bc349fda55b54146707a0b902e1f3}
+- {id: S306, path: skills/experiments/S306_data_split_leakage_check.md, sha256: 0e77fa1c755d02edd286959ebc1cebe684924980eb5e31035080c870816843c2}
+- {id: S307, path: skills/experiments/S307_ablation_interpretation_framework.md, sha256: 68900037fe9433fe997756b705acb241e8bd7b24a92e67dd7e554d1cacfc79c4}
+- {id: S308, path: skills/experiments/S308_hyperparameter_budget_plan.md, sha256: 9854c1388d4911dfb87a9a862314d631cc43b7170688a1e7a35fb2ca53d2c729}
+- {id: S309, path: skills/experiments/S309_error_analysis_playbook.md, sha256: a29305aa5b83a7fc123f5a7140c673414a2ea1837da891055910c5a063c8eeeb}
+- {id: S310, path: skills/experiments/S310_compute_cost_reporting_template.md, sha256: 8eefad47bf089ec43ec3ffca30fc2824e106f8bc1fc7dda4a61dc1faaec0de90}
+- {id: S311, path: skills/experiments/S311_statistical_significance_sanity.md, sha256: 7599ccb6c69c4a7fa56786158a8b76f1e004a3ad6901284322997c3453a57bc5}
+- {id: S312, path: skills/experiments/S312_replication_study_design.md, sha256: 202e5e0cf1baf86e6585475c4efeaa45bc722f4eadb45e1b7ff956ddcbe9f990}
+- {id: S313, path: skills/experiments/S313_data_augmentation_risk_audit.md, sha256: c99c542c27d35ce999cec1a9e76718553a3bd133450cb1d8b49613acd6eacfeb}
+- {id: S314, path: skills/experiments/S314_evaluation_suite_selection.md, sha256: 1d29032c98a3ece0ed42f572876bc3a4d2451ffee93914f4752f3eabd7e25e87}
+- {id: S315, path: skills/experiments/S315_stress_test_adversarial_cases.md, sha256: 85a0f99606a8042a594fe6a72d52ecb0b3c90ff9880952f2ae3d8f9160f5799f}
+- {id: S316, path: skills/experiments/S316_statistical_power_quickcheck.md, sha256: 07577e6c9e79c916ce9706069d54a5fcdaa1548dd11f2185388c4fa57728eb72}
+- {id: S317, path: skills/experiments/S317_seed_sensitivity_protocol.md, sha256: 6649d6e42021905f45289a7b00b3916182d7e29c2df85a4120b6b42c0f2d2263}
+- {id: S318, path: skills/experiments/S318_experiment_logging_schema.md, sha256: 86c7c2ca3dbaaec902a29d9273281db9daf884db53df8c2322b1491d88bc46aa}
+- {id: S319, path: skills/experiments/S319_failure_case_generation.md, sha256: 2bb91d90cc85aabed36b481fde3239c9a4e45324e4833ad9a08c12cf0dac2fc5}
+- {id: S320, path: skills/experiments/S320_hyperparam_search_reporting.md, sha256: b4917a5cb6f7c2f62126bf444c95c84eb003ce6e57323bb3cfbd81ce4c3f4948}
+- {id: S321, path: skills/experiments/S321_replicability_multi_machine.md, sha256: f01ba566905f6b5ecce60e67ccba6dd2e51423f3642cbb9c7d5274f9adede7cf}
+- {id: S322, path: skills/experiments/S322_visualization_plan_results.md, sha256: 2a17abf8aa8d112e006c41261f3f295fdb8a3fd8002b5b0cbe131722e03c0ae3}
+- {id: S323, path: skills/experiments/S323_rl_sanity_checks_pack.md, sha256: 541b0530072d42df153ef3d75068ea15d4ec7a74bb5197c7551d2d443ccb8ecd}
+- {id: S324, path: skills/experiments/S324_compute_scaling_experiment.md, sha256: 3735499bd083c6e5697ad34aec415b5d412b60ef4dd67bcc7aa4a3137febcb10}
+- {id: S325, path: skills/experiments/S325_experiment_registry_template.md, sha256: 21ea99cf4b1fff08e6f73f2c9f91a3eb34e41bc64d3cb72c288f20a27f20fd2d}
+- {id: S326, path: skills/experiments/S326_calculation_correctness_check.md, sha256: 56ca8fa6d9c554e240ffc7d233db07fdcef54ab041b86ff96392041fcd3b26ac}
+- {id: S327, path: skills/experiments/S327_experiment_completeness_check.md, sha256: 66d6186242ac929fca9d6bf44536c4c6085a7611c87a520e64608becf32de2a7}
+- {id: S328, path: skills/experiments/S328_experiment_rigor_scorecard.md, sha256: 75e0273c8b63f85f389951b62302684ed7f846c8cf1e6c8afb09ee1bac0b44fe}
+- {id: S336, path: skills/experiments/S336_pre_analysis_plan_builder.md, sha256: ac45f4cb57e7a9fa13046b521993a19aaf1ec113fdd22a00a3ead1c6b833a87b}
+- {id: S601, path: skills/rw/S601_paper_story_section_arch.md, sha256: 77a2e32077a20eb0b5f44e7963af26a1f013f71f79243f41f8d5a42da8b37c77}
+- {id: S602, path: skills/rw/S602_claim_evidence_reverse_outline_review.md, sha256: 13ea2bbac242b76944ad714885625cf8b156ea06dbf27d20493fb40b65b9b2ac}
+- {id: S603, path: skills/rw/S603_bilingual_human_voice_delta_rewrite.md, sha256: fcd9985e4dbae202743a19bbeec57623245dcd4bcbbf92b4e904cd74ed3202ad}
+- {id: S604, path: skills/rw/S604_experiment_result_narrative_and_ta_122557d2.md, sha256: e400206b1c6d2db3b0d927ef4b65fcdaf0d530a72485fa7a072820abeb3815bd}
+- {id: S621, path: skills/fig_ops/S621_publication_fig_design_theory.md, sha256: ec92e1d58aef283b479d941cab7f08aba75d2a6a2d1e708a07fb5b9772043c20}
+- {id: S622, path: skills/fig_ops/S622_matplotlib_publication_script_builder.md, sha256: 36e7e50296dbdcdbce889c5f70b9dd729eb295bc6934a8a8502c68a27fb3c902}
+- {id: S623, path: skills/fig_ops/S623_visual_claim_caption_audit.md, sha256: fa79ff47f12326ee8f7bd8ea7039a9a0d901ed96df2b59c00b61f8697cefb9c2}
+- {id: S509, path: skills/paper_ops/S509_author_contribution_statement.md, sha256: bc88fdefb78f15eeeac5491f73b4fd928d7d410fe01c44977f485665e3996594}
+- {id: S512, path: skills/paper_ops/S512_figure_table_audit.md, sha256: 017f1f5b69d505ca9f628dc3d805852df4429bdb286cfc32a5ca5964ba55ccc6}
+- {id: S513, path: skills/paper_ops/S513_title_abstract_optimizer.md, sha256: 7aadbcef54277d846539386be31e257b3c33cb3d6c1ddd9ad251b37ed68273d1}
+- {id: S515, path: skills/paper_ops/S515_open_source_release_plan.md, sha256: 1a3decb72412d102a50af4b780ed95e2079cd97e634d342a62a879395c1ca4d7}
+- {id: S517, path: skills/paper_ops/S517_figure_table_caption_rewrite.md, sha256: 413ccbfc080bbc1bf6535e196dc62a01695c12374406194f8de12e862f967288}
+- {id: S521, path: skills/paper_ops/S521_contribution_statement_refinement.md, sha256: bc295d99cd0a6f4eed4e4bfd2da31bb8af387e86d8b95321c213df1307160b3a}
+- {id: S524, path: skills/paper_ops/S524_open_source_release_note_generator.md, sha256: 25a8eb1d38d865b40017dcb4ea8677bd36834d1ad9679b40cecc232c1dbf8672}
+- {id: S415, path: skills/reproducibility/S415_data_pipeline_invariance_tests.md, sha256: 1b585fd0eeee21c86590019b17dc1cb3db5158b134b98b7f3dcc1ccb0794a5f1}
+- {id: S423, path: skills/reproducibility/S423_security_review_open_source.md, sha256: 521481aeffd0e68dbd0651d3d449bab3752d665d9bd6e8a7fa554059f38a003a}
+- {id: S204, path: skills/research_core/S204_literature_triage_pipeline.md, sha256: dcc74b9384e56be57a2f1f8593579f1aa83f570c349746252a45df8d6d95a889}
+- {id: S207, path: skills/research_core/S207_contribution_claim_refinement.md, sha256: 86ad6882e172f01f614475138f681cdf3ae699a208dc4c2d67f3ab1f2cd49179}
+- {id: S217, path: skills/research_core/S217_contribution_type_selector.md, sha256: 32df453489774356318d5b5b2ceb8c53a3e79034aba9bf753bd015a688efae22}

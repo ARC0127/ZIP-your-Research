@@ -1,4 +1,4 @@
-version: 1.6.5
+version: 1.6.6
 skills:
 - id: writing_engine
   name: writing_engine
@@ -1327,3 +1327,38 @@ skills:
   - 文件名过长
   - 完整性验证
   - 禁止遗漏
+- id: S660
+  name: epistemic_research_champion
+  category: research_core
+  path: skills/research_orchestrator/S660_epistemic_research_champion.md
+  triggers:
+  - autonomous multi-agent research
+  - authoritative web research
+  - research self-evolution
+  - evidence lineage
+  - candidate idea evolution
+  - cross-examination
+  - research champion
+  - 多智能体科研
+  - 权威检索
+  - 证据谱系
+  - 思路迭代
+  - 科研自进化
+- id: S661
+  name: dynamic_skill_memory
+  category: research_core
+  path: skills/research_orchestrator/S661_dynamic_skill_memory.md
+  triggers:
+  - automatic skill generation
+  - skill as memory
+  - procedural memory
+  - dynamic skill management
+  - update generated skill
+  - delete generated skill
+  - skill evolution
+  - 自动生成 Skill
+  - Skill 记忆
+  - 程序性记忆
+  - 动态技能管理
+  - 更新技能
+  - 删除技能

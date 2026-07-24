@@ -61,3 +61,12 @@ Treat SVG, PNG, and PDF as output formats, not as a substitute for source genera
 ## Physical-layout requirement
 
 For architecture diagrams and scientific figures, the output must satisfy physical layout constraints before style decoration: aligned outer planes, consistent margins, non-overlapping arrows, readable text, explicit arrow semantics, and caption/figure claim consistency. If these fail, redraw or change the source implementation rather than explain around the flaw.
+
+## v1.7 safe-release capability addendum
+
+Before applying the figures4papers-first rule, verify the `figures4papers`
+record in `manifests/RELEASE_CAPABILITIES.yaml` and the declared local source
+path. If either check fails, stop source-dependent design work with
+`SOURCE_UNAVAILABLE`. Do not report a closest pattern, inspection, or reuse
+decision that did not occur. A user-supplied visual may still be passed to
+`S623` for a read-only claim/caption audit.

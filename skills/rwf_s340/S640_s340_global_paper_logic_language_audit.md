@@ -89,3 +89,12 @@ S640 must search for and repair high-risk patterns, including but not limited to
 ## Non-omission source rule
 
 The complete source trees are preserved under `ext/src/`. This skill is a routing wrapper and logical reconstruction layer, not a replacement for the source files. For exact file-level coverage, inspect `manifests/src_manifest.json` and `manifests/src_FILE_integr_TABLE.md`.
+
+## v1.7 safe-release source-traceability addendum
+
+In a safety release, first inspect `manifests/RELEASE_CAPABILITIES.yaml`. If
+the original S340 source archive is absent, mark
+`DEGRADED_SOURCE_TRACEABILITY` and do not claim exact comparison with or
+execution of that archive. The embedded S640 rules and any available,
+license-admitted RPWS material may still be used, but the output must preserve
+this limitation until the original source is restored and verified.

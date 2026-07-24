@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Deterministic skill router (v1.3.2, weighted).
+"""Compatibility entrypoint for the trust-aware deterministic router.
+
+The public ``main`` delegates to ``router/route_v1_7.py``. The historical
+v1.3.2 weighted implementation is retained below as ``legacy_main`` for source
+compatibility; it is not the active routing authority.
+
+Historical v1.3.2 design:
 
 Goal: Given a user query, recommend top-K skills (copy/paste ready), with a bias toward:
 - 思路/逻辑核查
@@ -239,7 +245,7 @@ def secondary_recos(primary_id: str, weights: Dict) -> List[str]:
             dedup.append(x)
     return dedup
 
-def main():
+def legacy_main():
     ap = argparse.ArgumentParser()
     ap.add_argument("query", help="user query text")
     ap.add_argument("--topk", type=int, default=5)
@@ -369,6 +375,17 @@ def main():
             print(f"   weights: {', '.join(applied[:6])}{'...' if len(applied) > 6 else ''}")
         print(f"   file: {s['path']}")
     return 0
+
+
+def main():
+    """Compatibility entrypoint for the trust-aware v1.7 router."""
+
+    try:
+        from route_v1_7 import cli_main
+    except ImportError:  # pragma: no cover - package-style invocation
+        from router.route_v1_7 import cli_main
+    return cli_main()
+
 
 if __name__ == "__main__":
     raise SystemExit(main())

@@ -1,0 +1,224 @@
+schema_version: 1
+policy_version: v1.7
+archive_root: ZIP-your-Research
+source_mode: git_tracked_only
+default_version_file: VERSION
+
+allow:
+  exact:
+    - .gitattributes
+    - .gitignore
+    - AGENTS.md
+    - AUTOBOOT_v1.3.md
+    - CHANGELOG.md
+    - CONTRIBUTING.md
+    - INCREMENTAL_UPDATE_v1.3.md
+    - INCREMENTAL_UPDATE_v1.3.1.md
+    - INDEX.md
+    - LICENSE
+    - README.md
+    - VERSION
+    - artifacts/evidence_ledger.csv
+    - artifacts/negative_result_ledger.md
+    - artifacts/proof_casebook.md
+    - artifacts/run_state.json
+    - req.txt
+    - requirements.txt
+    - skills_manifest.yaml
+    - v
+  prefixes:
+    - .claude/skills/
+    - .github/skills/
+    - boot/
+    - docs/
+    - interfaces/
+    - manifests/
+    - research/
+    - router/
+    - skills/
+    - templates/
+    - tests/
+    - tools/
+    - ext/src/rpws/
+
+deny:
+  prefixes:
+    - .git/
+    - .github/workflows/
+    - dist/
+    - local/
+    - memory/
+    - transcripts/
+    - ext/src/S340_v4.2_theory_global_skill_bundle/
+    - ext/src/awesome/
+    - ext/src/figures/
+  path_parts:
+    # Runtime/user data roots are denied by prefix above. Keep nested public
+    # paths such as docs/memory/ and templates/memory/ eligible for release.
+    - __pycache__
+    - .mypy_cache
+    - .pytest_cache
+    - .ruff_cache
+    - .tox
+    - .venv
+    - node_modules
+  basenames:
+    - .env
+    - .env.local
+    - .env.production
+    - .env.test
+    - credentials.json
+    - secrets.json
+  name_globs:
+    - "*.7z"
+    - "*.bin"
+    - "*.bz2"
+    - "*.gz"
+    - "*.key"
+    - "*.p12"
+    - "*.pem"
+    - "*.pfx"
+    - "*.tar"
+    - "*.xz"
+    - "*.zip"
+    - "id_rsa*"
+    - "memory*.json"
+    - "memory*.jsonl"
+    - "transcript*.json"
+    - "transcript*.jsonl"
+
+required:
+  active_skill_count: 149
+  legacy_skill_count: 48
+  generated_file_count: 5
+  exact:
+    - README.md
+    - LICENSE
+    - VERSION
+    - v
+    - skills_manifest.yaml
+    - INDEX.md
+    - artifacts/evidence_ledger.csv
+    - artifacts/negative_result_ledger.md
+    - artifacts/proof_casebook.md
+    - artifacts/run_state.json
+    - docs/memory/VISIBLE_MEMORY_PROTOCOL_v1.md
+    - docs/memory/DYNAMIC_SKILL_MEMORY_PROTOCOL_v1.md
+    - interfaces/host_adapter_contract.md
+    - manifests/COMPATIBILITY.yaml
+    - manifests/RELEASE_CAPABILITIES.yaml
+    - manifests/THIRD_PARTY_ASSETS.yaml
+    - manifests/generated_files.yaml
+    - manifests/legacy_nonroutable.yaml
+    - manifests/release_policy.yaml
+    - router/SKILL_MAP_v1.3.2.md
+    - router/route_v1_7.py
+    - router/taxonomy.yaml
+    - router/test_route_v1_7.py
+    - skills/coding_engine/MASTER_v1.3.2.md
+    - skills/coding_engine/modules/00_HEADER.md
+    - skills/coding_engine/modules/01_GATE_AND_INTAKE.md
+    - skills/coding_engine/modules/02_DIAGNOSE.md
+    - skills/coding_engine/modules/03_PATCH_STYLE.md
+    - skills/coding_engine/modules/04_VERIFICATION.md
+    - skills/coding_engine/modules/05_MINIMALISM.md
+    - skills/proof_engine/MASTER_v1.5.md
+    - skills/proof_engine/modules/00_HEADER.md
+    - skills/proof_engine/modules/01_PROFILE_AND_ROUTING.md
+    - skills/proof_engine/modules/02_PESSIMISTIC_VERIFICATION.md
+    - skills/proof_engine/modules/03_PROGRESSIVE_VERIFICATION.md
+    - skills/proof_engine/modules/04_REFINEMENT_LOOP.md
+    - skills/proof_engine/modules/05_FORMAL_ADAPTER.md
+    - skills/proof_engine/modules/06_CANONICAL_OUTPUT_TEMPLATES.md
+    - skills/proof_engine/modules/07_LONG_PROOF_AUDIT_EXAMPLES.md
+    - skills/research_orchestrator/S660_epistemic_research_champion.md
+    - skills/research_orchestrator/S661_dynamic_skill_memory.md
+    - skills/writing_engine/MASTER_v1.3.2.md
+    - skills/writing_engine/modules/00_MAIN_ENTRYPOINT.md
+    - skills/writing_engine/modules/01_GATE_ROUTER.md
+    - skills/writing_engine/modules/02_REWRITE_ENGINE.md
+    - skills/writing_engine/modules/03_VERIFY_QA_ICML.md
+    - skills/writing_engine/modules/04_WEB_RESEARCH_PROTOCOL.md
+    - skills/writing_engine/modules/05_PDF_WORKFLOWS.md
+    - skills/writing_engine/modules/06_STYLE_HUMAN_VOICE.md
+    - skills/writing_engine/modules/07_VENUE_RULES_ICML_NEURIPS_ICLR.md
+    - skills/writing_engine/modules/08_OPENREVIEW_FIRST_PLAYBOOK.md
+    - skills/writing_engine/modules/09_OUTPUT_CONTRACT_CHANGE_ONLY.md
+    - skills/writing_engine/modules/10_SECTION_MOVE_MAP.md
+    - skills/writing_engine/modules/11_SCORING_SWITCHES.md
+    - skills/writing_engine/modules/12_CHANGELOG_v2.md
+    - skills/writing_engine/modules/13_TOP_VENUE_CONSTRAINT_MATRIX.md
+    - skills/writing_engine/modules/14_ICML2026_PROGRAMMATIC_HARD_CONSTRAINTS.md
+    - skills/writing_engine/modules/15_VERIFICATION_RECORD_TEMPLATE.md
+    - skills/writing_engine/modules/16_KNOWN_GAPS_AND_NEXT_STEPS.md
+    - templates/memory/DECISION_LOG.md
+    - templates/memory/FAILED_PATHS.md
+    - templates/memory/LONG_TERM_MEMORY.md
+    - templates/memory/MEMORY_AUDIT.md
+    - templates/memory/MEMORY_CONSENT.md
+    - templates/memory/MEMORY_EXPORT.md
+    - templates/memory/MEMORY_PROPOSAL.md
+    - templates/memory/SHORT_TERM_MEMORY.md
+    - templates/skill_memory/SKILL_CHANGE_CONSENT.md
+    - templates/skill_memory/SKILL_DELETION_RECEIPT.md
+    - templates/skill_memory/SKILL_EVALUATION.md
+    - templates/skill_memory/SKILL_PROPOSAL.md
+    - templates/skill_memory/TRACE_RECORD.md
+    - templates/orchestration/RESEARCH_RUN.md
+    - tests/integrity/test_manifest_closure.py
+    - tests/integrity/test_release_capabilities.py
+    - tests/router/cases_v2.jsonl
+    - tests/skill_memory/test_skill_memory_v1.py
+    - tools/validate_v1_3.py
+    - tools/validate_v7_2.py
+    - tools/zyr.py
+    - tools/zyr_lib/__init__.py
+    - tools/zyr_lib/build.py
+    - tools/zyr_lib/check.py
+    - tools/zyr_lib/forward.py
+    - tools/zyr_lib/init.py
+    - tools/zyr_lib/manifest.py
+    - tools/zyr_lib/skill_memory.py
+    - ext/src/rpws/LICENSE
+    - ext/src/rpws/paper_skill/SKILL.md
+
+third_party:
+  manifest: manifests/THIRD_PARTY_ASSETS.yaml
+  capabilities_manifest: manifests/RELEASE_CAPABILITIES.yaml
+  allowed_asset_ids:
+    - rpws
+  require_license_status: VERIFIED_LOCAL
+  require_redistribution_status: ALLOWED
+  block_unknown_or_unlisted: true
+
+secrets:
+  max_text_scan_bytes: 2097152
+  patterns:
+    - id: openai_key
+      regex: '(?<![A-Za-z0-9])sk-(?:proj-)?[A-Za-z0-9_-]{20,}'
+    - id: github_pat
+      regex: 'gh[pousr]_[A-Za-z0-9]{30,}'
+    - id: aws_access_key
+      regex: 'AKIA[0-9A-Z]{16}'
+    - id: private_key
+      regex: '-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'
+    - id: assigned_secret
+      regex: '(?i)(?:api[_-]?key|access[_-]?token|client[_-]?secret|password)\s*[:=]\s*["'']?[A-Za-z0-9_./+=-]{16,}'
+
+zip:
+  max_entries: 4096
+  max_archive_bytes: 268435456
+  max_entry_uncompressed_bytes: 33554432
+  max_total_uncompressed_bytes: 268435456
+  max_compression_ratio: 200
+  timestamp_utc:
+    - 1980
+    - 1
+    - 1
+    - 0
+    - 0
+    - 0
+  compression: deflate
+  compresslevel: 9
+  file_mode: "0644"
+  generated_manifest_path: RELEASE_MANIFEST_v1_7.json

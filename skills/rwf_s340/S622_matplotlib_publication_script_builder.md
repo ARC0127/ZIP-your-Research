@@ -44,6 +44,14 @@ Procedure: inspect `ext/src/figures/` first and select the closest source patter
 
 The complete source trees are preserved under `ext/src/`. This skill is a routing wrapper and logical reconstruction layer, not a replacement for the source files. For exact file-level coverage, inspect `manifests/src_manifest.json` and `manifests/src_FILE_integr_TABLE.md`.
 
+## v1.7 safe-release capability addendum
+
+Check `manifests/RELEASE_CAPABILITIES.yaml` and the declared figures4papers
+path before selecting or adapting a plotting script. When the backend is
+absent, return `SOURCE_UNAVAILABLE`; do not claim source inspection and do not
+fabricate a substitute script or data. Resume only after the user supplies or
+approves a local backend whose license and provenance have been verified.
+
 ## Executable-output requirement
 
 When SVG/PNG/PDF files are requested, keep the generating source code whenever possible, export the requested assets when technically suitable, and visually inspect the rendered output when the environment allows. Do not fabricate data or silently substitute a pretty image for a source artifact.

@@ -1,0 +1,66 @@
+schema_version: 1
+policy: fail_closed
+notes:
+  - Pins describe upstream revisions, not the commit that imported files into this repository.
+  - UNKNOWN means the checked-in source tree does not contain enough evidence to verify the field.
+assets:
+  - id: rpws
+    local_path: ext/src/rpws
+    origin:
+      name: Research-Paper-Writing-Skills
+      url: https://github.com/Master-cai/Research-Paper-Writing-Skills
+      evidence_path: docs/EXTERNAL_SKILL_ATTRIBUTION_v1.6.md
+    pin:
+      status: UNKNOWN
+      revision: UNKNOWN
+      reason: The vendored tree has no upstream Git metadata or recorded upstream commit.
+    license:
+      status: VERIFIED_LOCAL
+      spdx_id: MIT
+      license_path: ext/src/rpws/LICENSE
+      notice_path: null
+      notice_status: NOT_PRESENT
+    redistribution:
+      status: ALLOWED
+      conditions:
+        - Preserve ext/src/rpws/LICENSE with redistributed copies or substantial portions.
+
+  - id: figures
+    local_path: ext/src/figures
+    origin:
+      name: figures4papers
+      url: https://github.com/ChenLiu-1996/figures4papers
+      evidence_path: docs/EXTERNAL_SKILL_ATTRIBUTION_v1.6.md
+    pin:
+      status: UNKNOWN
+      revision: UNKNOWN
+      reason: The vendored tree has no upstream Git metadata or recorded upstream commit.
+    license:
+      status: UNKNOWN
+      spdx_id: UNKNOWN
+      license_path: UNKNOWN
+      notice_path: UNKNOWN
+      notice_status: UNKNOWN
+    redistribution:
+      status: BLOCKED
+      reason: No license or NOTICE is present in the checked-in vendored tree.
+
+  - id: awesome
+    local_path: ext/src/awesome
+    origin:
+      name: awesome-ai-research-writing
+      url: https://github.com/Leey21/awesome-ai-research-writing
+      evidence_path: docs/EXTERNAL_SKILL_ATTRIBUTION_v1.6.md
+    pin:
+      status: UNKNOWN
+      revision: UNKNOWN
+      reason: The vendored tree has no upstream Git metadata or recorded upstream commit.
+    license:
+      status: UNKNOWN
+      spdx_id: UNKNOWN
+      license_path: UNKNOWN
+      notice_path: UNKNOWN
+      notice_status: UNKNOWN
+    redistribution:
+      status: BLOCKED
+      reason: No license or NOTICE is present in the checked-in vendored tree.

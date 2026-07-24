@@ -38,3 +38,12 @@ Procedure: verify ZIP CRC; copy each source file byte-for-byte; generate manifes
 ## Non-omission source rule
 
 The complete source trees are preserved under `ext/src/`. This skill is a routing wrapper and logical reconstruction layer, not a replacement for the source files. For exact file-level coverage, inspect `manifests/src_manifest.json` and `manifests/src_FILE_integr_TABLE.md`.
+
+## v1.7 safe-release profile addendum
+
+“Complete source trees” above describes the full development checkout, not the
+default safety release. For a release audit, the authoritative closure is the
+required set and capability state in `manifests/release_policy.yaml` and
+`manifests/RELEASE_CAPABILITIES.yaml`. A policy-excluded source must be
+reported as `SOURCE_UNAVAILABLE`; it must not be reclassified as present merely
+because its wrapper skill or historical inventory remains in the archive.

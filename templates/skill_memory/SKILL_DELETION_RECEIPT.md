@@ -1,0 +1,21 @@
+# Dynamic Skill Deletion Receipt
+
+- Dynamic Skill ID:
+- Consent ID:
+- Host attestation ID:
+- Receipt ID:
+- Deleted immutable payload directory:
+- Deleted active projection directory:
+- Registry tombstone: VERIFIED / FAILED
+- Audit projection rebuilt: VERIFIED / FAILED
+- Lexical index rebuilt: VERIFIED / FAILED
+- Dense/Transformer indexes checked: NOT_CONFIGURED / VERIFIED / FAILED
+- Prepared journal cleared: VERIFIED / FAILED
+- Store verification: PASS / FAIL
+- Git history checked: YES / NO / NOT_APPLICABLE
+- Backups checked: YES / NO / NOT_APPLICABLE
+- Cloud or third-party copies checked: YES / NO / NOT_APPLICABLE
+- Local store status: LOCAL_STORE_DELETION_VERIFIED / DELETE_PENDING
+- Global deletion status: DELETION_UNVERIFIED / VERIFIED
+- Uninspected destinations:
+- Recovery or escalation action:

@@ -1,0 +1,83 @@
+schema_version: 1
+profile: safe_source_distribution
+availability_scope: release_archive
+policy: fail_closed
+capabilities:
+  - id: research_paper_writing_skills_source
+    asset_id: rpws
+    status: AVAILABLE
+    bundled_path: ext/src/rpws
+    allowed_missing_ref_prefixes: []
+    affected_skill_ids:
+      - writing_engine
+      - S601
+      - S602
+      - S603
+      - S604
+      - S640
+    missing_behavior: FAIL_CLOSED
+    evidence:
+      license_status: VERIFIED_LOCAL
+      redistribution_status: ALLOWED
+      source: manifests/THIRD_PARTY_ASSETS.yaml
+
+  - id: figures4papers_source
+    asset_id: figures
+    status: SOURCE_UNAVAILABLE
+    bundled_path: null
+    allowed_missing_ref_prefixes:
+      - ext/src/figures/
+    affected_skill_ids:
+      - figure_engine
+      - S621
+      - S622
+      - S623
+    missing_behavior: SOURCE_UNAVAILABLE
+    reason: License and redistribution permission are UNKNOWN, so the backend is excluded.
+    required_runtime_response: >-
+      Report SOURCE_UNAVAILABLE and do not claim that figures4papers source
+      inspection, reuse, rendering, or backend-dependent verification occurred.
+    verification_before_enablement:
+      - Resolve and record the upstream license and redistribution terms.
+      - Update manifests/THIRD_PARTY_ASSETS.yaml with verified local evidence.
+      - Rebuild and audit the release under the fail-closed policy.
+
+  - id: awesome_ai_research_writing_source
+    asset_id: awesome
+    status: SOURCE_UNAVAILABLE
+    bundled_path: null
+    allowed_missing_ref_prefixes:
+      - ext/src/awesome/
+    affected_skill_ids: []
+    missing_behavior: SOURCE_UNAVAILABLE
+    reason: License and redistribution permission are UNKNOWN, so the source is excluded.
+    required_runtime_response: >-
+      Report SOURCE_UNAVAILABLE if this optional source is explicitly requested;
+      do not claim that its contents were inspected or used.
+    verification_before_enablement:
+      - Resolve and record the upstream license and redistribution terms.
+      - Update manifests/THIRD_PARTY_ASSETS.yaml with verified local evidence.
+      - Rebuild and audit the release under the fail-closed policy.
+
+  - id: s340_original_source
+    asset_id: null
+    status: SOURCE_UNAVAILABLE
+    bundled_path: null
+    allowed_missing_ref_prefixes:
+      - ext/src/S340_v4.2_theory_global_skill_bundle/
+    affected_skill_ids:
+      - rwf_s340_master
+      - S640
+    missing_behavior: SOURCE_UNAVAILABLE
+    reason: >-
+      The default safe release excludes the original source bundle because its
+      provenance and redistribution boundary have not been recorded as
+      release-approved evidence.
+    required_runtime_response: >-
+      Report SOURCE_UNAVAILABLE for original-source inspection and use the
+      bundled canonical S640 wrapper only within its stated evidence boundary.
+      Do not claim that the excluded original source was inspected.
+    verification_before_enablement:
+      - Record the source provenance and redistribution authority.
+      - Add an explicit release-approved asset record and local evidence.
+      - Rebuild and audit the release under the fail-closed policy.

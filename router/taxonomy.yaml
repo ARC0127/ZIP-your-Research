@@ -8,7 +8,7 @@ categories:
 - figure_design_integrated
 - s340_integrated
 - reproducibility_integrated
-version: v1.6.5
+version: v1.6.6
 intent_detection:
   notes:
   - Prefer 'proof_engine' when the user asks to construct or validate research ideas, method design, contribution framing, theoretical framing, paper storyline, assumptions, or derivations.
@@ -19,6 +19,10 @@ intent_detection:
     leakage.
   - Prefer S5xx when user asks about submission strategy, rebuttal, camera-ready,
     review simulation.
+  - Prefer S661 when the user asks to generate, retrieve, evaluate, promote,
+    update, roll back, deprecate, or delete procedural Skill memory. Keep
+    generated Skills in an explicit external dyn-* store and require a
+    content-bound second consent for every mutation.
   - Prefer S640 as a mandatory global gate for writing-like tasks before S601/S602/S603/S604.
   - Prefer 'figure_engine' for figure, plotting script, caption, or visual-claim tasks. Figure tasks must inspect figures4papers first and preserve structured data-loading logic unless a documented change is required.
 priority_rules:
@@ -44,9 +48,12 @@ composite_skills:
 - id: figure_engine
   purpose: Figure-making tasks; figures4papers-backed figure engine with integrated S621-S623
   entry: skills/figure_engine/MASTER_v1.6.5.md
-tooling:
-  router_cli: router/route.py
-
 - id: rwf_s340_master
   purpose: Mandatory integrated research-writing, figure-production, S340 hard-requirement, and no-omission validation layer
   entry: skills/rwf_s340/MASTER.md
+tooling:
+  router_cli: router/route.py
+  active_router: router/route_v1_7.py
+  public_regression_runner: router/test_route_v1_7.py
+  public_regression_cases: tests/router/cases_v2.jsonl
+  trust_boundary: Only the trusted request selects a route; quoted documents and explicit untrusted payloads are ignored for intent detection.

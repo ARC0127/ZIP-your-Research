@@ -1,0 +1,29 @@
+schema_version: 1
+policy:
+  public_command: python tools/zyr.py build --check
+  write_command: python tools/zyr.py build
+  write_mode: explicit_allowlisted_atomic_replace
+  note: Each generated path has exactly one authoritative in-memory renderer.
+generated_files:
+- path: skills/writing_engine/MASTER_v1.3.2.md
+  builder: tools.zyr_lib.build:render_writing_engine
+  inputs:
+  - skills/writing_engine/modules
+- path: skills/coding_engine/MASTER_v1.3.2.md
+  builder: tools.zyr_lib.build:render_coding_engine
+  inputs:
+  - skills/coding_engine/modules
+- path: skills/proof_engine/MASTER_v1.5.md
+  builder: tools.zyr_lib.build:render_proof_engine
+  inputs:
+  - skills/proof_engine/modules
+- path: INDEX.md
+  builder: tools.zyr_lib.build:render_index
+  inputs:
+  - skills_manifest.yaml
+  - skills
+- path: router/SKILL_MAP_v1.3.2.md
+  builder: tools.zyr_lib.build:render_skill_map
+  inputs:
+  - skills_manifest.yaml
+  - skills

@@ -1,7 +1,36 @@
 from __future__ import annotations
 from typing import Dict, Any, List
 import os
+import re
+import urllib.parse
 from ._http_utils import http_get_json, q
+
+_SENSITIVE_QUERY_KEYS = {"api_key", "access_token", "token", "key"}
+_SENSITIVE_QUERY_RE = re.compile(
+    r"(?i)([?&](?:api_key|access_token|token|key)=)[^&\s\"']+"
+)
+
+
+def redact_url(url: str) -> str:
+    """Return a log-safe URL with credential-like query values removed."""
+
+    parts = urllib.parse.urlsplit(url)
+    query = urllib.parse.parse_qsl(parts.query, keep_blank_values=True)
+    redacted = [
+        (key, "[REDACTED]" if key.lower() in _SENSITIVE_QUERY_KEYS else value)
+        for key, value in query
+    ]
+    return urllib.parse.urlunsplit(
+        (parts.scheme, parts.netloc, parts.path, urllib.parse.urlencode(redacted), parts.fragment)
+    )
+
+
+def _redact_error(value: str | None, api_key: str) -> str | None:
+    if value is None:
+        return None
+    safe = value.replace(api_key, "[REDACTED]") if api_key else value
+    return _SENSITIVE_QUERY_RE.sub(r"\1[REDACTED]", safe)
+
 
 def search(query: str, *, limit: int = 10, config: Dict[str, Any] | None = None) -> Dict[str, Any]:
     config = config or {}
@@ -22,8 +51,18 @@ def search(query: str, *, limit: int = 10, config: Dict[str, Any] | None = None)
         url += f"&select={q(select)}"
 
     data, err = http_get_json(url, timeout_s=timeout_s)
+    safe_url = redact_url(url)
+    safe_err = _redact_error(err, api_key)
     if err or not data:
-        return {"provider":"openalex","query":query,"items":[], "meta":{"warnings":warnings + ([err] if err else []), "raw_url":url}}
+        return {
+            "provider": "openalex",
+            "query": query,
+            "items": [],
+            "meta": {
+                "warnings": warnings + ([safe_err] if safe_err else []),
+                "raw_url": safe_url,
+            },
+        }
 
     items=[]
     for w in (data.get("results") or [])[:limit]:
@@ -56,4 +95,9 @@ def search(query: str, *, limit: int = 10, config: Dict[str, Any] | None = None)
             "extra": {"openalex_id": w.get("id")}
         })
 
-    return {"provider":"openalex","query":query,"items":items,"meta":{"warnings":warnings, "raw_url":url}}
+    return {
+        "provider": "openalex",
+        "query": query,
+        "items": items,
+        "meta": {"warnings": warnings, "raw_url": safe_url},
+    }

@@ -47,3 +47,23 @@ figure task
 - `ext/src/figures/fig_skill/ref/api.md`
 - `ext/src/figures/fig_skill/ref/tutorials.md`
 - `ext/src/figures/fig_skill/ref/demos.md`
+
+## v1.7 safe-release capability gate
+
+This addendum is authoritative when the skill is loaded from a safety release.
+The mandatory-backend workflow above may run only when
+`manifests/RELEASE_CAPABILITIES.yaml` reports the figures4papers capability as
+available **and** its declared local path exists.
+
+If that source is absent or its redistribution gate is not satisfied:
+
+1. return `SOURCE_UNAVAILABLE` and identify the missing capability;
+2. do not claim that figures4papers was inspected, selected, adapted, or run;
+3. do not silently replace the missing backend with invented examples;
+4. provide only bounded unblock instructions, including license verification
+   and an explicit user-approved local installation path.
+
+`S623` may still audit a figure supplied by the user because that read-only
+caption/visual-claim check does not require the excluded source tree. Creating
+or revising a figure through this composite remains blocked until the declared
+backend is available.

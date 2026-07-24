@@ -1,5 +1,57 @@
 # Changelog
 
+## v1.6.6 - agentic research evolution, visible memory, and governed Skill learning
+
+This release turns ZYR's self-evolution goal into an inspectable research
+protocol: agents may broaden authoritative retrieval, challenge candidate
+ideas, and improve the next research action, while claims, evidence, memory,
+and persistent changes remain under explicit human control.
+
+### Added
+
+- `S660 epistemic_research_champion` for capability-gated multi-agent research,
+  blind first-round retrieval, evidence lineage, candidate versioning,
+  cross-examination, and scientific adjudication.
+- `S661 dynamic_skill_memory` for proposal-only Skill generation from verified
+  traces and governed create, promote, update, rollback, deprecate, and delete
+  operations in an external `dyn-*` store.
+- A visible Scientific Decision Record in
+  `templates/orchestration/RESEARCH_RUN.md`, plus short-/long-term memory,
+  consent, audit, and export templates.
+- Host capability and provider contracts, including explicit failure behavior
+  when real worker contexts, authoritative retrieval, approval channels, or
+  local persistence are unavailable.
+- Stable `tools/zyr.py` commands, deterministic v1.7 routing, release
+  allowlisting/auditing, compatibility and capability manifests, and integrity,
+  security, router, evolution, release, and dynamic-memory tests.
+
+### Changed
+
+- Reworked the README opening around concrete Agentic LLM research workflows,
+  clearer onboarding, and stronger public positioning while retaining the
+  scientific-evidence boundary.
+- Strengthened proof-first paper logic, scientific writing, rhetoric
+  refinement, source-code-first figure design, figure/claim consistency, and
+  integrated package validation.
+- Extended CI to exercise the stable facade, generated-file drift checks,
+  deterministic routing, security boundaries, and release closure.
+- Replaced the extra Python cryptography dependency with a standard-library
+  Ed25519 verifier anchored to the RFC 8032 test vector; host private keys and
+  signing remain outside the agent.
+
+### Safety and evidence boundaries
+
+- Automatic Skill drafting does not authorize save, registration, activation,
+  update, or deletion. Every mutation requires a content-bound plan and a
+  short-lived signed host attestation.
+- The dynamic store persists detached signed authorization receipts and the
+  pinned public key, allowing verification to reject post-consent registry or
+  payload rewrites even when derived hashes are rebuilt without the host key.
+- Structural tests do not claim independent scientific replication or LLM
+  behavioral superiority. Unrun or unavailable checks remain explicit.
+- The complete pre-existing README acknowledgments and reference section was
+  retained byte-for-byte during the final v1.6.6 clarity and promotion pass.
+
 ## v1.6.5 - README professionalism, engine-binding consolidation, and package hygiene
 
 This release consolidates the v1.6 line around a clearer public README and a stricter internal engine-binding contract.

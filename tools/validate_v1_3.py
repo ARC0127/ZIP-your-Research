@@ -6,9 +6,10 @@ Goals:
 - Fail fast on missing or inconsistent schema.
 
 Checks (baseline):
-- Every real skill file `skills/**/S###_*.md` has YAML front matter parseable by PyYAML.
+- Every active canonical skill in `skills_manifest.yaml` has valid YAML front matter.
+- Historical aliases are non-routable and match `manifests/legacy_nonroutable.yaml`.
 - Required fields: id, name, category, triggers, inputs_required, outputs_required, quality_gates.
-- id uniqueness.
+- Active id/path uniqueness and manifest/front-matter agreement.
 - id should match filename prefix when applicable (S###_*.md).
 - Backtick-referenced local file paths inside markdown must exist (best-effort; ignores generated artifacts like MODE_LOCK.md).
 
@@ -21,17 +22,24 @@ from __future__ import annotations
 
 import argparse
 import re
-from pathlib import Path
-from typing import Dict, List, Tuple
+import sys
+from pathlib import Path, PurePosixPath
+from typing import Any, Dict, List, Sequence, Tuple
 
 import yaml
 
+sys.dont_write_bytecode = True
+
+from zyr_lib.manifest import (
+    RepositoryContractError,
+    validate_repository_contract,
+)
+
 ROOT = Path(__file__).resolve().parents[1]
-SKILLS_DIR = ROOT / "skills"
+RELEASE_CAPABILITIES_PATH = ROOT / "manifests" / "RELEASE_CAPABILITIES.yaml"
 
 FRONT_MATTER_RE = re.compile(r"^---\n(.*?)\n---\n", re.S)
 BACKTICK_PATH_RE = re.compile(r"`([^`]+?\.(?:md|py|yaml|yml|json|txt|pdf))`")
-SKILL_FILENAME_RE = re.compile(r"^S\d+_.*\.md$")
 ALLOWED_CATEGORIES = {
     "research_core", "experiments", "reproducibility", "paper_ops", "composite",
     "research_writing_integrated", "figure_design_integrated", "s340_integrated",
@@ -51,15 +59,6 @@ def parse_front_matter(text: str) -> Dict:
     if not m:
         return {}
     return yaml.safe_load(m.group(1)) or {}
-
-def is_real_skill_file(path: Path) -> bool:
-    rel = path.relative_to(SKILLS_DIR).as_posix()
-    if "platform_zyr_skills/rewrites/" in rel:
-        return False
-    return bool(SKILL_FILENAME_RE.match(path.name))
-
-def iter_skill_files() -> List[Path]:
-    return sorted(p for p in SKILLS_DIR.rglob("*.md") if is_real_skill_file(p))
 
 def resolve_local_ref(md_path: Path, ref: str) -> List[Path]:
     raw = ref.strip()
@@ -83,7 +82,153 @@ def resolve_local_ref(md_path: Path, ref: str) -> List[Path]:
             dedup.append(candidate)
     return dedup
 
-def check_backtick_refs(md_path: Path, text: str) -> List[str]:
+def load_release_capabilities(
+    active_ids: Sequence[str],
+) -> Tuple[List[Dict[str, Any]], List[str]]:
+    """Load tightly scoped declarations for sources omitted from safe releases."""
+
+    errors: List[str] = []
+    try:
+        raw = yaml.safe_load(RELEASE_CAPABILITIES_PATH.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return [], [
+            "Missing release capability manifest: "
+            f"{RELEASE_CAPABILITIES_PATH.relative_to(ROOT)}"
+        ]
+    except yaml.YAMLError as exc:
+        return [], [f"Invalid release capability manifest YAML: {exc}"]
+    if not isinstance(raw, dict) or raw.get("schema_version") != 1:
+        return [], ["Release capability manifest requires schema_version: 1"]
+    records = raw.get("capabilities")
+    if not isinstance(records, list) or not records:
+        return [], ["Release capability manifest requires a non-empty capabilities list"]
+
+    allowed_statuses = {"AVAILABLE", "SOURCE_UNAVAILABLE"}
+    allowed_missing_behaviors = {
+        "FAIL_CLOSED",
+        "SOURCE_UNAVAILABLE",
+        "DEGRADED_SOURCE_TRACEABILITY",
+    }
+    active_set = set(active_ids)
+    seen_ids = set()
+    valid_records: List[Dict[str, Any]] = []
+    for index, record in enumerate(records):
+        label = f"release capability #{index + 1}"
+        if not isinstance(record, dict):
+            errors.append(f"{label} must be a mapping")
+            continue
+        capability_id = str(record.get("id", "")).strip()
+        if not capability_id:
+            errors.append(f"{label} requires id")
+            continue
+        if capability_id in seen_ids:
+            errors.append(f"Duplicate release capability id: {capability_id}")
+            continue
+        seen_ids.add(capability_id)
+
+        status = str(record.get("status", "")).strip()
+        behavior = str(record.get("missing_behavior", "")).strip()
+        if status not in allowed_statuses:
+            errors.append(f"{capability_id}: unsupported status {status!r}")
+        if behavior not in allowed_missing_behaviors:
+            errors.append(f"{capability_id}: unsupported missing_behavior {behavior!r}")
+
+        affected = record.get("affected_skill_ids")
+        if not isinstance(affected, list):
+            errors.append(f"{capability_id}: affected_skill_ids must be a list")
+            affected = []
+        normalized_affected = [str(value).strip() for value in affected if str(value).strip()]
+        unknown_ids = sorted(set(normalized_affected) - active_set)
+        if unknown_ids:
+            errors.append(
+                f"{capability_id}: affected_skill_ids are not active: {unknown_ids}"
+            )
+
+        prefixes = record.get("allowed_missing_ref_prefixes")
+        if not isinstance(prefixes, list):
+            errors.append(
+                f"{capability_id}: allowed_missing_ref_prefixes must be a list"
+            )
+            prefixes = []
+        normalized_prefixes: List[str] = []
+        for value in prefixes:
+            prefix = str(value).strip().replace("\\", "/")
+            posix = PurePosixPath(prefix)
+            if (
+                not prefix.endswith("/")
+                or posix.is_absolute()
+                or ".." in posix.parts
+                or not prefix.startswith("ext/src/")
+            ):
+                errors.append(
+                    f"{capability_id}: unsafe allowed missing reference prefix {prefix!r}"
+                )
+                continue
+            normalized_prefixes.append(prefix)
+
+        bundled_path = record.get("bundled_path")
+        if status == "AVAILABLE":
+            if not isinstance(bundled_path, str) or not bundled_path.strip():
+                errors.append(f"{capability_id}: AVAILABLE requires bundled_path")
+            else:
+                candidate = (ROOT / bundled_path).resolve()
+                try:
+                    candidate.relative_to(ROOT.resolve())
+                except ValueError:
+                    errors.append(f"{capability_id}: bundled_path escapes repository")
+                else:
+                    if not candidate.exists():
+                        errors.append(
+                            f"{capability_id}: declared bundled_path is missing: {bundled_path}"
+                        )
+            if normalized_prefixes:
+                errors.append(
+                    f"{capability_id}: AVAILABLE cannot allow missing references"
+                )
+        else:
+            if bundled_path not in (None, ""):
+                errors.append(
+                    f"{capability_id}: SOURCE_UNAVAILABLE must not declare bundled_path"
+                )
+            if normalized_prefixes and not normalized_affected:
+                # A declaration that cannot name a canonical consumer must not
+                # weaken canonical reference validation.
+                normalized_prefixes = []
+
+        normalized = dict(record)
+        normalized["affected_skill_ids"] = normalized_affected
+        normalized["allowed_missing_ref_prefixes"] = normalized_prefixes
+        valid_records.append(normalized)
+    return valid_records, errors
+
+
+def _declared_missing_reference(
+    ref: str,
+    skill_id: str,
+    capabilities: Sequence[Dict[str, Any]],
+) -> bool:
+    """Return true only for an unavailable source declared for this skill."""
+
+    for record in capabilities:
+        if record.get("status") != "SOURCE_UNAVAILABLE":
+            continue
+        if skill_id not in record.get("affected_skill_ids", []):
+            continue
+        if any(
+            ref.startswith(prefix)
+            for prefix in record.get("allowed_missing_ref_prefixes", [])
+        ):
+            return True
+    return False
+
+
+def check_backtick_refs(
+    md_path: Path,
+    text: str,
+    *,
+    skill_id: str = "",
+    capabilities: Sequence[Dict[str, Any]] = (),
+) -> List[str]:
     errs = []
     for m in BACKTICK_PATH_RE.finditer(text):
         ref = m.group(1).strip()
@@ -104,6 +249,8 @@ def check_backtick_refs(md_path: Path, text: str) -> List[str]:
         if ref.startswith("/") and not any(str(p).startswith(str(ROOT)) for p in candidates):
             continue
         if not any(p.exists() for p in candidates):
+            if _declared_missing_reference(ref, skill_id, capabilities):
+                continue
             errs.append(f"Missing referenced file `{ref}` in {md_path.relative_to(ROOT)}")
     return errs
 
@@ -112,10 +259,25 @@ def main():
     ap.add_argument("--loose", action="store_true", help="compat mode: only require id/name/category + uniqueness")
     args = ap.parse_args()
 
+    try:
+        _, active_entries, legacy_count = validate_repository_contract(ROOT)
+    except RepositoryContractError as exc:
+        print("Validation failed:")
+        for line in str(exc).splitlines():
+            print(f"- {line}")
+        raise SystemExit(1)
+
     errors: List[str] = []
     ids: Dict[str, Path] = {}
+    active_ids = [str(item.get("id", "")).strip() for item in active_entries]
+    release_capabilities, capability_errors = load_release_capabilities(active_ids)
+    errors.extend(capability_errors)
+    canonical_entries = [
+        item for item in active_entries if str(item.get("category", "")).strip() != "composite"
+    ]
 
-    for p in iter_skill_files():
+    for item in canonical_entries:
+        p = ROOT / str(item["path"])
         text = p.read_text(encoding="utf-8", errors="replace")
         fm = parse_front_matter(text)
         if not fm:
@@ -132,6 +294,19 @@ def main():
                 errors.append(f"Duplicate id `{sid}`: {p.relative_to(ROOT)} and {ids[sid].relative_to(ROOT)}")
             else:
                 ids[sid] = p
+        manifest_id = str(item.get("id", "")).strip()
+        if sid and sid != manifest_id:
+            errors.append(
+                f"Manifest/front-matter id mismatch: {item['path']} has {sid}, expected {manifest_id}"
+            )
+        for key in ("name", "category"):
+            manifest_value = str(item.get(key, "")).strip()
+            front_matter_value = str(fm.get(key, "")).strip()
+            if front_matter_value and front_matter_value != manifest_value:
+                errors.append(
+                    f"Manifest/front-matter `{key}` mismatch in {item['path']}: "
+                    f"{front_matter_value!r} != {manifest_value!r}"
+                )
 
         cat = str(fm.get("category", "")).strip()
         if cat and cat not in ALLOWED_CATEGORIES:
@@ -150,7 +325,14 @@ def main():
                 errors.append(f"ID mismatch: filename {stem} vs id {sid} in {p.relative_to(ROOT)}")
 
         # best-effort reference check
-        errors.extend(check_backtick_refs(p, text))
+        errors.extend(
+            check_backtick_refs(
+                p,
+                text,
+                skill_id=sid,
+                capabilities=release_capabilities,
+            )
+        )
 
     if errors:
         print("Validation failed:")
@@ -158,7 +340,21 @@ def main():
             print(f"- {e}")
         raise SystemExit(1)
 
-    print("Validation passed.")
+    print(
+        "Validation passed: "
+        f"active_canonical_skills={len(canonical_entries)} "
+        f"legacy_nonroutable={legacy_count} "
+        f"physical_skill_files={len(canonical_entries) + legacy_count}"
+    )
+    unavailable = sorted(
+        str(record["id"])
+        for record in release_capabilities
+        if record.get("status") == "SOURCE_UNAVAILABLE"
+    )
+    print(
+        "Safe-release capability declarations: "
+        + (", ".join(f"{value}=SOURCE_UNAVAILABLE" for value in unavailable) or "NONE")
+    )
 
 if __name__ == "__main__":
     main()
