@@ -1,3 +1,5 @@
+
+
 # ZIP-your-Research (ZYR) v1.6.6
 
 > **Turn an Agentic LLM from a fluent answer generator into an auditable
@@ -396,7 +398,7 @@ The v1.7 packaging protocol is fail-closed and does not replace the repository
 release version, which is v1.6.6. Build only from a clean Git worktree:
 
 ```bash
-python3 tools/make_release_v1_7.py --out /absolute/path/ZIP-your-Research_v1.6.6_release.zip
+python3 tools/make_release.py --out /absolute/path/ZIP-your-Research_v1.6.6_release.zip
 python3 tools/zyr.py release-audit /absolute/path/ZIP-your-Research_v1.6.6_release.zip
 ```
 
