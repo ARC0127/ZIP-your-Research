@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="620" viewBox="0 0 1440 620" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">ZIP your Research — Make every claim earn its place.</title>
+  <desc id="description">A dark editorial cover for ZYR. An illustrative research workflow connects a question to evidence and the next check. This is a workflow illustration, not an experiment result.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1440" y2="620" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#131F24"/>
+      <stop offset="1" stop-color="#0D1418"/>
+    </linearGradient>
+    <linearGradient id="signal" x1="876" y1="196" x2="1308" y2="458" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D9EFAC"/>
+      <stop offset="1" stop-color="#70BDA1"/>
+    </linearGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" stroke="#E0EBE8" stroke-opacity=".035"/>
+    </pattern>
+  </defs>
+  <rect width="1440" height="620" rx="20" fill="url(#background)"/>
+  <rect width="1440" height="620" rx="20" fill="url(#grid)"/>
+  <path d="M64 98H1376M64 532H1376" stroke="#334247"/>
+  <g stroke="#D9EFAC" stroke-width="2.5" stroke-linecap="square">
+    <path d="M66 44H94L66 72H94"/>
+    <path d="M79 35V43M79 73V81"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="116" y="66" fill="#F1F4EF" font-size="21" font-weight="700" letter-spacing="3.2">ZIP YOUR RESEARCH</text>
+    <rect x="1225" y="39" width="151" height="38" rx="19" stroke="#455653"/>
+    <circle cx="1249" cy="58" r="4" fill="#D9EFAC"/>
+    <text x="1263" y="64" fill="#DDE7E1" font-size="16" letter-spacing="1.8">SUITE 1.6.6</text>
+    <text x="64" y="162" fill="#A3B6AE" font-size="17" letter-spacing="3.5">A WORKFLOW FOR AGENTIC RESEARCH</text>
+    <text x="60" y="251" fill="#F2F5EE" font-size="76" font-weight="700" letter-spacing="-3">Make every claim</text>
+    <text x="60" y="339" fill="#D9EFAC" font-size="76" font-weight="700" letter-spacing="-3">earn its place.</text>
+    <text x="64" y="402" fill="#BAC9C3" font-size="24">Keep the evidence behind the answer.</text>
+    <text x="64" y="438" fill="#BAC9C3" font-size="24">Make the next research decision explicit.</text>
+    <rect x="64" y="471" width="165" height="32" rx="16" fill="#23332F"/>
+    <text x="82" y="493" fill="#D9EFAC" font-size="15" letter-spacing="1">OPEN SOURCE</text>
+    <text x="250" y="493" fill="#9AAFA5" font-size="15" letter-spacing="1">COPY / PASTE / VERIFY</text>
+    <path d="M834 142V491" stroke="#334247"/>
+    <text x="884" y="160" fill="#8FA99E" font-size="14" letter-spacing="2.4">THE RESEARCH RECORD</text>
+    <path d="M909 229V404" stroke="url(#signal)" stroke-width="2"/>
+    <rect x="884" y="191" width="444" height="74" rx="10" fill="#18262B" stroke="#385047"/>
+    <circle cx="909" cy="228" r="5" fill="#D9EFAC"/>
+    <text x="934" y="218" fill="#91AA9D" font-size="12" letter-spacing="1.6">01 / QUESTION</text>
+    <text x="934" y="245" fill="#E2EAE4" font-size="20">What needs to be established?</text>
+    <rect x="884" y="294" width="444" height="74" rx="10" fill="#18262B" stroke="#385047"/>
+    <circle cx="909" cy="331" r="5" fill="#BDE1A8"/>
+    <text x="934" y="321" fill="#91AA9D" font-size="12" letter-spacing="1.6">02 / EVIDENCE</text>
+    <text x="934" y="348" fill="#E2EAE4" font-size="20">Which sources support the claim?</text>
+    <rect x="884" y="397" width="444" height="74" rx="10" fill="#26382E" stroke="#718D60"/>
+    <circle cx="909" cy="434" r="5" fill="#D9EFAC"/>
+    <text x="934" y="424" fill="#BDDBA2" font-size="12" letter-spacing="1.6">03 / NEXT CHECK</text>
+    <text x="934" y="451" fill="#EBF4DF" font-size="20">What would change the decision?</text>
+    <text x="1328" y="498" fill="#80968B" font-size="12" letter-spacing="1.2" text-anchor="end">ILLUSTRATIVE WORKFLOW</text>
+    <text x="64" y="580" fill="#8FA69A" font-size="16" letter-spacing="1.8">RESEARCH HAS A MEMORY. GIVE IT A RECORD.</text>
+    <text x="1376" y="580" fill="#B5C6BD" font-size="16" letter-spacing="1.5" text-anchor="end">PROOF / WRITING / FIGURES / CODE</text>
+  </g>
+</svg>

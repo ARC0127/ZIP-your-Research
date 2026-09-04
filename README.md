@@ -1,19 +1,101 @@
 # ZIP-your-Research (ZYR) v1.6.6
 
-> **Turn an Agentic LLM from a fluent answer generator into an auditable
-> research collaborator.**
+<p align="center">
+  <picture>
+    <source media="(max-width: 600px)" srcset="docs/assets/zyr-cover-mobile-v1.6.6.svg">
+    <img src="docs/assets/zyr-cover-v1.6.6.svg" width="100%" alt="ZIP your Research — Make every claim earn its place. A workflow connecting research questions, evidence, and the next check.">
+  </picture>
+</p>
+
+<p align="center">
+  <a href="#quick-start"><strong>Get started</strong></a> &nbsp;·&nbsp;
+  <a href="docs/SHOWCASE.md"><strong>Explore verified cases</strong></a> &nbsp;·&nbsp;
+  <a href="docs/SKILLS.md">Browse skills</a> &nbsp;·&nbsp;
+  <a href="docs/USAGE.md">Documentation</a>
+</p>
+
+<p align="center">
+  <a href="docs/VERSION_IDENTITY_v1.6.6.md"><img src="https://img.shields.io/badge/suite-v1.6.6-23382e?style=flat-square&amp;labelColor=172228" alt="Suite v1.6.6"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-23382e?style=flat-square&amp;labelColor=172228" alt="MIT license"></a>
+  <a href="docs/SHOWCASE.md"><img src="https://img.shields.io/badge/router-33%2F33%20passed-23382e?style=flat-square&amp;labelColor=172228" alt="33 of 33 public router cases passed in the 2026-09-04 local snapshot"></a>
+</p>
+
+**A research workflow you can inspect.** ZYR is a library of specialized
+skills for AI research agents. Use it to evaluate ideas, design experiments,
+check claims against evidence, and produce research artifacts. Its protocols
+specify how to record decisions and choose the next verification step.
+
+<p align="center"><em>让每一个研究判断，都有据可循。</em></p>
+
+<table>
+  <tr>
+    <td align="center" width="33%"><h3>149</h3>Active skills<br><sub>Manifest-selected workflows</sub></td>
+    <td align="center" width="33%"><h3>4</h3>Dedicated engines<br><sub>Proof · Writing · Figures · Code</sub></td>
+    <td align="center" width="33%"><h3>33 / 33</h3>Routing cases passed<br><sub>Local verification · 2026-09-04</sub></td>
+  </tr>
+</table>
+
+## Put ZYR to work
+
+| Your next research decision | Start here | Work product |
+|---|---|---|
+| **Is this idea worth testing?** | [Research orchestration](skills/research_orchestrator/S660_epistemic_research_champion.md) + [proof engine](skills/proof_engine/MASTER_v1.5.md) | A question graph, competing candidates, and the next decisive check |
+| **Does the evidence support this claim?** | [Claim–evidence audit](skills/research_core/S203_claim_evidence_matrix.md) + [logic audit](skills/research_core/S226_logic_consistency_audit.md) | Claims mapped to sources, assumptions, and unresolved gaps |
+| **How should we communicate the result?** | [Writing engine](skills/writing_engine/MASTER_v1.6.6.md) + [figure engine](skills/figure_engine/MASTER_v1.6.5.md) | Prose and source-editable visuals tied to the research record |
+| **Can this procedure be reused?** | [Dynamic Skill memory](skills/research_orchestrator/S661_dynamic_skill_memory.md) | A versioned Skill proposal with evaluation and explicit activation controls |
+
+ZYR runs inside your agent host. Retrieval, worker agents, and rendering use
+the tools available there; the workflows declare the capabilities they need.
+
+## Evidence you can rerun
+
+**33 routing cases passed. 52 Python tests passed, with 1 platform-specific
+skip.** The snapshot below was executed locally on **2026-09-04** with
+**Python 3.13.2 / Windows**.
+
+| Test case | Observed result |
+|---|---|
+| “不要证明，只润色摘要” — polish only | Selects `writing_engine`; excludes `proof_engine` |
+| A reference document tries to override the route | Selects citation audit `S424`; records the untrusted payload as ignored |
+| “不要画图，但最后请画一个流程图。” — conflicting instructions | Returns `ROUTE_AMBIGUOUS` with no execution plan |
+| Memory write with wrong consent or a forged attestation | Rejects the operation; the temporary store remains absent |
+| Synthetic credentials in provider responses | Redacts credentials in returned metadata and errors; 3/3 tests pass |
+
+[**Read the inputs, outputs, and reproduction commands →**](docs/SHOWCASE.md)
+
+These results cover repository checks and implemented tool behavior. The
+**12 mutation/clean fixture pairs** also pass structural validation; S660
+model evaluation and scientific-outcome evaluation remain **NOT_RUN**.
+The [snapshot record](docs/evidence/2026-09-04/results.json) identifies the
+tested pre-publication tree, including the v1.6.6 alignment changes, and the
+single Windows skip.
+
+<details>
+<summary><strong>Why ZYR: operating model, release identity, and capabilities</strong></summary>
+
+> **Build research decisions on evidence you can inspect.**
 
 **ZIP-your-Research (ZYR)** is an open, repository-first operating layer for
-GPT-, Codex-, and other Agentic LLM research workflows. It combines
-copy/paste-ready Skills, deterministic routing, host-mediated protocols for
-real multi-agent cross-examination and authoritative web retrieval, visible
-research state, evidence checks, scientific writing and figure engines,
-governed memory, and release validation in one inspectable library.
+agentic research. Copy/paste-ready Skills and deterministic routing connect a
+task to specialized proof, writing, figure, and coding workflows. Host-mediated
+retrieval and multi-agent protocols feed a visible research record.
 
-ZYR is built for the difficult part of research assistance: not merely
-producing more text, but deciding **what must be checked next**, preserving why
-a claim changed, exposing unresolved contradictions, and carrying verified
-improvements into later work without silently rewriting the evidence.
+The workflows specify **what must be checked next**, why a claim changed, and
+which contradictions remain unresolved. Verified procedures can be proposed
+for later reuse through explicit memory controls.
+
+## Version identity
+
+- **Suite release:** `v1.6.6`. This is the only version that should be shown as
+  the current ZIP-your-Research release in user-facing responses and artifacts.
+- **Compatibility lineage:** filenames containing `v1.3.2`, `v1.3`, `v1.5`, or
+  `v1.6.5` identify preserved component contracts or historical artifacts; they
+  do not downgrade the installed suite release.
+- **Active entrypoints:** use `boot/00_RESPONSE_STATUS_BANNER_v1.6.6.md`,
+  `boot/01_GLOBAL_GUARDRAILS_v1.6.6.md`, and the manifest-selected engine paths.
+
+The normative precedence rule is documented in
+[`docs/VERSION_IDENTITY_v1.6.6.md`](docs/VERSION_IDENTITY_v1.6.6.md).
 
 ## Why ZYR
 
@@ -29,27 +111,25 @@ improvements into later work without silently rewriting the evidence.
 
 ## What v1.6.6 brings together
 
-- **S660 Epistemic Research Champion**: multi-round, multi-agent research
-  evolution grounded in inspected authoritative sources rather than invented
-  worker transcripts.
+- **S660 Epistemic Research Champion**: a protocol for multi-round research
+  using host-provided worker contexts and inspected authoritative sources.
 - **S661 Dynamic Skill Memory**: successful procedures can become externally
   stored `dyn-*` Skills only after content-bound planning, signed host consent,
   holdout comparison, and explicit lifecycle decisions.
 - **Scientific Decision Record (SDR)**: claims, evidence, candidate changes,
   objections, negative results, proof status, experiment status, and stop
   reasons remain visible and reviewable.
-- **Four dedicated engines**: proof, writing, figures, and coding each receive a
-  specialized route instead of being collapsed into generic chat behavior.
+- **Four dedicated engines**: specialized workflows for proof, writing,
+  figures, and coding, selected through deterministic routing.
 - **Fail-closed validation and release**: structural checks, behavioral checks,
   and scientific evidence are reported separately; missing evidence is never
   promoted by wording.
 
 ## The operating contract
 
-ZYR is a research-control and verification library, not a substitute for
-scientific judgment. It does not itself provide an autonomous host runtime,
-independent replication, or proof that a generated result is correct. Its value
-is that those boundaries are made explicit, testable, and difficult to skip.
+ZYR supplies workflow instructions and verification tools; the host supplies
+execution capabilities. Scientific conclusions depend on the sources,
+proofs, experiments, and checks recorded for the task.
 
 The default operating rule is:
 
@@ -61,6 +141,8 @@ lock the task
 → verify the resulting artifact
 → report PASS, FAIL, PARTIAL, BLOCKED, or UNKNOWN without upgrading the evidence
 ```
+
+</details>
 
 ## Quick start
 
@@ -99,6 +181,9 @@ no silent scope change, no persistent memory write.
 Output: completed templates/orchestration/RESEARCH_RUN.md with evidence lineage,
 candidate versions, objections, stop reason, and UNKNOWN verification actions.
 ```
+
+<details>
+<summary><strong>Research orchestration, the scientific record, and governed memory</strong></summary>
 
 ## What research self-evolution means here
 
@@ -155,8 +240,9 @@ The claim ledger, evidence lineage, candidate versions, proof/experiment
 status, and adjudication sections of `RESEARCH_RUN.md` together form the
 **Scientific Decision Record (SDR)** for a run.
 
-Writing, bilingual polishing, citation formatting, tables, figures, and
-diagrams are read-only renderers of that record. They must preserve claim IDs,
+The rendering contract treats writing, bilingual polishing, citation
+formatting, tables, figures, and diagrams as read-only uses of that record.
+They must preserve claim IDs,
 epistemic modality, negation, equations, values, denominators, units,
 uncertainty, citations, limitations, negative results, and generalization
 boundaries. If rendering needs a new scientific claim or changes one of these
@@ -237,6 +323,11 @@ Interrupted transactions fail closed and use a separately approved
 same-volume quarantine. See
 `docs/memory/DYNAMIC_SKILL_MEMORY_PROTOCOL_v1.md` and
 `templates/skill_memory/`.
+
+</details>
+
+<details>
+<summary><strong>Engine bindings, routing guide, and architecture</strong></summary>
 
 ## Mandatory engine bindings
 
@@ -359,6 +450,11 @@ deterministic test verifies their schema, pairing, coverage, and required
 protocol markers; it does not execute an LLM or establish that S660 detects the
 mutations. That behavioral result remains `NOT_RUN`.
 
+</details>
+
+<details>
+<summary><strong>Installation, release validation, and repository map</strong></summary>
+
 ## Installation and validation
 
 Install dependencies:
@@ -454,6 +550,8 @@ docs/how_to_use/              operational guides
 The complete acknowledgments, upstream references, preservation notes, and
 license-boundary statements below are an intentional part of this release and
 must be retained.
+
+</details>
 
 ## Acknowledgments and references
 

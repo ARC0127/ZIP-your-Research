@@ -1,0 +1,1949 @@
+ZYR homepage verification snapshot
+Run: 2026-09-04T04:31:33.885506+00:00
+Base commit: 054ef661fdca3b3d466a066a255595f10650a1dd
+Scope: Pre-publication working tree based on the recorded commit, including the v1.6.6 entrypoint alignment and reviewed homepage copy. This is a local verification snapshot; GitHub CI and release-archive checks are separate.
+Environment: {"python": "3.13.2", "python_implementation": "CPython", "os": "Windows-11-10.0.26100-SP0"}
+
+COMMAND: python -B tools/zyr.py manifest --json
+EXIT_CODE: 0
+STDOUT:
+{
+  "active_skill_count": 149,
+  "authority": "skills_manifest.yaml",
+  "category_counts": {
+    "composite": 5,
+    "experiments": 29,
+    "figure_design_integrated": 3,
+    "paper_ops": 30,
+    "reproducibility": 33,
+    "reproducibility_integrated": 1,
+    "research_core": 43,
+    "research_writing_integrated": 4,
+    "s340_integrated": 1
+  },
+  "legacy_nonroutable_count": 48,
+  "skills": [
+    {
+      "category": "composite",
+      "id": "writing_engine",
+      "name": "writing_engine",
+      "outputs": [
+        "master_prompt"
+      ],
+      "path": "skills/writing_engine/MASTER_v1.6.6.md"
+    },
+    {
+      "category": "composite",
+      "id": "figure_engine",
+      "name": "figure_engine",
+      "outputs": [
+        "master_prompt"
+      ],
+      "path": "skills/figure_engine/MASTER_v1.6.5.md"
+    },
+    {
+      "category": "composite",
+      "id": "coding_engine",
+      "name": "coding_engine",
+      "outputs": [
+        "master_prompt"
+      ],
+      "path": "skills/coding_engine/MASTER_v1.6.6.md"
+    },
+    {
+      "category": "composite",
+      "id": "proof_engine",
+      "name": "proof_engine",
+      "outputs": [
+        "master_prompt"
+      ],
+      "path": "skills/proof_engine/MASTER_v1.5.md"
+    },
+    {
+      "category": "composite",
+      "id": "rwf_s340_master",
+      "name": "research_writing_figure_s340_integrated_master",
+      "outputs": [
+        "master_prompt"
+      ],
+      "path": "skills/rwf_s340/MASTER.md"
+    },
+    {
+      "category": "experiments",
+      "id": "S301",
+      "name": "minimal_decidable_experiment",
+      "path": "skills/exp/S301_min_decidable_experiment.md",
+      "triggers": [
+        "2-hour validation",
+        "quick experiment",
+        "MVP test"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S302",
+      "name": "ablation_planner",
+      "path": "skills/exp/S302_ablation_planner.md",
+      "triggers": [
+        "ablation",
+        "component analysis",
+        "what matters"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S303",
+      "name": "evaluation_protocol_linter",
+      "path": "skills/exp/S303_eval_protocol_linter.md",
+      "triggers": [
+        "eval protocol",
+        "benchmark audit",
+        "leakage check"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S304",
+      "name": "baseline_selection_protocol",
+      "path": "skills/exp/S304_baseline_selection_protocol.md",
+      "triggers": [
+        "baseline selection",
+        "comparisons",
+        "fairness"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S305",
+      "name": "metric_design_and_sanity",
+      "path": "skills/exp/S305_metric_design_and_sanity.md",
+      "triggers": [
+        "metrics",
+        "sanity check",
+        "normalization"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S306",
+      "name": "data_split_leakage_check",
+      "path": "skills/exp/S306_data_split_leakage_check.md",
+      "triggers": [
+        "data split",
+        "leakage",
+        "train test"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S307",
+      "name": "ablation_interpretation_framework",
+      "path": "skills/exp/S307_ablation_interpretation_framework.md",
+      "triggers": [
+        "ablation interpretation",
+        "causal",
+        "alternative explanations"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S308",
+      "name": "hyperparameter_budget_plan",
+      "path": "skills/exp/S308_hyperparameter_budget_plan.md",
+      "triggers": [
+        "hyperparameter tuning",
+        "budget",
+        "search"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S309",
+      "name": "error_analysis_playbook",
+      "path": "skills/exp/S309_error_analysis_playbook.md",
+      "triggers": [
+        "error analysis",
+        "failure cases",
+        "diagnostics"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S310",
+      "name": "compute_cost_reporting_template",
+      "path": "skills/exp/S310_compute_cost_reporting_template.md",
+      "triggers": [
+        "compute cost",
+        "efficiency",
+        "reporting"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S311",
+      "name": "statistical_significance_sanity",
+      "path": "skills/exp/S311_statistical_significance_sanity.md",
+      "triggers": [
+        "statistical significance",
+        "confidence intervals",
+        "seeds"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S312",
+      "name": "replication_study_design",
+      "path": "skills/exp/S312_replication_study_design.md",
+      "triggers": [
+        "replication",
+        "reproduce baseline",
+        "study"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S313",
+      "name": "data_augmentation_risk_audit",
+      "path": "skills/exp/S313_data_augmentation_risk_audit.md",
+      "triggers": [
+        "augmentation",
+        "leakage risk",
+        "robustness"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S314",
+      "name": "evaluation_suite_selection",
+      "path": "skills/exp/S314_evaluation_suite_selection.md",
+      "triggers": [
+        "benchmark selection",
+        "suite",
+        "coverage"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S315",
+      "name": "stress_test_adversarial_cases",
+      "path": "skills/exp/S315_stress_test_adversarial_cases.md",
+      "triggers": [
+        "stress test",
+        "adversarial",
+        "edge cases"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S316",
+      "name": "statistical_power_quickcheck",
+      "path": "skills/exp/S316_statistical_power_quickcheck.md",
+      "triggers": [
+        "power analysis",
+        "sample size",
+        "effect size"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S317",
+      "name": "seed_sensitivity_protocol",
+      "path": "skills/exp/S317_seed_sensitivity_protocol.md",
+      "triggers": [
+        "seed sensitivity",
+        "variance across seeds",
+        "stability"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S318",
+      "name": "experiment_logging_schema",
+      "path": "skills/exp/S318_experiment_logging_schema.md",
+      "triggers": [
+        "logging schema",
+        "experiment tracking",
+        "artifact layout"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S319",
+      "name": "failure_case_generation",
+      "path": "skills/exp/S319_failure_case_generation.md",
+      "triggers": [
+        "failure cases",
+        "stress test",
+        "corner cases"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S320",
+      "name": "hyperparam_search_reporting",
+      "path": "skills/exp/S320_hyperparam_search_reporting.md",
+      "triggers": [
+        "hyperparameter search",
+        "tuning budget",
+        "fair comparison"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S321",
+      "name": "replicability_multi_machine",
+      "path": "skills/exp/S321_replicability_multi_machine.md",
+      "triggers": [
+        "replicability",
+        "multi-machine check",
+        "environment drift"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S322",
+      "name": "visualization_plan_results",
+      "path": "skills/exp/S322_visualization_plan_results.md",
+      "triggers": [
+        "plots",
+        "visualization plan",
+        "result figures"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S323",
+      "name": "rl_sanity_checks_pack",
+      "path": "skills/exp/S323_rl_sanity_checks_pack.md",
+      "triggers": [
+        "RL sanity checks",
+        "debug RL",
+        "common mistakes"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S324",
+      "name": "compute_scaling_experiment",
+      "path": "skills/exp/S324_compute_scaling_experiment.md",
+      "triggers": [
+        "scaling experiment",
+        "compute scaling",
+        "inference scaling"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S325",
+      "name": "experiment_registry_template",
+      "path": "skills/exp/S325_experiment_registry_template.md",
+      "triggers": [
+        "experiment registry",
+        "pre-registration",
+        "plan locking"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S326",
+      "name": "calculation_correctness_check",
+      "path": "skills/exp/S326_calculation_correctness_check.md",
+      "triggers": [
+        "计算正确性核查",
+        "算错了吗",
+        "unit check",
+        "dimension analysis",
+        "algebra check",
+        "numerical sanity check",
+        "calculation correctness"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S327",
+      "name": "experiment_completeness_check",
+      "path": "skills/exp/S327_experiment_completeness_check.md",
+      "triggers": [
+        "实验完整性检查",
+        "experiment completeness",
+        "missing ablations",
+        "protocol completeness",
+        "repro check for experiments"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S328",
+      "name": "experiment_rigor_scorecard",
+      "path": "skills/exp/S328_experiment_rigor_scorecard.md",
+      "triggers": [
+        "实验完整性检查",
+        "rigor scorecard",
+        "missing baselines",
+        "reporting checklist"
+      ]
+    },
+    {
+      "category": "experiments",
+      "id": "S336",
+      "name": "pre_analysis_plan_builder",
+      "path": "skills/exp/S336_pre_analysis_plan_builder.md",
+      "triggers": [
+        "pre-analysis plan",
+        "analysis plan",
+        "统计分析计划",
+        "decision rule plan"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S501",
+      "name": "rebuttal_generator",
+      "path": "skills/paper_ops/S501_rebuttal_generator.md",
+      "triggers": [
+        "rebuttal",
+        "review response",
+        "author response"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S502",
+      "name": "reviewer_simulator",
+      "path": "skills/paper_ops/S502_reviewer_simulator.md",
+      "triggers": [
+        "review simulation",
+        "steelman",
+        "rebuttal prep"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S503",
+      "name": "submission_readiness_gate",
+      "path": "skills/paper_ops/S503_submission_readiness_gate.md",
+      "triggers": [
+        "submission readiness",
+        "final checklist",
+        "deadline prep"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S504",
+      "name": "cover_letter_builder",
+      "path": "skills/paper_ops/S504_cover_letter_builder.md",
+      "triggers": [
+        "cover letter",
+        "submission",
+        "editor"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S505",
+      "name": "camera_ready_checklist",
+      "path": "skills/paper_ops/S505_camera_ready_checklist.md",
+      "triggers": [
+        "camera ready",
+        "formatting",
+        "final checks"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S506",
+      "name": "rebuttal_evidence_packager",
+      "path": "skills/paper_ops/S506_rebuttal_evidence_packager.md",
+      "triggers": [
+        "rebuttal evidence",
+        "appendix",
+        "artifact"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S507",
+      "name": "reviewer_comment_clustering",
+      "path": "skills/paper_ops/S507_reviewer_comment_clustering.md",
+      "triggers": [
+        "review clustering",
+        "themes",
+        "response plan"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S508",
+      "name": "response_tone_alignment",
+      "path": "skills/paper_ops/S508_response_tone_alignment.md",
+      "triggers": [
+        "tone",
+        "polite rebuttal",
+        "conflict de-escalation"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S509",
+      "name": "author_contribution_statement",
+      "path": "skills/paper_ops/S509_author_contrib_statement.md",
+      "triggers": [
+        "author contributions",
+        "CRediT",
+        "statement"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S510",
+      "name": "ethics_statement_generator",
+      "path": "skills/paper_ops/S510_ethics_statement_generator.md",
+      "triggers": [
+        "ethics statement",
+        "broader impacts",
+        "responsible AI"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S511",
+      "name": "appendix_structuring",
+      "path": "skills/paper_ops/S511_appendix_structuring.md",
+      "triggers": [
+        "appendix",
+        "supplementary",
+        "structure"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S512",
+      "name": "figure_table_audit",
+      "path": "skills/paper_ops/S512_fig_table_audit.md",
+      "triggers": [
+        "figure audit",
+        "table audit",
+        "clarity"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S513",
+      "name": "title_abstract_optimizer",
+      "path": "skills/paper_ops/S513_title_abs_optimizer.md",
+      "triggers": [
+        "title",
+        "abstract",
+        "keywords"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S514",
+      "name": "talk_poster_outline",
+      "path": "skills/paper_ops/S514_talk_poster_outline.md",
+      "triggers": [
+        "talk outline",
+        "poster",
+        "presentation"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S515",
+      "name": "open_source_release_plan",
+      "path": "skills/paper_ops/S515_open_src_release_plan.md",
+      "triggers": [
+        "open source release",
+        "repo checklist",
+        "artifact"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S516",
+      "name": "camera_ready_checklist",
+      "path": "skills/paper_ops/S516_camera_ready_checklist.md",
+      "triggers": [
+        "camera-ready",
+        "final submission",
+        "format check"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S517",
+      "name": "figure_table_caption_rewrite",
+      "path": "skills/paper_ops/S517_fig_table_caption_rewrite.md",
+      "triggers": [
+        "caption rewrite",
+        "figure caption",
+        "table caption"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S518",
+      "name": "limitations_section_builder",
+      "path": "skills/paper_ops/S518_limitations_section_builder.md",
+      "triggers": [
+        "limitations section",
+        "future work",
+        "honest disclosure"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S519",
+      "name": "response_matrix_builder",
+      "path": "skills/paper_ops/S519_response_matrix_builder.md",
+      "triggers": [
+        "response matrix",
+        "reviewer table",
+        "rebuttal planning"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S520",
+      "name": "tone_and_rhetoric_polisher",
+      "path": "skills/paper_ops/S520_tone_and_rhetoric_polisher.md",
+      "triggers": [
+        "tone polish",
+        "rhetoric",
+        "reduce overclaim"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S521",
+      "name": "contribution_statement_refinement",
+      "path": "skills/paper_ops/S521_contrib_statement_refinement.md",
+      "triggers": [
+        "contribution statement",
+        "contributions list",
+        "main contributions"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S522",
+      "name": "appendix_planner",
+      "path": "skills/paper_ops/S522_appendix_planner.md",
+      "triggers": [
+        "appendix plan",
+        "supplement planning",
+        "what goes where"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S523",
+      "name": "cover_letter_generator",
+      "path": "skills/paper_ops/S523_cover_letter_generator.md",
+      "triggers": [
+        "cover letter",
+        "journal submission",
+        "editor letter"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S524",
+      "name": "open_source_release_note_generator",
+      "path": "skills/paper_ops/S524_open_src_release_note_generator.md",
+      "triggers": [
+        "release notes",
+        "github release",
+        "version notes"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S525",
+      "name": "arxiv_metadata_preflight",
+      "path": "skills/paper_ops/S525_arxiv_metadata_preflight.md",
+      "triggers": [
+        "arXiv submission",
+        "metadata",
+        "preflight check"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S526",
+      "name": "sentence_rewrite_with_retrieval",
+      "path": "skills/paper_ops/S526_sentence_rewrite_with_retrieval.md",
+      "triggers": [
+        "句子改写",
+        "polish sentence",
+        "rewrite sentence",
+        "paraphrase",
+        "句子润色",
+        "检索改写",
+        "rewrite with sources"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S527",
+      "name": "claim_language_risk_linter",
+      "path": "skills/paper_ops/S527_claim_language_risk_linter.md",
+      "triggers": [
+        "句子改写",
+        "overclaim",
+        "claim audit",
+        "夸大",
+        "risk linter"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S528",
+      "name": "reporting_checklist_generator",
+      "path": "skills/paper_ops/S528_reporting_checklist_generator.md",
+      "triggers": [
+        "reporting checklist",
+        "Nature reporting summary",
+        "PRISMA checklist",
+        "reporting standards",
+        "透明度 清单"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S529",
+      "name": "transparency_disclosure_statements_builder",
+      "path": "skills/paper_ops/S529_transparency_disclosure_statements_builder.md",
+      "triggers": [
+        "data availability statement",
+        "code availability",
+        "disclosure",
+        "透明度声明",
+        "competing interests"
+      ]
+    },
+    {
+      "category": "paper_ops",
+      "id": "S530",
+      "name": "ethics_impact_assessment",
+      "path": "skills/paper_ops/S530_ethics_impact_assessment.md",
+      "triggers": [
+        "ethics statement",
+        "impact assessment",
+        "responsible AI",
+        "risk assessment",
+        "伦理 影响评估"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S401",
+      "name": "reproducibility_checklist",
+      "path": "skills/reproducibility/S401_repro_checklist.md",
+      "triggers": [
+        "repro checklist",
+        "reproducibility",
+        "artifact audit"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S402",
+      "name": "code_audit",
+      "path": "skills/reproducibility/S402_code_audit.md",
+      "triggers": [
+        "code audit",
+        "repo review",
+        "experiment hygiene"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S403",
+      "name": "dataset_spec",
+      "path": "skills/reproducibility/S403_dataset_spec.md",
+      "triggers": [
+        "dataset spec",
+        "schema",
+        "leakage audit"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S404",
+      "name": "environment_capture_spec",
+      "path": "skills/reproducibility/S404_environment_capture_spec.md",
+      "triggers": [
+        "environment",
+        "dependencies",
+        "lockfile"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S405",
+      "name": "seed_and_determinism_policy",
+      "path": "skills/reproducibility/S405_seed_and_determinism_policy.md",
+      "triggers": [
+        "seed",
+        "determinism",
+        "reproducibility"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S406",
+      "name": "experiment_logging_schema",
+      "path": "skills/reproducibility/S406_experiment_logging_schema.md",
+      "triggers": [
+        "logging",
+        "wandb",
+        "metadata schema"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S407",
+      "name": "artifact_packaging_release",
+      "path": "skills/reproducibility/S407_artifact_packaging_release.md",
+      "triggers": [
+        "artifact packaging",
+        "release",
+        "reproduce"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S408",
+      "name": "code_structure_refactor_plan",
+      "path": "skills/reproducibility/S408_code_structure_refactor_plan.md",
+      "triggers": [
+        "refactor",
+        "code structure",
+        "maintainability"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S409",
+      "name": "dataset_card_writer",
+      "path": "skills/reproducibility/S409_dataset_card_writer.md",
+      "triggers": [
+        "dataset card",
+        "documentation",
+        "datasheet"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S410",
+      "name": "model_card_writer",
+      "path": "skills/reproducibility/S410_model_card_writer.md",
+      "triggers": [
+        "model card",
+        "documentation",
+        "limitations"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S411",
+      "name": "privacy_ethics_checklist",
+      "path": "skills/reproducibility/S411_privacy_ethics_checklist.md",
+      "triggers": [
+        "privacy",
+        "ethics",
+        "compliance"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S412",
+      "name": "benchmark_reproduction_check",
+      "path": "skills/reproducibility/S412_benchmark_reproduction_check.md",
+      "triggers": [
+        "benchmark reproduce",
+        "protocol",
+        "compatibility"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S413",
+      "name": "dependency_risk_audit",
+      "path": "skills/reproducibility/S413_dependency_risk_audit.md",
+      "triggers": [
+        "dependency risk",
+        "supply chain",
+        "security"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S414",
+      "name": "results_traceability_matrix",
+      "path": "skills/reproducibility/S414_results_traceability_matrix.md",
+      "triggers": [
+        "traceability",
+        "results mapping",
+        "provenance"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S415",
+      "name": "data_pipeline_invariance_tests",
+      "path": "skills/reproducibility/S415_data_pipe_invariance_tests.md",
+      "triggers": [
+        "data pipeline",
+        "invariance tests",
+        "unit tests"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S416",
+      "name": "dependency_lockfile_strategy",
+      "path": "skills/reproducibility/S416_dependency_lockfile_strategy.md",
+      "triggers": [
+        "lock dependencies",
+        "reproducible env",
+        "pip/conda lock"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S417",
+      "name": "environment_capture_playbook",
+      "path": "skills/reproducibility/S417_environment_capture_playbook.md",
+      "triggers": [
+        "environment capture",
+        "docker",
+        "conda export"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S418",
+      "name": "determinism_settings_torch",
+      "path": "skills/reproducibility/S418_determinism_settings_torch.md",
+      "triggers": [
+        "torch deterministic",
+        "seed everything",
+        "nondeterminism"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S419",
+      "name": "data_versioning_and_checksum",
+      "path": "skills/reproducibility/S419_data_versioning_and_checksum.md",
+      "triggers": [
+        "data versioning",
+        "checksums",
+        "dataset integrity"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S420",
+      "name": "logging_and_artifact_naming",
+      "path": "skills/reproducibility/S420_logging_and_artifact_naming.md",
+      "triggers": [
+        "artifact naming",
+        "log conventions",
+        "run ids"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S421",
+      "name": "evaluation_script_hardening",
+      "path": "skills/reproducibility/S421_evaluation_script_hardening.md",
+      "triggers": [
+        "evaluation script",
+        "robust evaluation",
+        "script hardening"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S422",
+      "name": "minimal_repro_bundle_creator",
+      "path": "skills/reproducibility/S422_minimal_repro_bundle_creator.md",
+      "triggers": [
+        "repro bundle",
+        "minimal example",
+        "shareable package"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S423",
+      "name": "security_review_open_source",
+      "path": "skills/reproducibility/S423_security_review_open_src.md",
+      "triggers": [
+        "security review",
+        "secrets scan",
+        "open source hygiene"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S424",
+      "name": "citation_and_attribution_audit",
+      "path": "skills/reproducibility/S424_citation_and_attribution_audit.md",
+      "triggers": [
+        "citation audit",
+        "attribution",
+        "license compliance"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S425",
+      "name": "benchmark_reproduction_protocol",
+      "path": "skills/reproducibility/S425_benchmark_reproduction_protocol.md",
+      "triggers": [
+        "reproduce benchmark",
+        "benchmark protocol",
+        "paper reproduction"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S426",
+      "name": "data_management_sharing_plan_builder",
+      "path": "skills/reproducibility/S426_data_management_sharing_plan_builder.md",
+      "triggers": [
+        "data management plan",
+        "DMS plan",
+        "sharing plan",
+        "数据管理与共享计划",
+        "NIH DMS"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S427",
+      "name": "privacy_ip_sharing_constraints_audit",
+      "path": "skills/reproducibility/S427_privacy_ip_sharing_constraints_audit.md",
+      "triggers": [
+        "privacy audit",
+        "IP audit",
+        "sharing constraints",
+        "license constraints",
+        "data rights"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S428",
+      "name": "replication_package_builder",
+      "path": "skills/reproducibility/S428_replication_package_builder.md",
+      "triggers": [
+        "replication package",
+        "artifact bundle",
+        "reproducibility package",
+        "复现包",
+        "camera-ready artifact"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S429",
+      "name": "deterministic_seed_logging_policy",
+      "path": "skills/reproducibility/S429_deterministic_seed_logging_policy.md",
+      "triggers": [
+        "seed policy",
+        "deterministic",
+        "logging schema",
+        "randomness control",
+        "复现 日志 随机种子"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S430",
+      "name": "debug_vibe_core",
+      "path": "skills/reproducibility/S430_debug_vibe_core.md",
+      "triggers": [
+        "vibe coding",
+        "debug",
+        "debugging",
+        "报错",
+        "traceback",
+        "crash",
+        "修复",
+        "回归",
+        "pipeline",
+        "regression",
+        "代码审计"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S431",
+      "name": "closed_loop_verification",
+      "path": "skills/reproducibility/S431_closed_loop_verification.md",
+      "triggers": [
+        "closed loop",
+        "闭环",
+        "verification",
+        "回归矩阵",
+        "regression matrix",
+        "sanity check"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S432",
+      "name": "scope_drift_firewall",
+      "path": "skills/reproducibility/S432_scope_drift_firewall.md",
+      "triggers": [
+        "drift",
+        "scope drift",
+        "跑偏",
+        "偏题",
+        "out of scope",
+        "protocol check",
+        "锁死要求"
+      ]
+    },
+    {
+      "category": "reproducibility",
+      "id": "S433",
+      "name": "formal_proof_adapter",
+      "path": "skills/reproducibility/S433_formal_proof_adapter.md",
+      "triggers": [
+        "lean",
+        "theorem prover",
+        "autoformalization",
+        "formal proof adapter",
+        "形式化证明",
+        "Lean sketch"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S201",
+      "name": "problem_framing_audit",
+      "path": "skills/research_core/S201_problem_framing.md",
+      "triggers": [
+        "problem framing",
+        "research question",
+        "scope audit"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S202",
+      "name": "novelty_positioning_map",
+      "path": "skills/research_core/S202_novelty_map.md",
+      "triggers": [
+        "novelty",
+        "positioning",
+        "related work map"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S203",
+      "name": "claim_evidence_matrix",
+      "path": "skills/research_core/S203_claim_evidence_matrix.md",
+      "triggers": [
+        "claim evidence",
+        "support matrix",
+        "evidence audit"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S204",
+      "name": "literature_triage_pipeline",
+      "path": "skills/research_core/S204_literature_triage_pipe.md",
+      "triggers": [
+        "literature triage",
+        "paper reading",
+        "related work"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S205",
+      "name": "concept_map_builder",
+      "path": "skills/research_core/S205_concept_map_builder.md",
+      "triggers": [
+        "concept map",
+        "taxonomy",
+        "mental model"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S206",
+      "name": "research_gap_hypothesis_generator",
+      "path": "skills/research_core/S206_research_gap_hypothesis_generator.md",
+      "triggers": [
+        "research gap",
+        "hypothesis",
+        "idea generation"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S207",
+      "name": "contribution_claim_refinement",
+      "path": "skills/research_core/S207_contrib_claim_refinement.md",
+      "triggers": [
+        "contribution",
+        "claims",
+        "positioning"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S208",
+      "name": "assumption_risk_register",
+      "path": "skills/research_core/S208_assumption_risk_register.md",
+      "triggers": [
+        "assumptions",
+        "risks",
+        "threats to validity"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S209",
+      "name": "scope_minimization_2h",
+      "path": "skills/research_core/S209_scope_minimization_2h.md",
+      "triggers": [
+        "reduce scope",
+        "2 hour",
+        "minimum viable research"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S210",
+      "name": "terminology_definition_linter",
+      "path": "skills/research_core/S210_terminology_definition_linter.md",
+      "triggers": [
+        "terminology",
+        "definitions",
+        "notation"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S211",
+      "name": "related_work_delta_table",
+      "path": "skills/research_core/S211_related_work_delta_table.md",
+      "triggers": [
+        "related work",
+        "delta table",
+        "comparison"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S212",
+      "name": "problem_to_method_fit_check",
+      "path": "skills/research_core/S212_problem_to_method_fit_check.md",
+      "triggers": [
+        "method fit",
+        "approach selection",
+        "feasibility"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S213",
+      "name": "evaluation_goal_alignment",
+      "path": "skills/research_core/S213_evaluation_goal_alignment.md",
+      "triggers": [
+        "evaluation goals",
+        "metrics selection",
+        "alignment"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S214",
+      "name": "thesis_statement_builder",
+      "path": "skills/research_core/S214_thesis_statement_builder.md",
+      "triggers": [
+        "thesis statement",
+        "paper narrative",
+        "story"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S215",
+      "name": "research_question_tree",
+      "path": "skills/research_core/S215_research_question_tree.md",
+      "triggers": [
+        "question decomposition",
+        "research tree",
+        "subquestions"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S216",
+      "name": "hypothesis_to_predictions",
+      "path": "skills/research_core/S216_hypothesis_to_predictions.md",
+      "triggers": [
+        "hypothesis to prediction",
+        "measurable predictions",
+        "testable hypothesis"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S217",
+      "name": "contribution_type_selector",
+      "path": "skills/research_core/S217_contrib_type_selector.md",
+      "triggers": [
+        "contribution taxonomy",
+        "what is my contribution",
+        "paper contribution type"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S218",
+      "name": "assumptions_and_threats_audit",
+      "path": "skills/research_core/S218_assumptions_and_threats_audit.md",
+      "triggers": [
+        "assumptions audit",
+        "threats to validity",
+        "limitations planning"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S219",
+      "name": "ethics_and_data_risk_screen",
+      "path": "skills/research_core/S219_ethics_and_data_risk_screen.md",
+      "triggers": [
+        "ethics checklist",
+        "data privacy",
+        "responsible AI"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S220",
+      "name": "grant_proposal_skeleton",
+      "path": "skills/research_core/S220_grant_proposal_skeleton.md",
+      "triggers": [
+        "grant proposal",
+        "project outline",
+        "funding application"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S221",
+      "name": "paper_reading_schedule_2h",
+      "path": "skills/research_core/S221_paper_reading_schedule_2h.md",
+      "triggers": [
+        "paper reading plan",
+        "study schedule",
+        "reading pipeline"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S222",
+      "name": "idea_prioritization_matrix",
+      "path": "skills/research_core/S222_idea_prioritization_matrix.md",
+      "triggers": [
+        "prioritize ideas",
+        "impact feasibility matrix",
+        "choose research direction"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S223",
+      "name": "benchmark_selection_protocol",
+      "path": "skills/research_core/S223_benchmark_selection_protocol.md",
+      "triggers": [
+        "benchmark selection",
+        "choose datasets",
+        "evaluation suite"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S224",
+      "name": "novelty_verification_protocol",
+      "path": "skills/research_core/S224_novelty_verification_protocol.md",
+      "triggers": [
+        "novelty check",
+        "prior work search",
+        "is this new"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S225",
+      "name": "research_storyline_arc",
+      "path": "skills/research_core/S225_research_storyline_arc.md",
+      "triggers": [
+        "storyline",
+        "paper narrative",
+        "positioning"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S226",
+      "name": "logic_consistency_audit",
+      "path": "skills/research_core/S226_logic_consistency_audit.md",
+      "triggers": [
+        "逻辑核查",
+        "逻辑检查",
+        "论证是否自洽",
+        "contradiction check",
+        "logic consistency",
+        "argument coherence"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S227",
+      "name": "method_correctness_audit",
+      "path": "skills/research_core/S227_method_correctness_audit.md",
+      "triggers": [
+        "方法正确性核查",
+        "方法是否正确",
+        "algorithm correctness check",
+        "method validity",
+        "derivation check",
+        "assumption check"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S228",
+      "name": "innovation_novelty_audit",
+      "path": "skills/research_core/S228_innovation_novelty_audit.md",
+      "triggers": [
+        "创新性审查",
+        "novelty audit",
+        "innovation audit",
+        "贡献是否新",
+        "是否已有工作做过"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S229",
+      "name": "paper_storyline_integrity_check",
+      "path": "skills/research_core/S229_paper_storyline_integrity_check.md",
+      "triggers": [
+        "论文整体思路核查",
+        "storyline check",
+        "paper coherence",
+        "narrative integrity",
+        "整体框架是否连贯"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S230",
+      "name": "proof_idea_check",
+      "path": "skills/research_core/S230_proof_idea_check.md",
+      "triggers": [
+        "证明思路核查",
+        "proof sketch check",
+        "lemma plan",
+        "proof outline",
+        "proof strategy"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S231",
+      "name": "innovation_point_search_plan",
+      "path": "skills/research_core/S231_innovation_point_search_plan.md",
+      "triggers": [
+        "创新点搜索",
+        "novelty search",
+        "prior art search plan",
+        "新颖性检索",
+        "相关工作检索"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S232",
+      "name": "paper_interpretation_deep_read",
+      "path": "skills/research_core/S232_paper_interpretation_deep_read.md",
+      "triggers": [
+        "论文解读",
+        "paper interpretation",
+        "deep read",
+        "精读",
+        "读论文总结"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S233",
+      "name": "innovation_correctness_audit",
+      "path": "skills/research_core/S233_innovation_correctness_audit.md",
+      "triggers": [
+        "innovation correctness",
+        "idea validity",
+        "创新思路正确性",
+        "idea stands up",
+        "feasibility of idea"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S234",
+      "name": "novelty_search_protocol",
+      "path": "skills/research_core/S234_novelty_search_protocol.md",
+      "triggers": [
+        "创新点搜索",
+        "novelty search",
+        "查新",
+        "related work search",
+        "prior work search plan"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S235",
+      "name": "proof_gap_finder",
+      "path": "skills/research_core/S235_proof_gap_finder.md",
+      "triggers": [
+        "证明思路核查",
+        "proof gap",
+        "proof sketch audit",
+        "missing lemma",
+        "gap finder"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S236",
+      "name": "preregistration_builder",
+      "path": "skills/research_core/S236_preregistration_builder.md",
+      "triggers": [
+        "preregistration",
+        "pre-registration",
+        "OSF registration",
+        "预注册",
+        "analysis plan prereg"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S237",
+      "name": "theorem_assumption_normalizer",
+      "path": "skills/research_core/S237_theorem_assumption_normalizer.md",
+      "triggers": [
+        "theorem normalization",
+        "theorem assumptions",
+        "hidden assumptions",
+        "证明前提整理",
+        "定理规范化",
+        "theorem assumption audit"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S238",
+      "name": "systematic_review_protocol_builder",
+      "path": "skills/research_core/S238_systematic_review_protocol_builder.md",
+      "triggers": [
+        "systematic review",
+        "PRISMA",
+        "meta-analysis protocol",
+        "系统综述",
+        "PRISMA protocol"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S239",
+      "name": "study_screening_rubric_builder",
+      "path": "skills/research_core/S239_study_screening_rubric_builder.md",
+      "triggers": [
+        "screening rubric",
+        "inclusion exclusion",
+        "筛选标准",
+        "screening checklist"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S240",
+      "name": "pessimistic_proof_verification",
+      "path": "skills/research_core/S240_pessimistic_proof_verification.md",
+      "triggers": [
+        "pessimistic verification",
+        "proof verification",
+        "证明验证",
+        "证明审计",
+        "first-error-wins",
+        "theorem audit"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S241",
+      "name": "progressive_proof_verification",
+      "path": "skills/research_core/S241_progressive_proof_verification.md",
+      "triggers": [
+        "progressive verification",
+        "proof chunking",
+        "逐层证明验证",
+        "多尺度证明审计",
+        "vertical review",
+        "chunk verdict"
+      ]
+    },
+    {
+      "category": "research_writing_integrated",
+      "id": "S601",
+      "name": "paper_story_section_architecture",
+      "path": "skills/rwf_s340/S601_paper_story_section_arch.md",
+      "triggers": [
+        "paper story",
+        "manuscript architecture",
+        "Introduction structure",
+        "Method section",
+        "Experiments section",
+        "Conclusion section",
+        "论文结构",
+        "论文主线",
+        "引言重构",
+        "方法节重构",
+        "实验节写作"
+      ]
+    },
+    {
+      "category": "research_writing_integrated",
+      "id": "S602",
+      "name": "claim_evidence_reverse_outline_review",
+      "path": "skills/rwf_s340/S602_claim_evidence_reverse_outline_review.md",
+      "triggers": [
+        "reverse outline",
+        "reviewer audit",
+        "claim evidence",
+        "paper review",
+        "证据链",
+        "逻辑审查",
+        "审稿意见",
+        "逐行审查"
+      ]
+    },
+    {
+      "category": "research_writing_integrated",
+      "id": "S603",
+      "name": "bilingual_human_voice_delta_rewrite",
+      "path": "skills/rwf_s340/S603_bilingual_human_voice_delta_rewrite.md",
+      "triggers": [
+        "Chinese polish",
+        "English polish",
+        "bilingual rewrite",
+        "human voice",
+        "anti AI tone",
+        "润色",
+        "去AI味",
+        "中文润色",
+        "英文润色",
+        "中英互译"
+      ]
+    },
+    {
+      "category": "research_writing_integrated",
+      "id": "S604",
+      "name": "experiment_result_narrative_and_caption",
+      "path": "skills/rwf_s340/S604_experiment_result_narrative_and_caption.md",
+      "triggers": [
+        "experiment analysis",
+        "result narrative",
+        "table caption",
+        "figure caption",
+        "ablation description",
+        "实验分析",
+        "结果描述",
+        "图题",
+        "表题",
+        "消融实验"
+      ]
+    },
+    {
+      "category": "figure_design_integrated",
+      "id": "S621",
+      "name": "publication_figure_design_theory",
+      "path": "skills/rwf_s340/S621_publication_fig_design_theory.md",
+      "triggers": [
+        "scientific figure",
+        "publication figure",
+        "figure design",
+        "visualization design",
+        "论文图",
+        "科研绘图",
+        "图表设计",
+        "图形摘要",
+        "workflow diagram",
+        "architecture diagram",
+        "流程图"
+      ]
+    },
+    {
+      "category": "figure_design_integrated",
+      "id": "S622",
+      "name": "matplotlib_publication_script_builder",
+      "path": "skills/rwf_s340/S622_matplotlib_publication_script_builder.md",
+      "triggers": [
+        "matplotlib",
+        "plotting script",
+        "grouped bar",
+        "heatmap",
+        "radar chart",
+        "trend plot",
+        "svg png pdf",
+        "绘图脚本",
+        "画图代码",
+        "输出svg",
+        "输出png",
+        "workflow diagram",
+        "architecture diagram",
+        "流程图"
+      ]
+    },
+    {
+      "category": "figure_design_integrated",
+      "id": "S623",
+      "name": "visual_claim_caption_audit",
+      "path": "skills/rwf_s340/S623_visual_claim_caption_audit.md",
+      "triggers": [
+        "figure caption",
+        "visual claim",
+        "caption audit",
+        "figure audit",
+        "图注",
+        "视觉审查",
+        "图文一致",
+        "workflow audit"
+      ]
+    },
+    {
+      "category": "s340_integrated",
+      "id": "S640",
+      "name": "s340_global_paper_logic_language_audit",
+      "path": "skills/rwf_s340/S640_s340_global_paper_logic_language_audit.md",
+      "triggers": [
+        "S340",
+        "writing engine",
+        "proof engine",
+        "global paper audit",
+        "paper writing",
+        "manuscript",
+        "research plan",
+        "README text",
+        "polish",
+        "rewrite",
+        "revise",
+        "anti AI tone",
+        "forbidden phrases",
+        "mechanical phrasing",
+        "style logic review",
+        "论文润色",
+        "论文重构",
+        "研究计划",
+        "逻辑审查",
+        "公式图表引用核查",
+        "中英文合并",
+        "禁止词",
+        "禁用短语",
+        "机械排比",
+        "去AI味"
+      ]
+    },
+    {
+      "category": "reproducibility_integrated",
+      "id": "S650",
+      "name": "integrated_pack_no_omission_validation",
+      "path": "skills/rwf_s340/S650_integrated_pack_no_omission_valid.md",
+      "triggers": [
+        "validate integrated pack",
+        "no omission",
+        "checksum",
+        "source manifest",
+        "path length",
+        "压缩包无法打开",
+        "文件名过长",
+        "完整性验证",
+        "禁止遗漏"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S660",
+      "name": "epistemic_research_champion",
+      "path": "skills/research_orchestrator/S660_epistemic_research_champion.md",
+      "triggers": [
+        "autonomous multi-agent research",
+        "authoritative web research",
+        "research self-evolution",
+        "evidence lineage",
+        "candidate idea evolution",
+        "cross-examination",
+        "research champion",
+        "多智能体科研",
+        "权威检索",
+        "证据谱系",
+        "思路迭代",
+        "科研自进化"
+      ]
+    },
+    {
+      "category": "research_core",
+      "id": "S661",
+      "name": "dynamic_skill_memory",
+      "path": "skills/research_orchestrator/S661_dynamic_skill_memory.md",
+      "triggers": [
+        "automatic skill generation",
+        "skill as memory",
+        "procedural memory",
+        "dynamic skill management",
+        "update generated skill",
+        "delete generated skill",
+        "skill evolution",
+        "自动生成 Skill",
+        "Skill 记忆",
+        "程序性记忆",
+        "动态技能管理",
+        "更新技能",
+        "删除技能"
+      ]
+    }
+  ],
+  "version": "1.6.6"
+}
+
+STDERR:
+
+
+COMMAND: python -B tools/zyr.py build --check
+EXIT_CODE: 0
+STDOUT:
+Build check passed: generated_files=5
+
+STDERR:
+
+
+COMMAND: python -B tools/validate_v7_2.py
+EXIT_CODE: 0
+STDOUT:
+Validation passed: active_canonical_skills=144 legacy_nonroutable=48 physical_skill_files=192
+Safe-release capability declarations: awesome_ai_research_writing_source=SOURCE_UNAVAILABLE, figures4papers_source=SOURCE_UNAVAILABLE, s340_original_source=SOURCE_UNAVAILABLE
+RELEASE_IDENTITY_PASS: suite=1.6.6 legacy_lineage_preserved=true acknowledgments_preserved=true
+Validation passed: structural compatibility + v1.6.6 release identity
+
+STDERR:
+
+
+COMMAND: python -B tools/zyr.py route-test
+EXIT_CODE: 0
+STDOUT:
+PASS: 33 public routing cases
+
+STDERR:
+
+
+COMMAND: python -B -m unittest -v tests.evolution.test_public_mutations_v1 tests.integrity.test_generated_bootstrap tests.integrity.test_manifest_closure tests.integrity.test_release_identity_v1_6_6 tests.integrity.test_release_capabilities tests.security.test_openalex_redaction tests.release.test_make_release_v1_7 tests.skill_memory.test_skill_memory_v1
+EXIT_CODE: 0
+STDOUT:
+
+STDERR:
+test_exactly_twelve_mutation_clean_pairs (tests.evolution.test_public_mutations_v1.PublicEvolutionFixtureTests.test_exactly_twelve_mutation_clean_pairs) ... ok
+test_high_risk_renderer_figure_and_memory_pairs_exist (tests.evolution.test_public_mutations_v1.PublicEvolutionFixtureTests.test_high_risk_renderer_figure_and_memory_pairs_exist) ... ok
+test_ids_fields_and_actions_are_deterministic (tests.evolution.test_public_mutations_v1.PublicEvolutionFixtureTests.test_ids_fields_and_actions_are_deterministic) ... ok
+test_orchestration_and_memory_boundaries_are_present (tests.evolution.test_public_mutations_v1.PublicEvolutionFixtureTests.test_orchestration_and_memory_boundaries_are_present) ... ok
+test_s660_manifest_entry_and_path (tests.evolution.test_public_mutations_v1.PublicEvolutionFixtureTests.test_s660_manifest_entry_and_path) ... ok
+test_only_explicit_generated_output_may_be_missing (tests.integrity.test_generated_bootstrap.GeneratedBootstrapTests.test_only_explicit_generated_output_may_be_missing) ... ok
+test_unallowlisted_missing_path_still_fails (tests.integrity.test_generated_bootstrap.GeneratedBootstrapTests.test_unallowlisted_missing_path_still_fails) ... ok
+test_current_tree_is_canonical_plus_declared_legacy (tests.integrity.test_manifest_closure.ManifestClosureTests.test_current_tree_is_canonical_plus_declared_legacy) ... ok
+test_unmanifested_new_skill_id_fails_closed (tests.integrity.test_manifest_closure.ManifestClosureTests.test_unmanifested_new_skill_id_fails_closed) ... ok
+test_active_suite_regression_is_rejected (tests.integrity.test_release_identity_v1_6_6.ReleaseIdentityTests.test_active_suite_regression_is_rejected) ... ok
+test_current_repository_passes (tests.integrity.test_release_identity_v1_6_6.ReleaseIdentityTests.test_current_repository_passes) ... ok
+test_capability_manifest_is_strict_and_consistent (tests.integrity.test_release_capabilities.ReleaseCapabilityContractTests.test_capability_manifest_is_strict_and_consistent) ... ok
+test_missing_reference_exemption_is_skill_and_prefix_scoped (tests.integrity.test_release_capabilities.ReleaseCapabilityContractTests.test_missing_reference_exemption_is_skill_and_prefix_scoped) ... ok
+test_error_text_and_raw_url_are_redacted (tests.security.test_openalex_redaction.OpenAlexRedactionTests.test_error_text_and_raw_url_are_redacted) ... ok
+test_redact_url_covers_token_aliases (tests.security.test_openalex_redaction.OpenAlexRedactionTests.test_redact_url_covers_token_aliases) ... ok
+test_success_response_never_returns_api_key (tests.security.test_openalex_redaction.OpenAlexRedactionTests.test_success_response_never_returns_api_key) ... ok
+test_api_key_pattern_refuses_release (tests.release.test_make_release_v1_7.MakeReleaseV17Tests.test_api_key_pattern_refuses_release) ... ok
+test_archive_is_deterministic_and_auditable (tests.release.test_make_release_v1_7.MakeReleaseV17Tests.test_archive_is_deterministic_and_auditable) ... ok
+test_atomic_write_failure_preserves_existing_archive (tests.release.test_make_release_v1_7.MakeReleaseV17Tests.test_atomic_write_failure_preserves_existing_archive) ... ok
+test_auditor_rejects_single_file_self_reported_archive (tests.release.test_make_release_v1_7.MakeReleaseV17Tests.test_auditor_rejects_single_file_self_reported_archive) ... ok
+test_auditor_rejects_zip_bomb_before_reading_payload (tests.release.test_make_release_v1_7.MakeReleaseV17Tests.test_auditor_rejects_zip_bomb_before_reading_payload) ... ok
+test_cli_has_stable_json_and_exit_codes (tests.release.test_make_release_v1_7.MakeReleaseV17Tests.test_cli_has_stable_json_and_exit_codes) ... ok
+test_tracked_symlink_refuses_release (tests.release.test_make_release_v1_7.MakeReleaseV17Tests.test_tracked_symlink_refuses_release) ... ok
+test_unknown_license_asset_refuses_release (tests.release.test_make_release_v1_7.MakeReleaseV17Tests.test_unknown_license_asset_refuses_release) ... ok
+test_untracked_dotenv_refuses_release (tests.release.test_make_release_v1_7.MakeReleaseV17Tests.test_untracked_dotenv_refuses_release) ... ok
+test_version_mismatch_refuses_release (tests.release.test_make_release_v1_7.MakeReleaseV17Tests.test_version_mismatch_refuses_release) ... ok
+test_repository_policy_blocks_unknown_license_vendors (tests.release.test_make_release_v1_7.RepositoryPolicyTests.test_repository_policy_blocks_unknown_license_vendors) ... ok
+test_repository_policy_includes_public_memory_and_blocks_private_roots (tests.release.test_make_release_v1_7.RepositoryPolicyTests.test_repository_policy_includes_public_memory_and_blocks_private_roots) ... ok
+test_repository_policy_requires_all_memory_templates_and_safe_carriers (tests.release.test_make_release_v1_7.RepositoryPolicyTests.test_repository_policy_requires_all_memory_templates_and_safe_carriers) ... ok
+test_ambiguous_yaml_is_rejected_before_semantic_validation (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_ambiguous_yaml_is_rejected_before_semantic_validation) ... ok
+test_apply_requires_host_attested_user_consent (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_apply_requires_host_attested_user_consent) ... ok
+test_create_promote_update_rollback_deprecate_delete_lifecycle (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_create_promote_update_rollback_deprecate_delete_lifecycle) ... ok
+test_delete_reports_local_proof_and_uninspected_copies (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_delete_reports_local_proof_and_uninspected_copies) ... ok
+test_draft_is_content_bound_and_injection_is_rejected (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_draft_is_content_bound_and_injection_is_rejected) ... ok
+test_executable_skill_content_is_rejected_in_markdown_only_v1 (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_executable_skill_content_is_rejected_in_markdown_only_v1) ... ok
+test_hardlinked_payload_blocks_destructive_plan (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_hardlinked_payload_blocks_destructive_plan) ... ok
+test_lock_and_prepared_journal_block_new_plans (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_lock_and_prepared_journal_block_new_plans) ... ok
+test_lock_replacement_is_detected_without_deleting_foreign_lock (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_lock_replacement_is_detected_without_deleting_foreign_lock) ... skipped 'Windows held-handle semantics already prevent replacement'
+test_only_verified_success_can_be_drafted (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_only_verified_success_can_be_drafted) ... ok
+test_plan_is_read_only_and_wrong_consent_writes_nothing (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_plan_is_read_only_and_wrong_consent_writes_nothing) ... ok
+test_precreated_empty_root_can_be_initialized (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_precreated_empty_root_can_be_initialized) ... ok
+test_promotion_requires_independent_improvement_and_mutation_detection (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_promotion_requires_independent_improvement_and_mutation_detection) ... ok
+test_recover_rolls_back_delete_crash_before_registry_commit (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_recover_rolls_back_delete_crash_before_registry_commit) ... ok
+test_recover_rolls_forward_after_registry_commit (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_recover_rolls_forward_after_registry_commit) ... ok
+test_rfc8032_ed25519_verification_vector (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_rfc8032_ed25519_verification_vector) ... ok
+test_s661_manifest_protocol_and_cli_are_wired (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_s661_manifest_protocol_and_cli_are_wired) ... ok
+test_search_fails_on_hash_drift_and_unexpected_support_files (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_search_fails_on_hash_drift_and_unexpected_support_files) ... ok
+test_secret_in_trace_is_rejected_without_echoing_value (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_secret_in_trace_is_rejected_without_echoing_value) ... ok
+test_self_reported_or_unbound_evaluation_cannot_promote (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_self_reported_or_unbound_evaluation_cannot_promote) ... ok
+test_signed_authorization_receipt_detects_rebuilt_store_tampering (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_signed_authorization_receipt_detects_rebuilt_store_tampering) ... ok
+test_source_repository_and_builtin_ids_are_protected (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_source_repository_and_builtin_ids_are_protected) ... ok
+test_stale_consent_is_rejected_after_registry_change (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_stale_consent_is_rejected_after_registry_change) ... ok
+test_symlink_root_is_rejected_when_supported (tests.skill_memory.test_skill_memory_v1.DynamicSkillMemoryTests.test_symlink_root_is_rejected_when_supported) ... ok
+
+----------------------------------------------------------------------
+Ran 53 tests in 16.930s
+
+OK (skipped=1)
+
+
+COMMAND: python -B tools/zyr.py check --ci
+EXIT_CODE: 0
+STDOUT:
+Validation passed: active_canonical_skills=144 legacy_nonroutable=48 physical_skill_files=192
+Safe-release capability declarations: awesome_ai_research_writing_source=SOURCE_UNAVAILABLE, figures4papers_source=SOURCE_UNAVAILABLE, s340_original_source=SOURCE_UNAVAILABLE
+RELEASE_IDENTITY_PASS: suite=1.6.6 legacy_lineage_preserved=true acknowledgments_preserved=true
+Validation passed: structural compatibility + v1.6.6 release identity
+Build check passed: generated_files=5
+ZYR check passed: ci_mode=true
+
+STDERR:
+............s...............
+----------------------------------------------------------------------
+Ran 28 tests in 8.580s
+
+OK (skipped=1)
