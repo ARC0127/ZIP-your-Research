@@ -29,6 +29,9 @@ compatibility_entrypoints:
 - {path: tools/build_proof_engine_v1_5.py, status: compatibility_only, replacement: python tools/zyr.py build}
 - {path: tools/build_index.py, status: compatibility_only, replacement: python tools/zyr.py build}
 - {path: tools/build_skill_map.py, status: compatibility_only, replacement: python tools/zyr.py build}
+- {path: skills/writing_engine/MASTER_v1.3.2.md, status: compatibility_only, replacement: skills/writing_engine/MASTER_v1.6.6.md}
+- {path: skills/coding_engine/MASTER_v1.3.2.md, status: compatibility_only, replacement: skills/coding_engine/MASTER_v1.6.6.md}
+- {path: router/SKILL_MAP_v1.3.2.md, status: compatibility_only, replacement: router/SKILL_MAP_v1.6.6.md}
 - {path: router/route.py, status: compatibility_only, replacement: python tools/zyr.py route}
 - {path: router/route_v1_7.py, status: compatibility_only, replacement: python tools/zyr.py route}
 - {path: router/test_route_v1_7.py, status: compatibility_only, replacement: python tools/zyr.py route-test}

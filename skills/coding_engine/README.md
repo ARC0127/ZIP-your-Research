@@ -1,4 +1,4 @@
-# coding_engine (v1.3.2)
+# coding_engine (suite v1.6.6)
 
 A copy/paste “coding + debugging” master prompt that **enforces S430** (DEBUG_VIBE_CORE) and adds stronger *anti-drift* + *patch correctness* scaffolding.
 
@@ -9,5 +9,5 @@ A copy/paste “coding + debugging” master prompt that **enforces S430** (DEBU
 
 Build:
 ```bash
-python tools/build_coding_engine_v1_3.py
+python tools/zyr.py build
 ```

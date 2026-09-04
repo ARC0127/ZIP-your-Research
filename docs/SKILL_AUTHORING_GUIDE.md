@@ -1,4 +1,7 @@
-# Skill Authoring Guide (v1.3.2)
+# Skill Authoring Guide (suite v1.6.6)
+
+> Historical filenames and schemas may retain earlier component suffixes for
+> compatibility; the active suite identity is ZYR v1.6.6.
 
 ## Philosophy
 A good skill is:

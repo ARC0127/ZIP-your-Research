@@ -37,6 +37,7 @@ jobs:
           python -B tools/zyr.py manifest
           python -B tools/zyr.py build --check
           python -B tools/validate_v7_1.py
+          python -B tools/validate_v7_2.py
           python -B tools/zyr.py check --ci
 
       - name: Run routing, evolution, security, and release regressions
@@ -44,7 +45,9 @@ jobs:
           python -B tools/zyr.py route-test
           python -B -m unittest \
             tests.evolution.test_public_mutations_v1 \
+            tests.integrity.test_generated_bootstrap \
             tests.integrity.test_manifest_closure \
+            tests.integrity.test_release_identity_v1_6_6 \
             tests.integrity.test_release_capabilities \
             tests.security.test_openalex_redaction \
             tests.release.test_make_release_v1_7 \

@@ -98,24 +98,28 @@ required:
     - v
     - skills_manifest.yaml
     - INDEX.md
+    - boot/00_RESPONSE_STATUS_BANNER_v1.6.6.md
+    - boot/01_GLOBAL_GUARDRAILS_v1.6.6.md
     - artifacts/evidence_ledger.csv
     - artifacts/negative_result_ledger.md
     - artifacts/proof_casebook.md
     - artifacts/run_state.json
     - docs/memory/VISIBLE_MEMORY_PROTOCOL_v1.md
     - docs/memory/DYNAMIC_SKILL_MEMORY_PROTOCOL_v1.md
+    - docs/VERSION_IDENTITY_v1.6.6.md
     - interfaces/host_adapter_contract.md
     - manifests/COMPATIBILITY.yaml
+    - manifests/ACKNOWLEDGMENTS_BASELINE_v1.6.6.sha256
     - manifests/RELEASE_CAPABILITIES.yaml
     - manifests/THIRD_PARTY_ASSETS.yaml
     - manifests/generated_files.yaml
     - manifests/legacy_nonroutable.yaml
     - manifests/release_policy.yaml
-    - router/SKILL_MAP_v1.3.2.md
+    - router/SKILL_MAP_v1.6.6.md
     - router/route_v1_7.py
     - router/taxonomy.yaml
     - router/test_route_v1_7.py
-    - skills/coding_engine/MASTER_v1.3.2.md
+    - skills/coding_engine/MASTER_v1.6.6.md
     - skills/coding_engine/modules/00_HEADER.md
     - skills/coding_engine/modules/01_GATE_AND_INTAKE.md
     - skills/coding_engine/modules/02_DIAGNOSE.md
@@ -133,7 +137,7 @@ required:
     - skills/proof_engine/modules/07_LONG_PROOF_AUDIT_EXAMPLES.md
     - skills/research_orchestrator/S660_epistemic_research_champion.md
     - skills/research_orchestrator/S661_dynamic_skill_memory.md
-    - skills/writing_engine/MASTER_v1.3.2.md
+    - skills/writing_engine/MASTER_v1.6.6.md
     - skills/writing_engine/modules/00_MAIN_ENTRYPOINT.md
     - skills/writing_engine/modules/01_GATE_ROUTER.md
     - skills/writing_engine/modules/02_REWRITE_ENGINE.md
@@ -166,10 +170,13 @@ required:
     - templates/skill_memory/TRACE_RECORD.md
     - templates/orchestration/RESEARCH_RUN.md
     - tests/integrity/test_manifest_closure.py
+    - tests/integrity/test_generated_bootstrap.py
+    - tests/integrity/test_release_identity_v1_6_6.py
     - tests/integrity/test_release_capabilities.py
     - tests/router/cases_v2.jsonl
     - tests/skill_memory/test_skill_memory_v1.py
     - tools/validate_v1_3.py
+    - tools/validate_release_identity_v1_6_6.py
     - tools/validate_v7_2.py
     - tools/zyr.py
     - tools/zyr_lib/__init__.py

@@ -1,4 +1,7 @@
-# Skills Catalog (v1.3.2)
+# Skills Catalog (suite v1.6.6)
+
+> 当前套件版本是 **ZYR v1.6.6**；文件名中的旧版本号表示兼容组件沿革，
+> 不代表当前安装版本。详见 `docs/VERSION_IDENTITY_v1.6.6.md`。
 
 > 新手只看这一页：先学会 **FOCUS（A–J）** + **ONECHAT** 的最短闭环。
 
@@ -34,7 +37,7 @@ ONECHAT 是“单个 ChatGPT 对话”下的科研闭环模板：
 - Ideation：S201–S214
 - Planning：S301–S308
 - Experiment：S430–S432 + S421
-- Writing：`skills/writing_engine/MASTER_v1.3.2.md`
+- Writing：`skills/writing_engine/MASTER_v1.6.6.md`
 - Review：S424 + S432
 - Ops：S407 + S428 + `artifacts/release_checklist.md`
 

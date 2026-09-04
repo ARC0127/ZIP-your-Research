@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build generated artifacts for v1.5.
+"""Build authoritative generated artifacts for suite v1.6.6.
 
 - writing_engine MASTER prompt
 - coding_engine MASTER prompt
@@ -14,28 +14,19 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-def run(script: str):
+def run(script: str, *args: str):
     cmd = [sys.executable]
     if getattr(sys.flags, "no_site", 0):
         cmd.append("-S")
-    cmd.append(str(ROOT / "tools" / script))
+    cmd.extend((str(ROOT / "tools" / script), *args))
     p = subprocess.run(cmd, cwd=str(ROOT))
     if p.returncode != 0:
         raise SystemExit(p.returncode)
 
 def main():
-    run("build.py")
-    # v1.3+: writing_engine MASTER
-    if (ROOT / "tools" / "build_writing_engine_v1_3.py").exists():
-        run("build_writing_engine_v1_3.py")
-    # v1.3+: coding_engine MASTER
-    if (ROOT / "tools" / "build_coding_engine_v1_3.py").exists():
-        run("build_coding_engine_v1_3.py")
-    # v1.5+: proof_engine MASTER
-    if (ROOT / "tools" / "build_proof_engine_v1_5.py").exists():
-        run("build_proof_engine_v1_5.py")
-    run("build_index.py")
-    run("build_skill_map.py")
+    # The stable facade renders every allowlisted output atomically. Historical
+    # v1.3/v1.5 builders remain available as compatibility entrypoints only.
+    run("zyr.py", "build")
     print("OK: build_all completed")
 
 if __name__ == "__main__":

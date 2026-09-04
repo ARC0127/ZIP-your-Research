@@ -1,4 +1,7 @@
-# Usage (v1.3.2)
+# Usage (suite v1.6.6)
+
+The current suite release is **ZYR v1.6.6**. Older suffixes in retained files
+identify compatibility components and do not override the suite release.
 
 This repository supports two modes:
 
@@ -24,7 +27,7 @@ Each `skills/**/S*.md` file contains:
 
 ### Fast path
 1) Manuscript / reviews / venue constraints:
-   - Use `skills/writing_engine/MASTER_v1.3.2.md`
+   - Use `skills/writing_engine/MASTER_v1.6.6.md`
 2) Single task (ablation plan, repro audit, method check):
    - Pick a skill and paste it as-is.
 

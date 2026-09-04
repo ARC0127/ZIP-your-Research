@@ -84,8 +84,17 @@ def parse_front_matter(path: Path) -> dict[str, Any]:
     return data
 
 
-def load_active_manifest(root: Path = ROOT) -> tuple[dict[str, Any], list[dict[str, Any]]]:
-    """Load the sole active skill registry and validate its path closure."""
+def load_active_manifest(
+    root: Path = ROOT,
+    allowed_missing_paths: set[str] | None = None,
+) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    """Load the active registry and validate path closure.
+
+    ``allowed_missing_paths`` is reserved for the build bootstrap: an active
+    path may be absent only when the generated-files allowlist declares that
+    exact path as an output. Normal manifest validation remains fail-closed.
+    """
+    allowed_missing = allowed_missing_paths or set()
     manifest_path = root / "skills_manifest.yaml"
     data = load_yaml_mapping(manifest_path)
     raw_entries = data.get("skills")
@@ -125,7 +134,7 @@ def load_active_manifest(root: Path = ROOT) -> tuple[dict[str, Any], list[dict[s
         except RepositoryContractError as exc:
             errors.append(str(exc))
         else:
-            if not path.is_file():
+            if not path.is_file() and relative not in allowed_missing:
                 errors.append(f"Missing active skill path for `{sid}`: {relative}")
         entries.append(entry)
 
@@ -317,9 +326,10 @@ def validate_compatibility_contract(root: Path = ROOT) -> None:
 
 def validate_repository_contract(
     root: Path = ROOT,
+    allowed_missing_active_paths: set[str] | None = None,
 ) -> tuple[dict[str, Any], list[dict[str, Any]], int]:
     """Validate version, active registry, legacy aliases, and CLI compatibility."""
-    manifest, active_entries = load_active_manifest(root)
+    manifest, active_entries = load_active_manifest(root, allowed_missing_active_paths)
     validate_version_contract(manifest, root)
     legacy_count = validate_legacy_overlay(active_entries, root)
     validate_compatibility_contract(root)

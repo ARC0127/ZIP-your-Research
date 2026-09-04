@@ -1,5 +1,11 @@
 # Versioning
 
+## Current suite identity
+
+The current release is **ZYR v1.6.6**. Component filenames may retain older
+suffixes for compatibility and provenance. See `docs/VERSION_IDENTITY_v1.6.6.md`
+for the authoritative precedence rules.
+
 ## Policy (starting 1.0.0)
 We use **Semantic Versioning**: `MAJOR.MINOR.PATCH`.
 
@@ -8,8 +14,9 @@ We use **Semantic Versioning**: `MAJOR.MINOR.PATCH`.
 - PATCH: bugfixes, typos, doc clarifications.
 
 ## Legacy tags (pre-1.0)
-Earlier internal snapshots existed during development, but are not shipped in this release.
-For open-source stability, we start semver at **1.0.0** and treat the `v1.3.2` snapshot as the last pre-1.0 milestone.
+Earlier internal snapshots existed during development and some are retained as
+compatibility assets. The `v1.3.2` label is historical component lineage; it is
+not the current suite version.
 
 ## Backward compatibility promise (1.0+)
 - Existing skill files are never deleted; deprecated items are kept under `archive/` if needed.

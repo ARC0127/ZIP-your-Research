@@ -1,8 +1,8 @@
 ## Mandatory response banner
 
-Every assistant message must start with the one-line banner defined in `boot/00_RESPONSE_STATUS_BANNER_v1.3.2.md` (which references the authoritative definition in `boot/01_GLOBAL_GUARDRAILS_v1.3.2.md`).
+Every assistant message must start with the one-line banner defined in `boot/00_RESPONSE_STATUS_BANNER_v1.6.6.md` (which references the authoritative definition in `boot/01_GLOBAL_GUARDRAILS_v1.6.6.md`). Release/component version precedence is defined in `docs/VERSION_IDENTITY_v1.6.6.md`.
 
-# AGENTS.md (v1.3.2)
+# AGENTS.md (suite v1.6.6)
 
 ## Mission
 Maintain this repository as a **copy/paste-first** research assistant skill library.
@@ -15,19 +15,22 @@ Preserve existing content; only add incremental improvements.
 
 ## Editing rules
 - Never delete existing modules or skills.
-- Prefer additive changes: append v1.3.2 addenda rather than rewriting history.
+- Prefer additive changes: preserve v1.3.2 compatibility assets and add or update active v1.6.6 entrypoints rather than rewriting history.
 - If you must change behavior, add a new file (e.g., validate_v7_1.py) and update CI to use it.
 
 ## Repo conventions
 - `skills/**/S*.md` must include YAML front matter and a copy/paste prompt body.
 - `skills/writing_engine/modules/*` is verbatim; do not rewrite.
 - Generated artifacts:
-  - `skills/writing_engine/MASTER_v1.3.2.md`
+  - `skills/writing_engine/MASTER_v1.6.6.md`
+  - `skills/coding_engine/MASTER_v1.6.6.md`
+  - `router/SKILL_MAP_v1.6.6.md`
 
 ## Validation
 - `tools/validate.py` is legacy.
-- `tools/validate_v7_1.py` is authoritative in v1.3.2.
-- CI should run build + validate_v7_1.
+- `tools/validate_v1_3.py` remains the structural compatibility core.
+- `tools/validate_v7_2.py` is the v1.6.6 compatibility facade and also enforces release identity.
+- CI should run `python tools/zyr.py build --check` plus `python tools/validate_v7_2.py`.
 
 ## Adding a new skill
 1) Copy `templates/skill_template.md`
@@ -42,7 +45,7 @@ Preserve existing content; only add incremental improvements.
 - new skills are copy/paste-ready
 - UNKNOWN policy present
 
-## v1.3.2 additions
+## Legacy v1.3.2 compatibility notes
 - Router CLI: `router/route.py` is the machine-executable deterministic router.
 - Validator: `tools/validate_v7_2.py` is the strict quality gate. Keep v1.3.2 validator for compatibility.
 - Release packaging: `tools/make_release.py` produces a clean zip without `.git`.

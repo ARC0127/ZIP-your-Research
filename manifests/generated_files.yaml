@@ -5,11 +5,11 @@ policy:
   write_mode: explicit_allowlisted_atomic_replace
   note: Each generated path has exactly one authoritative in-memory renderer.
 generated_files:
-- path: skills/writing_engine/MASTER_v1.3.2.md
+- path: skills/writing_engine/MASTER_v1.6.6.md
   builder: tools.zyr_lib.build:render_writing_engine
   inputs:
   - skills/writing_engine/modules
-- path: skills/coding_engine/MASTER_v1.3.2.md
+- path: skills/coding_engine/MASTER_v1.6.6.md
   builder: tools.zyr_lib.build:render_coding_engine
   inputs:
   - skills/coding_engine/modules
@@ -22,7 +22,7 @@ generated_files:
   inputs:
   - skills_manifest.yaml
   - skills
-- path: router/SKILL_MAP_v1.3.2.md
+- path: router/SKILL_MAP_v1.6.6.md
   builder: tools.zyr_lib.build:render_skill_map
   inputs:
   - skills_manifest.yaml

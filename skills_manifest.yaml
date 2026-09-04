@@ -3,7 +3,7 @@ skills:
 - id: writing_engine
   name: writing_engine
   category: composite
-  path: skills/writing_engine/MASTER_v1.3.2.md
+  path: skills/writing_engine/MASTER_v1.6.6.md
   outputs:
   - master_prompt
 - id: figure_engine
@@ -15,7 +15,7 @@ skills:
 - id: coding_engine
   name: coding_engine
   category: composite
-  path: skills/coding_engine/MASTER_v1.3.2.md
+  path: skills/coding_engine/MASTER_v1.6.6.md
   outputs:
   - master_prompt
 - id: proof_engine

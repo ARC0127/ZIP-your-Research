@@ -1,4 +1,7 @@
-# Quickstart (v1.3.2)
+# Quickstart (suite v1.6.6)
+
+> Current suite identity: **ZYR v1.6.6**. Filenames that retain older version
+> suffixes are preserved compatibility components, not the installed suite version.
 
 ## Option A — ZIP-only boot (recommended)
 1) Upload the ZIP to a new chat.
@@ -17,7 +20,7 @@ Reference:
 
 ## Option B — Copy/paste (fastest for single tasks)
 ### 1) Writing engine (manuscripts / reviews)
-- Open `skills/writing_engine/MASTER_v1.3.2.md`
+- Open `skills/writing_engine/MASTER_v1.6.6.md`
 - Paste it into your chat as the instruction prompt
 
 ### 2) One skill prompt
@@ -29,6 +32,6 @@ Reference:
 ## Optional local tooling
 ```bash
 pip install -r requirements.txt
-python tools/build_all.py
-python router/route.py "summarize this paper and extract claims" --topk 5
+python tools/zyr.py build
+python router/route_v1_7.py "summarize this paper and extract claims" --topk 5
 ```
