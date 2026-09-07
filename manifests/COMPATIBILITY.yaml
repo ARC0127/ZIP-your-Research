@@ -2,7 +2,6 @@ schema_version: 1
 version_contract:
   authoritative: VERSION
   compatibility_projections:
-  - v
   - skills_manifest.yaml#version
 public_cli:
   path: tools/zyr.py
@@ -18,21 +17,33 @@ public_cli:
   - route-test
   - release-audit
 compatibility_entrypoints:
-- {path: tools/validate_v7_2.py, status: compatibility_only, replacement: python tools/zyr.py check}
-- {path: tools/validate_v7_1.py, status: compatibility_only, replacement: python tools/validate_v1_3.py --loose}
-- {path: tools/validate_v1_3.py, status: compatibility_only, replacement: python tools/zyr.py check}
-- {path: tools/build_all.py, status: compatibility_only, replacement: python tools/zyr.py build}
-- {path: tools/build.py, status: compatibility_only, replacement: python tools/zyr.py build}
-- {path: tools/build_write_engine_v1_3.py, status: compatibility_only, replacement: python tools/zyr.py build}
-- {path: tools/build_writing_engine_v1_3.py, status: compatibility_only, replacement: python tools/zyr.py build}
-- {path: tools/build_coding_engine_v1_3.py, status: compatibility_only, replacement: python tools/zyr.py build}
-- {path: tools/build_proof_engine_v1_5.py, status: compatibility_only, replacement: python tools/zyr.py build}
-- {path: tools/build_index.py, status: compatibility_only, replacement: python tools/zyr.py build}
-- {path: tools/build_skill_map.py, status: compatibility_only, replacement: python tools/zyr.py build}
-- {path: skills/writing_engine/MASTER_v1.3.2.md, status: compatibility_only, replacement: skills/writing_engine/MASTER_v1.7.0.md}
-- {path: skills/coding_engine/MASTER_v1.3.2.md, status: compatibility_only, replacement: skills/coding_engine/MASTER_v1.7.0.md}
-- {path: router/SKILL_MAP_v1.3.2.md, status: compatibility_only, replacement: router/SKILL_MAP_v1.7.0.md}
-- {path: router/route.py, status: compatibility_only, replacement: python tools/zyr.py route}
-- {path: router/route_v1_7.py, status: compatibility_only, replacement: python tools/zyr.py route}
-- {path: router/test_route_v1_7.py, status: compatibility_only, replacement: python tools/zyr.py route-test}
-- {path: tools/audit_release_v1_7.py, status: compatibility_only, replacement: python tools/zyr.py release-audit}
+- path: tools/validate_v7_2.py
+  status: compatibility_only
+  replacement: python tools/zyr.py check
+- path: tools/validate_v7_1.py
+  status: compatibility_only
+  replacement: python tools/validate_v1_3.py --loose
+- path: tools/validate_v1_3.py
+  status: compatibility_only
+  replacement: python tools/zyr.py check
+- path: skills/writing_engine/MASTER_v1.3.2.md
+  status: compatibility_only
+  replacement: skills/writing_engine/MASTER_v1.7.0.md
+- path: skills/coding_engine/MASTER_v1.3.2.md
+  status: compatibility_only
+  replacement: skills/coding_engine/MASTER_v1.7.0.md
+- path: router/SKILL_MAP_v1.3.2.md
+  status: compatibility_only
+  replacement: router/SKILL_MAP_v1.7.0.md
+- path: router/route.py
+  status: compatibility_only
+  replacement: python tools/zyr.py route
+- path: router/route_v1_7.py
+  status: compatibility_only
+  replacement: python tools/zyr.py route
+- path: router/test_route_v1_7.py
+  status: compatibility_only
+  replacement: python tools/zyr.py route-test
+- path: tools/audit_release_v1_7.py
+  status: compatibility_only
+  replacement: python tools/zyr.py release-audit

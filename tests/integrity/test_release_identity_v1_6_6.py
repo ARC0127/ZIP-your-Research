@@ -17,7 +17,6 @@ from validate_release_identity_v1_7_0 import validate  # noqa: E402
 
 IDENTITY_FIXTURE = (
     "VERSION",
-    "v",
     "skills_manifest.yaml",
     "README.md",
     "AGENTS.md",

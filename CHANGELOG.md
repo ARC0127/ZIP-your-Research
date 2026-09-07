@@ -8,8 +8,9 @@
 - Unify active engine entries, strict bootstrap, Mode Lock Markdown/JSON,
   migration prompts and installed skill metadata at v1.7.0. The release gate
   rejects old session-version values; historical sources remain reproducible.
-- Remove 46 obsolete document/report copies, consolidate current guides, and
-  provide three practical usage paths with inputs and expected outputs in README.
+- Retire obsolete reports, identical aliases, generated caches and superseded
+  tools. The latest cleanup reduces tracked files from 760 to 648 while keeping
+  all 149 active skill identities. README retains three practical usage paths.
 - Update existing local ZYR installations with backups; separately remove only
   unchanged retired copies, with restore receipts. Model settings are unchanged.
 

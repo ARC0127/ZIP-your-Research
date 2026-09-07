@@ -11,5 +11,5 @@
 
 ## Release checklist
 - Update `VERSION` and `CHANGELOG.md`
-- Run `tools/verify_v5_arch.py` (should pass)
-- Ensure new files are additive
+- Run `python -B tools/zyr.py check --ci` and the release checks in `docs/RELEASE.md`.
+- Preserve active contracts; use the retirement registry for reviewed deletions.

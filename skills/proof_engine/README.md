@@ -1,4 +1,4 @@
-# proof_engine (v1.5)
+# proof_engine (suite v1.7.0)
 
 A composite proof-audit engine for theorem verification, derivation checking, gap finding, and optional formal adaptation.
 
@@ -12,7 +12,7 @@ A composite proof-audit engine for theorem verification, derivation checking, ga
 
 Build:
 ```bash
-python tools/build_proof_engine_v1_5.py
+python -B tools/zyr.py build
 ```
 
 Outputs:

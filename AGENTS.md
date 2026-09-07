@@ -24,7 +24,7 @@ preserves existing locks and explicit approvals, treats same-objective
 corrections as in-scope steering, and makes skill loading and verification
 proportional to the requested result. Ordinary work starts with one agent.
 The active resource-aware router is `router/route_v1_8.py`; v1_7 is retained
-for compatibility regression. No historical module is removed.
+for compatibility regression. Preserve the source protocols required by active skills.
 
 ## Mission
 Maintain this repository as a **copy/paste-first** research assistant skill library.
@@ -36,14 +36,18 @@ Maintain one current authority for each workflow and keep navigation concise.
 - Outputs must match the Output Contract of the selected skill.
 
 ## Editing rules
-- Never delete existing modules or skills.
+- Preserve active skill identities, distinct protocols, required source modules,
+  and attribution. An identical alias or superseded entrypoint may be removed
+  after its references are migrated to the preserved canonical replacement.
 - User-authorized documentation cleanup may remove obsolete reports, duplicate
   guides, and superseded instructions after checking references and build inputs.
   Preserve skill contracts, attribution, actual dependencies, and recoverability
   through Git. Do not retain unused document copies solely to satisfy an old
   no-deletion convention.
-- Prefer additive changes: preserve v1.3.2 compatibility assets and add or update active v1.7.0 entrypoints rather than rewriting history.
-- If you must change behavior, add a new file (e.g., validate_v7_1.py) and update CI to use it.
+- Maintain current entrypoints in place. Add a versioned parallel file only when
+  a real compatibility contract needs it; Git preserves historical snapshots.
+- Do not require an unused file to remain solely because an old validator lists
+  it. Update the relevant contract and tests when retiring that dependency.
 
 ## Repo conventions
 - Keep one dated, concrete latest-update section near the top of README.md.
@@ -78,7 +82,7 @@ Maintain one current authority for each workflow and keep navigation concise.
 ## Legacy v1.3.2 compatibility notes
 - Router CLI: `router/route.py` is the machine-executable deterministic router.
 - Validator: `tools/validate_v7_3.py` is the strict quality gate. Keep v1.3.2 validator for compatibility.
-- Release packaging: `tools/make_release.py` produces a clean zip without `.git`.
+- Release packaging: use `tools/make_release_v1_7.py` and the release guide.
 
 ## Coding standards (Python tools)
 - Keep tools dependency-light (stdlib + PyYAML only).

@@ -36,8 +36,8 @@ class ManifestClosureTests(unittest.TestCase):
         )
         self.assertEqual(physical_count, canonical_count + legacy_count)
         self.assertGreaterEqual(canonical_count, 144)
-        self.assertGreaterEqual(legacy_count, 48)
-        self.assertGreaterEqual(physical_count, 192)
+        self.assertEqual(legacy_count, 7)
+        self.assertEqual(physical_count, 151)
 
     def test_unmanifested_new_skill_id_fails_closed(self) -> None:
         with tempfile.TemporaryDirectory(prefix="zyr-manifest-closure-") as temporary:

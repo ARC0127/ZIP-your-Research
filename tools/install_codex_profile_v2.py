@@ -27,7 +27,21 @@ import install_codex_profile_v1 as base
 ROOT = Path(__file__).resolve().parents[1]
 DESCRIPTIONS = "manifests/codex_descriptions_v1.yaml"
 EXTRA_FILES = (
-    "VERSION", "v", "skills_manifest.yaml", "INDEX.md",
+    'CONTRIBUTING.md',
+    'docs/DEBUG_VIBE_CORE_PLAYBOOK.md',
+    'docs/DEVELOPER_API.md',
+    'docs/VERSIONING.md',
+    'manifests/legacy_nonroutable.yaml',
+    'router/taxonomy.yaml',
+    'skills/platform_zyr_skills/modules/10_CLAUDE_CODE_MAINTENANCE_DIFFING.md',
+    'skills/platform_zyr_skills/rewrites/claude_code_runtime_rw_20260331_f15/README.md',
+    'skills/platform_zyr_skills/rewrites/runtime_rw_20260222_f28/INDEX.md',
+    'skills/proof_engine/README.md',
+    'skills/writing_engine/README.md',
+    'tests/integrity/test_manifest_closure.py',
+    'tools/validate_integrated_sources.py',
+    'tools/zyr_lib/manifest.py',
+    "VERSION", "skills_manifest.yaml", "INDEX.md",
     "boot/00_RESPONSE_STATUS_BANNER_v1.7.0.md", "boot/01_GLOBAL_GUARDRAILS_v1.7.0.md",
     "boot/00_BOOTSTRAP_PROTOCOL_v1.7.0.md", "boot/04_MODE_LOCK_FORMAT_v1.7.0.md",
     "boot/08_MODE_LOCK_SCHEMA_v1.7.0.json", "boot/01_MIGRATION_PROMPT_TEMPLATE_v1.7.0.md",

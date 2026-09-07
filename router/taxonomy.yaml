@@ -44,7 +44,7 @@ composite_skills:
   entry: skills/proof_engine/MASTER_v1.5.md
 - id: writing_engine
   purpose: Visible writing tasks; RPWS-backed writing engine with integrated S601-S604 and S640
-  entry: skills/writing_engine/MASTER_v1.6.6.md
+  entry: skills/writing_engine/MASTER_v1.7.0.md
 - id: figure_engine
   purpose: Figure-making tasks; figures4papers-backed figure engine with integrated S621-S623
   entry: skills/figure_engine/MASTER_v1.6.5.md

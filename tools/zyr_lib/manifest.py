@@ -146,9 +146,9 @@ def load_active_manifest(
 def validate_version_contract(
     manifest: dict[str, Any], root: Path = ROOT
 ) -> str:
-    """Require VERSION, v, manifest, and compatibility metadata to agree."""
+    """Require the authoritative VERSION and active manifest to agree."""
     values: dict[str, str] = {}
-    for relative in ("VERSION", "v"):
+    for relative in ("VERSION",):
         path = root / relative
         if not path.is_file():
             raise RepositoryContractError(f"Required version projection is missing: {relative}")

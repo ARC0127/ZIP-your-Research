@@ -1,30 +1,10 @@
 #!/usr/bin/env python3
-"""Compatibility validator facade for suite v1.6.6.
-
-Runs the structural compatibility core followed by the release-identity gate.
+"""Retained CLI alias for the current suite validator.
 
 Usage:
   python tools/validate_v7_2.py
 """
-
-import subprocess
-import sys
-from pathlib import Path
-
-ROOT = Path(__file__).resolve().parents[1]
-
-def main():
-    version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
-    identity = "validate_release_identity_v1_7_0.py" if version == "1.7.0" else "validate_release_identity_v1_6_6.py"
-    for script in ("validate_v1_3.py", identity):
-        cmd = [sys.executable]
-        if getattr(sys.flags, "no_site", 0):
-            cmd.append("-S")
-        cmd.append(str(ROOT / "tools" / script))
-        p = subprocess.run(cmd, cwd=str(ROOT))
-        if p.returncode != 0:
-            raise SystemExit(p.returncode)
-    print(f"Validation passed: structural compatibility + v{version} release identity")
+from validate_v7_3 import main
 
 if __name__ == "__main__":
     main()

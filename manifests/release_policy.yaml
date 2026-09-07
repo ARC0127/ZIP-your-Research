@@ -9,7 +9,6 @@ allow:
     - .gitattributes
     - .gitignore
     - AGENTS.md
-    - AUTOBOOT_v1.3.md
     - CHANGELOG.md
     - CONTRIBUTING.md
     - INDEX.md
@@ -22,7 +21,6 @@ allow:
     - artifacts/run_state.json
     - requirements.txt
     - skills_manifest.yaml
-    - v
   prefixes:
     - .claude/skills/
     - .github/skills/
@@ -86,13 +84,12 @@ deny:
 
 required:
   active_skill_count: 149
-  legacy_skill_count: 48
+  legacy_skill_count: 7
   generated_file_count: 5
   exact:
     - README.md
     - LICENSE
     - VERSION
-    - v
     - skills_manifest.yaml
     - INDEX.md
     - boot/00_RESPONSE_STATUS_BANNER_v1.7.0.md

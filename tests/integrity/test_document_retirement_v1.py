@@ -15,6 +15,19 @@ import prune_retired_docs_v1 as cleanup
 
 
 class DocumentRetirementTests(unittest.TestCase):
+    def test_duplicate_can_retire_but_active_skill_cannot(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "skills").mkdir()
+            (root / "skills/old.md").write_bytes(b"protocol")
+            (root / "skills/current.md").write_bytes(b"protocol")
+            (root / "skills_manifest.yaml").write_text("skills:\n- id: S001\n  path: skills/current.md\n", encoding="utf-8")
+            row = {"path": "skills/old.md", "replacement": "skills/current.md", "sha256": hashlib.sha256(b"protocol").hexdigest()}
+            self.assertEqual(list(cleanup.pending(root, [row])), ["skills/old.md"])
+            row.update(path="skills/current.md", replacement="skills/old.md")
+            with self.assertRaisesRegex(ValueError, "not a retired"):
+                cleanup.pending(root, [row])
+
     def test_cleanup_and_recovery_preserve_bytes_and_unrelated_files(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory) / "suite"
@@ -22,6 +35,9 @@ class DocumentRetirementTests(unittest.TestCase):
             (root / "old.md").write_bytes(b"old\r\n")
             (root / "keep.md").write_bytes(b"keep")
             rows = [{"path": "old.md", "sha256": hashlib.sha256(b"old\n").hexdigest()}]
+            historical = {**rows[0], "sha256": hashlib.sha256(b"newer\n").hexdigest(),
+                          "previous_versions": [{"commit": "previous-release", "sha256": rows[0]["sha256"]}]}
+            self.assertEqual(cleanup.pending(root, [historical]), {"old.md": b"old\r\n"})
             backup = Path(directory) / "backup"
             self.assertEqual(cleanup.apply(root, rows, backup), 1)
             self.assertFalse((root / "old.md").exists())

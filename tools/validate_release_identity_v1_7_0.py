@@ -39,7 +39,7 @@ def _acknowledgments_block(readme: str) -> str:
 def validate(root: Path) -> list[str]:
     errors: list[str] = []
 
-    for relative in ("VERSION", "v"):
+    for relative in ("VERSION",):
         value = _read(root, relative).strip()
         if value != EXPECTED:
             errors.append(f"{relative}: expected {EXPECTED}, found {value!r}")

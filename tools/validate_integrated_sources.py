@@ -36,7 +36,7 @@ for item in manifest.get("source_inventory", []):
 
 required = [
     "skills/writing_engine/MASTER_v1.3.2.md",
-    "skills/writing_engine/MASTER_v1.6.6.md",
+    "skills/writing_engine/MASTER_v1.7.0.md",
     "skills/figure_engine/MASTER_v1.6.5.md",
     "skills/rwf_s340/S601_paper_story_section_arch.md",
     "skills/rwf_s340/S602_claim_evidence_reverse_outline_review.md",

@@ -14,7 +14,7 @@ Refresh the Claude Code runtime rewrite pack if any of these are true:
 1. Re-extract or re-open the authoritative snapshot source.
 2. Recompute the 15-file metadata table used by:
    - `../rewrites/claude_code_runtime_rw_20260331/SOURCES.md`
-   - `../rewrites/claude_code_runtime_rw_20260331_f15/SOURCES.md`
+   - `../rewrites/claude_code_runtime_rw_20260331/SOURCES.md`
 3. Compare the old and new source list.
 4. If the source set changed, update:
    - compact topic notes

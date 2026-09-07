@@ -1,7 +1,7 @@
 # Release packaging — ZYR v1.7.0
 
 The current builder is `tools/make_release_v1_7.py`; its suffix identifies the
-builder, not the suite release. `VERSION`, `v`, and `skills_manifest.yaml` must
+builder, not the suite release. `VERSION` and `skills_manifest.yaml` must
 agree. The [release policy](../manifests/release_policy.yaml) controls allowed,
 required, excluded, and third-party files.
 

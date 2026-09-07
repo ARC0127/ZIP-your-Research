@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Remove exact retired document copies from a checkout or installed suite.
+"""Remove reviewed obsolete files and duplicate references from a suite.
 
 Usage:
   python tools/prune_retired_docs_v1.py --root PATH --check
@@ -17,6 +17,8 @@ import hashlib
 import json
 from pathlib import Path
 
+import yaml
+
 from install_codex_profile_v1 import restore, sha, within
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,16 +26,23 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def pending(root: Path, records: list[dict]) -> dict[str, bytes]:
     result = {}
+    manifest = root / "skills_manifest.yaml"
+    active = {str(x["path"]) for x in (yaml.safe_load(manifest.read_text(encoding="utf-8")) or {}).get("skills", [])} if manifest.is_file() else set()
     for row in records:
         relative = row["path"]
         path = within(root, relative)
-        if relative.startswith(("skills/", "ext/", ".codex/")):
+        if relative in active or relative.startswith(("ext/", ".codex/")) or "/modules/" in relative:
             raise ValueError(f"not a retired documentation path: {relative}")
+        if relative.startswith("skills/"):
+            replacement = row.get("replacement", "")
+            if not replacement or replacement == relative or not within(root, replacement).is_file():
+                raise ValueError(f"retired skill copy requires its replacement: {relative}")
         if not path.exists():
             continue
         data = path.read_bytes()
-        normalized = data if path.suffix == ".pdf" else data.replace(b"\r\n", b"\n")
-        if hashlib.sha256(normalized).hexdigest() != row["sha256"]:
+        normalized = data if row.get("hash_mode") == "raw" or path.suffix == ".pdf" else data.replace(b"\r\n", b"\n")
+        accepted = {row["sha256"]} | {item["sha256"] for item in row.get("previous_versions", [])}
+        if hashlib.sha256(normalized).hexdigest() not in accepted:
             raise ValueError(f"preserving changed document; inspect before removal: {relative}")
         result[relative] = data
     return result
@@ -57,6 +66,15 @@ def apply(root: Path, records: list[dict], backup: Path) -> int:
             raise ValueError(f"concurrent edit before cleanup: {relative}")
     for relative in changes:
         within(root, relative).unlink()
+    # Remove only newly empty ancestors inside the verified target root.
+    for relative in changes:
+        parent = within(root, relative).parent
+        while parent != root.resolve() and parent.is_relative_to(root.resolve()):
+            try:
+                parent.rmdir()
+            except OSError:
+                break
+            parent = parent.parent
     return len(changes)
 
 

@@ -10,7 +10,7 @@
 
 - **S430（唯一权威规范）**：`skills/reproducibility/S430_debug_vibe_core.md`
 - **S431（闭环验证模板）**：`skills/reproducibility/S431_closed_loop_verification.md`
-- **状态栏展示**：`boot/00_RESPONSE_STATUS_BANNER_v1.6.6.md`
+- **状态栏展示**：`boot/00_RESPONSE_STATUS_BANNER_v1.7.0.md`
 - **HCP 最短展示模板**（语义仍以 S430 为准）：`boot/09_HCP_MINI_v1.3.2.md`
 
 ---

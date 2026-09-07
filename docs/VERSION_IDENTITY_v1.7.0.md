@@ -12,7 +12,7 @@ suite release from preserved component lineage.
 
 ## Precedence
 
-1. `VERSION`, `v`, and `skills_manifest.yaml#version` identify the installed
+1. `VERSION` and `skills_manifest.yaml#version` identify the installed
    suite release and must agree.
 2. Active entrypoints and user-facing responses must identify the suite as
    `ZIP-your-Research v1.7.0`.

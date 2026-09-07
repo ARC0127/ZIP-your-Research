@@ -168,7 +168,7 @@ class InstallerTests(unittest.TestCase):
 
     def test_references_use_existing_canonical_source(self):
         meta = {"name": "zyr-writing-engine", "description": "old", "version": "1.6.6"}
-        source = "skills/writing_engine/MASTER_v1.6.6.md"
+        source = "skills/writing_engine/MASTER_v1.7.0.md"
         text = installer.render_entry(meta, "writing_engine", source, ROOT)
         self.assertLess(len(text.encode()), 2500)
         self.assertTrue((ROOT / source).is_file())

@@ -23,12 +23,12 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 POLICY = "boot/14_RESOURCE_PROPORTIONAL_EXECUTION_v1.md"
 OVERLAY_FILES = (
-    "AGENTS.md", "README.md", "boot/01_GLOBAL_GUARDRAILS_v1.6.6.md", POLICY,
+    "AGENTS.md", "README.md", "boot/01_GLOBAL_GUARDRAILS_v1.7.0.md", POLICY,
     ".claude/skills/zip-your-research/SKILL.md", ".github/skills/zip-your-research/SKILL.md",
     "tools/zyr.py", "tools/zyr_lib/build.py", "tools/zyr_lib/resource_profile_v1.py",
     "tools/install_codex_profile_v1.py", "router/route_v1_8.py",
     "manifests/generated_files.yaml",
-    "skills/writing_engine/MASTER_v1.6.6.md", "skills/coding_engine/MASTER_v1.6.6.md",
+    "skills/writing_engine/MASTER_v1.7.0.md", "skills/coding_engine/MASTER_v1.7.0.md",
     "skills/proof_engine/MASTER_v1.5.md", "docs/RESOURCE_PROFILE_v1.md",
     "tests/integrity/test_resource_profile_v1.py", ".github/workflows/ci.yml",
     "templates/codex/zip-your-research.md", "templates/codex/zyr-research-suite.md",
