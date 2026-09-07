@@ -1,5 +1,11 @@
 # zip-your-research (suite v1.6.6)
 
+Apply `boot/14_RESOURCE_PROPORTIONAL_EXECUTION_v1.md` first. The ZIP startup
+steps below apply to ZIP-only startup or an explicitly selected strict boot.
+An atomic skill request or work within an existing lock does not repeat intake.
+Read the chosen manifest entry and its applicable references, not all boot,
+router, or engine content. Use `router/route_v1_8.py` for active routing.
+
 A *repository-first* agent skill: when the user uploads the **ZIP your Research** release ZIP, you must:
 
 1) **Release identity**: read `docs/VERSION_IDENTITY_v1.6.6.md`; never present a legacy component version as the suite release.

@@ -31,6 +31,12 @@ version.
 
 ## Stage and scope
 
+Apply `boot/14_RESOURCE_PROPORTIONAL_EXECUTION_v1.md` when determining
+applicability: atomic skill use does not restart ZIP intake; reuse the current
+lock and authorization. Same-objective corrections, references, and progress
+questions are in-scope steering. Explicit strict-workflow CONFIRM and real
+scope-change approvals remain required.
+
 - PRE-LOCK permits intake, mode lock, usage clarification, and the documented
   conservative convenience exception.
 - LOCKED execution must remain inside the confirmed scope.

@@ -265,7 +265,7 @@ def main() -> int:
             forwarded.extend(("--untrusted-text-file", args.untrusted_text_file))
         if args.route_json:
             forwarded.append("--json")
-        return run_repository_cli("router/route_v1_7.py", forwarded)
+        return run_repository_cli("router/route_v1_8.py", forwarded)
     if args.command == "route-test":
         forwarded = ["--cases", args.cases] if args.cases else []
         return run_repository_cli("router/test_route_v1_7.py", forwarded)

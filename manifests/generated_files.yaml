@@ -9,14 +9,20 @@ generated_files:
   builder: tools.zyr_lib.build:render_writing_engine
   inputs:
   - skills/writing_engine/modules
+  - boot/14_RESOURCE_PROPORTIONAL_EXECUTION_v1.md
+  - tools/zyr_lib/resource_profile_v1.py
 - path: skills/coding_engine/MASTER_v1.6.6.md
   builder: tools.zyr_lib.build:render_coding_engine
   inputs:
   - skills/coding_engine/modules
+  - boot/14_RESOURCE_PROPORTIONAL_EXECUTION_v1.md
+  - tools/zyr_lib/resource_profile_v1.py
 - path: skills/proof_engine/MASTER_v1.5.md
   builder: tools.zyr_lib.build:render_proof_engine
   inputs:
   - skills/proof_engine/modules
+  - boot/14_RESOURCE_PROPORTIONAL_EXECUTION_v1.md
+  - tools/zyr_lib/resource_profile_v1.py
 - path: INDEX.md
   builder: tools.zyr_lib.build:render_index
   inputs:

@@ -23,6 +23,7 @@ from .manifest import (
     resolve_repo_path,
     validate_repository_contract,
 )
+from .resource_profile_v1 import engine_addendum
 
 MODULE_RE = re.compile(r"^\d{2}_.+\.md$")
 SKILL_ID_RE = re.compile(r"S(\d+)")
@@ -79,6 +80,7 @@ def render_writing_engine(
             "applies after lock activation.\n\n---\n"
         ),
     ]
+    parts.insert(1, engine_addendum("writing_engine"))
     for path in _module_files(root, "skills/writing_engine/modules"):
         parts.append(path.read_text(encoding="utf-8").rstrip())
         parts.append("\n\n---\n")
@@ -100,6 +102,7 @@ def render_coding_engine(
         "`boot/10_LOCKED_SCOPE_GUARD_v1.3.md` + "
         "`boot/11_COMPLETION_FIRST_ANTI_SHORTCUT_v1.5.md`.\n\n---\n"
     )
+    parts.insert(1, engine_addendum("coding_engine"))
     for path in _module_files(root, "skills/coding_engine/modules"):
         parts.append(path.read_text(encoding="utf-8").rstrip())
         parts.append("\n\n---\n")
@@ -129,6 +132,7 @@ def render_proof_engine(
             "`skills/research_core/S241_progressive_proof_verification.md`.\n\n---\n"
         ),
     ]
+    parts.insert(1, engine_addendum("proof_engine"))
     for path in _module_files(root, "skills/proof_engine/modules"):
         parts.append(path.read_text(encoding="utf-8").rstrip())
         parts.append("\n\n---\n")

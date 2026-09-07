@@ -46,6 +46,7 @@ jobs:
           python -B -m unittest \
             tests.evolution.test_public_mutations_v1 \
             tests.integrity.test_generated_bootstrap \
+            tests.integrity.test_resource_profile_v1 \
             tests.integrity.test_manifest_closure \
             tests.integrity.test_release_identity_v1_6_6 \
             tests.integrity.test_release_capabilities \

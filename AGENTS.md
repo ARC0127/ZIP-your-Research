@@ -4,6 +4,16 @@ Every assistant message must start with the one-line banner defined in `boot/00_
 
 # AGENTS.md (suite v1.6.6)
 
+## Active execution profile
+
+Apply `boot/14_RESOURCE_PROPORTIONAL_EXECUTION_v1.md` before interpreting
+retained workflow defaults. It scopes intake to ZIP-only/strict startup,
+preserves existing locks and explicit approvals, treats same-objective
+corrections as in-scope steering, and makes skill loading and verification
+proportional to the requested result. Ordinary work starts with one agent.
+The active resource-aware router is `router/route_v1_8.py`; v1_7 is retained
+for compatibility regression. No historical module is removed.
+
 ## Mission
 Maintain this repository as a **copy/paste-first** research assistant skill library.
 Preserve existing content; only add incremental improvements.

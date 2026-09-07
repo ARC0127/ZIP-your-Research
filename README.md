@@ -25,6 +25,10 @@ skills for AI research agents. Use it to evaluate ideas, design experiments,
 check claims against evidence, and produce research artifacts. Its protocols
 specify how to record decisions and choose the next verification step.
 
+The [resource profile v1](docs/RESOURCE_PROFILE_v1.md) adds progressive skill
+loading and single-agent defaults, with full workflows available when requested.
+It preserves explicit approvals and the v1.6.6 research evidence contracts.
+
 <p align="center"><em>让每一个研究判断，都有据可循。</em></p>
 
 <table>
