@@ -1,6 +1,6 @@
 ---
 name: zyr-research-suite
-description: Compatibility entry for users explicitly invoking zyr-research-suite; routes to the current ZYR suite or a named Sxxx skill.
+description: Compatibility route for explicit zyr-research-suite requests.
 version: 1.6.6
 ---
 

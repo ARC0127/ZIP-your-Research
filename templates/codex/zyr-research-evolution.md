@@ -1,6 +1,6 @@
 ---
 name: zyr-research-evolution
-description: Maintain or evaluate ZYR skills. Separates packaging checks, agent-behavior evaluation, and claims of scientific capability improvement.
+description: Maintain, install, or evaluate the ZYR skill library.
 version: 1.6.6
 ---
 

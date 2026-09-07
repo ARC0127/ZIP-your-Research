@@ -48,6 +48,12 @@ and unavailable capabilities retain the v1_7 checks. `route-test` retains the
 
 ## Installed skills
 
+The current follow-up uses `tools/install_codex_profile_v2.py` for concise
+discovery descriptions and an opt-in personal instruction profile. See the
+[Astra instruction audit](ASTRA_INSTRUCTION_AUDIT_v1.md) for source coverage,
+specific edits, current installation commands, and authority boundaries.
+The v1 commands below describe the retained initial profile.
+
 `tools/install_codex_profile_v1.py` updates an existing complete ZYR installation.
 It creates short SKILL.md entrypoints, preserves full protocols in references,
 and synchronizes the listed active source files to the packaged suite. Historical

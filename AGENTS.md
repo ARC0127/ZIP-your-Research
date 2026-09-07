@@ -29,6 +29,9 @@ Preserve existing content; only add incremental improvements.
 - If you must change behavior, add a new file (e.g., validate_v7_1.py) and update CI to use it.
 
 ## Repo conventions
+- Keep one dated, concrete latest-update section near the top of README.md.
+  Replace that section on each update; do not append a release-history list.
+  State suite/component versions accurately and link supporting audit details.
 - `skills/**/S*.md` must include YAML front matter and a copy/paste prompt body.
 - `skills/writing_engine/modules/*` is verbatim; do not rewrite.
 - Generated artifacts:
@@ -68,11 +71,20 @@ Preserve existing content; only add incremental improvements.
 
 ## Stage enforcement
 
+These stage rules apply to an explicitly selected ZIP-only/strict workflow,
+as scoped by the active execution profile. Ordinary repository maintenance and
+atomic skill requests use current task authorization without restarting intake.
+
 - PRE-LOCK: intake / mode lock / usage clarification only.
   - **Exception (convenience):** you may give a *quick best-effort answer* **only** if it is short, conservative, explicitly marked out-of-protocol, and followed by an immediate return to intake.
 - LOCKED: execute tasks within Mode Lock scope only.
 
 If a drift happens in PRE-LOCK, run `boot/02_PRELOCK_VIOLATION_RESPONSE_v1.3.2.md`.
+
+For authorized implementation, complete the requested files, relevant checks,
+and delivery. Review-only requests remain review-only. Existing explicit
+authorization for the same action is sufficient unless a governing rule requires
+action-time confirmation; a skill's suggestion is not a new approval gate.
 
 ---
 

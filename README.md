@@ -25,9 +25,41 @@ skills for AI research agents. Use it to evaluate ideas, design experiments,
 check claims against evidence, and produce research artifacts. Its protocols
 specify how to record decisions and choose the next verification step.
 
-The [resource profile v1](docs/RESOURCE_PROFILE_v1.md) adds progressive skill
-loading and single-agent defaults, with full workflows available when requested.
-It preserves explicit approvals and the v1.6.6 research evidence contracts.
+<!-- ZYR_LATEST_UPDATE_START -->
+## 最新更新 · 2026-09-07
+
+**v1.6.6 Astra 适配更新** · 执行配置 v1 · 路由 v1.8 · 本地安装器 v2
+
+本次根据 OpenAI 的 GPT-6 Astra 指南和 Eric Provencher 的文章，清理容易导致
+反复确认、过量读取、过度测试与不必要 Agent 调用的指令。
+
+- **技能更容易选对。** 153 个本地 ZYR 入口保留，描述先写具体用途；描述总量
+  从 16,364 降至 7,463 字节（减少 54.4%）。完整研究协议继续按需读取。
+- **按任务规模执行。** 普通检索由当前 Agent 完成，明确要求多 Agent 时保留
+  S660 流程；局部润色按需选择模块。同一目标内的补充与纠正不重启 intake。
+- **完成后再交付。** 已授权任务继续到相关验证和交付；清楚区分完整审计与逐轮
+  讨论，避免停在初版。明确的审批、科学证据与记忆激活要求仍然有效。
+- **提供可选个人指令配置。** 将详细写作、工程与存档协议分离，全局常驻
+  AGENTS 从 25,448 降至 5,652 字节（减少 77.8%）；同时收窄 Headroom 触发范围。
+  默认安装仅更新 ZYR，个人配置须显式选择。模型与推理强度保持用户设定。
+- **可检查、可回滚。** 安装器保存被替换文件和哈希，支持检查本地安装与源码
+  是否一致，并拒绝用旧备份覆盖后续编辑。
+
+**本轮验证：** 76 项 Python 测试通过、1 项平台相关跳过；33 个兼容路由用例、
+生成产物检查与 v1.6.6 结构校验通过。
+
+已有完整 ZYR 安装的用户，可在仓库根目录执行：
+
+```powershell
+py -3 -B tools/install_codex_profile_v2.py --codex-home D:/codex/home --apply --backup D:/codex/backups/zyr-NEW-DIRECTORY
+py -3 -B tools/install_codex_profile_v2.py --codex-home D:/codex/home --check
+```
+
+将路径换为自己的目录，并选择一个尚不存在的备份目录；安装后重新加载 Codex
+或开始新任务。[逐项修改、材料读取范围与个人配置安装说明](docs/ASTRA_INSTRUCTION_AUDIT_v1.md)
+及[执行规则](docs/RESOURCE_PROFILE_v1.md)可供核查。上述数字是本地文件字节数，
+实际 token、耗时和任务质量变化尚未做配对测量。
+<!-- ZYR_LATEST_UPDATE_END -->
 
 <p align="center"><em>让每一个研究判断，都有据可循。</em></p>
 
@@ -43,7 +75,7 @@ It preserves explicit approvals and the v1.6.6 research evidence contracts.
 
 | Your next research decision | Start here | Work product |
 |---|---|---|
-| **Is this idea worth testing?** | [Research orchestration](skills/research_orchestrator/S660_epistemic_research_champion.md) + [proof engine](skills/proof_engine/MASTER_v1.5.md) | A question graph, competing candidates, and the next decisive check |
+| **Is this idea worth testing?** | [Problem framing](skills/research_core/S201_problem_framing.md); use [S660](skills/research_orchestrator/S660_epistemic_research_champion.md) for explicitly requested multi-agent research | A scoped research question and the next decisive check |
 | **Does the evidence support this claim?** | [Claim–evidence audit](skills/research_core/S203_claim_evidence_matrix.md) + [logic audit](skills/research_core/S226_logic_consistency_audit.md) | Claims mapped to sources, assumptions, and unresolved gaps |
 | **How should we communicate the result?** | [Writing engine](skills/writing_engine/MASTER_v1.6.6.md) + [figure engine](skills/figure_engine/MASTER_v1.6.5.md) | Prose and source-editable visuals tied to the research record |
 | **Can this procedure be reused?** | [Dynamic Skill memory](skills/research_orchestrator/S661_dynamic_skill_memory.md) | A versioned Skill proposal with evaluation and explicit activation controls |

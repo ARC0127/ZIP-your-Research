@@ -1,6 +1,6 @@
 ---
 name: zip-your-research
-description: Route ZIP-your-Research (ZYR) tasks, start an explicitly requested ZIP workflow, or maintain the ZYR suite. Named Sxxx tasks use their exact skill.
+description: Route ZYR suite tasks or start an explicitly requested ZIP workflow.
 version: 1.6.6
 ---
 
