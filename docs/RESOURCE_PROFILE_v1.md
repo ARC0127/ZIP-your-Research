@@ -1,101 +1,70 @@
-# ZYR resource profile v1
+# Resource profile and Codex installation — ZYR v1.7.0
 
-Suite release remains **v1.6.6**. This is a maintenance profile, not a claim
-that scientific capability or measured end-to-end token efficiency improved.
+The active [execution profile](../boot/14_RESOURCE_PROPORTIONAL_EXECUTION_v1.md)
+uses one primary skill, progressive references, and the current agent for
+ordinary work. Explicit S660 research keeps its multi-agent contract; strict ZIP
+startup keeps CONFIRM. Complete authorized deliverables and relevant checks.
+Do not repeat passing checks or restart intake without a concrete reason.
+Ordinary replies have no status banner. Status is shown on user request or
+diagnostic opt-in, without repeating unchanged fields; strict ZIP confirmation
+and the underlying safeguards still apply.
 
-## GPT-6 Astra alignment (verified 2026-09-07)
+## Why these defaults
 
-The [official model guide](https://developers.openai.com/api/docs/guides/latest-model#prompting-best-practices)
-describes sensitivity to skill instructions, clarification pauses, detailed
-formatting, configurable delegation, and overly broad tests on small changes.
-This profile maps those observations to the following defaults:
+The [official GPT-6 Astra guide](https://developers.openai.com/api/docs/guides/latest-model)
+recommends auditing skill instructions, making completion explicit, and
+calibrating tests. Its delegation advice is configurable; the single-agent
+default here is a local workflow choice. Model and reasoning settings remain
+under user control.
 
-| Officially described behavior | ZYR behavior |
-|---|---|
-| Greater sensitivity to skills and AGENTS.md | One applicable contract, progressive references, explicit precedence over retained blanket defaults |
-| Clarification can interrupt expected follow-through | Reuse current authorization; finish independent work while required input is pending |
-| Detailed formatted responses | Lead with the result and decisive evidence; avoid repeated deliberation and unnecessary status artifacts |
-| Delegation depends on prompting and host needs | Single-agent default; preserve explicitly requested S660, independent review, and named skills |
-| Small changes can trigger excessive testing | Relevant checks, completion criteria, and no repeat without new evidence |
+Eric Provencher's [Rethinking skills and prompts for GPT-6 Astra](https://x.com/pvncher/status/2095991462416490862)
+supports short capability descriptions, selective reference loading, and precise
+approval boundaries. The September 7 review read the complete official Markdown
+and the article text through a public mirror; two embedded images could not be
+verified because browser policy enforcement was unavailable. The
+[historical audit](https://github.com/ARC0127/ZIP-your-Research/blob/b290a2a650b2e0f4dab55ff613697ae1fdcfe86f/docs/ASTRA_INSTRUCTION_AUDIT_v1.md)
+retains the detailed findings without adding another current instruction entry.
 
-The guide says Astra can delegate less often than desired. It does not establish
-that over-delegation is an intrinsic model defect. ZYR's former broad triggers
-are local evidence for this user's reported overhead. Neither a smaller entry
-file nor a deterministic routing test establishes end-to-end token savings.
+## Update an existing installation
 
-Model/API features such as asynchronous tools and mid-turn steering do not
-require extra worker agents. Existing host tools provide those capabilities;
-this patch does not add an API integration or change reasoning settings. The
-user's GPT-6 Astra / xhigh choice and the claim skill's search rules are retained.
+The v2 installer requires the existing full ZYR installation. It preserves 153
+entry identities, canonical protocols, and invocation policies. Detailed source
+protocols remain in `references/source.md`; 150 mapped descriptions are maintained
+in `manifests/codex_descriptions_v1.yaml`. The default changes ZYR files only.
 
-## Behavior
-
-The active policy is [resource-proportional execution](../boot/14_RESOURCE_PROPORTIONAL_EXECUTION_v1.md).
-It scopes old unconditional companion rules while preserving complete requested
-outputs, evidence requirements, explicit approvals, and strict ZIP boot.
-Same-objective steering does not restart intake. Default execution uses the
-current agent. The separate claim coaching/fresh-literature contract is unchanged.
-
-`python tools/zyr.py route "query"` uses `router/route_v1_8.py`. Ordinary
-authoritative search selects S204; explicitly requested multi-agent research
-retains S660. Explicit named-skill requests take precedence over a shorter
-default route. Merely discussing S660 does not launch it, and refusing a team
-while requesting ordinary search is not a routing conflict. Related skills
-appear in `optional_companions` instead of forcing
-every workflow to run. Negation, ambiguous requests, untrusted source boundaries,
-and unavailable capabilities retain the v1_7 checks. `route-test` retains the
-33-case v1_7 compatibility suite; active routing has separate regression tests.
-
-## Installed skills
-
-The current follow-up uses `tools/install_codex_profile_v2.py` for concise
-discovery descriptions and an opt-in personal instruction profile. See the
-[Astra instruction audit](ASTRA_INSTRUCTION_AUDIT_v1.md) for source coverage,
-specific edits, current installation commands, and authority boundaries.
-The v1 commands below describe the retained initial profile.
-
-`tools/install_codex_profile_v1.py` updates an existing complete ZYR installation.
-It creates short SKILL.md entrypoints, preserves full protocols in references,
-and synchronizes the listed active source files to the packaged suite. Historical
-writing modules remain verbatim. Existing names, version, and invocation-policy
-files are retained. The research-evolution workflow distinguishes maintenance,
-agent-behavior evidence, and scientific-capability promotion.
+Run from the repository root, replacing paths with your own. Each backup path
+must be new and outside the corresponding target root.
 
 ```powershell
-py -3 -B tools/zyr.py build
-py -3 -B tools/zyr.py build --check
-py -3 -B tools/validate_v7_2.py
-py -3 -B tools/zyr.py route-test
-py -3 -B -m unittest tests.integrity.test_resource_profile_v1
-py -3 -B tools/install_codex_profile_v1.py --skills-root D:/codex/home/skills --apply --backup D:/codex/home/skill-backups/CHOOSE-NEW-DIRECTORY
-py -3 -B tools/install_codex_profile_v1.py --skills-root D:/codex/home/skills --check
+py -3 -B tools/install_codex_profile_v2.py --codex-home D:/codex/home --apply --backup D:/codex/backups/zyr-update-NEW
+py -3 -B tools/prune_retired_docs_v1.py --root D:/codex/home/skills/zip-your-research/references/upstream/ZIP-your-Research-main --apply --backup D:/codex/backups/zyr-docs-NEW
+py -3 -B tools/install_codex_profile_v2.py --codex-home D:/codex/home --check
+py -3 -B tools/prune_retired_docs_v1.py --root D:/codex/home/skills/zip-your-research/references/upstream/ZIP-your-Research-main --check
 ```
 
-Rollback uses the exact receipt from the apply command:
+The cleanup command only deletes exact, unchanged retired copies and saves their
+original bytes. A changed copy is kept and reported for inspection. Older v1
+installers remain compatibility tools; use v2 for current discovery metadata.
+Reload Codex or start a new task to refresh already loaded instructions.
+
+## Optional personal profile
+
+`--include-user-instructions` also installs `templates/codex-home/` and the
+existing Headroom / Theory Claim Audit entrypoints. Review those templates before
+adopting this user's personal profile elsewhere. It moves conditional writing,
+engineering, and archive rules into references; it retains human scientific
+choices and real approval boundaries. It does not change model configuration,
+Claim's coaching/fresh-literature contract, vendor caches, or automatic memories.
+
+## Rollback
+
+Restore the cleanup receipt first, then the installer receipt:
 
 ```powershell
-py -3 -B tools/install_codex_profile_v1.py --skills-root D:/codex/home/skills --restore D:/codex/home/skill-backups/CHOOSE-NEW-DIRECTORY/receipt.json
+py -3 -B tools/prune_retired_docs_v1.py --root D:/codex/home/skills/zip-your-research/references/upstream/ZIP-your-Research-main --restore D:/codex/backups/zyr-docs-NEW/receipt.json
+py -3 -B tools/install_codex_profile_v2.py --codex-home D:/codex/home --restore D:/codex/backups/zyr-update-NEW/receipt.json
 ```
 
-The installer rejects paths outside the installation and refuses rollback over
-later edits. It does not touch model settings, the claim skill, plugin caches,
-automatic memories, or other projects. Restart Codex or use a new task to refresh
-skill discovery; already loaded instructions cannot be removed from a running
-conversation by changing a file.
-
-## Evidence and acceptance
-
-The 2026-09-07 user approved review items 1-6 and chose to retain GPT-6 Astra
-with xhigh. The baseline was preserved before editing. Acceptance requires:
-all 153 ZYR entries remain; all 150 mapped source protocols match the current
-repository; untouched modules and non-ZYR skills remain byte-identical;
-active routing preserves explicit multi-agent work and trust boundaries;
-installation check and rollback tests pass. Entry bytes and description bytes
-are packaging metrics. Agent-behavior tokens, time, and scientific benefit remain
-UNKNOWN until measured on paired real tasks with equal settings and quality gates.
-
-The design follows official guidance on instruction sensitivity, proportional
-testing, and outcome-focused prompting: [GPT-6 Astra guide](https://developers.openai.com/api/docs/guides/latest-model).
-Progressive loading follows [OpenAI skill guidance](https://learn.chatgpt.com/docs/build-skills).
-Published model evaluations and launch commentary are context, not evidence for
-this installation's measured improvement.
+Restoration refuses later edits. Keep receipts outside the installation. Byte
+counts measure packaging size; token use, latency, behavior quality and scientific
+benefit require paired evaluations and are not established by file cleanup.

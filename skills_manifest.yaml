@@ -1,33 +1,33 @@
-version: 1.6.6
+version: 1.7.0
 skills:
 - id: writing_engine
   name: writing_engine
   category: composite
-  path: skills/writing_engine/MASTER_v1.6.6.md
+  path: skills/writing_engine/MASTER_v1.7.0.md
   outputs:
   - master_prompt
 - id: figure_engine
   name: figure_engine
   category: composite
-  path: skills/figure_engine/MASTER_v1.6.5.md
+  path: skills/figure_engine/MASTER_v1.7.0.md
   outputs:
   - master_prompt
 - id: coding_engine
   name: coding_engine
   category: composite
-  path: skills/coding_engine/MASTER_v1.6.6.md
+  path: skills/coding_engine/MASTER_v1.7.0.md
   outputs:
   - master_prompt
 - id: proof_engine
   name: proof_engine
   category: composite
-  path: skills/proof_engine/MASTER_v1.5.md
+  path: skills/proof_engine/MASTER_v1.7.0.md
   outputs:
   - master_prompt
 - id: rwf_s340_master
   name: research_writing_figure_s340_integrated_master
   category: composite
-  path: skills/rwf_s340/MASTER.md
+  path: skills/rwf_s340/MASTER_v1.7.0.md
   outputs:
   - master_prompt
 - id: S301

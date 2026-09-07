@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.7.0 — 2026-09-07
+
+- Route ordinary tasks to one primary skill and the current agent; preserve
+  full requested workflows, explicit approvals and scientific evidence rules.
+- Remove recurring status banners. Show diagnostics only on request.
+- Unify active engine entries, strict bootstrap, Mode Lock Markdown/JSON,
+  migration prompts and installed skill metadata at v1.7.0. The release gate
+  rejects old session-version values; historical sources remain reproducible.
+- Remove 46 obsolete document/report copies, consolidate current guides, and
+  provide three practical usage paths with inputs and expected outputs in README.
+- Update existing local ZYR installations with backups; separately remove only
+  unchanged retired copies, with restore receipts. Model settings are unchanged.
+
 ## v1.6.6 - agentic research evolution, visible memory, and governed Skill learning
 
 This release turns ZYR's self-evolution goal into an inspectable research
@@ -91,7 +104,7 @@ This release consolidates the v1.6 line into a cleaner package layout. The ZYR s
 - Explicit README and CONTRIBUTING rules that bind:
   - writing tasks to `writing_engine` + `ext/src/rpws/` + S601-S604 + S640;
   - figure tasks to `figure_engine` + `ext/src/figures/` + S621-S623.
-- A consolidated release audit at `manifests/RELEASE_AUDIT_v1.6.4.md`.
+- A consolidated release audit, retained in [Git history](https://github.com/ARC0127/ZIP-your-Research/blob/b290a2a650b2e0f4dab55ff613697ae1fdcfe86f/manifests/RELEASE_AUDIT_v1.6.4.md).
 
 ### Changed
 

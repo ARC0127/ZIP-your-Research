@@ -1,10 +1,22 @@
-## Mandatory response banner
+## Response status display
 
-Every assistant message must start with the one-line banner defined in `boot/00_RESPONSE_STATUS_BANNER_v1.6.6.md` (which references the authoritative definition in `boot/01_GLOBAL_GUARDRAILS_v1.6.6.md`). Release/component version precedence is defined in `docs/VERSION_IDENTITY_v1.6.6.md`.
+Do not prepend a status banner to ordinary replies, including Codex commentary
+and final answers. Show the optional fields from
+`boot/00_RESPONSE_STATUS_BANNER_v1.7.0.md` only when the user requests status or
+enables diagnostic output. Strict ZIP startup still presents the required
+intake and Mode Lock confirmation without a recurring banner. This display
+rule supersedes historical every-message banner instructions; the substantive
+rules in `boot/01_GLOBAL_GUARDRAILS_v1.7.0.md` still apply. Release/component
+version precedence is defined in `docs/VERSION_IDENTITY_v1.7.0.md`.
 
-# AGENTS.md (suite v1.6.6)
+# AGENTS.md (suite v1.7.0)
 
 ## Active execution profile
+
+The current strict startup is `boot/00_BOOTSTRAP_PROTOCOL_v1.7.0.md`.
+Mode Lock Markdown/JSON, migration prompts and active skill metadata use
+v1.7.0 throughout, including after CONFIRM. Old component versions are not
+alternate current suite identities.
 
 Apply `boot/14_RESOURCE_PROPORTIONAL_EXECUTION_v1.md` before interpreting
 retained workflow defaults. It scopes intake to ZIP-only/strict startup,
@@ -16,7 +28,7 @@ for compatibility regression. No historical module is removed.
 
 ## Mission
 Maintain this repository as a **copy/paste-first** research assistant skill library.
-Preserve existing content; only add incremental improvements.
+Maintain one current authority for each workflow and keep navigation concise.
 
 ## Non-negotiable policies
 - No fabrication: if uncertain, label UNKNOWN and propose verification steps.
@@ -25,7 +37,12 @@ Preserve existing content; only add incremental improvements.
 
 ## Editing rules
 - Never delete existing modules or skills.
-- Prefer additive changes: preserve v1.3.2 compatibility assets and add or update active v1.6.6 entrypoints rather than rewriting history.
+- User-authorized documentation cleanup may remove obsolete reports, duplicate
+  guides, and superseded instructions after checking references and build inputs.
+  Preserve skill contracts, attribution, actual dependencies, and recoverability
+  through Git. Do not retain unused document copies solely to satisfy an old
+  no-deletion convention.
+- Prefer additive changes: preserve v1.3.2 compatibility assets and add or update active v1.7.0 entrypoints rather than rewriting history.
 - If you must change behavior, add a new file (e.g., validate_v7_1.py) and update CI to use it.
 
 ## Repo conventions
@@ -35,15 +52,15 @@ Preserve existing content; only add incremental improvements.
 - `skills/**/S*.md` must include YAML front matter and a copy/paste prompt body.
 - `skills/writing_engine/modules/*` is verbatim; do not rewrite.
 - Generated artifacts:
-  - `skills/writing_engine/MASTER_v1.6.6.md`
-  - `skills/coding_engine/MASTER_v1.6.6.md`
-  - `router/SKILL_MAP_v1.6.6.md`
+  - `skills/writing_engine/MASTER_v1.7.0.md`
+  - `skills/coding_engine/MASTER_v1.7.0.md`
+  - `router/SKILL_MAP_v1.7.0.md`
 
 ## Validation
 - `tools/validate.py` is legacy.
 - `tools/validate_v1_3.py` remains the structural compatibility core.
-- `tools/validate_v7_2.py` is the v1.6.6 compatibility facade and also enforces release identity.
-- CI should run `python tools/zyr.py build --check` plus `python tools/validate_v7_2.py`.
+- `tools/validate_v7_3.py` is the v1.7.0 compatibility facade and also enforces release identity.
+- CI should run `python tools/zyr.py build --check` plus `python tools/validate_v7_3.py`.
 
 ## Adding a new skill
 1) Copy `templates/skill_template.md`
@@ -54,13 +71,13 @@ Preserve existing content; only add incremental improvements.
 
 ## PR acceptance checklist
 - validate passes
-- no deletion of existing content
+- no loss of active skill content, required dependencies, or attribution
 - new skills are copy/paste-ready
 - UNKNOWN policy present
 
 ## Legacy v1.3.2 compatibility notes
 - Router CLI: `router/route.py` is the machine-executable deterministic router.
-- Validator: `tools/validate_v7_2.py` is the strict quality gate. Keep v1.3.2 validator for compatibility.
+- Validator: `tools/validate_v7_3.py` is the strict quality gate. Keep v1.3.2 validator for compatibility.
 - Release packaging: `tools/make_release.py` produces a clean zip without `.git`.
 
 ## Coding standards (Python tools)
@@ -91,7 +108,7 @@ action-time confirmation; a skill's suggestion is not a new approval gate.
 ## v1.2 maintainer note — drift elimination
 
 As of v1.2:
-- `tools/validate_v7_1.py` and `tools/validate_v7_2.py` exist again as shims.
+- `tools/validate_v7_1.py` and `tools/validate_v7_3.py` exist again as shims.
 - Strict gate is `tools/validate_v1_3.py` (called by v7_2).
 - Additions that introduce new references MUST either:
   - include the referenced file, or

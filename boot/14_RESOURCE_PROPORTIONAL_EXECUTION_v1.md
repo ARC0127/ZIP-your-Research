@@ -1,8 +1,8 @@
 # Resource-proportional execution (active profile v1)
 
-This profile applies to the v1.6.6 suite and its installed skill entrypoints.
+This profile applies to the v1.7.0 suite and its installed skill entrypoints.
 It takes precedence over broad default loading, companion-skill, repetition,
-and intake wording in retained components. It does not override the user's
+intake, and recurring status-banner wording in retained components. It does not override the user's
 instructions, host policy, explicit approvals, or scientific evidence rules.
 
 ## Choose work by the requested result
@@ -34,6 +34,12 @@ instructions, host policy, explicit approvals, or scientific evidence rules.
 
 ## Reasoning, tools, and workers
 
+- Ordinary replies, including Codex commentary and final answers, have no status
+  banner. Show relevant status fields only on user request or explicit diagnostic
+  opt-in; do not repeat unchanged fields. This overrides legacy every-message
+  banner instructions, including S430 display rules. Strict ZIP intake and
+  Mode Lock confirmation remain required. Full field definitions are available
+  in `boot/00_RESPONSE_STATUS_BANNER_v1.7.0.md` only when needed.
 - Match analysis to the actual uncertainty, consequence, and requested rigor.
   Explain the conclusion and decisive evidence without narrating repeated
   deliberation. This profile does not change the host's model or reasoning effort.
@@ -53,6 +59,10 @@ instructions, host policy, explicit approvals, or scientific evidence rules.
 
 ## Intake, steering, and approval
 
+- The active strict startup is `boot/00_BOOTSTRAP_PROTOCOL_v1.7.0.md`. Generate
+  working Mode Lock Markdown/JSON and migration prompts with suite v1.7.0 using
+  its current templates. Do not adopt a retained module's version as session
+  identity. Existing confirmed scope survives a version-only normalization.
 - ZIP-only startup and user-selected strict Mode Lock workflows retain their
   explicit CONFIRM requirement. Calling an atomic skill does not start that
   workflow again. Reuse an existing lock and already granted authorization.
@@ -81,4 +91,4 @@ instructions, host policy, explicit approvals, or scientific evidence rules.
   unresolved concern. Full requested research and required checks still apply.
 
 The separate claim skill's fresh-literature and coaching contracts are not
-changed by this profile. Suite identity remains v1.6.6; profile version is v1.
+changed by this profile. Suite identity remains v1.7.0; profile version is v1.

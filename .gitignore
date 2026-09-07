@@ -1,2 +1,12 @@
 __pycache__/
 *.py[cod]
+
+# Generated historical operation reports; current evidence is explicitly curated.
+/validate_v*.log
+/artifacts/*/report*.md
+/docs/audits/
+/docs/how_to_use/*How_to_Use_v1.3.2.pdf
+/docs/SKILLS_INDEX_GENERATED_v1.3.md
+/manifests/.repair*_tmp.json
+/manifests/*AUDIT*.md
+/manifests/*REPORT*.md

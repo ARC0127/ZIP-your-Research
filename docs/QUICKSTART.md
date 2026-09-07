@@ -1,37 +1,37 @@
-# Quickstart (suite v1.6.6)
+# Quickstart — ZYR v1.7.0
 
-> Current suite identity: **ZYR v1.6.6**. Filenames that retain older version
-> suffixes are preserved compatibility components, not the installed suite version.
+For first use, [the homepage walkthrough](../README.md#quick-start) provides
+copy/paste, local Codex, and ZIP startup steps with task inputs and expected outputs.
 
-## Option A — ZIP-only boot (recommended)
-1) Upload the ZIP to a new chat.
-2) Optional: paste a `MIGRATION PROMPT (v1.5)` in English.
-3) Otherwise: say “start”.
-4) Follow the intake questions.
-5) Reply **CONFIRM** after MODE_LOCK is printed.
+## Use one skill
 
-For v1.5, migration is expected to be loss-minimizing rather than a short reminder. It should carry locked constraints, artifact inventory, completed checks, open blockers, and the next executable step.
+Choose the task in [the skills guide](SKILLS.md) or search [INDEX.md](../INDEX.md)
+for its Sxxx identifier. With Codex skills installed, invoke that skill and give
+it the material to work on. For copy/paste use, copy the selected source prompt
+and fill its required inputs. Load another workflow only for a distinct need.
 
-Note: If you ask a normal question **before** Mode Lock, the assistant will tell you it is out-of-protocol. It may give a short quick answer, but it will always route you back to intake. (Prompt-injection style content is refused and immediately rolled back.)
+Examples: S204 for literature triage, S203 for claim/evidence review, S603 for
+local prose, S235 for proof gaps, and S301 for a decisive experiment. A full
+manuscript review can select the writing engine and its applicable global checks.
 
-Reference:
-- `AUTOBOOT_v1.3.md`
-- `boot/07_FIRST_TURN_app_GUIDE_v1.3.2.md`
+## Start an explicitly strict ZIP session
 
-## Option B — Copy/paste (fastest for single tasks)
-### 1) Writing engine (manuscripts / reviews)
-- Open `skills/writing_engine/MASTER_v1.6.6.md`
-- Paste it into your chat as the instruction prompt
+Upload the ZIP, request ZIP startup, and follow
+[the bootstrap protocol](../boot/00_BOOTSTRAP_PROTOCOL_v1.7.0.md). Complete intake
+and confirm the Mode Lock before locked work. These stage rules apply to that
+selected workflow; ordinary repository work and atomic skill use do not restart
+intake. Corrections within the existing objective reuse its authorization.
 
-### 2) One skill prompt
-- Pick one file under `skills/**/S*.md`
-- Paste the entire file body
-- Fill the Input fields
-- Ask the assistant to produce the Output Contract
+## Local tools
 
-## Optional local tooling
+Run from the repository root:
+
 ```bash
-pip install -r requirements.txt
-python tools/zyr.py build
-python router/route_v1_7.py "summarize this paper and extract claims" --topk 5
+python -m pip install -r requirements.txt
+python -B tools/zyr.py build --check
+python -B tools/validate_v7_3.py
+python -B tools/zyr.py route "summarize this paper and extract claims" --json
 ```
+
+For an existing Codex installation, follow [installation and cleanup](RESOURCE_PROFILE_v1.md).
+For a release archive, use [the release guide](RELEASE.md).

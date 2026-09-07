@@ -37,7 +37,7 @@ jobs:
           python -B tools/zyr.py manifest
           python -B tools/zyr.py build --check
           python -B tools/validate_v7_1.py
-          python -B tools/validate_v7_2.py
+          python -B tools/validate_v7_3.py
           python -B tools/zyr.py check --ci
 
       - name: Run routing, evolution, security, and release regressions
@@ -48,6 +48,7 @@ jobs:
             tests.integrity.test_generated_bootstrap \
             tests.integrity.test_resource_profile_v1 \
             tests.integrity.test_astra_instructions_v1 \
+            tests.integrity.test_document_retirement_v1 \
             tests.integrity.test_manifest_closure \
             tests.integrity.test_release_identity_v1_6_6 \
             tests.integrity.test_release_capabilities \
@@ -57,6 +58,7 @@ jobs:
 
       - name: Build, audit, and self-check the default-safe release
         run: |
+          python -B tools/prune_retired_docs_v1.py --root . --check
           release_zip="${RUNNER_TEMP}/ZIP-your-Research_release.zip"
           python -B tools/make_release_v1_7.py --out "${release_zip}"
           python -B tools/zyr.py release-audit "${release_zip}"

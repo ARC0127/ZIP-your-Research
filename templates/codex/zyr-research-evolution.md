@@ -1,7 +1,7 @@
 ---
 name: zyr-research-evolution
 description: Maintain, install, or evaluate the ZYR skill library.
-version: 1.6.6
+version: 1.7.0
 ---
 
 # ZYR Research Evolution

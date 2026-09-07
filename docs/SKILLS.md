@@ -1,15 +1,15 @@
-# Skills Catalog (suite v1.6.6)
+# Skills Catalog (suite v1.7.0)
 
-> 当前套件版本是 **ZYR v1.6.6**；文件名中的旧版本号表示兼容组件沿革，
-> 不代表当前安装版本。详见 `docs/VERSION_IDENTITY_v1.6.6.md`。
+> 当前套件版本是 **ZYR v1.7.0**；文件名中的旧版本号表示兼容组件沿革，
+> 不代表当前安装版本。详见 `docs/VERSION_IDENTITY_v1.7.0.md`。
 
-> 新手只看这一页：先学会 **FOCUS（A–J）** + **ONECHAT** 的最短闭环。
+先按任务选择一个技能；完整清单见 [INDEX.md](../INDEX.md)，安装与启动见 [Quickstart](QUICKSTART.md)。
 
-本仓库的目标不是“随便聊天”，而是把科研工作流拆成可复用的 **skills**，并用 **MODE_LOCK/LOCKED** 机制在用户扰动下保持稳定执行。
+普通任务直接使用所选技能。以下 FOCUS、ONECHAT 和 Mode Lock 是明确选择严格 ZIP 工作流时的配置，不是每次调用技能的前置手续。
 
 ## A. FOCUS domains（你在 intake 里选择的“关注维度”）
 
-> 这 10 个 domain 的**权威定义**在：`router/intake_profile_v1.3.2.yaml`（含推荐提问模板与主技能）。
+> 这 10 个 domain 的**权威定义**在：`router/intake_profile_v1.7.0.yaml`（含推荐提问模板与主技能）。
 
 - **A_logic**：思路/逻辑一致性核查（主技能：S226）
 - **B_method**：方法正确性核查（主技能：S227）
@@ -24,9 +24,9 @@
 
 完整技能清单看：`INDEX.md`（自动生成，按目录列出所有 Sxxx）。
 
-## B. 最短上手（10 分钟）
+## B. 严格 ZIP 工作流的启动
 
-1) **只做 intake，不执行**：按 `boot/00_BOOTSTRAP_PROTOCOL_v1.3.2.md` 走到 CONFIRM。
+1) **只做 intake，不执行**：按 `boot/00_BOOTSTRAP_PROTOCOL_v1.7.0.md` 走到 CONFIRM。
 2) 选一个 FOCUS（例如 A_logic），给最小材料范围（段落/公式/实验表）。
 3) 回复 `CONFIRM` 后进入 LOCKED：严格按 `boot/10_LOCKED_SCOPE_GUARD_v1.3.md` 执行。
 
@@ -37,7 +37,7 @@ ONECHAT 是“单个 ChatGPT 对话”下的科研闭环模板：
 - Ideation：S201–S214
 - Planning：S301–S308
 - Experiment：S430–S432 + S421
-- Writing：`skills/writing_engine/MASTER_v1.6.6.md`
+- Writing：`skills/writing_engine/MASTER_v1.7.0.md`
 - Review：S424 + S432
 - Ops：S407 + S428 + `artifacts/release_checklist.md`
 

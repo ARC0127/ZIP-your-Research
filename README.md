@@ -1,9 +1,9 @@
-# ZIP-your-Research (ZYR) v1.6.6
+# ZIP-your-Research (ZYR) v1.7.0
 
 <p align="center">
   <picture>
-    <source media="(max-width: 600px)" srcset="docs/assets/zyr-cover-mobile-v1.6.6.svg">
-    <img src="docs/assets/zyr-cover-v1.6.6.svg" width="100%" alt="ZIP your Research — Make every claim earn its place. A workflow connecting research questions, evidence, and the next check.">
+    <source media="(max-width: 600px)" srcset="docs/assets/zyr-cover-mobile-v1.7.0.svg">
+    <img src="docs/assets/zyr-cover-v1.7.0.svg" width="100%" alt="ZIP your Research — Make every claim earn its place. A workflow connecting research questions, evidence, and the next check.">
   </picture>
 </p>
 
@@ -11,583 +11,199 @@
   <a href="#quick-start"><strong>Get started</strong></a> &nbsp;·&nbsp;
   <a href="docs/SHOWCASE.md"><strong>Explore verified cases</strong></a> &nbsp;·&nbsp;
   <a href="docs/SKILLS.md">Browse skills</a> &nbsp;·&nbsp;
-  <a href="docs/USAGE.md">Documentation</a>
+  <a href="docs/QUICKSTART.md">Documentation</a>
 </p>
 
 <p align="center">
-  <a href="docs/VERSION_IDENTITY_v1.6.6.md"><img src="https://img.shields.io/badge/suite-v1.6.6-23382e?style=flat-square&amp;labelColor=172228" alt="Suite v1.6.6"></a>
+  <a href="docs/VERSION_IDENTITY_v1.7.0.md"><img src="https://img.shields.io/badge/suite-v1.7.0-23382e?style=flat-square&amp;labelColor=172228" alt="Suite v1.7.0"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-23382e?style=flat-square&amp;labelColor=172228" alt="MIT license"></a>
   <a href="docs/SHOWCASE.md"><img src="https://img.shields.io/badge/router-33%2F33%20passed-23382e?style=flat-square&amp;labelColor=172228" alt="33 of 33 public router cases passed in the 2026-09-04 local snapshot"></a>
 </p>
 
-**A research workflow you can inspect.** ZYR is a library of specialized
-skills for AI research agents. Use it to evaluate ideas, design experiments,
-check claims against evidence, and produce research artifacts. Its protocols
-specify how to record decisions and choose the next verification step.
+**让每个科研主张都有对应的证据。** ZYR 是可阅读、可复制的科研技能库，包含
+149 个活动清单条目，覆盖问题定义、文献、实验、证明、写作与绘图。
+你提供任务和材料，助手按对应技能交付结果；检索、代码执行和文件生成能力由
+所用平台提供。只使用文本提示词时，也可以完成材料分析和方案设计。
 
 <!-- ZYR_LATEST_UPDATE_START -->
 ## 最新更新 · 2026-09-07
 
-**v1.6.6 Astra 适配更新** · 执行配置 v1 · 路由 v1.8 · 本地安装器 v2
+**v1.7.0 发布：精简流程与文档** · 路由 v1.8 · 本地更新器 v2
 
-本次根据 OpenAI 的 GPT-6 Astra 指南和 Eric Provencher 的文章，清理容易导致
-反复确认、过量读取、过度测试与不必要 Agent 调用的指令。
+- 清除 **46 个**重复或过期文件：旧发布审计、临时改名报告、重复 PDF、
+  旧目录索引与多轮执行记录。历史内容仍可通过 Git 恢复。
+- 合并重复使用说明，首页直接说明三种使用方式、可复制的任务示例与预期交付物；
+  修正旧文档中无条件启动 intake、证明引擎和多技能流水线的表述。
+- 取消日常回复中的固定状态横幅；状态按需显示，严格 ZIP 启动的范围确认保留。
+- 将当前启动入口、CONFIRM 后的 Mode Lock Markdown/JSON、迁移提示及本地技能
+  元数据统一为 **v1.7.0**，不再把旧组件版本带入当前会话。
+- 保留 149 个活动清单条目、153 个本地 ZYR 入口、48 个受兼容契约约束的技能
+  别名，以及实际依赖、科研证据规则和署名许可。
+- 本地清理工具仅移除清单中内容未改动的旧副本，保存备份并支持回滚；后续
+  CI 检查这些旧文件不会重新进入发布包。
 
-- **技能更容易选对。** 153 个本地 ZYR 入口保留，描述先写具体用途；描述总量
-  从 16,364 降至 7,463 字节（减少 54.4%）。完整研究协议继续按需读取。
-- **按任务规模执行。** 普通检索由当前 Agent 完成，明确要求多 Agent 时保留
-  S660 流程；局部润色按需选择模块。同一目标内的补充与纠正不重启 intake。
-- **完成后再交付。** 已授权任务继续到相关验证和交付；清楚区分完整审计与逐轮
-  讨论，避免停在初版。明确的审批、科学证据与记忆激活要求仍然有效。
-- **提供可选个人指令配置。** 将详细写作、工程与存档协议分离，全局常驻
-  AGENTS 从 25,448 降至 5,652 字节（减少 77.8%）；同时收窄 Headroom 触发范围。
-  默认安装仅更新 ZYR，个人配置须显式选择。模型与推理强度保持用户设定。
-- **可检查、可回滚。** 安装器保存被替换文件和哈希，支持检查本地安装与源码
-  是否一致，并拒绝用旧备份覆盖后续编辑。
-
-**本轮验证：** 76 项 Python 测试通过、1 项平台相关跳过；33 个兼容路由用例、
-生成产物检查与 v1.6.6 结构校验通过。
-
-已有完整 ZYR 安装的用户，可在仓库根目录执行：
-
-```powershell
-py -3 -B tools/install_codex_profile_v2.py --codex-home D:/codex/home --apply --backup D:/codex/backups/zyr-NEW-DIRECTORY
-py -3 -B tools/install_codex_profile_v2.py --codex-home D:/codex/home --check
-```
-
-将路径换为自己的目录，并选择一个尚不存在的备份目录；安装后重新加载 Codex
-或开始新任务。[逐项修改、材料读取范围与个人配置安装说明](docs/ASTRA_INSTRUCTION_AUDIT_v1.md)
-及[执行规则](docs/RESOURCE_PROFILE_v1.md)可供核查。上述数字是本地文件字节数，
-实际 token、耗时和任务质量变化尚未做配对测量。
+[安装与升级](docs/RESOURCE_PROFILE_v1.md) ·
+[发布检查](docs/RELEASE.md) ·
+[GitHub CI](https://github.com/ARC0127/ZIP-your-Research/actions/workflows/ci.yml)
 <!-- ZYR_LATEST_UPDATE_END -->
-
-<p align="center"><em>让每一个研究判断，都有据可循。</em></p>
-
-<table>
-  <tr>
-    <td align="center" width="33%"><h3>149</h3>Active skills<br><sub>Manifest-selected workflows</sub></td>
-    <td align="center" width="33%"><h3>4</h3>Dedicated engines<br><sub>Proof · Writing · Figures · Code</sub></td>
-    <td align="center" width="33%"><h3>33 / 33</h3>Routing cases passed<br><sub>Local verification · 2026-09-04</sub></td>
-  </tr>
-</table>
-
-## Put ZYR to work
-
-| Your next research decision | Start here | Work product |
-|---|---|---|
-| **Is this idea worth testing?** | [Problem framing](skills/research_core/S201_problem_framing.md); use [S660](skills/research_orchestrator/S660_epistemic_research_champion.md) for explicitly requested multi-agent research | A scoped research question and the next decisive check |
-| **Does the evidence support this claim?** | [Claim–evidence audit](skills/research_core/S203_claim_evidence_matrix.md) + [logic audit](skills/research_core/S226_logic_consistency_audit.md) | Claims mapped to sources, assumptions, and unresolved gaps |
-| **How should we communicate the result?** | [Writing engine](skills/writing_engine/MASTER_v1.6.6.md) + [figure engine](skills/figure_engine/MASTER_v1.6.5.md) | Prose and source-editable visuals tied to the research record |
-| **Can this procedure be reused?** | [Dynamic Skill memory](skills/research_orchestrator/S661_dynamic_skill_memory.md) | A versioned Skill proposal with evaluation and explicit activation controls |
-
-ZYR runs inside your agent host. Retrieval, worker agents, and rendering use
-the tools available there; the workflows declare the capabilities they need.
-
-## Evidence you can rerun
-
-**33 routing cases passed. 52 Python tests passed, with 1 platform-specific
-skip.** The snapshot below was executed locally on **2026-09-04** with
-**Python 3.13.2 / Windows**.
-
-| Test case | Observed result |
-|---|---|
-| “不要证明，只润色摘要” — polish only | Selects `writing_engine`; excludes `proof_engine` |
-| A reference document tries to override the route | Selects citation audit `S424`; records the untrusted payload as ignored |
-| “不要画图，但最后请画一个流程图。” — conflicting instructions | Returns `ROUTE_AMBIGUOUS` with no execution plan |
-| Memory write with wrong consent or a forged attestation | Rejects the operation; the temporary store remains absent |
-| Synthetic credentials in provider responses | Redacts credentials in returned metadata and errors; 3/3 tests pass |
-
-[**Read the inputs, outputs, and reproduction commands →**](docs/SHOWCASE.md)
-
-These results cover repository checks and implemented tool behavior. The
-**12 mutation/clean fixture pairs** also pass structural validation; S660
-model evaluation and scientific-outcome evaluation remain **NOT_RUN**.
-The [snapshot record](docs/evidence/2026-09-04/results.json) identifies the
-tested pre-publication tree, including the v1.6.6 alignment changes, and the
-single Windows skip.
-
-<details>
-<summary><strong>Why ZYR: operating model, release identity, and capabilities</strong></summary>
-
-> **Build research decisions on evidence you can inspect.**
-
-**ZIP-your-Research (ZYR)** is an open, repository-first operating layer for
-agentic research. Copy/paste-ready Skills and deterministic routing connect a
-task to specialized proof, writing, figure, and coding workflows. Host-mediated
-retrieval and multi-agent protocols feed a visible research record.
-
-The workflows specify **what must be checked next**, why a claim changed, and
-which contradictions remain unresolved. Verified procedures can be proposed
-for later reuse through explicit memory controls.
-
-## Version identity
-
-- **Suite release:** `v1.6.6`. This is the only version that should be shown as
-  the current ZIP-your-Research release in user-facing responses and artifacts.
-- **Compatibility lineage:** filenames containing `v1.3.2`, `v1.3`, `v1.5`, or
-  `v1.6.5` identify preserved component contracts or historical artifacts; they
-  do not downgrade the installed suite release.
-- **Active entrypoints:** use `boot/00_RESPONSE_STATUS_BANNER_v1.6.6.md`,
-  `boot/01_GLOBAL_GUARDRAILS_v1.6.6.md`, and the manifest-selected engine paths.
-
-The normative precedence rule is documented in
-[`docs/VERSION_IDENTITY_v1.6.6.md`](docs/VERSION_IDENTITY_v1.6.6.md).
-
-## Why ZYR
-
-| Research pressure | What ZYR adds |
-|---|---|
-| A broad prompt produces a confident but untraceable answer | Task lock, decision lock, deterministic routing, and explicit completion states |
-| Literature search becomes a list of agreeable citations | Authoritative retrieval, source inspection, evidence lineage, contradiction retention, and `UNKNOWN` when verification is absent |
-| Several agents repeat the same opinion | Capability-gated worker contexts, blind first rounds, functionally distinct critics, and scientific adjudication |
-| A promising idea improves only rhetorically | Candidate versioning, assumptions, falsifiers, proof obligations, decisive experiments, and `NO_SCIENTIFIC_DELTA` |
-| Paper language sounds polished while the logic remains weak | Proof-first claim audits followed by dedicated writing, rhetoric, citation, and global logic gates |
-| Figures are attractive but scientifically ambiguous | Source-code-first figure design, caption/claim consistency checks, data lineage, and capability-aware rendering |
-| Useful procedures disappear after the task | Visible short-/long-term memory proposals and approval-gated dynamic Skill creation, evaluation, update, rollback, deprecation, and deletion |
-
-## What v1.6.6 brings together
-
-- **S660 Epistemic Research Champion**: a protocol for multi-round research
-  using host-provided worker contexts and inspected authoritative sources.
-- **S661 Dynamic Skill Memory**: successful procedures can become externally
-  stored `dyn-*` Skills only after content-bound planning, signed host consent,
-  holdout comparison, and explicit lifecycle decisions.
-- **Scientific Decision Record (SDR)**: claims, evidence, candidate changes,
-  objections, negative results, proof status, experiment status, and stop
-  reasons remain visible and reviewable.
-- **Four dedicated engines**: specialized workflows for proof, writing,
-  figures, and coding, selected through deterministic routing.
-- **Fail-closed validation and release**: structural checks, behavioral checks,
-  and scientific evidence are reported separately; missing evidence is never
-  promoted by wording.
-
-## The operating contract
-
-ZYR supplies workflow instructions and verification tools; the host supplies
-execution capabilities. Scientific conclusions depend on the sources,
-proofs, experiments, and checks recorded for the task.
-
-The default operating rule is:
-
-```text
-lock the task
-→ verify host capabilities
-→ route to the applicable engine and skills
-→ preserve evidence and rejected paths
-→ verify the resulting artifact
-→ report PASS, FAIL, PARTIAL, BLOCKED, or UNKNOWN without upgrading the evidence
-```
-
-</details>
 
 ## Quick start
 
-For a local checkout, verify the public entrypoint first:
+**第一次用，先选一个具体任务。** 例如核对论文主张、设计一个实验，或润色一段
+摘要。无需先学习所有技能编号，也无需每次启动完整科研流程。
+
+| 你现在的环境 | 用法 |
+|---|---|
+| 只有一个聊天窗口 | 复制单个技能正文，再贴任务材料，见方式一 |
+| Codex 能读取本地文件，或已安装 ZYR | 打开仓库或调用已安装技能，见方式二 |
+| 希望用 ZIP 建立完整、有范围锁定的研究对话 | 上传 ZIP 并完成启动确认，见方式三 |
+
+### 方式一：复制一个技能，立即使用
+
+1. 在下表选任务并打开技能文件。点击 GitHub 的 **Raw**，复制文件正文。
+2. 把正文粘贴到聊天窗口，再补充目标、原始材料、限制和交付格式。
+3. 发送后检查结果是否包含该技能的交付项；缺少的证据应明确标为 `UNKNOWN`。
+
+以核对论文主张为例，复制 [S203](skills/research_core/S203_claim_evidence_matrix.md)
+正文后，接着粘贴以下内容，并替换方括号中的材料：
+
+```text
+请按上面的 S203 技能检查论文主张与证据是否一致。
+主张：[粘贴摘要或贡献列表中的具体主张]
+现有证据：[粘贴对应实验表、图注、统计结果或可读取的文件]
+范围：只核查这些主张；保持原始数值，不补造实验或引用。
+交付：主张—证据—状态矩阵、证据缺口、建议修改的措辞、下一步验证。
+```
+
+预期得到可逐项核对的证据表和修改建议。只写“我们优于基线”却未提供结果表，
+不能得到已验证的结论；助手应指出缺哪项证据。单个技能无需上传整个仓库，
+涉及额外协议时再提供其明确需要的文件。
+
+### 方式二：在 Codex 中使用
+
+**尚未安装技能：直接把仓库作为项目使用。** 在 GitHub 点击
+**Code → Download ZIP** 并解压，或运行：
 
 ```bash
 git clone https://github.com/ARC0127/ZIP-your-Research.git
-cd ZIP-your-Research
-python3 -m pip install -r requirements.txt
-python3 tools/zyr.py manifest
-python3 tools/zyr.py route "authoritative multi-agent research with evidence lineage"
 ```
 
-Then:
-
-1. Open the checkout as the project/workspace in a local Agentic app, or attach
-   the release ZIP to a web host that can read repository files.
-2. Describe the research decision, available evidence, constraints, and desired
-   artifact.
-3. Complete intake and `MODE_LOCK`; provide `CONFIRM` when the selected boot
-   protocol requires it.
-4. Name the relevant engine or let the deterministic router select it.
-5. Require the result to separate performed checks, failed checks, and
-   uninspected or unresolved items.
-
-Copy/paste starter:
+在 Codex 中打开包含 `AGENTS.md`、`skills_manifest.yaml`、`skills/` 的目录，
+然后发送下面的任务。此方式让助手读取本地协议，不需要先运行安装脚本：
 
 ```text
-Call ZYR v1.6.6 under MODE_LOCK.
-Objective: determine whether [candidate method] warrants a controlled pilot.
-Decision: select the next decisive proof, experiment, or retrieval action.
-Inputs: [files, URLs, data, code, figures, constraints].
-Required route: S660 with proof_engine and experiment skills as applicable.
-Hard boundaries: authoritative web retrieval, no fabricated agent transcripts,
-no silent scope change, no persistent memory write.
-Output: completed templates/orchestration/RESEARCH_RUN.md with evidence lineage,
-candidate versions, objections, stop reason, and UNKNOWN verification actions.
+使用这个仓库的 ZYR 技能完成任务。
+先遵循 boot/14_RESOURCE_PROPORTIONAL_EXECUTION_v1.md，
+在 skills_manifest.yaml 中定位 S603，只加载本次需要的协议。
+请润色以下英文摘要，保留公式、数值、引用和技术主张，只输出修改后的正文：
+[粘贴摘要]
 ```
 
-<details>
-<summary><strong>Research orchestration, the scientific record, and governed memory</strong></summary>
-
-## What research self-evolution means here
-
-`S660 epistemic_research_champion` defines **task-level epistemic and operational
-evolution**. A locked research task can improve its:
-
-- question graph and search frontier;
-- inspected evidence and contradiction map;
-- candidate mechanism, assumptions, predictions, and falsifiers;
-- proof obligations and experiment design;
-- next highest-information action.
-
-Each material change is recorded from `candidate_v0` to `candidate_vN` with a
-round delta. A round that changes only wording or appearance is
-`NO_SCIENTIFIC_DELTA`.
-
-This protocol does **not** authorize the assistant to modify its model weights,
-system policy, source code, validators, evaluation rules, or persistent memory.
-Those are separate engineering or governance actions and require their own
-locked task and approval. Agent agreement is not a truth criterion, and agents
-using the same base model are not independent scientific replications.
-
-The S660 flow is:
+**已经安装 ZYR：在技能列表选择 `zip-your-research`，或在输入中明确调用：**
 
 ```text
-task and decision lock
-→ host capability handshake
-→ question graph
-→ blind first-round authoritative retrieval
-→ evidence lineage and contradiction retention
-→ materially distinct candidate_v0 alternatives
-→ functional cross-examination
-→ immutable candidate_vN and ROUND_DELTA
-→ scientific adjudication or NO_CHAMPION_READY
-→ read-only rendering
-→ visible, non-persistent memory proposal
+$zip-your-research
+请用 S603 润色下面的英文摘要，保留公式、数值、引用和技术主张，
+只输出修改后的正文：[粘贴摘要]
 ```
 
-S660 requires real host-provided worker contexts, blind first-round isolation,
-web/page inspection, recoverable citations, and an approval channel for
-persistent writes. When required capabilities are absent, the correct status is
-`MULTI_AGENT_UNAVAILABLE`; ZYR must not invent a multi-agent transcript.
+也可以直接选择具体技能，例如 `zyr-s603-bilingual-human-voice-delta-rewrite`。
+不知道编号时说明任务即可，由总入口选择技能。材料可以直接粘贴，也可以给出
+助手实际可读取的文件路径；仅写一个不可访问的文件名不能替代材料。
 
-Use:
+已有完整安装的用户按 [升级与回滚说明](docs/RESOURCE_PROFILE_v1.md) 使用 v2
+更新器。**v2 目前只支持升级已有的完整 ZYR 安装，不是首次安装器**；克隆仓库
+也不会自动注册全局技能。更新后重新加载 Codex 或新建任务以读取新入口。
 
-- `skills/research_orchestrator/S660_epistemic_research_champion.md`
-- `templates/orchestration/RESEARCH_RUN.md`
-- `interfaces/host_adapter_contract.md`
-- `docs/memory/VISIBLE_MEMORY_PROTOCOL_v1.md`
+### 方式三：上传 ZIP，启动完整研究对话
 
-## Scientific Decision Record and read-only rendering
-
-The claim ledger, evidence lineage, candidate versions, proof/experiment
-status, and adjudication sections of `RESEARCH_RUN.md` together form the
-**Scientific Decision Record (SDR)** for a run.
-
-The rendering contract treats writing, bilingual polishing, citation
-formatting, tables, figures, and diagrams as read-only uses of that record.
-They must preserve claim IDs,
-epistemic modality, negation, equations, values, denominators, units,
-uncertainty, citations, limitations, negative results, and generalization
-boundaries. If rendering needs a new scientific claim or changes one of these
-objects, execution returns to the earliest affected research state.
-
-A fluent paragraph or attractive figure cannot change `UNKNOWN` to
-`SUPPORTED`, `SUPPORTED` to `PROVED`, or an association into a causal result.
-
-## Visible memory boundary
-
-Markdown records are the human-reviewable memory authority. Embeddings, search
-indexes, graphs, and caches may be derived for retrieval, but they are
-rebuildable aids rather than truth sources.
-
-Memory is **non-persistent by default**:
-
-- short-term memory expires with the run unless the user chooses otherwise;
-- long-term records remain `PROPOSED_ONLY` until their exact contents, scope,
-  destination, and retention are approved;
-- a web host may offer a user-triggered Markdown download, but must not save or
-  upload memory in the background;
-- a Codex/local host must first show the exact records and absolute target, then
-  obtain a second, write-specific confirmation before saving them;
-- approval to run S660 is not approval to write memory, edit source code, stage
-  Git changes, commit, push, or upload;
-- secrets, credentials, raw source instructions, and cross-project content
-  without explicit scope are not valid long-term memory.
-
-The visible templates are under `templates/memory/`.
-
-## Dynamic Skill memory
-
-`S661 dynamic_skill_memory` turns a verified run trace into a reusable
-procedural-Skill candidate and governs its full lifecycle:
+适用于能读取 ZIP 内文件的聊天环境。在 GitHub 点击 **Code → Download ZIP**，
+将下载的文件上传到新对话，然后发送：
 
 ```text
-VERIFIED_SUCCESS trace
--> read-only content-bound proposal
--> user-approved PILOT
--> NO_SKILL / CHAMPION / CHALLENGER evaluation
--> user-approved ACTIVE
--> immutable update, rollback, or deprecation
--> separately planned and approved deletion
--> content-free DELETED tombstone
+请读取上传的 ZYR ZIP。先应用 boot/14_RESOURCE_PROPORTIONAL_EXECUTION_v1.md，
+再按 boot/00_BOOTSTRAP_PROTOCOL_v1.7.0.md 启动严格 ZIP 工作流。
+这是新项目，没有迁移提示词。
+研究目标：[用一两句话说明问题]
+已有材料：[说明已上传的论文、代码、数据或草稿]
+本次交付：[例如一份带证据的研究缺口分析和可执行的实验计划]
+允许联网检索；先完成 intake 并生成 Mode Lock，待我回复 CONFIRM 后执行。
 ```
 
-Automatic candidate generation is not automatic save, registration,
-activation, update, or deletion. Dynamic Skills live only in an explicit
-external root, use the `dyn-*` namespace, and cannot modify or delete built-in
-ZYR Skills, manifests, validators, or policy.
+助手会先询问影响范围的缺失信息，整理任务范围、材料、联网策略和交付物。
+核对 Mode Lock 后回复 **`CONFIRM`**，再进入执行。后续在同一目标内补充材料、
+纠正要求可直接继续。若平台不能读取 ZIP，解压后改用方式一。
 
-P0 generated Skills are declarative Markdown only. Executable code fences,
-runtime installers, preauthorized tools, secrets, prompt overrides,
-path traversal, symlinks, junctions, and hardlinks fail closed. Every mutation
-uses a read-only plan followed by a second apply phase bound to the exact root,
-operation, paths, hashes, version, source records, and a short-lived Ed25519
-attestation from a pinned trusted-host key. A bare consent ID is not user
-authorization. Each applied lifecycle event retains a detached signed
-authorization receipt; verification rechecks the receipt chain and binds the
-latest signed plan to the complete registry hash. Detecting restoration of a
-complete earlier valid snapshot requires an external monotonic anchor.
+### 选哪个技能、给什么材料
 
-Start with:
+下列是日常任务入口。完整清单见 [INDEX.md](INDEX.md)。
 
-```bash
-python3 tools/zyr.py skill-memory draft /absolute/path/TRACE.yaml
-python3 tools/zyr.py skill-memory plan create \
-  --root /absolute/external/dynamic-root \
-  --proposal /absolute/path/PROPOSAL.yaml \
-  --trusted-consent-public-key /host/HOST_PUBLIC_KEY.pem
-```
+| 你的任务 | 技能 | 提供的材料 | 主要交付 |
+|---|---|---|---|
+| 把模糊想法变成研究问题 | [S201](skills/research_core/S201_problem_framing.md) | 想法、领域、约束 | 问题定义、假设与成功标准 |
+| 搜索并筛选文献 | [S204](skills/research_core/S204_literature_triage_pipe.md) | 主题、时间范围、纳入标准 | 检索与筛选结果、分类摘要和缺口 |
+| 核对主张是否被证据支持 | [S203](skills/research_core/S203_claim_evidence_matrix.md) | 主张、实验表或其他证据 | 证据矩阵、缺口与措辞校准 |
+| 设计能支持或否定假设的实验 | [S301](skills/exp/S301_min_decidable_experiment.md) | 假设、数据、算力与时间限制 | 实验步骤、验收标准、失败信号与日志要求 |
+| 润色一段中文或英文 | [S603](skills/rwf_s340/S603_bilingual_human_voice_delta_rewrite.md) | 原文、用途、必须保留的内容 | 修订正文或逐句修改说明 |
+| 查找数学证明中的缺口 | [S235](skills/research_core/S235_proof_gap_finder.md) | 定理、假设、完整推导 | 缺口、所需引理与修复路径 |
+| 设计论文图 | [S621](skills/rwf_s340/S621_publication_fig_design_theory.md) | 要表达的结论、数据、版面要求 | 图型、信息编码与版式方案 |
 
-Do not run `apply` until the trusted host has displayed the complete preview
-and the user has returned the exact `APPROVE zyr-smc-...` confirmation. The
-host must sign that exact plan with a private key unavailable to the agent.
-Interrupted transactions fail closed and use a separately approved
-`plan recover` / `apply recover`; delete payloads are first moved to reversible
-same-volume quarantine. See
-`docs/memory/DYNAMIC_SKILL_MEMORY_PROTOCOL_v1.md` and
-`templates/skill_memory/`.
-
-</details>
-
-<details>
-<summary><strong>Engine bindings, routing guide, and architecture</strong></summary>
-
-## Mandatory engine bindings
-
-A dedicated engine takes precedence over generic chat behavior when its task
-class applies.
-
-### Research idea, method, contribution, theorem, or storyline
-
-Use `proof_engine` before prose polishing:
+例如设计实验可以这样提问：
 
 ```text
-research logic task
-→ proof_engine
-→ S203 claim_evidence_matrix
-→ S226 logic_consistency_audit
-→ S227 method_correctness_audit
-→ S230 proof_idea_check
-→ S237 theorem_assumption_normalizer when assumptions matter
-→ S240 / S241 for pessimistic or progressive verification
-→ writing_engine only after the SDR is stable
+用 S301 设计一个检验“加入模块 A 能改善小样本泛化”的实验。
+现有资源：[数据划分、基线代码、算力]。可用时间：[实际预算]。
+请给出控制变量、对照组、指标与预先确定的判定标准，
+说明什么结果会否定假设，以及必须保存哪些日志。本次交付实验方案。
 ```
 
-For autonomous multi-agent retrieval and candidate evolution, place S660 before
-the applicable proof and experiment skills.
+要实际运行实验时，再给出代码与数据路径并明确执行要求；输出方案本身不代表
+实验已运行。文献检索需要联网工具，图像与文件生成需要对应后端；缺少能力时
+应明确说明可完成的部分及剩余项。
 
-### Writing, rewriting, translation, and document prose
+### 完整流程与默认行为
 
-Use `writing_engine`, backed by the preserved
-Research-Paper-Writing-Skills source tree:
+整篇论文写作选择 `writing_engine`；证明验证选择 `proof_engine`；实际制图与
+研究代码分别选择 `figure_engine`、`coding_engine`。跨阶段任务可说明最终
+交付物，让助手按需要衔接技能，示例见 [工作流组合](docs/WORKFLOWS.md)。
 
-```text
-writing task
-→ writing_engine
-→ ext/src/rpws/
-→ S601 / S602 / S603 / S604 as applicable
-→ S640 global logic and language gate
-```
+普通任务从当前 Agent 和一个主技能开始。明确要求多 Agent 研究或独立交叉审查
+时才选择 S660；S661 用于生成式技能记忆，保留其同意、认证与评估要求。
+严格 ZIP 启动需要 `CONFIRM`；单项技能调用沿用当前任务授权。模型与推理强度
+由用户决定，ZYR 不自动修改这些设置。
 
-If the scientific decision is unstable, return to S660 or `proof_engine`
-instead of repairing it through prose.
+日常回复不再重复 `ZIP_MODE / STAGE / MEMORY / WEB` 等状态横幅。需要排查执行
+状态时可以明确询问或开启 `DEBUG_TRACE=ON`；这不会替代实际执行或必要确认。
 
-### Figures, plots, diagrams, and visual claims
+## Documentation
 
-In a full local checkout, use `figure_engine` with the preserved figures4papers
-source tree:
-
-```text
-figure task
-→ figure_engine
-→ inspect ext/src/figures/ first
-→ S621 / S622 / S623 as applicable
-→ coding_engine only for execution or code repair
-```
-
-Keep source-code-first generation and structured data-loading logic. SVG, PNG,
-and PDF are exports, not substitutes for the generating source. In a full local
-checkout, inspect a close figures4papers pattern before creating a new design.
-The safety release excludes `ext/src/figures/` while its local license evidence
-is `UNKNOWN`. `manifests/RELEASE_CAPABILITIES.yaml` is the machine-readable
-authority for that boundary: a source-dependent figure route must return
-`SOURCE_UNAVAILABLE` rather than claim inspection or rendering. `S623` may
-still perform a read-only claim/caption audit on a visual supplied by the user.
-
-### Code, repository, validation, and release
-
-Use `coding_engine` for bounded code or repository changes:
-
-```text
-code or repository task
-→ coding_engine
-→ smallest sufficient patch
-→ closed-loop verification
-→ S650 for package or release validation
-```
-
-`S650` covers integrated package validation, source preservation, manifests,
-checksums, and no-omission review. A build or schema pass is structural
-evidence; it is not behavioral or scientific validation.
-
-## Routing guide
-
-| Task | Primary route | Required companions |
-|---|---|---|
-| Multi-agent authoritative research and candidate evolution | `S660` | host capability contract, `RESEARCH_RUN.md`, applicable proof/experiment skills |
-| Generate, evaluate, update, rollback, or delete procedural Skill memory | `S661` | `S660`, `S303`, `S414`, `S423`, `S431`; exact plan/apply consent |
-| Research idea, method, contribution, or storyline | `proof_engine` | `S203`, `S226`, `S227`, `S230`; add `S237/S240/S241` when needed |
-| Manuscript logic audit or reviewer simulation | `proof_engine` + `writing_engine` | `S602` + `S640` |
-| Paper section, proposal, README, or recommendation letter | `writing_engine` | `ext/src/rpws/`, `S601`, `S640`; use the SDR as read-only input |
-| Rewrite, polish, compress, expand, or translate | `writing_engine` | `S603` + `S640` |
-| Result paragraph, table, or figure caption | `writing_engine` | `S604` + `S640`; add `S623` for visual-evidence consistency |
-| Scientific figure, workflow, or architecture diagram | `figure_engine` | inspect `ext/src/figures/`; use `S621` + `S623` |
-| Plotting code, export, or repair | `figure_engine` + `coding_engine` | `S622`, `S621`, `S623`; retain source and data lineage |
-| Experiment, metric, ablation, or leakage review | `proof_engine` + experiment skills | `S301`-`S328`, especially `S301`, `S303`, `S305`, `S307`, `S327`, `S328` |
-| Code repair or repository change | `coding_engine` | `S402`, `S407`, `S421`, `S431`, `S432` |
-| ZIP, manifest, checksum, path, or no-omission check | `S650` | repository validators and release tools |
-
-## Architecture
-
-| Layer | Purpose | Main paths |
-|---|---|---|
-| Control | Bootstrap, intake, mode lock, guardrails, deterministic routing | `boot/`, `router/` |
-| Epistemic orchestration | Capability-gated multi-agent retrieval, candidate evolution, adjudication | `skills/research_orchestrator/`, `templates/orchestration/`, `interfaces/` |
-| Engines | Proof, writing, figure, and coding workflows | `skills/proof_engine/`, `skills/writing_engine/`, `skills/figure_engine/`, `skills/coding_engine/` |
-| Atomic skills | Research, experiment, paper, reproducibility, and integrated operations | `skills/research_core/`, `skills/exp/`, `skills/paper_ops/`, `skills/reproducibility/`, `skills/rwf_s340/` |
-| Visible and Skill memory | Human-reviewable memory plus governed dynamic procedural Skills | `docs/memory/`, `templates/memory/`, `templates/skill_memory/`, `tools/zyr_lib/skill_memory.py` |
-| Local source references | Attributed upstream and user-authored material; release inclusion is governed separately by license evidence | `ext/src/` |
-| Validation and evaluation | Manifests, validators, public paired mutation fixtures, artifact checks | `skills_manifest.yaml`, `manifests/`, `tools/`, `tests/evolution/`, `artifacts/` |
-
-Keep three statuses separate:
-
-| Status | What it can establish |
+| Need | Current guide |
 |---|---|
-| Structural | Required files, schemas, references, builds, or validators have the reported result. |
-| Behavioral | The system took the expected action on named, executed cases. |
-| Scientific | A bounded claim has the stated evidence, proof, experiment, or replication status. |
+| Choose a skill | [Skills guide](docs/SKILLS.md) and [generated index](INDEX.md) |
+| Install or update Codex skills | [Resource profile and installer](docs/RESOURCE_PROFILE_v1.md) |
+| Combine workflows | [Workflow recipes](docs/WORKFLOWS.md) |
+| Understand proof, writing, figure, and code integrations | [Engine guides](docs/how_to_use/README.md) |
+| Inspect reproducible examples | [Verified cases](docs/SHOWCASE.md) |
+| Build and publish a release | [Release guide](docs/RELEASE.md) |
+| Extend the library | [Contributing](CONTRIBUTING.md), [skill authoring](docs/SKILL_AUTHORING_GUIDE.md), [developer API](docs/DEVELOPER_API.md) |
+| Understand memory boundaries | [Visible memory](docs/memory/VISIBLE_MEMORY_PROTOCOL_v1.md) and [procedural skills](docs/memory/DYNAMIC_SKILL_MEMORY_PROTOCOL_v1.md) |
+| Check release identity or licensing | [Version identity](docs/VERSION_IDENTITY_v1.7.0.md), [LICENSE](LICENSE), [third-party attribution](docs/EXTERNAL_SKILL_ATTRIBUTION_v1.6.md) |
 
-The public fixtures in `tests/evolution/public_mutations_v1.jsonl` encode 12
-mutation/clean-twin pairs for later behavioral evaluation. The current
-deterministic test verifies their schema, pairing, coverage, and required
-protocol markers; it does not execute an LLM or establish that S660 detects the
-mutations. That behavioral result remains `NOT_RUN`.
-
-</details>
-
-<details>
-<summary><strong>Installation, release validation, and repository map</strong></summary>
-
-## Installation and validation
-
-Install dependencies:
+## Development
 
 ```bash
-python3 -m pip install -r requirements.txt
+python -m pip install -r requirements.txt
+python -B tools/zyr.py build --check
+python -B tools/validate_v7_3.py
+python -B tools/zyr.py check --ci
+python -B tools/zyr.py route "search and triage recent papers" --json
 ```
 
-Use the stable repository facade for normal operation. `init` is a dry run
-unless `--apply` is supplied:
-
-```bash
-python3 tools/zyr.py manifest
-python3 tools/zyr.py init /absolute/path/to/research-workspace
-python3 tools/zyr.py build --check
-python3 tools/zyr.py check --ci
-python3 tools/zyr.py route-test
-python3 tools/zyr.py skill-memory --help
-```
-
-Invoke a trusted route through the same facade:
-
-```bash
-python3 tools/zyr.py route "autonomous multi-agent research evidence lineage S660"
-```
-
-`tools/build_all.py`, `tools/validate_v7_2.py`, `tools/validate_v1_3.py`, and
-the older direct router/build entrypoints remain compatibility-only. They are
-not the standard interface. See `manifests/COMPATIBILITY.yaml` for the
-authoritative replacement mapping.
-
-### Safe release and release audit
-
-The v1.7 packaging protocol is fail-closed and does not replace the repository
-release version, which is v1.6.6. Build only from a clean Git worktree:
-
-```bash
-python3 tools/make_release_v1_7.py --out /absolute/path/ZIP-your-Research_v1.6.6_release.zip
-python3 tools/zyr.py release-audit /absolute/path/ZIP-your-Research_v1.6.6_release.zip
-```
-
-The builder selects Git-tracked files through
-`manifests/release_policy.yaml`, creates a deterministic content manifest, and
-refuses dirty trees, unsafe ZIP paths, symlinks, configured secret patterns,
-and third-party assets that fail the local license and redistribution gate.
-`release-audit` inspects an existing ZIP without extraction and checks archive
-integrity, deterministic metadata, the policy-required exact set, all active
-skill paths, self-check inputs, capability declarations, third-party evidence,
-and secret patterns. CI then extracts the already-audited archive and runs
-`zyr.py check --ci` plus `route-test` from inside the package.
-
-Under the current fail-closed policy:
-
-- `ext/src/rpws/` may be released because a local MIT license is present and
-  redistribution is marked `ALLOWED`;
-- `ext/src/figures/` and `ext/src/awesome/` are excluded because their
-  checked-in license evidence is `UNKNOWN` and redistribution is `BLOCKED`;
-- local presence, attribution, or internal use is not evidence of permission to
-  redistribute.
-
-Legacy cleanup changes repository contents. Inspect it with `--dry-run` and use
-it only in an appropriate clean or disposable worktree; it is not a
-prerequisite to read or invoke the skills.
-
-## Repository map
-
-```text
-boot/                         bootstrap, migration, intake, mode lock, guardrails
-router/                       deterministic routing and route addenda
-skills/research_orchestrator/ task-level epistemic evolution and adjudication
-skills/proof_engine/          idea, theorem, derivation, claim, and logic checks
-skills/writing_engine/        RPWS-backed prose and read-only SDR rendering
-skills/figure_engine/         capability-gated visual rendering and auditing
-skills/coding_engine/         debugging, patching, and code verification
-skills/research_core/         research framing, novelty, literature, method checks
-skills/exp/                   experiment design, metrics, ablations, sanity checks
-skills/paper_ops/             paper operations, rebuttal, captions, release notes
-skills/reproducibility/       artifacts, dependencies, security, verification
-skills/rwf_s340/              integrated S601-S604, S621-S623, S640, S650
-templates/orchestration/      visible RESEARCH_RUN artifact
-docs/memory/                  visible memory protocol
-templates/memory/             proposal, consent, audit, export, and memory records
-templates/skill_memory/       trace, proposal, evaluation, consent, deletion records
-interfaces/                   host capability and provider contracts
-tests/evolution/              paired public epistemic mutation fixtures
-ext/src/                      preserved upstream and user-authored sources
-manifests/                    inventories, checksums, compatibility, release audits
-tools/                        validators, builders, migration and packaging tools
-artifacts/                    durable task, evidence, proof, and release artifacts
-docs/how_to_use/              operational guides
-```
-
-The complete acknowledgments, upstream references, preservation notes, and
-license-boundary statements below are an intentional part of this release and
-must be retained.
-
-</details>
+Model tools and external backends come from the host. Missing sources and
+unverified claims remain `UNKNOWN` or explicitly unavailable. Repository tests
+establish implemented behavior and package integrity; they do not establish
+scientific benefit or measured token savings. Current execution rules are in
+[the resource profile](boot/14_RESOURCE_PROPORTIONAL_EXECUTION_v1.md).
 
 ## Acknowledgments and references
 

@@ -1,65 +1,38 @@
-# Release Packaging (v1.5.0)
+# Release packaging — ZYR v1.7.0
 
-This document describes the current packaging workflow for the formal `v1.5.0` release line.
+The current builder is `tools/make_release_v1_7.py`; its suffix identifies the
+builder, not the suite release. `VERSION`, `v`, and `skills_manifest.yaml` must
+agree. The [release policy](../manifests/release_policy.yaml) controls allowed,
+required, excluded, and third-party files.
 
-`v1.5.0` is the formal release that closes the alignment work started from `v1.4.4`, with stricter validation and a stronger artifact/proof stack.
-
-## Current recommended flow
-
-From the repository root:
-
-```bash
-python3 tools/build_all.py
-python3 tools/validate_v7_2.py
-python3 tools/drift_audit_v1_3.py
-python3 tools/validate_corpus_v1_3.py
-python3 tools/simulate_locked_regression_v1_3.py --n 25 --seed 0
-python3 tools/validate_completion_corpus_v1_5.py
-python3 tools/simulate_completion_compliance_v1_5.py
-python3 tools/validate_scientific_discipline_corpus_v1_5.py
-python3 tools/simulate_scientific_discipline_v1_5.py
-python3 tools/validate_proof_verification_corpus_v1_5.py
-python3 tools/simulate_proof_verification_v1_5.py
-python3 tools/system_audit_v1_3.py
-python3 tools/make_release.py
-```
-
-## What this produces
-
-- regenerated composite prompts and indexes
-- refreshed deterministic reports under `artifacts/`
-- a clean zip named from `VERSION`
-
-With the current `VERSION`, the default package name is:
-
-- `ZIP-your-Research_v1.5.0_release.zip`
-
-## Version source of truth
-
-- `VERSION` is the packaging source of truth
-- `tools/make_release.py` reads `VERSION` by default
-- `skills_manifest.yaml`, `README.md`, and `CHANGELOG.md` should agree with `VERSION`
-
-If you need to override the version explicitly:
+Use a clean checkout with committed source. Do not remove unrelated user files
+to make a working directory appear clean; create an isolated checkout instead.
 
 ```bash
-python3 tools/make_release.py --version v1.5.0
+python -B tools/zyr.py build --check
+python -B tools/validate_v7_3.py
+python -B tools/zyr.py check --ci
+python -B tools/zyr.py route-test
+python -B tools/prune_retired_docs_v1.py --root . --check
+python -B tools/make_release_v1_7.py --out /tmp/ZIP-your-Research_release.zip
+python -B tools/zyr.py release-audit /tmp/ZIP-your-Research_release.zip
 ```
 
-## Release expectations for this line
+Choose an output path outside the checkout. GitHub CI also extracts the archive
+and verifies the packaged CLI. It rejects secrets, missing required files, and
+unlicensed third-party assets. A successful package check does not establish
+scientific capability or full model-behavior quality.
 
-Before packaging, ensure all of the following are true:
+## Document maintenance
 
-- `README.md` reflects the `v1.5.0` release posture
-- `CHANGELOG.md` has the latest `1.4.4 -> v1.5.0` summary at the top
-- `proof_engine` has been rebuilt into `skills/proof_engine/MASTER_v1.5.md`
-- proof/completion/scientific-discipline regressions all pass
-- `artifacts/system_audit/report_v1.3.2.md` reflects the current workspace rather than the old `v1.4.4` copy
+Keep one current guide per purpose. Put the latest concrete update in the single
+README update section; use Git history for superseded operation reports. Keep
+actual skill dependencies, attribution, source provenance, and test fixtures.
+Generated local reports should remain untracked unless they support a current
+published result such as the [verified examples](SHOWCASE.md).
 
-## Why package without `.git`
-
-- smaller distribution size
-- cleaner copy/paste usage for end users
-- lower risk of shipping irrelevant local history
-
-Do not rely on the release zip as a substitute for proper git history or reproducible release tagging.
+The exact retirement list and baseline hashes are in
+`manifests/retired_documents_v1.json`. To remove matching obsolete copies from an
+older checkout or installed suite, run the cleanup tool with that root and a new
+backup directory. It refuses modified copies and does not remove skill modules.
+Restore uses the recorded receipt; no Git history is rewritten.

@@ -1,0 +1,190 @@
+{
+  "baseline_commit": "b290a2a650b2e0f4dab55ff613697ae1fdcfe86f",
+  "hash_mode": "text CRLF normalized to LF; PDF bytes unchanged",
+  "files": [
+    {
+      "path": "INCREMENTAL_UPDATE_v1.3.1.md",
+      "sha256": "ae9ef2ace8b2cc5aedd06b6f1e163b829bcbd5ac3d58efe3b4fb4158772ef2ab"
+    },
+    {
+      "path": "INCREMENTAL_UPDATE_v1.3.md",
+      "sha256": "6ade866f6ca859c2b27fa5cbe3b15edd37f3768c0d10a376b25ae689925c9964"
+    },
+    {
+      "path": "artifacts/completion_compliance/report_v1.5.md",
+      "sha256": "9219eff6fdcdc7d736067561955e9d2e9443ef7e16a7d1082aa9188abe4d4b24"
+    },
+    {
+      "path": "artifacts/locked_regression/report_v1.3.2.md",
+      "sha256": "0838315a29670f554ee7a4466f34491cfbdbccd41d8c9e3e4b3b5ca29a3bbff0"
+    },
+    {
+      "path": "artifacts/proof_verification/report_v1.5.md",
+      "sha256": "44ebba5bb8c0ffd9385610ae4d9f89ff77072a6d0d0d4764225476e28a982a2e"
+    },
+    {
+      "path": "artifacts/scientific_discipline/report_v1.5.md",
+      "sha256": "1b8da8d0262f1dae2e633835cffc4ce41a2ce8aba03586f413f159b6a870a6cc"
+    },
+    {
+      "path": "artifacts/system_audit/report_v1.3.2.md",
+      "sha256": "d2cf06ea792fb9b4b52fd4c4776bdcc6bcc7d1259620fbadcd744925edbaad1f"
+    },
+    {
+      "path": "boot/07_FIRST_TURN_APPLICATION_GUIDE_v1.3.2.md",
+      "sha256": "2a422cbfca0531cec26fbaa3708c34fc41a25f118a5d2c46f18bd0546e64e5d0"
+    },
+    {
+      "path": "boot/11_REQUIREMENTS_LOCK_LOOP_v1.3.md",
+      "sha256": "06895da6bcf08756a4b2c91ef870cefd2af07ccdfcc09251b82b0726b44c6d22"
+    },
+    {
+      "path": "docs/AGENTIC_ARCHITECTURE_v1.3.md",
+      "sha256": "8468e3f8d141c8e38f1db47d98968114b9734d230c51c11c74ee416277c1908a"
+    },
+    {
+      "path": "docs/AGENTIC_arch_v1.3.md",
+      "sha256": "8468e3f8d141c8e38f1db47d98968114b9734d230c51c11c74ee416277c1908a"
+    },
+    {
+      "path": "docs/ASTRA_INSTRUCTION_AUDIT_v1.md",
+      "sha256": "27ff7b4e11b85fe797c4e2866e144a7c3886c673ad505a0bc05e8f7fd340b57b"
+    },
+    {
+      "path": "docs/HELLO_AGENTS_ADAPTATION_v1.3.md",
+      "sha256": "c80a9d8a0fa2cd13824dd589246f8c0f23d479e877ebb60d4901bc3bc6a6ae31"
+    },
+    {
+      "path": "docs/SKILLS_INDEX_GENERATED_v1.3.md",
+      "sha256": "17ecd0d12dafae80e8b71bb520c3738c2ae59438a81974665f5cd06d541b575e"
+    },
+    {
+      "path": "docs/USAGE.md",
+      "sha256": "a1360a960fa82a8b97026268cefebe5118ac8932d3aa3eb11d3d878f23447fef"
+    },
+    {
+      "path": "docs/audits/AUDIT_platform_spreadsheets_examples_vs_ZYR_v1.3.2_addendum_20260222.md",
+      "sha256": "bf416dd253b5550017b643668f783a81bfad070c9efd4625e362ae24368f6a2d"
+    },
+    {
+      "path": "docs/audits/AUDIT_platform_zyr_skills_docs_pdfs_spr_40841d89.4.0_20260222.md",
+      "sha256": "719361a5049845fd73cd3259a4819eb01af9c9aead336525d996338718b1e7a0"
+    },
+    {
+      "path": "docs/audits/AUDIT_platform_zyr_skills_docs_pdfs_spreadsheets_vs_ZYR_v1.4.0_20260222.md",
+      "sha256": "719361a5049845fd73cd3259a4819eb01af9c9aead336525d996338718b1e7a0"
+    },
+    {
+      "path": "docs/evidence/2026-09-07-resource-profile/README.md",
+      "sha256": "91c60ea44f03766564cd0abbf05c6c6d7ccd8b158554dbdad8b6ddb478a88c7d"
+    },
+    {
+      "path": "docs/evidence/2026-09-07-resource-profile/verification.json",
+      "sha256": "ae9867410e610a662c911c575c0f95ef966a189e51683eaf5c2b21a48980e1cd"
+    },
+    {
+      "path": "docs/how_to_use/PLATFORM_SKILLS_INTEGRATION_v1.4.md",
+      "sha256": "2891704b4c5ad0ea3527679f9e4d00b9f44b5a65147edbb7aac0c39b2e64e1db"
+    },
+    {
+      "path": "docs/how_to_use/PLATFORM_SKILLS_integr_v1.4.md",
+      "sha256": "2891704b4c5ad0ea3527679f9e4d00b9f44b5a65147edbb7aac0c39b2e64e1db"
+    },
+    {
+      "path": "docs/how_to_use/ZIP-your-Research_How_to_Use_v1.3.2.pdf",
+      "sha256": "ceb3d181ba6f67fb654d12fe563d0304135c34f13f4f007bf4c07283024ce1fe"
+    },
+    {
+      "path": "docs/how_to_use/ZIP_your_Research_How_to_Use_v1.3.2.pdf",
+      "sha256": "ceb3d181ba6f67fb654d12fe563d0304135c34f13f4f007bf4c07283024ce1fe"
+    },
+    {
+      "path": "docs/integrated_external_skills/LOGIC_RECONSTRUCTION_v1.0.md",
+      "sha256": "b552ee1e9f90c0ad0a1d416ade777959d26b32ac4ca82e74e5e5aa58809cd4ec"
+    },
+    {
+      "path": "manifests/.repair_changed_files_tmp.json",
+      "sha256": "aaf7cfaff83f7953bbfbfae67e69bac16d86c4088ba17d8e2e6437f8aa78b7f4"
+    },
+    {
+      "path": "manifests/CHECKSUMS.sha256",
+      "sha256": "192a3c417bd0b6c6e8c54cce820284cb1fe096049ce6beb2e9fe65f61893d41f"
+    },
+    {
+      "path": "manifests/FINAL_NO_DELETE_OVERLAY_AUDIT_v1.6.md",
+      "sha256": "2238a3e067a747fa0b38d70cdd451eedf3f3cf60689af73b09fd09d3e51d48bf"
+    },
+    {
+      "path": "manifests/FINAL_RELEASE_AUDIT_v1.6.md",
+      "sha256": "e567e1628a78094e7b0e2409a64eb70d8006b295c862dd7a1ea685483395b0b2"
+    },
+    {
+      "path": "manifests/FINAL_RELEASE_AUDIT_v1.6_S340_HARDENING.md",
+      "sha256": "be3fabcd3ca8a5c1dd3328fffacf20eaf1b49d91544013446fa7d0b64649ec1b"
+    },
+    {
+      "path": "manifests/NO_DELETE_OVERLAY_valid_v1.6.json",
+      "sha256": "4c9bffef9cdb469d8c237dfa0a237388ce084f8f913c923c641e891686b9b610"
+    },
+    {
+      "path": "manifests/PATH_LENGTH_REPORT.md",
+      "sha256": "48b7725b3124c9d6cc652b70683cd7b0263b68c73a866fe2ce6face7e463701d"
+    },
+    {
+      "path": "manifests/README_REWRITE_AUDIT_v1.6.md",
+      "sha256": "6451ec9086915db26b1feb0c56a9c261bf45ef8edd9333dd3216d2a62782ef3a"
+    },
+    {
+      "path": "manifests/README_REWRITE_valid_v1.6.json",
+      "sha256": "d22632b350719ed8efb22a2ea58e13ba6c567083c489f36f846c36f1c564acaf"
+    },
+    {
+      "path": "manifests/README_USAGE_AUDIT_v1.6.2.md",
+      "sha256": "3aaf15a709b1d2a0b0c7501c308eb9eeec2d2e9408493eb35a7ee3fca7340d0b"
+    },
+    {
+      "path": "manifests/RELEASE_AUDIT_v1.6.4.md",
+      "sha256": "ce0e8241f4c441ef2ee6ccc8654b812054a043d70de5592a3e1518a814a66e37"
+    },
+    {
+      "path": "manifests/RELEASE_AUDIT_v1.6.5.md",
+      "sha256": "a40b6cfb56d8a17503c9f33a84ba7728b265f9a67dfa4cc2d9dab767c9897fae"
+    },
+    {
+      "path": "manifests/RELEASE_AUDIT_v1.6.5_CI_FIX.md",
+      "sha256": "fe28833208a76aefa06192342433b40d2ae1ad5a3fac2e32f13d2a8191e619f0"
+    },
+    {
+      "path": "manifests/REPAIR_AUDIT_v1.6.1.md",
+      "sha256": "50e5e7a6532bce875872107d42fdaa6e2567d1b874c107d05552732db0613c98"
+    },
+    {
+      "path": "manifests/REPAIR_AUDIT_v1.6.3.md",
+      "sha256": "13b852a6d154124172dcf4b87171bee45f014db010b3a0e97f120f681201ef6e"
+    },
+    {
+      "path": "manifests/ROUTE_SMOKE_TESTS_v1.6.json",
+      "sha256": "1a944c07cb0db45b5ee664be582e39e11080685a11a3b18d7da213674e6d59a6"
+    },
+    {
+      "path": "manifests/WINDOWS_SAFE_INSTALL_REPORT_v1.6.md",
+      "sha256": "ecb94469319e2ebaeda73fa8c849b277369db945a4ef289496aded18b70410d2"
+    },
+    {
+      "path": "manifests/WINDOWS_SAFE_PATH_RENAME_MAP_v1.6.csv",
+      "sha256": "120a161b0504c5d39a94f5b79e66ad7c3ff0592170c519d0bdee367cff43d837"
+    },
+    {
+      "path": "manifests/WINDOWS_SAFE_PATH_RENAME_MAP_v1.6.json",
+      "sha256": "d161ab8e61c4909c96ffb90a96e0c0f877d2a3b23f284e44192c1f6a63b9594f"
+    },
+    {
+      "path": "req.txt",
+      "sha256": "8cfc3197b86bf23f2454918d3a0e212585c9cc70f8eee9ee36518311a93c7eb9"
+    },
+    {
+      "path": "validate_v7_2.log",
+      "sha256": "c39ff43674448161dd6e67383e83e8a12ed43f67f2b1d039870d87ca73dea633"
+    }
+  ]
+}

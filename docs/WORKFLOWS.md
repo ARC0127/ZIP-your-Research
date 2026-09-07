@@ -1,6 +1,9 @@
 # Workflows (suite v1.6.6)
 
-These are **copy/paste** workflow recipes that chain multiple skills. Each workflow is designed to produce a **2-hour deliverable** by default.
+These are optional **copy/paste** recipes for compound requests. Use the steps
+needed for the requested result; a recipe does not require unrelated companion
+skills. Two hours is an example planning budget, not a universal limit. The
+[resource profile](RESOURCE_PROFILE_v1.md) scopes retained defaults below.
 
 ## WF-1 Paper reading → claim map → 2-hour validation → write-up snippet
 

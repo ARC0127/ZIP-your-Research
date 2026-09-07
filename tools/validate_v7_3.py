@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Compatibility validator facade for suite v1.6.6.
+"""Compatibility validator facade for suite v1.7.0.
 
 Runs the structural compatibility core followed by the release-identity gate.
 
 Usage:
-  python tools/validate_v7_2.py
+  python tools/validate_v7_3.py
 """
 
 import subprocess
@@ -14,9 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 def main():
-    version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
-    identity = "validate_release_identity_v1_7_0.py" if version == "1.7.0" else "validate_release_identity_v1_6_6.py"
-    for script in ("validate_v1_3.py", identity):
+    for script in ("validate_v1_3.py", "validate_release_identity_v1_7_0.py"):
         cmd = [sys.executable]
         if getattr(sys.flags, "no_site", 0):
             cmd.append("-S")
@@ -24,7 +22,7 @@ def main():
         p = subprocess.run(cmd, cwd=str(ROOT))
         if p.returncode != 0:
             raise SystemExit(p.returncode)
-    print(f"Validation passed: structural compatibility + v{version} release identity")
+    print("Validation passed: structural compatibility + v1.7.0 release identity")
 
 if __name__ == "__main__":
     main()

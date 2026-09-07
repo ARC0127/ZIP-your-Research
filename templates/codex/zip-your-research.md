@@ -1,12 +1,12 @@
 ---
 name: zip-your-research
 description: Route ZYR suite tasks or start an explicitly requested ZIP workflow.
-version: 1.6.6
+version: 1.7.0
 ---
 
 # ZIP Your Research
 
-Suite v1.6.6 with resource-proportional execution profile v1.
+Suite v1.7.0 with resource-proportional execution profile v1.
 The local suite root is `references/upstream/ZIP-your-Research-main/`.
 
 Read `references/resource_policy.md` unless the same resource profile v1 is
@@ -22,8 +22,10 @@ manifest, every boot file, or multiple engines.
   explicitly requested multi-agent research or independent review workflow.
 - For suite maintenance, use `zyr-research-evolution`; do not invoke S660 merely
   because the task says "optimize" or "improve".
-- For ZIP-only startup or an explicitly requested strict boot, read the active
-  banner, guardrails, and compatibility bootstrap under `boot/`, then retain
+- Ordinary replies have no status banner; show status only on user request or
+  explicit diagnostic opt-in, without repeating unchanged fields.
+- For ZIP-only startup or an explicitly requested strict boot, read
+  `boot/00_BOOTSTRAP_PROTOCOL_v1.7.0.md` and its required references, then retain
   the existing CONFIRM requirement. Atomic skill use does not restart intake.
 - S661 concerns generated procedural memory. Preserve its exact consent,
   host-attestation, and evaluation requirements when that workflow is selected.

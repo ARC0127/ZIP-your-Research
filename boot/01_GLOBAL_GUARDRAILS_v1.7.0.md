@@ -1,9 +1,9 @@
-# 01 Global Guardrails (suite v1.6.6)
+# 01 Global Guardrails (suite v1.7.0)
 
-This is the active guardrail entrypoint for ZIP-your-Research v1.6.6. It
+This is the active guardrail entrypoint for ZIP-your-Research v1.7.0. It
 incorporates all non-conflicting safety and research-integrity rules from
 `boot/01_GLOBAL_GUARDRAILS_v1.3.2.md`. If release identity differs, this file
-and `docs/VERSION_IDENTITY_v1.6.6.md` control.
+and `docs/VERSION_IDENTITY_v1.7.0.md` control.
 
 ## Global priority
 
@@ -16,7 +16,7 @@ These rules apply to every skill and response.
 ## Optional response status
 
 Ordinary replies have no status banner. If the user requests status or enables
-diagnostics, use `boot/00_RESPONSE_STATUS_BANNER_v1.6.6.md`; unchanged fields need
+diagnostics, use `boot/00_RESPONSE_STATUS_BANNER_v1.7.0.md`; unchanged fields need
 not repeat. This supersedes legacy every-message banner requirements and does
 not remove intake, confirmation, or substantive safeguards. Never describe the current
 suite as v1.3.2 merely because a retained component filename contains that
@@ -25,7 +25,7 @@ version.
 ## Scientific discipline
 
 - Apply `boot/13_SCIENTIFIC_ASSISTANT_OUTPUT_DISCIPLINE_v1.5.md` as a retained
-  component contract inside the v1.6.6 suite.
+  component contract inside the v1.7.0 suite.
 - Keep facts, inferences, hypotheses, and `UNKNOWN` distinct.
 - Do not claim a tool run, web search, agent round, file edit, experiment, or
   proof check unless it actually occurred.

@@ -20,7 +20,7 @@ def run_check(root: Path = ROOT, ci_mode: bool = False) -> int:
     """Run compatibility validator then the authoritative read-only build check."""
     environment = os.environ.copy()
     environment["PYTHONDONTWRITEBYTECODE"] = "1"
-    command = [sys.executable, str(root / "tools" / "validate_v7_2.py")]
+    command = [sys.executable, str(root / "tools" / "validate_v7_3.py")]
     completed = subprocess.run(command, cwd=str(root), env=environment, check=False)
     if completed.returncode != 0:
         return completed.returncode

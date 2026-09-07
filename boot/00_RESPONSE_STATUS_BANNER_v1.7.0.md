@@ -1,7 +1,7 @@
-# 00 Response Status Banner (suite v1.6.6)
+# 00 Response Status Banner (suite v1.7.0)
 
 This file is the active single source of truth for optional status display.
-Version precedence is defined in `docs/VERSION_IDENTITY_v1.6.6.md`.
+Version precedence is defined in `docs/VERSION_IDENTITY_v1.7.0.md`.
 
 ## Display only on request
 
@@ -19,7 +19,7 @@ When the full diagnostic line is requested, use this shape:
 
 ## Semantics
 
-- `ZIP_MODE: ON` means the assistant is following the ZYR suite v1.6.6
+- `ZIP_MODE: ON` means the assistant is following the ZYR suite v1.7.0
   protocol.
 - `STAGE` reports whether Mode Lock is active in this task.
 - `MEMORY` reports the actual memory posture; it must not claim use that did
@@ -37,4 +37,4 @@ They do not identify the current suite release.
 
 Follow the active stage rules and the retained detailed response templates.
 Where a retained template filename contains v1.3.2, treat that number as
-component lineage under the v1.6.6 release identity.
+component lineage under the v1.7.0 release identity.

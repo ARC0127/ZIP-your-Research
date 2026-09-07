@@ -12,8 +12,6 @@ allow:
     - AUTOBOOT_v1.3.md
     - CHANGELOG.md
     - CONTRIBUTING.md
-    - INCREMENTAL_UPDATE_v1.3.md
-    - INCREMENTAL_UPDATE_v1.3.1.md
     - INDEX.md
     - LICENSE
     - README.md
@@ -22,7 +20,6 @@ allow:
     - artifacts/negative_result_ledger.md
     - artifacts/proof_casebook.md
     - artifacts/run_state.json
-    - req.txt
     - requirements.txt
     - skills_manifest.yaml
     - v
@@ -98,15 +95,20 @@ required:
     - v
     - skills_manifest.yaml
     - INDEX.md
-    - boot/00_RESPONSE_STATUS_BANNER_v1.6.6.md
-    - boot/01_GLOBAL_GUARDRAILS_v1.6.6.md
+    - boot/00_RESPONSE_STATUS_BANNER_v1.7.0.md
+    - boot/01_GLOBAL_GUARDRAILS_v1.7.0.md
+    - boot/00_BOOTSTRAP_PROTOCOL_v1.7.0.md
+    - boot/04_MODE_LOCK_FORMAT_v1.7.0.md
+    - boot/08_MODE_LOCK_SCHEMA_v1.7.0.json
+    - boot/01_MIGRATION_PROMPT_TEMPLATE_v1.7.0.md
+    - router/intake_profile_v1.7.0.yaml
     - artifacts/evidence_ledger.csv
     - artifacts/negative_result_ledger.md
     - artifacts/proof_casebook.md
     - artifacts/run_state.json
     - docs/memory/VISIBLE_MEMORY_PROTOCOL_v1.md
     - docs/memory/DYNAMIC_SKILL_MEMORY_PROTOCOL_v1.md
-    - docs/VERSION_IDENTITY_v1.6.6.md
+    - docs/VERSION_IDENTITY_v1.7.0.md
     - interfaces/host_adapter_contract.md
     - manifests/COMPATIBILITY.yaml
     - manifests/ACKNOWLEDGMENTS_BASELINE_v1.6.6.sha256
@@ -115,18 +117,18 @@ required:
     - manifests/generated_files.yaml
     - manifests/legacy_nonroutable.yaml
     - manifests/release_policy.yaml
-    - router/SKILL_MAP_v1.6.6.md
+    - router/SKILL_MAP_v1.7.0.md
     - router/route_v1_7.py
     - router/taxonomy.yaml
     - router/test_route_v1_7.py
-    - skills/coding_engine/MASTER_v1.6.6.md
+    - skills/coding_engine/MASTER_v1.7.0.md
     - skills/coding_engine/modules/00_HEADER.md
     - skills/coding_engine/modules/01_GATE_AND_INTAKE.md
     - skills/coding_engine/modules/02_DIAGNOSE.md
     - skills/coding_engine/modules/03_PATCH_STYLE.md
     - skills/coding_engine/modules/04_VERIFICATION.md
     - skills/coding_engine/modules/05_MINIMALISM.md
-    - skills/proof_engine/MASTER_v1.5.md
+    - skills/proof_engine/MASTER_v1.7.0.md
     - skills/proof_engine/modules/00_HEADER.md
     - skills/proof_engine/modules/01_PROFILE_AND_ROUTING.md
     - skills/proof_engine/modules/02_PESSIMISTIC_VERIFICATION.md
@@ -137,7 +139,7 @@ required:
     - skills/proof_engine/modules/07_LONG_PROOF_AUDIT_EXAMPLES.md
     - skills/research_orchestrator/S660_epistemic_research_champion.md
     - skills/research_orchestrator/S661_dynamic_skill_memory.md
-    - skills/writing_engine/MASTER_v1.6.6.md
+    - skills/writing_engine/MASTER_v1.7.0.md
     - skills/writing_engine/modules/00_MAIN_ENTRYPOINT.md
     - skills/writing_engine/modules/01_GATE_ROUTER.md
     - skills/writing_engine/modules/02_REWRITE_ENGINE.md
@@ -176,8 +178,8 @@ required:
     - tests/router/cases_v2.jsonl
     - tests/skill_memory/test_skill_memory_v1.py
     - tools/validate_v1_3.py
-    - tools/validate_release_identity_v1_6_6.py
-    - tools/validate_v7_2.py
+    - tools/validate_release_identity_v1_7_0.py
+    - tools/validate_v7_3.py
     - tools/zyr.py
     - tools/zyr_lib/__init__.py
     - tools/zyr_lib/build.py

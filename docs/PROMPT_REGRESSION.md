@@ -28,5 +28,5 @@ python tools/simulate_locked_regression_v1_3.py --n 25 --seed 0
 The simulator is *not an LLM*. It checks the **protocol contract** only:
 `[LOCKED][SCOPE=<LABEL>] ...`
 
-The report is written to:
+The report is generated on request (not shipped as a current result) at:
 `artifacts/locked_regression/report_v1.3.2.md`

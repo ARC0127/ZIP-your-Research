@@ -27,9 +27,25 @@ import install_codex_profile_v1 as base
 ROOT = Path(__file__).resolve().parents[1]
 DESCRIPTIONS = "manifests/codex_descriptions_v1.yaml"
 EXTRA_FILES = (
+    "VERSION", "v", "skills_manifest.yaml", "INDEX.md",
+    "boot/00_RESPONSE_STATUS_BANNER_v1.7.0.md", "boot/01_GLOBAL_GUARDRAILS_v1.7.0.md",
+    "boot/00_BOOTSTRAP_PROTOCOL_v1.7.0.md", "boot/04_MODE_LOCK_FORMAT_v1.7.0.md",
+    "boot/08_MODE_LOCK_SCHEMA_v1.7.0.json", "boot/01_MIGRATION_PROMPT_TEMPLATE_v1.7.0.md",
+    "router/intake_profile_v1.7.0.yaml", "router/SKILL_MAP_v1.7.0.md",
+    "skills/writing_engine/MASTER_v1.7.0.md", "skills/coding_engine/MASTER_v1.7.0.md",
+    "skills/proof_engine/MASTER_v1.7.0.md", "skills/figure_engine/MASTER_v1.7.0.md",
+    "skills/rwf_s340/MASTER_v1.7.0.md", "docs/VERSION_IDENTITY_v1.7.0.md",
+    "docs/assets/zyr-cover-v1.7.0.svg", "docs/assets/zyr-cover-mobile-v1.7.0.svg",
+    "tools/zyr_lib/check.py", "tools/validate_v7_3.py", "tools/validate_v7_2.py",
+    "tools/validate_release_identity_v1_7_0.py", "manifests/COMPATIBILITY.yaml",
+    "tests/integrity/test_release_identity_v1_6_6.py",
     DESCRIPTIONS, "tools/install_codex_profile_v2.py",
     "tests/integrity/test_astra_instructions_v1.py",
-    "docs/ASTRA_INSTRUCTION_AUDIT_v1.md",
+    "docs/QUICKSTART.md", "docs/RELEASE.md", "docs/SKILLS.md",
+    "docs/how_to_use/README.md", "docs/WORKFLOWS.md", "CHANGELOG.md", ".gitignore",
+    "docs/SHOWCASE.md", "docs/PROMPT_REGRESSION.md",
+    "manifests/retired_documents_v1.json", "manifests/release_policy.yaml",
+    "tools/prune_retired_docs_v1.py", "tests/integrity/test_document_retirement_v1.py",
 )
 
 
@@ -55,12 +71,18 @@ def with_description(data: bytes, description: str) -> bytes:
 def plan(codex_home: Path, include_user_instructions: bool = False) -> dict[str, bytes]:
     changes = base.plan(codex_home / "skills")
     discovery = descriptions()
+    suite_version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
     for relative, data in list(changes.items()):
         if relative.count("/") != 1 or not relative.endswith("/SKILL.md"):
             continue
         match = re.search(r"Manifest id: `([^`]+)`", data.decode("utf-8-sig"))
         if match:
-            changes[relative] = with_description(data, discovery[match.group(1)])
+            data = with_description(data, discovery[match.group(1)])
+        _, header, body = data.decode("utf-8-sig").split("---", 2)
+        meta = yaml.safe_load(header)
+        meta["version"] = suite_version
+        body = body.replace("Suite v1.6.6;", f"Suite v{suite_version};")
+        changes[relative] = ("---\n" + yaml.safe_dump(meta, allow_unicode=True, sort_keys=False).strip() + "\n---" + body).encode("utf-8")
     archive = "zip-your-research/references/upstream/ZIP-your-Research-main/"
     templates = sorted(p for folder in ("templates/codex-home", "templates/codex-user-skills") for p in (ROOT / folder).rglob("*.md"))
     for relative in (*EXTRA_FILES, *(p.relative_to(ROOT).as_posix() for p in templates)):
